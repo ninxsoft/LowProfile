@@ -85,7 +85,6 @@
 		57301B6824E24C4D00814349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57301B6924E24C4D00814349 /* Low Profile - Quick Look.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Low Profile - Quick Look.entitlements"; sourceTree = "<group>"; };
 		573F4D0324E81EB000E6136F /* AppCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
-		578539D124E936DE00B68138 /* Low Profile - Quick Look copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Low Profile - Quick Look copy-Info.plist"; path = "/Users/ninxsoft/Documents/GitHub/LowProfile/Low Profile - Quick Look copy-Info.plist"; sourceTree = "<absolute>"; };
 		578B3B9224DAA193004D06C2 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		578B3B9424DAA318004D06C2 /* UnselectedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnselectedDetail.swift; sourceTree = "<group>"; };
 		578B3B9624DAA522004D06C2 /* DetailInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformation.swift; sourceTree = "<group>"; };
@@ -233,7 +232,6 @@
 				57301B6224E24C4D00814349 /* Low Profile - Quick Look */,
 				57D4F7E924D6D85D00BC0648 /* Frameworks */,
 				57D4F7CF24D6D6A500BC0648 /* Products */,
-				578539D124E936DE00B68138 /* Low Profile - Quick Look copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
