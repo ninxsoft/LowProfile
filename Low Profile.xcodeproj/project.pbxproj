@@ -39,40 +39,6 @@
 		57301BA124E3FE2600814349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D4F7D524D6D6A700BC0648 /* Assets.xcassets */; };
 		57301BA324E41CEB00814349 /* Payloads.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57BB578724D818F00090CDDF /* Payloads.plist */; };
 		573F4D0424E81EB000E6136F /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F4D0324E81EB000E6136F /* AppCommands.swift */; };
-		578539A924E936DE00B68138 /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */; };
-		578539AA24E936DE00B68138 /* UnselectedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9424DAA318004D06C2 /* UnselectedDetail.swift */; };
-		578539AB24E936DE00B68138 /* SidebarRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578224D7FD330090CDDF /* SidebarRow.swift */; };
-		578539AC24E936DE00B68138 /* DetailHeadingPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BAC24DE4F9D004D06C2 /* DetailHeadingPlatforms.swift */; };
-		578539AD24E936DE00B68138 /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FFFED24E675EC00DA8DF1 /* AttributedText.swift */; };
-		578539AE24E936DE00B68138 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9224DAA193004D06C2 /* Sidebar.swift */; };
-		578539AF24E936DE00B68138 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BA224DC08B8004D06C2 /* Availability.swift */; };
-		578539B024E936DE00B68138 /* TextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BA824DC1FAD004D06C2 /* TextRow.swift */; };
-		578539B124E936DE00B68138 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BB624DE7088004D06C2 /* String+Extension.swift */; };
-		578539B224E936DE00B68138 /* DetailDiscussion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BBC24DFB7CE004D06C2 /* DetailDiscussion.swift */; };
-		578539B324E936DE00B68138 /* PayloadProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9C24DABB23004D06C2 /* PayloadProperty.swift */; };
-		578539B424E936DE00B68138 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9A24DAB51F004D06C2 /* Property.swift */; };
-		578539B524E936DE00B68138 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BA024DC05B2004D06C2 /* Platform.swift */; };
-		578539B624E936DE00B68138 /* DocumentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F000424E8148D00DA8DF1 /* DocumentError.swift */; };
-		578539B724E936DE00B68138 /* DetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9624DAA522004D06C2 /* DetailInformation.swift */; };
-		578539B824E936DE00B68138 /* PlatformTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9E24DC0444004D06C2 /* PlatformTag.swift */; };
-		578539B924E936DE00B68138 /* DetailPropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FFFF024E7AB5D00DA8DF1 /* DetailPropertyList.swift */; };
-		578539BA24E936DE00B68138 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7D324D6D6A500BC0648 /* ContentView.swift */; };
-		578539BB24E936DE00B68138 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578024D78B2C0090CDDF /* Profile.swift */; };
-		578539BC24E936DE00B68138 /* PayloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578924D81AB00090CDDF /* PayloadHelper.swift */; };
-		578539BD24E936DE00B68138 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB577A24D789E70090CDDF /* Payload.swift */; };
-		578539BE24E936DE00B68138 /* TextTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BB024DE5763004D06C2 /* TextTag.swift */; };
-		578539BF24E936DE00B68138 /* DetailAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BB824DE78B1004D06C2 /* DetailAvailability.swift */; };
-		578539C024E936DE00B68138 /* DetailCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BC224E143CD004D06C2 /* DetailCertificate.swift */; };
-		578539C124E936DE00B68138 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57301B6324E24C4D00814349 /* PreviewViewController.swift */; };
-		578539C224E936DE00B68138 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578524D802270090CDDF /* Detail.swift */; };
-		578539C324E936DE00B68138 /* DetailHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BAA24DE4D90004D06C2 /* DetailHeading.swift */; };
-		578539C424E936DE00B68138 /* PropertyListText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FFFF624E7B49800DA8DF1 /* PropertyListText.swift */; };
-		578539C524E936DE00B68138 /* PayloadProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BBE24DFD64E004D06C2 /* PayloadProperties.swift */; };
-		578539C724E936DE00B68138 /* ASN1Decoder in Frameworks */ = {isa = PBXBuildFile; productRef = 578539A624E936DE00B68138 /* ASN1Decoder */; };
-		578539C824E936DE00B68138 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D4F7EA24D6D85D00BC0648 /* Quartz.framework */; };
-		578539CA24E936DE00B68138 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D4F7D524D6D6A700BC0648 /* Assets.xcassets */; };
-		578539CB24E936DE00B68138 /* PreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57301B6524E24C4D00814349 /* PreviewViewController.xib */; };
-		578539CC24E936DE00B68138 /* Payloads.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57BB578724D818F00090CDDF /* Payloads.plist */; };
 		578B3B9324DAA193004D06C2 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9224DAA193004D06C2 /* Sidebar.swift */; };
 		578B3B9524DAA318004D06C2 /* UnselectedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9424DAA318004D06C2 /* UnselectedDetail.swift */; };
 		578B3B9724DAA522004D06C2 /* DetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9624DAA522004D06C2 /* DetailInformation.swift */; };
@@ -119,7 +85,6 @@
 		57301B6824E24C4D00814349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57301B6924E24C4D00814349 /* Low Profile - Quick Look.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Low Profile - Quick Look.entitlements"; sourceTree = "<group>"; };
 		573F4D0324E81EB000E6136F /* AppCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
-		578539D024E936DE00B68138 /* Low Profile - Quick Look copy.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Low Profile - Quick Look copy.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		578539D124E936DE00B68138 /* Low Profile - Quick Look copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Low Profile - Quick Look copy-Info.plist"; path = "/Users/ninxsoft/Documents/GitHub/LowProfile/Low Profile - Quick Look copy-Info.plist"; sourceTree = "<absolute>"; };
 		578B3B9224DAA193004D06C2 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		578B3B9424DAA318004D06C2 /* UnselectedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnselectedDetail.swift; sourceTree = "<group>"; };
@@ -167,15 +132,6 @@
 			files = (
 				57301BA024E3CDF800814349 /* ASN1Decoder in Frameworks */,
 				57301B6124E24C4D00814349 /* Quartz.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		578539C624E936DE00B68138 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				578539C724E936DE00B68138 /* ASN1Decoder in Frameworks */,
-				578539C824E936DE00B68138 /* Quartz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +242,6 @@
 			children = (
 				57D4F7CE24D6D6A500BC0648 /* Low Profile.app */,
 				57301B6024E24C4D00814349 /* Low Profile - Quick Look.appex */,
-				578539D024E936DE00B68138 /* Low Profile - Quick Look copy.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,26 +289,6 @@
 			);
 			productName = quicklook;
 			productReference = 57301B6024E24C4D00814349 /* Low Profile - Quick Look.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		578539A524E936DE00B68138 /* Low Profile - Quick Look copy */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 578539CD24E936DE00B68138 /* Build configuration list for PBXNativeTarget "Low Profile - Quick Look copy" */;
-			buildPhases = (
-				578539A824E936DE00B68138 /* Sources */,
-				578539C624E936DE00B68138 /* Frameworks */,
-				578539C924E936DE00B68138 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Low Profile - Quick Look copy";
-			packageProductDependencies = (
-				578539A624E936DE00B68138 /* ASN1Decoder */,
-			);
-			productName = quicklook;
-			productReference = 578539D024E936DE00B68138 /* Low Profile - Quick Look copy.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		57D4F7CD24D6D6A500BC0648 /* Low Profile */ = {
@@ -412,7 +347,6 @@
 			targets = (
 				57D4F7CD24D6D6A500BC0648 /* Low Profile */,
 				57301B5F24E24C4D00814349 /* Low Profile - Quick Look */,
-				578539A524E936DE00B68138 /* Low Profile - Quick Look copy */,
 			);
 		};
 /* End PBXProject section */
@@ -425,16 +359,6 @@
 				57301BA124E3FE2600814349 /* Assets.xcassets in Resources */,
 				57301B6724E24C4D00814349 /* PreviewViewController.xib in Resources */,
 				57301BA324E41CEB00814349 /* Payloads.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		578539C924E936DE00B68138 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				578539CA24E936DE00B68138 /* Assets.xcassets in Resources */,
-				578539CB24E936DE00B68138 /* PreviewViewController.xib in Resources */,
-				578539CC24E936DE00B68138 /* Payloads.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,42 +428,6 @@
 				57301B8524E273F300814349 /* DetailHeading.swift in Sources */,
 				578FFFF824E7B49800DA8DF1 /* PropertyListText.swift in Sources */,
 				57301B7824E273F300814349 /* PayloadProperties.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		578539A824E936DE00B68138 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				578539A924E936DE00B68138 /* UTType+Extension.swift in Sources */,
-				578539AA24E936DE00B68138 /* UnselectedDetail.swift in Sources */,
-				578539AB24E936DE00B68138 /* SidebarRow.swift in Sources */,
-				578539AC24E936DE00B68138 /* DetailHeadingPlatforms.swift in Sources */,
-				578539AD24E936DE00B68138 /* AttributedText.swift in Sources */,
-				578539AE24E936DE00B68138 /* Sidebar.swift in Sources */,
-				578539AF24E936DE00B68138 /* Availability.swift in Sources */,
-				578539B024E936DE00B68138 /* TextRow.swift in Sources */,
-				578539B124E936DE00B68138 /* String+Extension.swift in Sources */,
-				578539B224E936DE00B68138 /* DetailDiscussion.swift in Sources */,
-				578539B324E936DE00B68138 /* PayloadProperty.swift in Sources */,
-				578539B424E936DE00B68138 /* Property.swift in Sources */,
-				578539B524E936DE00B68138 /* Platform.swift in Sources */,
-				578539B624E936DE00B68138 /* DocumentError.swift in Sources */,
-				578539B724E936DE00B68138 /* DetailInformation.swift in Sources */,
-				578539B824E936DE00B68138 /* PlatformTag.swift in Sources */,
-				578539B924E936DE00B68138 /* DetailPropertyList.swift in Sources */,
-				578539BA24E936DE00B68138 /* ContentView.swift in Sources */,
-				578539BB24E936DE00B68138 /* Profile.swift in Sources */,
-				578539BC24E936DE00B68138 /* PayloadHelper.swift in Sources */,
-				578539BD24E936DE00B68138 /* Payload.swift in Sources */,
-				578539BE24E936DE00B68138 /* TextTag.swift in Sources */,
-				578539BF24E936DE00B68138 /* DetailAvailability.swift in Sources */,
-				578539C024E936DE00B68138 /* DetailCertificate.swift in Sources */,
-				578539C124E936DE00B68138 /* PreviewViewController.swift in Sources */,
-				578539C224E936DE00B68138 /* Detail.swift in Sources */,
-				578539C324E936DE00B68138 /* DetailHeading.swift in Sources */,
-				578539C424E936DE00B68138 /* PropertyListText.swift in Sources */,
-				578539C524E936DE00B68138 /* PayloadProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,48 +513,6 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Low Profile - Quick Look/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MARKETING_VERSION = "0.1 Beta";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ninxsoft.lowprofile.quicklook;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		578539CE24E936DE00B68138 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Low Profile - Quick Look/Low Profile - Quick Look.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "Low Profile - Quick Look copy-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MARKETING_VERSION = "0.1 Beta";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ninxsoft.lowprofile.quicklook;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		578539CF24E936DE00B68138 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Low Profile - Quick Look/Low Profile - Quick Look.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "Low Profile - Quick Look copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -857,15 +703,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		578539CD24E936DE00B68138 /* Build configuration list for PBXNativeTarget "Low Profile - Quick Look copy" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				578539CE24E936DE00B68138 /* Debug */,
-				578539CF24E936DE00B68138 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		57D4F7C924D6D6A500BC0648 /* Build configuration list for PBXProject "Low Profile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -895,14 +732,6 @@
 				minimumVersion = 1.3.3;
 			};
 		};
-		578539A724E936DE00B68138 /* XCRemoteSwiftPackageReference "ASN1Decoder" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/filom/ASN1Decoder.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.3;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -914,11 +743,6 @@
 		57301B9F24E3CDF800814349 /* ASN1Decoder */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 57301B9C24E3CDBE00814349 /* XCRemoteSwiftPackageReference "ASN1Decoder" */;
-			productName = ASN1Decoder;
-		};
-		578539A624E936DE00B68138 /* ASN1Decoder */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 578539A724E936DE00B68138 /* XCRemoteSwiftPackageReference "ASN1Decoder" */;
 			productName = ASN1Decoder;
 		};
 /* End XCSwiftPackageProductDependency section */
