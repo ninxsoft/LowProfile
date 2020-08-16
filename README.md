@@ -13,7 +13,7 @@ If the answer is yes to any of the above, then **Low Profile** is the app for **
 
 ## Features
 
-*   [x] Displays details for all Apple [supported payloads](#supported-payloads):
+*   [x] Displays details for all Apple [supported payloads](https://developer.apple.com/documentation/devicemanagement/profile-specific_payload_keys):
     *   Description
     *   Payload Type
     *   Supported Platforms (iOS, macOS, tvOS, watchOS)
