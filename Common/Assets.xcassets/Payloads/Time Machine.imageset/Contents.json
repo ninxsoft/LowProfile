@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Time Machine.png",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

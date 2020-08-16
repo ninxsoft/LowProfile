@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "AirPrint.png",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

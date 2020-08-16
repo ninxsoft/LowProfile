@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Wi-Fi.png",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

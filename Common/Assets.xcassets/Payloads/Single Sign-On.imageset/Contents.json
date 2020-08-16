@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Single Sign-On.png",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

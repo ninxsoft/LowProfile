@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "macOS Server.png",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

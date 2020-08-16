@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Login Items.png",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

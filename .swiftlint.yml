@@ -1,0 +1,7 @@
+opt_in_rules:
+- explicit_type_interface
+- file_name
+- file_types_order
+- modifier_order
+- type_contents_order
+- yoda_condition

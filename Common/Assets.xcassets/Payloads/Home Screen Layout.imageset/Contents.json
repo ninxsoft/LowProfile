@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Home Screen Layout.png",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
