@@ -247,8 +247,8 @@
 		57D4F7D024D6D6A500BC0648 /* Low Profile */ = {
 			isa = PBXGroup;
 			children = (
-				578B3BC024E132D0004D06C2 /* AppDelegate.swift */,
 				573F4D0324E81EB000E6136F /* AppCommands.swift */,
+				578B3BC024E132D0004D06C2 /* AppDelegate.swift */,
 				57D4F7FB24D6D8D100BC0648 /* Document.swift */,
 				578F000424E8148D00DA8DF1 /* DocumentError.swift */,
 				57D4F7DA24D6D6A700BC0648 /* Info.plist */,

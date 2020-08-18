@@ -14,7 +14,6 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct ContentView: View {
-  @Environment(\.colorScheme) var colorScheme: ColorScheme
   @Environment(\.openURL) var openURL: OpenURLAction
   var profile: Profile
   @State var selection: Payload?
@@ -35,7 +34,7 @@ struct ContentView: View {
         }
       }
     }
-    .toolbar(items: {
+    .toolbar {
       ToolbarItem {
         Button(action: {
           homepage()
@@ -43,7 +42,7 @@ struct ContentView: View {
           Image(systemName: "questionmark.circle")
         })
       }
-    })
+    }
     .frame(minWidth: width, maxWidth: .infinity, minHeight: height, maxHeight: .infinity)
   }
 
