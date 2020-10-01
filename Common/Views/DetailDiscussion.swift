@@ -7,24 +7,24 @@
 
 import SwiftUI
 
-struct DetailDiscussion_Previews: PreviewProvider {
-  static var previews: some View {
-    DetailDiscussion(discussion: "Example")
-  }
+struct DetailDiscussion: View {
+    var discussion: String
+
+    var body: some View {
+        VStack {
+            ScrollView(.vertical) {
+                HStack {
+                    AttributedText(string: discussion)
+                    Spacer()
+                }
+            }
+        }
+        .padding()
+    }
 }
 
-struct DetailDiscussion: View {
-  var discussion: String
-
-  var body: some View {
-    VStack {
-      ScrollView(.vertical) {
-        HStack {
-          AttributedText(string: discussion)
-          Spacer()
-        }
-      }
+struct DetailDiscussion_Previews: PreviewProvider {
+    static var previews: some View {
+        DetailDiscussion(discussion: "Example")
     }
-    .padding()
-  }
 }

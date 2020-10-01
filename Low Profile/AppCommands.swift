@@ -8,37 +8,37 @@
 import SwiftUI
 
 struct AppCommands: Commands {
-  @Environment(\.openURL) var openURL: OpenURLAction
+    @Environment(\.openURL) var openURL: OpenURLAction
 
-  @CommandsBuilder var body: some Commands {
-    CommandGroup(replacing: .help) {
-      Button("Low Profile Help", action: {
-        help()
-      })
-    }
-    CommandGroup(replacing: .saveItem) {
-      Button("Close", action: {
-        close()
-      })
-      .keyboardShortcut("w", modifiers: .command)
-    }
-    CommandGroup(replacing: .systemServices) {
-
-    }
-  }
-
-  func help() {
-
-    let string: String = "https://github.com/ninxsoft/LowProfile"
-
-    guard let url: URL = URL(string: string) else {
-      return
+    @CommandsBuilder var body: some Commands {
+        CommandGroup(replacing: .help) {
+            Button("Low Profile Help") {
+                help()
+            }
+        }
+        CommandGroup(replacing: .saveItem) {
+            Button("Close") {
+                close()
+            }
+            .keyboardShortcut("w", modifiers: .command)
+        }
+        CommandGroup(replacing: .systemServices) {
+            // do nothing ?
+        }
     }
 
-    openURL(url)
-  }
+    func help() {
 
-  func close() {
-    NSApplication.shared.keyWindow?.close()
-  }
+        let string: String = "https://github.com/ninxsoft/LowProfile"
+
+        guard let url: URL = URL(string: string) else {
+            return
+        }
+
+        openURL(url)
+    }
+
+    func close() {
+        NSApplication.shared.keyWindow?.close()
+    }
 }

@@ -7,27 +7,27 @@
 
 import SwiftUI
 
-struct TextRow_Previews: PreviewProvider {
-  static var previews: some View {
-    TextRow(leading: "Leading", trailing: "Trailing")
-  }
+struct TextRow: View {
+    var leading: String
+    var trailing: String
+    var formattedTrailing: String {
+        trailing.isEmpty ? "-" : trailing
+    }
+
+    var body: some View {
+        HStack(alignment: .top) {
+            Text(leading)
+                .foregroundColor(.primary)
+                .fontWeight(.semibold)
+            Spacer()
+            Text(formattedTrailing)
+                .foregroundColor(.secondary)
+        }
+    }
 }
 
-struct TextRow: View {
-  var leading: String
-  var trailing: String
-  var formattedTrailing: String {
-    return trailing.isEmpty ? "-" : trailing
-  }
-
-  var body: some View {
-    HStack(alignment: .top) {
-      Text(leading)
-        .foregroundColor(.primary)
-        .fontWeight(.semibold)
-      Spacer()
-      Text(formattedTrailing)
-        .foregroundColor(.secondary)
+struct TextRow_Previews: PreviewProvider {
+    static var previews: some View {
+        TextRow(leading: "Leading", trailing: "Trailing")
     }
-  }
 }

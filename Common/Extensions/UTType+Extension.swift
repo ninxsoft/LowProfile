@@ -8,5 +8,5 @@
 import UniformTypeIdentifiers
 
 extension UTType {
-  static var mobileconfig: UTType = UTType(importedAs: "com.apple.mobileconfig")
+    static var mobileconfig: UTType = UTType(importedAs: "com.apple.mobileconfig")
 }

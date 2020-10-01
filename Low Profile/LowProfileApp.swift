@@ -9,15 +9,15 @@ import SwiftUI
 
 @main
 struct LowProfileApp: App {
-  // swiftlint:disable:next weak_delegate
-  @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate: AppDelegate
+    // swiftlint:disable:next weak_delegate
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate: AppDelegate
 
-  var body: some Scene {
-    DocumentGroup(viewing: Document.self) { file in
-      ContentView(profile: file.document.profile)
+    var body: some Scene {
+        DocumentGroup(viewing: Document.self) { file in
+            ContentView(profile: file.document.profile)
+        }
+        .commands {
+            AppCommands()
+        }
     }
-    .commands {
-      AppCommands()
-    }
-  }
 }

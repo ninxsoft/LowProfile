@@ -9,16 +9,16 @@ import Foundation
 
 extension String {
 
-  static func ~= (lhs: String, rhs: String) -> Bool {
-    guard let regex: NSRegularExpression = try? NSRegularExpression(pattern: rhs) else {
-      return false
+    static func ~= (lhs: String, rhs: String) -> Bool {
+        guard let regex: NSRegularExpression = try? NSRegularExpression(pattern: rhs) else {
+            return false
+        }
+
+        let range: NSRange = NSRange(location: 0, length: lhs.utf16.count)
+        return regex.firstMatch(in: lhs, options: [], range: range) != nil
     }
 
-    let range: NSRange = NSRange(location: 0, length: lhs.utf16.count)
-    return regex.firstMatch(in: lhs, options: [], range: range) != nil
-  }
-
-  func surroundingOccurrences(of string: String, with separator: String) -> String {
-    return self.replacingOccurrences(of: string, with: separator + string + separator)
-  }
+    func surroundingOccurrences(of string: String, with separator: String) -> String {
+        self.replacingOccurrences(of: string, with: separator + string + separator)
+    }
 }

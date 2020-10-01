@@ -10,20 +10,20 @@ import UniformTypeIdentifiers
 
 struct Document: FileDocument {
 
-  static var readableContentTypes: [UTType] = [.mobileconfig]
-  var profile: Profile = Profile()
+    static var readableContentTypes: [UTType] = [.mobileconfig]
+    var profile: Profile = Profile()
 
-  init(fileWrapper: FileWrapper, contentType: UTType) throws {
+    init(configuration: ReadConfiguration) throws {
 
-    guard let data: Data = fileWrapper.regularFileContents,
-          let object: Profile = Profile(from: data) else {
-      throw DocumentError("Unable to load Configuration Profile")
+        guard let data: Data = configuration.file.regularFileContents,
+            let object: Profile = Profile(from: data) else {
+            throw DocumentError("Unable to load Configuration Profile")
+        }
+
+        profile = object
     }
 
-    profile = object
-  }
-
-  func write(to fileWrapper: inout FileWrapper, contentType: UTType) throws {
-    // do nothing
-  }
+    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
+        throw DocumentError("Unable to save Configuration Profile")
+    }
 }
