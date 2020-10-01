@@ -95,7 +95,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -111,7 +111,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -119,7 +119,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.0</string>
+				<string>7.1</string>
 				<key>introduced_at</key>
 				<string>2.0</string>
 				<key>name</key>
@@ -238,6 +238,18 @@
 			</dict>
 			<dict>
 				<key>attributes</key>
+				<dict/>
+				<key>description</key>
+				<array>
+					<string>The date when a profile is no longer valid and an update button is presented to the user.</string>
+				</array>
+				<key>name</key>
+				<string>PayloadExpirationDate</string>
+				<key>type</key>
+				<string>date</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
 				<dict>
 					<key>required</key>
 					<true/>
@@ -271,7 +283,9 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, the user cannot delete the profile unless the profile has a removal password and the user provides it. If the device is unsupervised, this key is ignored.</string>
+					<string>If present and set to &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, the user cannot delete the profile (unless the profile has a removal password and the user provides it).</string>
+					<string>On macOS, as of 10.15, this key only affects removal of manually installed profiles. If set to &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt; and no profile removal payload is present, admin auth will be required to remove the profile.</string>
+					<string>On macOS versions prior to 10.15, this key would prevent admins from removing MDM installed profiles but as of macOS 10.15, MDM profiles can never be removed by a user, not even the admin.</string>
 				</array>
 				<key>name</key>
 				<string>PayloadRemovalDisallowed</string>
@@ -391,16 +405,6 @@
 				<string>TargetDeviceType</string>
 				<key>type</key>
 				<string>integer</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict/>
-				<key>description</key>
-				<array/>
-				<key>name</key>
-				<string>PayloadExpirationDate</string>
-				<key>type</key>
-				<string>date</string>
 			</dict>
 		</array>
 	</dict>
@@ -606,6 +610,160 @@
 				</array>
 				<key>name</key>
 				<string>PromptForCredentials</string>
+				<key>type</key>
+				<string>boolean</string>
+			</dict>
+		</array>
+	</dict>
+	<key>com.apple.AIM.account</key>
+	<dict>
+		<key>availability</key>
+		<dict>
+			<key>device</key>
+			<string>-</string>
+			<key>manual</key>
+			<string>macOS</string>
+			<key>multiple</key>
+			<string>macOS</string>
+			<key>supervision</key>
+			<string>-</string>
+			<key>user</key>
+			<string>macOS</string>
+			<key>user_approved</key>
+			<string>-</string>
+			<key>user_enrol</key>
+			<string>-</string>
+		</dict>
+		<key>description</key>
+		<string>The payload for configuring an AIM account on the device.</string>
+		<key>discussion</key>
+		<array/>
+		<key>name</key>
+		<string>AIM</string>
+		<key>paths</key>
+		<array>
+			<string>aimaccount</string>
+		</array>
+		<key>platforms</key>
+		<array>
+			<dict>
+				<key>current</key>
+				<string>11.0</string>
+				<key>deprecated</key>
+				<true/>
+				<key>deprecated_at</key>
+				<string>10.13</string>
+				<key>introduced_at</key>
+				<string>10.7</string>
+				<key>name</key>
+				<string>macOS</string>
+			</dict>
+		</array>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>attributes</key>
+				<dict/>
+				<key>description</key>
+				<array>
+					<string>The description of the account.</string>
+				</array>
+				<key>name</key>
+				<string>AIMAccountDescription</string>
+				<key>type</key>
+				<string>string</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>possibleValues</key>
+					<array>
+						<string>AIMAuthPassword</string>
+					</array>
+					<key>required</key>
+					<true/>
+				</dict>
+				<key>description</key>
+				<array>
+					<string>The authentication method for the account.</string>
+				</array>
+				<key>name</key>
+				<string>AIMAuthentication</string>
+				<key>type</key>
+				<string>string</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>possibleValues</key>
+					<array>
+						<string>slogin.oscar.aol.com</string>
+					</array>
+					<key>required</key>
+					<true/>
+				</dict>
+				<key>description</key>
+				<array/>
+				<key>name</key>
+				<string>AIMHostName</string>
+				<key>type</key>
+				<string>string</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict/>
+				<key>description</key>
+				<array>
+					<string>The user's password.</string>
+				</array>
+				<key>name</key>
+				<string>AIMPassword</string>
+				<key>type</key>
+				<string>string</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
+					<string>5190</string>
+					<key>maximum</key>
+					<string>65535</string>
+					<key>minimum</key>
+					<string>0</string>
+				</dict>
+				<key>description</key>
+				<array>
+					<string>The connection port for the server.</string>
+				</array>
+				<key>name</key>
+				<string>AIMPort</string>
+				<key>type</key>
+				<string>integer</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict/>
+				<key>description</key>
+				<array>
+					<string>The user's login name.</string>
+				</array>
+				<key>name</key>
+				<string>AIMUserName</string>
+				<key>type</key>
+				<string>string</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
+					<string>true</string>
+				</dict>
+				<key>description</key>
+				<array>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, enables SSL.</string>
+				</array>
+				<key>name</key>
+				<string>AIMUseSSL</string>
 				<key>type</key>
 				<string>boolean</string>
 			</dict>
@@ -1864,6 +2022,21 @@
 				</dict>
 				<key>description</key>
 				<array>
+					<string>Set to &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt; to prevent storing the FileVault key across restarts.</string>
+				</array>
+				<key>name</key>
+				<string>DestroyFVKeyOnStandby</string>
+				<key>type</key>
+				<string>boolean</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
+					<string>false</string>
+				</dict>
+				<key>description</key>
+				<array>
 					<string>Set to &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt; to prevent FileVault from being disabled.</string>
 				</array>
 				<key>name</key>
@@ -1883,19 +2056,6 @@
 				</array>
 				<key>name</key>
 				<string>dontAllowFDEEnable</string>
-				<key>type</key>
-				<string>boolean</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict>
-					<key>default</key>
-					<string>false</string>
-				</dict>
-				<key>description</key>
-				<array/>
-				<key>name</key>
-				<string>DestroyFVKeyOnStandby</string>
 				<key>type</key>
 				<string>boolean</string>
 			</dict>
@@ -2419,7 +2579,7 @@
 		<string>The payload for configuring managed Wi-Fi settings.</string>
 		<key>discussion</key>
 		<array>
-			<string>Specify &lt;&gt;&lt;code&gt;com.apple.MCX.WiFi&lt;/code&gt;&lt;&gt; as the payload type.</string>
+			<string>Specify &lt;&gt;&lt;code&gt;com.apple.MCX&lt;/code&gt;&lt;&gt; as the payload type.</string>
 		</array>
 		<key>name</key>
 		<string>Wi-Fi Preferences</string>
@@ -2639,7 +2799,7 @@
 		<key>availability</key>
 		<dict>
 			<key>device</key>
-			<string>macOS, Shared iPad</string>
+			<string>iOS, macOS, Shared iPad</string>
 			<key>manual</key>
 			<string>iOS, macOS</string>
 			<key>multiple</key>
@@ -2668,10 +2828,8 @@
 		<key>platforms</key>
 		<array>
 			<dict>
-				<key>beta</key>
-				<true/>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>14.0</string>
 				<key>name</key>
@@ -3232,7 +3390,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -3310,7 +3468,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -3389,7 +3547,7 @@
 			<key>manual</key>
 			<string>iOS, macOS</string>
 			<key>multiple</key>
-			<string>-</string>
+			<string>iOS, macOS</string>
 			<key>supervision</key>
 			<string>-</string>
 			<key>user</key>
@@ -3415,7 +3573,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -3449,161 +3607,7 @@
 			</dict>
 		</array>
 	</dict>
-	<key>com.apple.aol.account</key>
-	<dict>
-		<key>availability</key>
-		<dict>
-			<key>device</key>
-			<string>-</string>
-			<key>manual</key>
-			<string>macOS</string>
-			<key>multiple</key>
-			<string>macOS</string>
-			<key>supervision</key>
-			<string>-</string>
-			<key>user</key>
-			<string>macOS</string>
-			<key>user_approved</key>
-			<string>-</string>
-			<key>user_enrol</key>
-			<string>-</string>
-		</dict>
-		<key>description</key>
-		<string>The payload for configuring an AIM account on the device.</string>
-		<key>discussion</key>
-		<array/>
-		<key>name</key>
-		<string>AIM</string>
-		<key>paths</key>
-		<array>
-			<string>aimaccount</string>
-		</array>
-		<key>platforms</key>
-		<array>
-			<dict>
-				<key>current</key>
-				<string>11.0</string>
-				<key>deprecated</key>
-				<true/>
-				<key>deprecated_at</key>
-				<string>10.13</string>
-				<key>introduced_at</key>
-				<string>10.7</string>
-				<key>name</key>
-				<string>macOS</string>
-			</dict>
-		</array>
-		<key>properties</key>
-		<array>
-			<dict>
-				<key>attributes</key>
-				<dict/>
-				<key>description</key>
-				<array>
-					<string>The description of the account.</string>
-				</array>
-				<key>name</key>
-				<string>AIMAccountDescription</string>
-				<key>type</key>
-				<string>string</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict>
-					<key>possibleValues</key>
-					<array>
-						<string>AIMAuthPassword</string>
-					</array>
-					<key>required</key>
-					<true/>
-				</dict>
-				<key>description</key>
-				<array>
-					<string>The authentication method for the account.</string>
-				</array>
-				<key>name</key>
-				<string>AIMAuthentication</string>
-				<key>type</key>
-				<string>string</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict>
-					<key>possibleValues</key>
-					<array>
-						<string>slogin.oscar.aol.com</string>
-					</array>
-					<key>required</key>
-					<true/>
-				</dict>
-				<key>description</key>
-				<array/>
-				<key>name</key>
-				<string>AIMHostName</string>
-				<key>type</key>
-				<string>string</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict/>
-				<key>description</key>
-				<array>
-					<string>The user's password.</string>
-				</array>
-				<key>name</key>
-				<string>AIMPassword</string>
-				<key>type</key>
-				<string>string</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict>
-					<key>default</key>
-					<string>5190</string>
-					<key>maximum</key>
-					<string>65535</string>
-					<key>minimum</key>
-					<string>0</string>
-				</dict>
-				<key>description</key>
-				<array>
-					<string>The connection port for the server.</string>
-				</array>
-				<key>name</key>
-				<string>AIMPort</string>
-				<key>type</key>
-				<string>integer</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict/>
-				<key>description</key>
-				<array>
-					<string>The user's login name.</string>
-				</array>
-				<key>name</key>
-				<string>AIMUserName</string>
-				<key>type</key>
-				<string>string</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict>
-					<key>default</key>
-					<string>true</string>
-				</dict>
-				<key>description</key>
-				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, enables SSL.</string>
-				</array>
-				<key>name</key>
-				<string>AIMUseSSL</string>
-				<key>type</key>
-				<string>boolean</string>
-			</dict>
-		</array>
-	</dict>
-	<key>com.apple.apn</key>
+	<key>com.apple.apn.managed</key>
 	<dict>
 		<key>availability</key>
 		<dict>
@@ -3638,7 +3642,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -3723,7 +3727,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>6.0</string>
 				<key>name</key>
@@ -3731,7 +3735,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>10.2</string>
 				<key>name</key>
@@ -3792,7 +3796,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -3808,7 +3812,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -3960,7 +3964,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, prevents a user from adding any App Clips, and removes any existing App Clips on the device. Available in iOS 14.0 and later.</string>
+					<string>If &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, prevents a user from adding any App Clips, and removes any existing App Clips on the device. Requires a supervised device. Available in iOS 14.0 and later.</string>
 				</array>
 				<key>name</key>
 				<string>allowAppClips</string>
@@ -3979,6 +3983,21 @@
 				</array>
 				<key>name</key>
 				<string>allowAppInstallation</string>
+				<key>type</key>
+				<string>boolean</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
+					<string>true</string>
+				</dict>
+				<key>description</key>
+				<array>
+					<string>If &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, limits Apple personalized advertising. Available in iOS 14 and later.</string>
+				</array>
+				<key>name</key>
+				<string>allowApplePersonalizedAdvertising</string>
 				<key>type</key>
 				<string>boolean</string>
 			</dict>
@@ -5450,7 +5469,9 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>Sets how many days to delay a software update on the device. With this restriction in place, the user doesn't see a software update until the specified number of days after the software update release date. Requires a supervised device. Available in iOS 11.3 and later, macOS 10.13.4 and later, and tvOS 12.2 and later.</string>
+					<string>Sets how many days to delay a software update on the device. With this restriction in place, the user doesn't see a software update until the specified number of days after the software update release date. This value is used by  &lt;&gt;&lt;code&gt;forceDelayedAppSoftwareUpdates&lt;/code&gt;&lt;&gt; and &lt;&gt;&lt;code&gt;forceDelayedSoftwareUpdates&lt;/code&gt;&lt;&gt;.</string>
+					<string>Requires a supervised device in iOS and tvOS.</string>
+					<string>Available in iOS 11.3 and later, macOS 10.13.4 and later, and tvOS 12.2 and later.</string>
 				</array>
 				<key>name</key>
 				<string>enforcedSoftwareUpdateDelay</string>
@@ -5632,6 +5653,7 @@
 				<array>
 					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, delays user visibility of non-OS Software Updates. Requires a supervised device.</string>
 					<string>Visibility of Operating System updates is controlled through &lt;&gt;&lt;code&gt;forceDelayedSoftwareUpdates&lt;/code&gt;&lt;&gt;.</string>
+					<string>The delay is 30 days unless &lt;&gt;&lt;code&gt;enforcedSoftwareUpdateDelay&lt;/code&gt;&lt;&gt; is set to another value.</string>
 					<string>Available in macOS 11 and later.</string>
 				</array>
 				<key>name</key>
@@ -5647,7 +5669,9 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, delays user visibility of software updates. In macOS, seed build updates are allowed, without delay. Requires a supervised device. Available in iOS 11.3 and later, macOS 10.13 and later, and tvOS 12.2 and later.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, delays user visibility of software updates. In macOS, seed build updates are allowed, without delay. Requires a supervised device in iOS and tvOS.</string>
+					<string>The delay is 30 days unless &lt;&gt;&lt;code&gt;enforcedSoftwareUpdateDelay&lt;/code&gt;&lt;&gt; is set to another value.</string>
+					<string>Available in iOS 11.3 and later, macOS 10.13 and later, and tvOS 12.2 and later.</string>
 				</array>
 				<key>name</key>
 				<string>forceDelayedSoftwareUpdates</string>
@@ -6020,7 +6044,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The paths to disallowed apps. This property is deprecated in macOS 10.15 and later.</string>
+					<string>The paths to apps in the deny list. This property is deprecated in macOS 10.15 and later.</string>
 				</array>
 				<key>name</key>
 				<string>pathBlackList</string>
@@ -6032,7 +6056,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The paths to allowed apps. This property is deprecated in macOS 10.15 and later.</string>
+					<string>The paths to apps in the allow list. This property is deprecated in macOS 10.15 and later.</string>
 				</array>
 				<key>name</key>
 				<string>pathWhiteList</string>
@@ -6044,7 +6068,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The list of app item dictionaries for apps that are allowed to run.</string>
+					<string>The allow list of app item dictionaries.</string>
 				</array>
 				<key>name</key>
 				<string>whiteList</string>
@@ -6150,7 +6174,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, restricts app installations to software updates only. Available in macOS 10.10 and later.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, prevents App Store from launching. Available in macOS 10.14 and later. Restricts installations to software updates only in macOS 10.10 - 10.13.</string>
 				</array>
 				<key>name</key>
 				<string>restrict-store-softwareupdate-only</string>
@@ -6318,7 +6342,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -6473,7 +6497,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -6639,7 +6663,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -6647,7 +6671,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.0</string>
+				<string>7.1</string>
 				<key>introduced_at</key>
 				<string>3.2</string>
 				<key>name</key>
@@ -6718,7 +6742,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>10.2</string>
 				<key>name</key>
@@ -6990,7 +7014,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -7045,7 +7069,7 @@
 		<key>availability</key>
 		<dict>
 			<key>device</key>
-			<string>macOS, Shared iPad</string>
+			<string>iOS, macOS, Shared iPad</string>
 			<key>manual</key>
 			<string>iOS, macOS</string>
 			<key>multiple</key>
@@ -7062,6 +7086,8 @@
 		<key>discussion</key>
 		<array>
 			<string>Specify &lt;&gt;&lt;code&gt;com.apple.dnsSettings.managed&lt;/code&gt;&lt;&gt; as the payload type.</string>
+			<string>When installed from an MDM, the setting only applies to managed wifi networks</string>
+			<string>When installed manually, this setting also applies to cellular.</string>
 		</array>
 		<key>name</key>
 		<string>DNS Settings</string>
@@ -7072,10 +7098,8 @@
 		<key>platforms</key>
 		<array>
 			<dict>
-				<key>beta</key>
-				<true/>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>14.0</string>
 				<key>name</key>
@@ -7715,7 +7739,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>8.0</string>
 				<key>name</key>
@@ -7808,7 +7832,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -8480,7 +8504,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -8958,7 +8982,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>13.0</string>
 				<key>name</key>
@@ -9010,6 +9034,7 @@
 					<string>An array of host names or domain names which can be authenticated through the app extension.</string>
 					<string>Required for &lt;&gt;&lt;code&gt;Credential&lt;/code&gt;&lt;&gt; payloads. Ignored for &lt;&gt;&lt;code&gt;Redirect&lt;/code&gt;&lt;&gt; payloads.</string>
 					<string>Host or domain names are matched case-insensitively, and all the host/domain names of all installed Extensible SSO payloads must be unique.</string>
+					<string>Hosts that begin with a “.” are wildcard suffixes and will match all subdomains, otherwise the host must be an exact match.</string>
 				</array>
 				<key>name</key>
 				<string>Hosts</string>
@@ -9113,6 +9138,7 @@
 				<key>description</key>
 				<array>
 					<string>One or more host or domain names for which the app extension performs SSO. Host or domain names are matched case-insensitively, and all the host/domain names of all installed Extensible SSO payloads must be unique.</string>
+					<string>Hosts that begin with a “.” are wildcard suffixes and will match all subdomains, otherwise the host must be an exact match.</string>
 				</array>
 				<key>name</key>
 				<string>Hosts</string>
@@ -9253,7 +9279,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The array of URLs for websites that are never to be allowed when &lt;&gt;&lt;code&gt;restrictWeb&lt;/code&gt;&lt;&gt; and &lt;&gt;&lt;code&gt;useContentFilter&lt;/code&gt;&lt;&gt; are enabled.</string>
+					<string>The array of URLs that defines a deny list. When &lt;&gt;&lt;code&gt;restrictWeb&lt;/code&gt;&lt;&gt; and &lt;&gt;&lt;code&gt;useContentFilter&lt;/code&gt;&lt;&gt; are enabled, no URLs in the deny list are available to the user.</string>
 				</array>
 				<key>name</key>
 				<string>filterBlacklist</string>
@@ -9265,7 +9291,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The array of URLs designating the allowed websites when &lt;&gt;&lt;code&gt;restrictWeb&lt;/code&gt;&lt;&gt; and &lt;&gt;&lt;code&gt;useContentFilter&lt;/code&gt;&lt;&gt; are enabled.</string>
+					<string>The array of URLs that defines an allow list. When &lt;&gt;&lt;code&gt;restrictWeb&lt;/code&gt;&lt;&gt; and &lt;&gt;&lt;code&gt;useContentFilter&lt;/code&gt;&lt;&gt; are enabled, only URLs in the allow list are available to the user.</string>
 				</array>
 				<key>name</key>
 				<string>filterWhitelist</string>
@@ -9277,7 +9303,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>An array of whitelisted sites. If specified, this defines additional allowed sites besides those in the automated list of allowed and disallowed sites, including disallowed adult sites.</string>
+					<string>An array of sites that defines an allow list. If specified, this defines additional allowed sites besides those in the automated allow list and deny list, including disallowed adult sites.</string>
 					<string>This key is required if &lt;&gt;&lt;code&gt;whiteListEnabled&lt;/code&gt;&lt;&gt; is &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;.</string>
 				</array>
 				<key>name</key>
@@ -9293,7 +9319,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If true, enables web content filters.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, enables web content filters.</string>
 				</array>
 				<key>name</key>
 				<string>whitelistEnabled</string>
@@ -9754,7 +9780,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -9994,7 +10020,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -10104,7 +10130,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -10112,7 +10138,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -10419,7 +10445,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -10992,12 +11018,36 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The UUID certificate for the LOM controller. This key configures the device to accept the &lt;&gt;[LOMDeviceRequestCommand](https://developer.apple.com/documentation/devicemanagement/lomdevicerequestcommand)&lt;&gt; from the MDM and then send it to the target device.</string>
+					<string>Array of payload UUIDs containing CA certificates that devices use to evaluate trust of controller certificates.</string>
+				</array>
+				<key>name</key>
+				<string>ControllerCACertificateUUIDs</string>
+				<key>type</key>
+				<string>[string]</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict/>
+				<key>description</key>
+				<array>
+					<string>The UUID certificate for the LOM controller. This key configures the device to accept the &lt;&gt;[LOMDeviceRequestCommand](https://developer.apple.com/documentation/devicemanagement/lomdevicerequestcommand)&lt;&gt; from MDM and then send it to the target device.</string>
 				</array>
 				<key>name</key>
 				<string>ControllerCertificateUUID</string>
 				<key>type</key>
 				<string>string</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict/>
+				<key>description</key>
+				<array>
+					<string>Array of payload UUIDs containing CA certificates that controllers use to evaluate trust of device certificates.</string>
+				</array>
+				<key>name</key>
+				<string>DeviceCACertificateUUIDs</string>
+				<key>type</key>
+				<string>[string]</string>
 			</dict>
 			<dict>
 				<key>attributes</key>
@@ -11010,26 +11060,6 @@
 				<string>DeviceCertificateUUID</string>
 				<key>type</key>
 				<string>string</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict/>
-				<key>description</key>
-				<array/>
-				<key>name</key>
-				<string>ControllerCACertificateUUIDs</string>
-				<key>type</key>
-				<string>[string]</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict/>
-				<key>description</key>
-				<array/>
-				<key>name</key>
-				<string>DeviceCACertificateUUIDs</string>
-				<key>type</key>
-				<string>[string]</string>
 			</dict>
 		</array>
 	</dict>
@@ -11068,7 +11098,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -11370,6 +11400,7 @@
 				<key>description</key>
 				<array>
 					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, the user is prompted only once for the password, which is used for both outgoing and incoming mail.</string>
+					<string>This setting is only supported by interactive profile installations. Not supported by non-interactive installations (like MDM on iOS).</string>
 				</array>
 				<key>name</key>
 				<string>OutgoingPasswordSameAsIncomingPassword</string>
@@ -12309,7 +12340,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -12325,7 +12356,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -12590,7 +12621,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -12840,7 +12871,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -12910,7 +12941,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -12979,7 +13010,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -13251,7 +13282,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -13267,7 +13298,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -13326,7 +13357,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>6.0</string>
 				<key>name</key>
@@ -13342,7 +13373,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14037,7 +14068,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>12.1.1</string>
 				<key>name</key>
@@ -14053,7 +14084,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>12.1.1</string>
 				<key>name</key>
@@ -14061,7 +14092,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.0</string>
+				<string>7.1</string>
 				<key>introduced_at</key>
 				<string>5.1.1</string>
 				<key>name</key>
@@ -14321,7 +14352,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14337,7 +14368,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14345,7 +14376,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.0</string>
+				<string>7.1</string>
 				<key>introduced_at</key>
 				<string>3.0</string>
 				<key>name</key>
@@ -14418,7 +14449,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14434,7 +14465,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14442,7 +14473,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.0</string>
+				<string>7.1</string>
 				<key>introduced_at</key>
 				<string>3.0</string>
 				<key>name</key>
@@ -14515,7 +14546,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14531,7 +14562,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14539,7 +14570,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.0</string>
+				<string>7.1</string>
 				<key>introduced_at</key>
 				<string>3.0</string>
 				<key>name</key>
@@ -14655,7 +14686,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14671,7 +14702,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14679,7 +14710,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.0</string>
+				<string>7.1</string>
 				<key>introduced_at</key>
 				<string>3.0</string>
 				<key>name</key>
@@ -14753,7 +14784,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14769,7 +14800,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14981,7 +15012,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -15063,7 +15094,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -15136,7 +15167,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -15759,7 +15790,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The single leaf certificate for the app that should be white listed.</string>
+					<string>The single leaf certificate for the app that is in the allow list.</string>
 				</array>
 				<key>name</key>
 				<string>LeafCertificate</string>
@@ -16199,7 +16230,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>11.3</string>
 				<key>name</key>
@@ -16207,7 +16238,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>11.3</string>
 				<key>name</key>
@@ -16348,7 +16379,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, enables "Show preview rectangle" in the Zoom options.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, enables "Show preview rectangle" in the Zoom options. Only available in macOS 10.15 and earlier.</string>
 				</array>
 				<key>name</key>
 				<string>closeViewShowPreview</string>
@@ -16626,7 +16657,7 @@
 			<key>supervision</key>
 			<string>-</string>
 			<key>user</key>
-			<string>-</string>
+			<string>macOS</string>
 			<key>user_approved</key>
 			<string>-</string>
 			<key>user_enrol</key>
@@ -16648,7 +16679,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -16848,7 +16879,7 @@
 			<key>supervision</key>
 			<string>-</string>
 			<key>user</key>
-			<string>-</string>
+			<string>macOS</string>
 			<key>user_approved</key>
 			<string>-</string>
 			<key>user_enrol</key>
@@ -16871,7 +16902,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -17115,7 +17146,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -17165,6 +17196,22 @@
 				<key>attributes</key>
 				<dict>
 					<key>default</key>
+					<string>false</string>
+				</dict>
+				<key>description</key>
+				<array>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, a full screen web clip can navigate to an external web site without showing Safari UI. Otherwise, Safari UI appears when navigating away from the web clip’s URL.</string>
+					<string>This key has no effect when &lt;&gt;&lt;code&gt;FullScreen&lt;/code&gt;&lt;&gt; is &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;.</string>
+				</array>
+				<key>name</key>
+				<string>IgnoreManifestScope</string>
+				<key>type</key>
+				<string>boolean</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
 					<string>true</string>
 				</dict>
 				<key>description</key>
@@ -17205,6 +17252,18 @@
 				<string>Precomposed</string>
 				<key>type</key>
 				<string>boolean</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict/>
+				<key>description</key>
+				<array>
+					<string>The application bundle identifier that specifies the application which opens the URL.</string>
+				</array>
+				<key>name</key>
+				<string>TargetApplicationBundleIdentifier</string>
+				<key>type</key>
+				<string>string</string>
 			</dict>
 			<dict>
 				<key>attributes</key>
@@ -17259,7 +17318,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -17601,7 +17660,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -17617,7 +17676,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.0</string>
+				<string>14.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -17625,7 +17684,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.0</string>
+				<string>7.1</string>
 				<key>introduced_at</key>
 				<string>3.2</string>
 				<key>name</key>
@@ -17642,7 +17701,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, the network is joined automatically.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, the device joins the network automatically.</string>
 					<string>If &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, the user must tap the network name to join it.</string>
 					<string>Available in iOS 5.0 and later and in macOS 10.7 and later.</string>
 				</array>
@@ -17676,6 +17735,7 @@
 				<key>description</key>
 				<array>
 					<string>If &lt;&gt;&lt;code&gt;true,&lt;/code&gt;&lt;&gt; disables MAC address randomization for that Wi-Fi network while associated with the network. This also shows a privacy warning in Settings indicating that the network has reduced privacy protections.</string>
+					<string>Available in iOS 14 and later and watchOS 7 and later.</string>
 				</array>
 				<key>name</key>
 				<string>DisableAssociationMACRandomization</string>
@@ -17808,7 +17868,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, the network is treated as a hotspot.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, the device treats the network as a hotspot.</string>
 					<string>Available in iOS 7.0 and later and in macOS 10.9 and later.</string>
 				</array>
 				<key>name</key>
@@ -17988,7 +18048,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>A dictionary that contains the list of apps that are allowed to benefit from L2 and L3 marking. When this dictionary isn't present, all apps are whitelisted to use L2 and L3 marking when the Wi-Fi network supports Cisco QoS fast lane.</string>
+					<string>A dictionary that contains the list of apps that are allowed to benefit from L2 and L3 marking. When this dictionary isn't present, all apps are allowed to use L2 and L3 marking when the Wi-Fi network supports Cisco QoS fast lane.</string>
 					<string>Available in iOS 10.0 and later and in macOS 10.13 and later.</string>
 				</array>
 				<key>name</key>
