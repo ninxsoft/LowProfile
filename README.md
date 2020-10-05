@@ -1,7 +1,7 @@
 
 # Low Profile
 
-A friendly Mac utility to help inspect Apple Configuration Profile [payloads](https://developer.apple.com/documentation/devicemanagement/profile-specific_payload_keys):
+A Mac utility to help inspect Apple Configuration Profile [payloads](https://developer.apple.com/documentation/devicemanagement/profile-specific_payload_keys):
 
 ![Example](Readme%20Resources/Example.png)
 
