@@ -34,8 +34,6 @@
 		57301B8724E273FD00814349 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BB624DE7088004D06C2 /* String+Extension.swift */; };
 		57301B8824E2740200814349 /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */; };
 		57301B8924E2741D00814349 /* PayloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578924D81AB00090CDDF /* PayloadHelper.swift */; };
-		57301B9E24E3CDBE00814349 /* ASN1Decoder in Frameworks */ = {isa = PBXBuildFile; productRef = 57301B9D24E3CDBE00814349 /* ASN1Decoder */; };
-		57301BA024E3CDF800814349 /* ASN1Decoder in Frameworks */ = {isa = PBXBuildFile; productRef = 57301B9F24E3CDF800814349 /* ASN1Decoder */; };
 		57301BA124E3FE2600814349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D4F7D524D6D6A700BC0648 /* Assets.xcassets */; };
 		57301BA324E41CEB00814349 /* Payloads.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57BB578724D818F00090CDDF /* Payloads.plist */; };
 		573F4D0424E81EB000E6136F /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F4D0324E81EB000E6136F /* AppCommands.swift */; };
@@ -65,6 +63,7 @@
 		578FFFF224E7AB5D00DA8DF1 /* DetailPropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FFFF024E7AB5D00DA8DF1 /* DetailPropertyList.swift */; };
 		578FFFF724E7B49800DA8DF1 /* PropertyListText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FFFF624E7B49800DA8DF1 /* PropertyListText.swift */; };
 		578FFFF824E7B49800DA8DF1 /* PropertyListText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FFFF624E7B49800DA8DF1 /* PropertyListText.swift */; };
+		5794E85D254A6B1A004A5942 /* ASN1Decoder in Frameworks */ = {isa = PBXBuildFile; productRef = 5794E85C254A6B1A004A5942 /* ASN1Decoder */; };
 		57BB577B24D789E70090CDDF /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB577A24D789E70090CDDF /* Payload.swift */; };
 		57BB578124D78B2C0090CDDF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578024D78B2C0090CDDF /* Profile.swift */; };
 		57BB578324D7FD330090CDDF /* SidebarRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578224D7FD330090CDDF /* SidebarRow.swift */; };
@@ -129,7 +128,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57301BA024E3CDF800814349 /* ASN1Decoder in Frameworks */,
 				57301B6124E24C4D00814349 /* Quartz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57301B9E24E3CDBE00814349 /* ASN1Decoder in Frameworks */,
+				5794E85D254A6B1A004A5942 /* ASN1Decoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +281,6 @@
 			);
 			name = "Low Profile - Quick Look";
 			packageProductDependencies = (
-				57301B9F24E3CDF800814349 /* ASN1Decoder */,
 			);
 			productName = quicklook;
 			productReference = 57301B6024E24C4D00814349 /* Low Profile - Quick Look.appex */;
@@ -304,7 +301,7 @@
 			);
 			name = "Low Profile";
 			packageProductDependencies = (
-				57301B9D24E3CDBE00814349 /* ASN1Decoder */,
+				5794E85C254A6B1A004A5942 /* ASN1Decoder */,
 			);
 			productName = "Low Profile";
 			productReference = 57D4F7CE24D6D6A500BC0648 /* Low Profile.app */;
@@ -337,7 +334,7 @@
 			);
 			mainGroup = 57D4F7C524D6D6A500BC0648;
 			packageReferences = (
-				57301B9C24E3CDBE00814349 /* XCRemoteSwiftPackageReference "ASN1Decoder" */,
+				5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */,
 			);
 			productRefGroup = 57D4F7CF24D6D6A500BC0648 /* Products */;
 			projectDirPath = "";
@@ -726,7 +723,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		57301B9C24E3CDBE00814349 /* XCRemoteSwiftPackageReference "ASN1Decoder" */ = {
+		5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/filom/ASN1Decoder.git";
 			requirement = {
@@ -737,14 +734,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		57301B9D24E3CDBE00814349 /* ASN1Decoder */ = {
+		5794E85C254A6B1A004A5942 /* ASN1Decoder */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 57301B9C24E3CDBE00814349 /* XCRemoteSwiftPackageReference "ASN1Decoder" */;
-			productName = ASN1Decoder;
-		};
-		57301B9F24E3CDF800814349 /* ASN1Decoder */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 57301B9C24E3CDBE00814349 /* XCRemoteSwiftPackageReference "ASN1Decoder" */;
+			package = 5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */;
 			productName = ASN1Decoder;
 		};
 /* End XCSwiftPackageProductDependency section */

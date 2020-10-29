@@ -5972,6 +5972,19 @@
 				<key>type</key>
 				<string>[string]</string>
 			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
+					<string>true</string>
+				</dict>
+				<key>description</key>
+				<array/>
+				<key>name</key>
+				<string>allowNFC</string>
+				<key>type</key>
+				<string>boolean</string>
+			</dict>
 		</array>
 	</dict>
 	<key>com.apple.applicationaccess.new</key>
