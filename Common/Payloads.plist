@@ -37,7 +37,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -95,7 +95,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -103,7 +103,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -111,7 +111,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -119,7 +119,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.1</string>
+				<string>7.2</string>
 				<key>introduced_at</key>
 				<string>2.0</string>
 				<key>name</key>
@@ -444,7 +444,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -648,7 +648,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -804,7 +804,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.13.4</string>
 				<key>name</key>
@@ -1185,7 +1185,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -1246,7 +1246,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.8</string>
 				<key>name</key>
@@ -1826,7 +1826,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -1899,7 +1899,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -2200,7 +2200,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -2433,7 +2433,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -2591,7 +2591,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -2682,7 +2682,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -2747,7 +2747,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.13</string>
 				<key>name</key>
@@ -2829,7 +2829,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>14.0</string>
 				<key>name</key>
@@ -2837,7 +2837,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.12</string>
 				<key>name</key>
@@ -3016,7 +3016,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -3090,7 +3090,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -3268,7 +3268,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -3329,7 +3329,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.14</string>
 				<key>name</key>
@@ -3390,7 +3390,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -3398,7 +3398,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.10</string>
 				<key>name</key>
@@ -3468,7 +3468,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -3573,7 +3573,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -3581,7 +3581,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.10</string>
 				<key>name</key>
@@ -3642,7 +3642,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -3727,7 +3727,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>6.0</string>
 				<key>name</key>
@@ -3735,7 +3735,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>10.2</string>
 				<key>name</key>
@@ -3796,7 +3796,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -3804,7 +3804,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -3812,7 +3812,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -5985,6 +5985,19 @@
 				<key>type</key>
 				<string>boolean</string>
 			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
+					<string>false</string>
+				</dict>
+				<key>description</key>
+				<array/>
+				<key>name</key>
+				<string>forceOnDeviceOnlyDictation</string>
+				<key>type</key>
+				<string>boolean</string>
+			</dict>
 		</array>
 	</dict>
 	<key>com.apple.applicationaccess.new</key>
@@ -6028,7 +6041,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -6125,7 +6138,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -6232,7 +6245,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.13.4</string>
 				<key>name</key>
@@ -6294,7 +6307,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.15</string>
 				<key>name</key>
@@ -6355,7 +6368,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -6363,7 +6376,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -6510,7 +6523,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -6518,7 +6531,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -6676,7 +6689,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -6684,7 +6697,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.1</string>
+				<string>7.2</string>
 				<key>introduced_at</key>
 				<string>3.2</string>
 				<key>name</key>
@@ -6755,7 +6768,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>10.2</string>
 				<key>name</key>
@@ -6813,7 +6826,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -6874,7 +6887,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -6954,7 +6967,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.10</string>
 				<key>name</key>
@@ -7027,7 +7040,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -7112,17 +7125,15 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>14.0</string>
 				<key>name</key>
 				<string>iOS</string>
 			</dict>
 			<dict>
-				<key>beta</key>
-				<true/>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -7210,7 +7221,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -7752,7 +7763,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>8.0</string>
 				<key>name</key>
@@ -7760,7 +7771,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.10</string>
 				<key>name</key>
@@ -7845,7 +7856,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -8517,7 +8528,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -8525,7 +8536,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.14</string>
 				<key>name</key>
@@ -8742,7 +8753,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -8995,7 +9006,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>13.0</string>
 				<key>name</key>
@@ -9003,7 +9014,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.15</string>
 				<key>name</key>
@@ -9248,7 +9259,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -9376,7 +9387,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -9446,10 +9457,8 @@
 		<key>platforms</key>
 		<array>
 			<dict>
-				<key>beta</key>
-				<true/>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -9510,7 +9519,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -9697,7 +9706,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -9748,7 +9757,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -9793,7 +9802,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -9801,7 +9810,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -9875,7 +9884,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -9986,7 +9995,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.13</string>
 				<key>name</key>
@@ -10033,7 +10042,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -10143,7 +10152,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -10151,7 +10160,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -10224,7 +10233,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -10304,7 +10313,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -10458,7 +10467,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -10466,7 +10475,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -10600,7 +10609,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.13</string>
 				<key>name</key>
@@ -10661,7 +10670,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -11014,10 +11023,8 @@
 		<key>platforms</key>
 		<array>
 			<dict>
-				<key>beta</key>
-				<true/>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -11111,7 +11118,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -11119,7 +11126,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -11674,7 +11681,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -12064,7 +12071,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -12164,7 +12171,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -12353,7 +12360,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -12361,7 +12368,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -12369,7 +12376,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -12634,7 +12641,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -12642,7 +12649,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -12884,7 +12891,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -12954,7 +12961,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -12962,7 +12969,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.15</string>
 				<key>name</key>
@@ -13023,7 +13030,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -13142,7 +13149,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.10</string>
 				<key>name</key>
@@ -13233,7 +13240,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.12</string>
 				<key>name</key>
@@ -13295,7 +13302,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -13303,7 +13310,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -13311,7 +13318,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -13370,7 +13377,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>6.0</string>
 				<key>name</key>
@@ -13378,7 +13385,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -13386,7 +13393,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -13551,7 +13558,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.11</string>
 				<key>name</key>
@@ -13648,7 +13655,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.11</string>
 				<key>name</key>
@@ -13724,7 +13731,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -13775,7 +13782,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -13830,7 +13837,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.13</string>
 				<key>name</key>
@@ -13923,7 +13930,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -14005,7 +14012,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.12</string>
 				<key>name</key>
@@ -14081,7 +14088,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>12.1.1</string>
 				<key>name</key>
@@ -14089,7 +14096,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.14.2</string>
 				<key>name</key>
@@ -14097,7 +14104,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>12.1.1</string>
 				<key>name</key>
@@ -14105,7 +14112,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.1</string>
+				<string>7.2</string>
 				<key>introduced_at</key>
 				<string>5.1.1</string>
 				<key>name</key>
@@ -14183,7 +14190,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.12</string>
 				<key>name</key>
@@ -14289,7 +14296,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.12</string>
 				<key>name</key>
@@ -14365,7 +14372,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14373,7 +14380,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -14381,7 +14388,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14389,7 +14396,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.1</string>
+				<string>7.2</string>
 				<key>introduced_at</key>
 				<string>3.0</string>
 				<key>name</key>
@@ -14462,7 +14469,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14470,7 +14477,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -14478,7 +14485,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14486,7 +14493,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.1</string>
+				<string>7.2</string>
 				<key>introduced_at</key>
 				<string>3.0</string>
 				<key>name</key>
@@ -14559,7 +14566,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14567,7 +14574,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -14575,7 +14582,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14583,7 +14590,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.1</string>
+				<string>7.2</string>
 				<key>introduced_at</key>
 				<string>3.0</string>
 				<key>name</key>
@@ -14699,7 +14706,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14707,7 +14714,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -14715,7 +14722,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14723,7 +14730,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.1</string>
+				<string>7.2</string>
 				<key>introduced_at</key>
 				<string>3.0</string>
 				<key>name</key>
@@ -14797,7 +14804,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14805,7 +14812,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -14813,7 +14820,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14874,7 +14881,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.12.4</string>
 				<key>name</key>
@@ -15025,7 +15032,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -15107,7 +15114,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -15180,7 +15187,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -15302,7 +15309,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.13.2</string>
 				<key>name</key>
@@ -15390,7 +15397,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.15</string>
 				<key>name</key>
@@ -15490,7 +15497,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.12</string>
 				<key>name</key>
@@ -15572,7 +15579,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.12.4</string>
 				<key>name</key>
@@ -15630,7 +15637,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.8</string>
 				<key>name</key>
@@ -15702,7 +15709,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.8</string>
 				<key>name</key>
@@ -15765,7 +15772,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.8</string>
 				<key>name</key>
@@ -15892,7 +15899,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -16055,7 +16062,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -16147,7 +16154,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -16198,7 +16205,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -16243,7 +16250,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>11.3</string>
 				<key>name</key>
@@ -16251,7 +16258,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>11.3</string>
 				<key>name</key>
@@ -16321,7 +16328,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -16692,7 +16699,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -16700,7 +16707,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -16915,7 +16922,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -16923,7 +16930,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -17094,7 +17101,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -17159,7 +17166,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -17167,7 +17174,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -17331,7 +17338,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -17339,7 +17346,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.15</string>
 				<key>name</key>
@@ -17673,7 +17680,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -17681,7 +17688,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -17689,7 +17696,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>14.2</string>
+				<string>14.3</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -17697,7 +17704,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>7.1</string>
+				<string>7.2</string>
 				<key>introduced_at</key>
 				<string>3.2</string>
 				<key>name</key>
@@ -18182,7 +18189,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.10</string>
 				<key>name</key>
@@ -18309,7 +18316,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.11</string>
 				<key>name</key>
@@ -18418,7 +18425,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>11.0</string>
+				<string>11.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
