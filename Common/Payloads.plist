@@ -637,7 +637,9 @@
 		<key>description</key>
 		<string>The payload for configuring an AIM account on the device.</string>
 		<key>discussion</key>
-		<array/>
+		<array>
+			<string>Specify &lt;&gt;&lt;code&gt;com.apple.AIM.account&lt;/code&gt;&lt;&gt; as the payload type.</string>
+		</array>
 		<key>name</key>
 		<string>AIM</string>
 		<key>paths</key>
@@ -869,7 +871,8 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, automatically activates the content cache when possible and prevents it from being disabled.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, automatically activates the content cache when possible and prevents it from being disabled. If the &lt;&gt;&lt;code&gt;allowContentCaching&lt;/code&gt;&lt;&gt; restriction is set to &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, &lt;&gt;&lt;code&gt;AutoActivation&lt;/code&gt;&lt;&gt; is also &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;.</string>
+					<string>Removing a profile that set &lt;&gt;&lt;code&gt;AutoActivation&lt;/code&gt;&lt;&gt; to &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt; does not deactivate the Content Cache.</string>
 				</array>
 				<key>name</key>
 				<string>AutoActivation</string>
@@ -2261,7 +2264,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>The maximum number of times users can bypass enabling FileVault before being required to enable it to log in. If the value is &lt;&gt;&lt;code&gt;0&lt;/code&gt;&lt;&gt;, users are always prompted to enable FileVault, although they're not required to do so. Setting this key to &lt;&gt;&lt;code&gt;–1&lt;/code&gt;&lt;&gt; disables the feature.</string>
+					<string>The maximum number of times users can bypass enabling FileVault before being required to enable it to log in. If the value is &lt;&gt;&lt;code&gt;0&lt;/code&gt;&lt;&gt;, the user will be required to enabled FileVault the next time they attempt to log in. Setting this key to &lt;&gt;&lt;code&gt;–1&lt;/code&gt;&lt;&gt; disables the feature.</string>
 				</array>
 				<key>name</key>
 				<string>DeferForceAtUserLoginMaxBypassAttempts</string>
@@ -3631,6 +3634,7 @@
 		<key>discussion</key>
 		<array>
 			<string>This profile has been deprecated. Use the &lt;&gt;[Cellular](https://developer.apple.com/documentation/devicemanagement/cellular)&lt;&gt; profile instead.</string>
+			<string>Specify &lt;&gt;&lt;code&gt;com.apple.apn.managed&lt;/code&gt;&lt;&gt; as the payload type.</string>
 		</array>
 		<key>name</key>
 		<string>APN</string>
@@ -4189,7 +4193,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, disables the use of the Messages app with supervised devices. Requires a supervised device. Available in iOS 5 and later.</string>
+					<string>If &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, disables the use of the iMessage with supervised devices. If the device supports text messaging, the user can still send and receive text messages. Requires a supervised device. Available in iOS 5 and later.</string>
 				</array>
 				<key>name</key>
 				<string>allowChat</string>
@@ -4915,6 +4919,21 @@
 				</array>
 				<key>name</key>
 				<string>allowNews</string>
+				<key>type</key>
+				<string>boolean</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
+					<string>true</string>
+				</dict>
+				<key>description</key>
+				<array>
+					<string>If &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, disables NFC. Requires a supervised device. Available in iOS 14.2 and later.</string>
+				</array>
+				<key>name</key>
+				<string>allowNFC</string>
 				<key>type</key>
 				<string>boolean</string>
 			</dict>
@@ -5892,7 +5911,7 @@
 					<string>This value defines the conditions under which the device accepts cookies. The user-facing settings changed in iOS 11, although the possible values remain the same. Available in iOS 4 and later.</string>
 					<string>&lt;&gt;&lt;code&gt;0&lt;/code&gt;&lt;&gt;: Prevent Cross-Site Tracking and Block All Cookies are enabled and the user canʼt disable either setting.</string>
 					<string>&lt;&gt;&lt;code&gt;1&lt;/code&gt;&lt;&gt; or &lt;&gt;&lt;code&gt;1.5&lt;/code&gt;&lt;&gt;: Prevent Cross-Site Tracking is enabled and the user canʼt disable it. Block All Cookies is not enabled, although the user can enable it.</string>
-					<string>&lt;&gt;&lt;code&gt;2&lt;/code&gt;&lt;&gt;: Prevent Cross-Site Tracking is enabled and BlockAll Cookies is not enabled. The user can toggle either setting.</string>
+					<string>&lt;&gt;&lt;code&gt;2&lt;/code&gt;&lt;&gt;: Prevent Cross-Site Tracking is enabled and Block All Cookies is not enabled. The user can toggle either setting.</string>
 				</array>
 				<key>name</key>
 				<string>safariAcceptCookies</string>
@@ -5971,32 +5990,6 @@
 				<string>whitelistedAppBundleIDs</string>
 				<key>type</key>
 				<string>[string]</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict>
-					<key>default</key>
-					<string>true</string>
-				</dict>
-				<key>description</key>
-				<array/>
-				<key>name</key>
-				<string>allowNFC</string>
-				<key>type</key>
-				<string>boolean</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict>
-					<key>default</key>
-					<string>false</string>
-				</dict>
-				<key>description</key>
-				<array/>
-				<key>name</key>
-				<string>forceOnDeviceOnlyDictation</string>
-				<key>type</key>
-				<string>boolean</string>
 			</dict>
 		</array>
 	</dict>
@@ -7099,7 +7092,7 @@
 			<key>manual</key>
 			<string>iOS, macOS</string>
 			<key>multiple</key>
-			<string>iOS, macOS</string>
+			<string>iOS, macOS, Shared iPad</string>
 			<key>supervision</key>
 			<string>-</string>
 			<key>user</key>
@@ -7799,7 +7792,7 @@
 				<key>description</key>
 				<array>
 					<string>An array of domains. Users can only save passwords in Safari from URLs matching the patterns listed here.</string>
-					<string>If the device is configured as Shared iPad, no password can be saved. If the device isn't configured as Shared iPad, all passwords can be saved.</string>
+					<string>Without this payload, if the device is configured as Shared iPad, no password can be saved. If the device isn't configured as Shared iPad, all passwords can be saved.</string>
 					<string>Available in iOS 9.3 and later.</string>
 				</array>
 				<key>name</key>
@@ -8994,6 +8987,7 @@
 		<key>discussion</key>
 		<array>
 			<string>Specify &lt;&gt;&lt;code&gt;com.apple.extensiblesso&lt;/code&gt;&lt;&gt; as the payload type.</string>
+			<string>User channel installation is supported in macOS 11 and later.</string>
 		</array>
 		<key>name</key>
 		<string>Extensions (Single Sign-On)</string>
@@ -9043,7 +9037,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>The bundle identifier of the app extension that performs single sign on (SSO) for the specified URLs.</string>
+					<string>The bundle identifier of the app extension that performs single sign-on (SSO) for the specified URLs.</string>
 				</array>
 				<key>name</key>
 				<string>ExtensionIdentifier</string>
@@ -9055,7 +9049,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>An array of host names or domain names which can be authenticated through the app extension.</string>
+					<string>An array of host names or domain names that can be authenticated through the app extension.</string>
 					<string>Required for &lt;&gt;&lt;code&gt;Credential&lt;/code&gt;&lt;&gt; payloads. Ignored for &lt;&gt;&lt;code&gt;Redirect&lt;/code&gt;&lt;&gt; payloads.</string>
 					<string>Host or domain names are matched case-insensitively, and all the host/domain names of all installed Extensible SSO payloads must be unique.</string>
 					<string>Hosts that begin with a “.” are wildcard suffixes and will match all subdomains, otherwise the host must be an exact match.</string>
@@ -9678,7 +9672,7 @@
 			<key>supervision</key>
 			<string>-</string>
 			<key>user</key>
-			<string>-</string>
+			<string>macOS</string>
 			<key>user_approved</key>
 			<string>-</string>
 			<key>user_enrol</key>
@@ -9729,7 +9723,7 @@
 			<key>supervision</key>
 			<string>-</string>
 			<key>user</key>
-			<string>-</string>
+			<string>macOS</string>
 			<key>user_approved</key>
 			<string>-</string>
 			<key>user_enrol</key>
@@ -9968,7 +9962,7 @@
 			<key>supervision</key>
 			<string>-</string>
 			<key>user</key>
-			<string>-</string>
+			<string>macOS</string>
 			<key>user_approved</key>
 			<string>-</string>
 			<key>user_enrol</key>
@@ -12160,6 +12154,7 @@
 		<key>discussion</key>
 		<array>
 			<string>Specify &lt;&gt;&lt;code&gt;com.apple.mcxprinting&lt;/code&gt;&lt;&gt; as the payload type.</string>
+			<string>Removing this profile from a device does not automatically remove printers from the device.</string>
 		</array>
 		<key>name</key>
 		<string>Printing</string>
@@ -12343,12 +12338,11 @@
 		<string>The payload for configuring mobile device management (MDM) settings.</string>
 		<key>discussion</key>
 		<array>
-			<string>Specify &lt;&gt;&lt;code&gt;com.apple.mdm&lt;/code&gt;&lt;&gt; as the payload type.</string>
-			<string>The MDM protocol provides a way for system administrators to send device management commands to the following managed devices:</string>
-			<string>• iOS devices running iOS 4 and later</string>
-			<string>• macOS devices running macOS 10.7 and later</string>
-			<string>• Apple TV devices running Apple TV software 6.0 and later</string>
-			<string>Through the MDM service, an IT administrator can inspect, install, or remove profiles; remove passcodes; and begin secure erase on a managed device.</string>
+			<string>Also define the following four standard payload values in your MDM payload:</string>
+			<string>The reverse-DNS style identifier that identifies the profile; for example, &lt;&gt;&lt;code&gt;com.example.myprofile&lt;/code&gt;&lt;&gt;. The system uses this value to determine whether to replace an existing profile or add a new one.</string>
+			<string>A globally unique identifier for the profile. In macOS, you can use &lt;&gt;&lt;code&gt;uuidgen&lt;/code&gt;&lt;&gt; to generate this value.</string>
+			<string>The payload type. Set to &lt;&gt;&lt;code&gt;com.apple.mdm&lt;/code&gt;&lt;&gt; to designate that this payload is an MDM payload.</string>
+			<string>The version number of the profile format, which describes the version of the configuration profile as a whole, not of the individual profiles within it. Set this value to &lt;&gt;&lt;code&gt;1&lt;/code&gt;&lt;&gt;.</string>
 		</array>
 		<key>name</key>
 		<string>MDM</string>
@@ -12391,20 +12385,20 @@
 				<key>description</key>
 				<array>
 					<string>Logical OR of the following bit flags:</string>
-					<string>1: Allow inspection of installed configuration profiles.</string>
-					<string>2: Allow installation and removal of configuration profiles.</string>
-					<string>4: Allow device lock and passcode removal.</string>
-					<string>8: Allow device erase.</string>
-					<string>16: Allow query of device information (device capacity, serial number).</string>
-					<string>32: Allow query of network information (phone/SIM numbers, MAC addresses).</string>
-					<string>64: Allow inspection of installed provisioning profiles.</string>
-					<string>128: Allow installation and removal of provisioning profiles.</string>
-					<string>256: Allow inspection of installed applications.</string>
-					<string>512: Allow restriction-related queries.</string>
-					<string>1024: Allow security-related queries.</string>
-					<string>2048: Allow manipulation of settings.</string>
-					<string>4096: Allow app management.</string>
-					<string>The value can't be 0. If 2 is specified, 1 must also be specified. If 128 is specified, 64 must also be specified.</string>
+					<string>&lt;&gt;&lt;code&gt;1&lt;/code&gt;&lt;&gt;: Allow inspection of installed configuration profiles.</string>
+					<string>&lt;&gt;&lt;code&gt;2&lt;/code&gt;&lt;&gt;: Allow installation and removal of configuration profiles.</string>
+					<string>&lt;&gt;&lt;code&gt;4&lt;/code&gt;&lt;&gt;: Allow device lock and passcode removal.</string>
+					<string>&lt;&gt;&lt;code&gt;8&lt;/code&gt;&lt;&gt;: Allow device erase.</string>
+					<string>&lt;&gt;&lt;code&gt;16&lt;/code&gt;&lt;&gt;: Allow query of device information (device capacity, serial number).</string>
+					<string>&lt;&gt;&lt;code&gt;32&lt;/code&gt;&lt;&gt;: Allow query of network information (phone/SIM numbers, MAC addresses).</string>
+					<string>&lt;&gt;&lt;code&gt;64&lt;/code&gt;&lt;&gt;: Allow inspection of installed provisioning profiles.</string>
+					<string>&lt;&gt;&lt;code&gt;128&lt;/code&gt;&lt;&gt;: Allow installation and removal of provisioning profiles.</string>
+					<string>&lt;&gt;&lt;code&gt;256&lt;/code&gt;&lt;&gt;: Allow inspection of installed applications.</string>
+					<string>&lt;&gt;&lt;code&gt;512&lt;/code&gt;&lt;&gt;: Allow restriction-related queries.</string>
+					<string>&lt;&gt;&lt;code&gt;1024&lt;/code&gt;&lt;&gt;: Allow security-related queries.</string>
+					<string>&lt;&gt;&lt;code&gt;2048&lt;/code&gt;&lt;&gt;: Allow manipulation of settings.</string>
+					<string>&lt;&gt;&lt;code&gt;4096&lt;/code&gt;&lt;&gt;: Allow app management.</string>
+					<string>The value can't be &lt;&gt;&lt;code&gt;0&lt;/code&gt;&lt;&gt;. If &lt;&gt;&lt;code&gt;2&lt;/code&gt;&lt;&gt; is specified, &lt;&gt;&lt;code&gt;1&lt;/code&gt;&lt;&gt; must also be specified. If &lt;&gt;&lt;code&gt;128&lt;/code&gt;&lt;&gt; is specified, &lt;&gt;&lt;code&gt;64&lt;/code&gt;&lt;&gt; must also be specified.</string>
 					<string>If the &lt;&gt;&lt;code&gt;ManagedAppleID&lt;/code&gt;&lt;&gt; is included, then &lt;&gt;&lt;code&gt;AccessRights&lt;/code&gt;&lt;&gt; are ignored.</string>
 				</array>
 				<key>name</key>
@@ -12497,6 +12491,24 @@
 			<dict>
 				<key>attributes</key>
 				<dict>
+					<key>default</key>
+					<string>false</string>
+				</dict>
+				<key>description</key>
+				<array>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, warns the user that they need to reboot into RecoveryOS and allow the MDM to use the Bootstrap Token for authentication for certain sensitive operations such as enabling kernel extensions or installing some types of software updates. If the MDM doesn’t need to perform these operations, it can leave this key set to &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, and the user won’t be notified.</string>
+					<string>The &lt;&gt;[SettingsCommand.Command.Settings.MDMOptions.MDMOptions](https://developer.apple.com/documentation/devicemanagement/settingscommand/command/settings/mdmoptions/mdmoptions)&lt;&gt; command overrides this default value.</string>
+					<string>This setting only applies to devices that have &lt;&gt;&lt;code&gt;BootstrapTokenRequiredForSoftwareUpdate&lt;/code&gt;&lt;&gt; or &lt;&gt;&lt;code&gt;BootstrapTokenRequiredForKernelExtensionApproval&lt;/code&gt;&lt;&gt; set to &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt; in their &lt;&gt;[SecurityInfoResponse.SecurityInfo](https://developer.apple.com/documentation/devicemanagement/securityinforesponse/securityinfo)&lt;&gt;.</string>
+					<string>DEP-enrolled devices are automatically allowed to use the Bootstrap Token for authentication.</string>
+				</array>
+				<key>name</key>
+				<string>PromptUserToAllowBootstrapTokenForAuthentication</string>
+				<key>type</key>
+				<string>boolean</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
 					<key>possibleValues</key>
 					<array>
 						<string>com.apple.mdm.per-user-connections</string>
@@ -12505,7 +12517,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>A unique array of strings indicating server capabilities. If the server manages macOS devices or a Shared iPad, this field is mandatory and must contain the value &lt;&gt;&lt;code&gt;com.apple.mdm.per-user-connections&lt;/code&gt;&lt;&gt; which indicates that the server supports both device and user connections.</string>
+					<string>A unique array of strings indicating server capabilities. If the server manages macOS devices or a Shared iPad, this field is mandatory and must contain the value &lt;&gt;&lt;code&gt;com.apple.mdm.per-user-connections&lt;/code&gt;&lt;&gt;, which indicates that the server supports both device and user connections.</string>
 					<string>Starting with macOS 11, it is also recommended that macOS device enrollment profiles contain the value &lt;&gt;&lt;code&gt;com.apple.mdm.bootstraptoken&lt;/code&gt;&lt;&gt; to ensure the Bootstrap Token is created and escrowed with the MDM server at enrollment time.</string>
 				</array>
 				<key>name</key>
@@ -12583,19 +12595,6 @@
 				</array>
 				<key>name</key>
 				<string>UseDevelopmentAPNS</string>
-				<key>type</key>
-				<string>boolean</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict>
-					<key>default</key>
-					<string>false</string>
-				</dict>
-				<key>description</key>
-				<array/>
-				<key>name</key>
-				<string>PromptUserToAllowBootstrapTokenForAuthentication</string>
 				<key>type</key>
 				<string>boolean</string>
 			</dict>
@@ -13425,7 +13424,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, allows connecting directly to the destination if the proxy autoconfiguraiton (PAC) file is unreachable.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, allows connecting directly to the destination if the proxy autoconfiguration (PAC) file is unreachable.</string>
 				</array>
 				<key>name</key>
 				<string>ProxyPACFallbackAllowed</string>
@@ -13703,7 +13702,7 @@
 			<key>supervision</key>
 			<string>-</string>
 			<key>user</key>
-			<string>-</string>
+			<string>macOS</string>
 			<key>user_approved</key>
 			<string>-</string>
 			<key>user_enrol</key>
@@ -13754,7 +13753,7 @@
 			<key>supervision</key>
 			<string>-</string>
 			<key>user</key>
-			<string>-</string>
+			<string>macOS</string>
 			<key>user_approved</key>
 			<string>-</string>
 			<key>user_enrol</key>
@@ -16126,7 +16125,7 @@
 			<key>supervision</key>
 			<string>-</string>
 			<key>user</key>
-			<string>-</string>
+			<string>macOS</string>
 			<key>user_approved</key>
 			<string>-</string>
 			<key>user_enrol</key>
@@ -16177,7 +16176,7 @@
 			<key>supervision</key>
 			<string>-</string>
 			<key>user</key>
-			<string>-</string>
+			<string>macOS</string>
 			<key>user_approved</key>
 			<string>-</string>
 			<key>user_enrol</key>
@@ -17723,7 +17722,7 @@
 				<array>
 					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, the device joins the network automatically.</string>
 					<string>If &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, the user must tap the network name to join it.</string>
-					<string>Available in iOS 5.0 and later and in macOS 10.7 and later.</string>
+					<string>Available in iOS 5.0 and later, and in macOS 10.7 and later.</string>
 				</array>
 				<key>name</key>
 				<string>AutoJoin</string>
@@ -17754,8 +17753,9 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true,&lt;/code&gt;&lt;&gt; disables MAC address randomization for that Wi-Fi network while associated with the network. This also shows a privacy warning in Settings indicating that the network has reduced privacy protections.</string>
-					<string>Available in iOS 14 and later and watchOS 7 and later.</string>
+					<string>If &lt;&gt;&lt;code&gt;true,&lt;/code&gt;&lt;&gt; disables MAC address randomization for a Wi-Fi network while associated with that network. This feature also shows a privacy warning in Settings indicating that the network has reduced privacy protections.</string>
+					<string>This value is only locked when the profile is installed by MDM. If the profile is manually installed, the value is set but the user can change it.</string>
+					<string>Available in iOS 14 and later, and watchOS 7 and later.</string>
 				</array>
 				<key>name</key>
 				<string>DisableAssociationMACRandomization</string>
@@ -17768,7 +17768,7 @@
 				<key>description</key>
 				<array>
 					<string>The operator name to display when connected to this network. Used only with Wi-Fi Hotspot 2.0 access points.</string>
-					<string>Available in iOS 7.0 and later and in macOS 10.9 and later.</string>
+					<string>Available in iOS 7.0 and later, and in macOS 10.9 and later.</string>
 				</array>
 				<key>name</key>
 				<string>DisplayedOperatorName</string>
@@ -17781,7 +17781,7 @@
 				<key>description</key>
 				<array>
 					<string>The primary domain of the tunnel.</string>
-					<string>Available in iOS 7.0 and later and in macOS 10.9 and later.</string>
+					<string>Available in iOS 7.0 and later, and in macOS 10.9 and later.</string>
 				</array>
 				<key>name</key>
 				<string>DomainName</string>
@@ -17834,7 +17834,7 @@
 				<array>
 					<string>The encryption type for the network.</string>
 					<string>WPA specifies WPA only; WPA2 applies to both encryption types.</string>
-					<string>Available in iOS 4.0 and later and in all versions of macOS. The &lt;&gt;&lt;code&gt;None&lt;/code&gt;&lt;&gt; value is available in iOS 5.0 and later and the &lt;&gt;&lt;code&gt;WPA2&lt;/code&gt;&lt;&gt; value is available in iOS 8.0 and later.</string>
+					<string>Available in iOS 4.0 and later, and in all versions of macOS. The &lt;&gt;&lt;code&gt;None&lt;/code&gt;&lt;&gt; value is available in iOS 5.0 and later, and the &lt;&gt;&lt;code&gt;WPA2&lt;/code&gt;&lt;&gt; value is available in iOS 8.0 and later.</string>
 				</array>
 				<key>name</key>
 				<string>EncryptionType</string>
@@ -17873,7 +17873,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The wireless interface to use.The &lt;&gt;&lt;code&gt;com.apple.globalethernet.managed&lt;/code&gt;&lt;&gt; payload uses the value &lt;&gt;&lt;code&gt;AnyEthernet&lt;/code&gt;&lt;&gt;. The values for the other payloads are derived from their name; for example the &lt;&gt;&lt;code&gt;com.apple.firstethernet.managed&lt;/code&gt;&lt;&gt; value would be &lt;&gt;&lt;code&gt;FirstEthernet&lt;/code&gt;&lt;&gt;. (Links to 801.2 payloads)</string>
+					<string>The wireless interface to use. The &lt;&gt;&lt;code&gt;com.apple.globalethernet.managed&lt;/code&gt;&lt;&gt; payload uses the value &lt;&gt;&lt;code&gt;AnyEthernet&lt;/code&gt;&lt;&gt;. The values for the other payloads are derived from their name; for example the &lt;&gt;&lt;code&gt;com.apple.firstethernet.managed&lt;/code&gt;&lt;&gt; value would be &lt;&gt;&lt;code&gt;FirstEthernet&lt;/code&gt;&lt;&gt;. (Links to 801.2 payloads)</string>
 				</array>
 				<key>name</key>
 				<string>Interface</string>
@@ -17889,7 +17889,7 @@
 				<key>description</key>
 				<array>
 					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, the device treats the network as a hotspot.</string>
-					<string>Available in iOS 7.0 and later and in macOS 10.9 and later.</string>
+					<string>Available in iOS 7.0 and later, and in macOS 10.9 and later.</string>
 				</array>
 				<key>name</key>
 				<string>IsHotspot</string>
@@ -17915,7 +17915,7 @@
 				<key>description</key>
 				<array>
 					<string>An array of Network Access Identifier Realm names used for Wi-Fi Hotspot 2.0 negotiation.</string>
-					<string>Available in iOS 7.0 and later and in macOS 10.9 and later.</string>
+					<string>Available in iOS 7.0 and later, and in macOS 10.9 and later.</string>
 				</array>
 				<key>name</key>
 				<string>NAIRealmNames</string>
@@ -17927,7 +17927,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The password for the access point</string>
+					<string>The password for the access point.</string>
 				</array>
 				<key>name</key>
 				<string>Password</string>
@@ -18044,7 +18044,7 @@
 				<key>description</key>
 				<array>
 					<string>The proxy type, if any, to use. If you choose the manual proxy type, you need the proxy server address, including its port and optionally a user name and password into the proxy server. If you choose the auto proxy type, you can enter a proxy autoconfiguration (PAC) URL.</string>
-					<string>Available in iOS 5.0 and later and on all versions of macOS.</string>
+					<string>Available in iOS 5.0 and later, and on all versions of macOS.</string>
 				</array>
 				<key>name</key>
 				<string>ProxyType</string>
@@ -18069,7 +18069,7 @@
 				<key>description</key>
 				<array>
 					<string>A dictionary that contains the list of apps that are allowed to benefit from L2 and L3 marking. When this dictionary isn't present, all apps are allowed to use L2 and L3 marking when the Wi-Fi network supports Cisco QoS fast lane.</string>
-					<string>Available in iOS 10.0 and later and in macOS 10.13 and later.</string>
+					<string>Available in iOS 10.0 and later, and in macOS 10.13 and later.</string>
 				</array>
 				<key>name</key>
 				<string>QoSMarkingPolicy</string>
@@ -18082,7 +18082,7 @@
 				<key>description</key>
 				<array>
 					<string>An array of Roaming Consortium Organization Identifiers used for Wi-Fi Hotspot 2.0 negotiation.</string>
-					<string>Available in iOS 7.0 and later and in macOS 10.9 and later.</string>
+					<string>Available in iOS 7.0 and later, and in macOS 10.9 and later.</string>
 				</array>
 				<key>name</key>
 				<string>RoamingConsortiumOIs</string>
@@ -18098,7 +18098,7 @@
 				<key>description</key>
 				<array>
 					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, allows connection to roaming service providers.</string>
-					<string>Available in iOS 7.0 and later and in macOS 10.9 and later.</string>
+					<string>Available in iOS 7.0 and later, and in macOS 10.9 and later.</string>
 				</array>
 				<key>name</key>
 				<string>ServiceProviderRoamingEnabled</string>
@@ -18128,7 +18128,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The SSID of the Wi-Fi network to be used. In iOS 7.0 and later, the SSID is optional if a &lt;&gt;&lt;code&gt;DomainName&lt;/code&gt;&lt;&gt; value is provided</string>
+					<string>The SSID of the Wi-Fi network to be used. In iOS 7.0 and later, the SSID is optional if a &lt;&gt;&lt;code&gt;DomainName&lt;/code&gt;&lt;&gt; value is provided.</string>
 				</array>
 				<key>name</key>
 				<string>SSID_STR</string>
