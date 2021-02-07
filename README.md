@@ -1,4 +1,3 @@
-
 # Low Profile
 
 A Mac utility to help inspect Apple Configuration Profile [payloads](https://developer.apple.com/documentation/devicemanagement/profile-specific_payload_keys):
@@ -62,7 +61,7 @@ Grab the latest version of **Low Profile** from the [releases page](https://gith
 
 ## License
 
-    Copyright © 2020 Nindi Gill
+    Copyright © 2021 Nindi Gill
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
