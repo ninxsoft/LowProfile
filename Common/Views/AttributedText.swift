@@ -88,7 +88,7 @@ struct AttributedText: View {
         }
 
         guard let url: URL = URL(string: string) else {
-            //swiftlint:disable:next force_unwrapping
+            // swiftlint:disable:next force_unwrapping
             return URL(string: "https://developer.apple.com/documentation/devicemanagement")!
         }
 
