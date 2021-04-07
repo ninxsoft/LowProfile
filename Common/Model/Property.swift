@@ -56,12 +56,9 @@ struct Property: Identifiable {
             return string.description
         }
 
-        if let dictionary: [String: Any] = value as? [String: Any] {
-            return dictionary.description
-        }
-
-        if let dictionaries: [[String: Any]] = value as? [[String: Any]] {
-            return dictionaries.description
+        if let data: Data = try? JSONSerialization.data(withJSONObject: value, options: [.prettyPrinted, .sortedKeys]),
+            let string: String = String(data: data, encoding: .utf8) {
+            return string
         }
 
         return "Unknown type"
