@@ -9,6 +9,15 @@ import SwiftUI
 
 struct DetailDiscussion: View {
     var discussion: String
+    private var formattedDiscussion: String {
+        discussion.replacingOccurrences(of: "<>", with: "")
+            .replacingOccurrences(of: "<code>", with: "")
+            .replacingOccurrences(of: "</code>", with: "")
+            .replacingOccurrences(of: "<emphasis>", with: "")
+            .replacingOccurrences(of: "</emphasis>", with: "")
+            .replacingOccurrences(of: "[", with: "")
+            .replacingOccurrences(of: "]", with: " - ")
+    }
 
     var body: some View {
         VStack {
@@ -16,7 +25,7 @@ struct DetailDiscussion: View {
                 HStack {
                     AttributedText(string: discussion)
                         .contextMenu {
-                            CopyButton(string: discussion)
+                            CopyButton(string: formattedDiscussion)
                         }
                     Spacer()
                 }
