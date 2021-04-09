@@ -22,12 +22,18 @@ struct PayloadProperty: View {
                         .font(.system(.body, design: .monospaced))
                         .bold()
                         .foregroundColor(.primary)
+                        .contextMenu {
+                            CopyButton(string: property.name)
+                        }
                 }
                 HStack {
                     Spacer()
                     Text(property.type)
                         .font(.system(.body, design: .monospaced))
                         .foregroundColor(.pink)
+                        .contextMenu {
+                            CopyButton(string: property.type)
+                        }
                 }
                 if property.required {
                     HStack {
@@ -42,12 +48,18 @@ struct PayloadProperty: View {
                 if [.payload, .unknown].contains(type) {
                     HStack {
                         Text(property.valueString)
+                            .contextMenu {
+                                CopyButton(string: property.valueString)
+                            }
                         Spacer()
                     }
                 }
                 if [.payload, .available].contains(type) {
                     HStack {
                         AttributedText(string: property.descriptionString)
+                            .contextMenu {
+                                CopyButton(string: property.descriptionString)
+                            }
                         Spacer()
                     }
                 }

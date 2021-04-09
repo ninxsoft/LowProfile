@@ -29,7 +29,7 @@ struct DetailPropertyList: View {
                         Spacer()
                         if visible {
                             Button(action: {
-                                copyToPasteboard()
+                                NSPasteboard.general.setString(string, forType: .string)
                             }, label: {
                                 Image(systemName: "doc.on.doc")
                                     .resizable()
@@ -58,12 +58,6 @@ struct DetailPropertyList: View {
                 visible = hovering
             }
         }
-    }
-
-    private func copyToPasteboard() {
-        let pasteboard: NSPasteboard = NSPasteboard.general
-        pasteboard.declareTypes([.string], owner: nil)
-        pasteboard.setString(string, forType: .string)
     }
 }
 

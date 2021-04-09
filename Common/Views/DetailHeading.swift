@@ -22,6 +22,9 @@ struct DetailHeading: View {
         GroupBox(label:
             HStack {
                 Text(payload.name).font(.title)
+                    .contextMenu {
+                        CopyButton(string: payload.name)
+                    }
                 Spacer()
             }
             .padding(.bottom, padding)
@@ -31,10 +34,16 @@ struct DetailHeading: View {
                     Text(payload.description)
                         .font(.title2)
                         .foregroundColor(.secondary)
+                        .contextMenu {
+                            CopyButton(string: payload.description)
+                        }
                     HStack {
                         Text(payload.type)
                             .font(.title3)
                             .foregroundColor(.secondary)
+                            .contextMenu {
+                                CopyButton(string: payload.type)
+                            }
                         if payload.deprecated {
                             TextTag(title: "Deprecated")
                         }

@@ -15,6 +15,9 @@ struct DetailDiscussion: View {
             ScrollView(.vertical) {
                 HStack {
                     AttributedText(string: discussion)
+                        .contextMenu {
+                            CopyButton(string: discussion)
+                        }
                     Spacer()
                 }
             }

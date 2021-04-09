@@ -22,6 +22,9 @@ struct TextRow: View {
             Spacer()
             Text(formattedTrailing)
                 .foregroundColor(.secondary)
+                .contextMenu {
+                    CopyButton(string: formattedTrailing)
+                }
         }
     }
 }
