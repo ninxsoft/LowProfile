@@ -40,9 +40,9 @@
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).PreviewViewController</string>
 	</dict>
-	<key>QLPreviewWidth</key>
-	<integer>1200</integer>
 	<key>QLPreviewHeight</key>
 	<integer>720</integer>
+	<key>QLPreviewWidth</key>
+	<integer>1200</integer>
 </dict>
 </plist>
