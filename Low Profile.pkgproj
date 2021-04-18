@@ -494,7 +494,7 @@
 			<key>USE_HFS+_COMPRESSION</key>
 			<false/>
 			<key>VERSION</key>
-			<string>0.1</string>
+			<string>1.0</string>
 		</dict>
 		<key>PROJECT_COMMENTS</key>
 		<dict>
@@ -687,7 +687,7 @@
 				</dict>
 			</array>
 			<key>NAME</key>
-			<string>Low Profile 0.1 Beta</string>
+			<string>Low Profile 1.0</string>
 			<key>PAYLOAD_ONLY</key>
 			<false/>
 		</dict>
