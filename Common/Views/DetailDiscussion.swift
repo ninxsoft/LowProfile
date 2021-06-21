@@ -24,10 +24,10 @@ struct DetailDiscussion: View {
             ScrollView(.vertical) {
                 HStack {
                     AttributedText(string: discussion)
+                        .multilineTextAlignment(.center)
                         .contextMenu {
                             CopyButton(string: formattedDiscussion)
                         }
-                    Spacer()
                 }
             }
         }

@@ -22,14 +22,14 @@
 		57301B7A24E273F300814349 /* UnselectedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9424DAA318004D06C2 /* UnselectedDetail.swift */; };
 		57301B7B24E273F300814349 /* PlatformTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9E24DC0444004D06C2 /* PlatformTag.swift */; };
 		57301B7C24E273F300814349 /* TextTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BB024DE5763004D06C2 /* TextTag.swift */; };
-		57301B7D24E273F300814349 /* DetailHeadingPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BAC24DE4F9D004D06C2 /* DetailHeadingPlatforms.swift */; };
+		57301B7D24E273F300814349 /* DetailOverviewPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BAC24DE4F9D004D06C2 /* DetailOverviewPlatforms.swift */; };
 		57301B7E24E273F300814349 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9224DAA193004D06C2 /* Sidebar.swift */; };
 		57301B8024E273F300814349 /* SidebarRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578224D7FD330090CDDF /* SidebarRow.swift */; };
 		57301B8124E273F300814349 /* DetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9624DAA522004D06C2 /* DetailInformation.swift */; };
 		57301B8224E273F300814349 /* DetailAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BB824DE78B1004D06C2 /* DetailAvailability.swift */; };
 		57301B8324E273F300814349 /* DetailCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BC224E143CD004D06C2 /* DetailCertificate.swift */; };
 		57301B8424E273F300814349 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578524D802270090CDDF /* Detail.swift */; };
-		57301B8524E273F300814349 /* DetailHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BAA24DE4D90004D06C2 /* DetailHeading.swift */; };
+		57301B8524E273F300814349 /* DetailOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BAA24DE4D90004D06C2 /* DetailOverview.swift */; };
 		57301B8624E273F300814349 /* DetailDiscussion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BBC24DFB7CE004D06C2 /* DetailDiscussion.swift */; };
 		57301B8724E273FD00814349 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BB624DE7088004D06C2 /* String+Extension.swift */; };
 		57301B8824E2740200814349 /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */; };
@@ -46,8 +46,8 @@
 		578B3BA124DC05B2004D06C2 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BA024DC05B2004D06C2 /* Platform.swift */; };
 		578B3BA324DC08B8004D06C2 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BA224DC08B8004D06C2 /* Availability.swift */; };
 		578B3BA924DC1FAD004D06C2 /* TextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BA824DC1FAD004D06C2 /* TextRow.swift */; };
-		578B3BAB24DE4D90004D06C2 /* DetailHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BAA24DE4D90004D06C2 /* DetailHeading.swift */; };
-		578B3BAD24DE4F9D004D06C2 /* DetailHeadingPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BAC24DE4F9D004D06C2 /* DetailHeadingPlatforms.swift */; };
+		578B3BAB24DE4D90004D06C2 /* DetailOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BAA24DE4D90004D06C2 /* DetailOverview.swift */; };
+		578B3BAD24DE4F9D004D06C2 /* DetailOverviewPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BAC24DE4F9D004D06C2 /* DetailOverviewPlatforms.swift */; };
 		578B3BB124DE5763004D06C2 /* TextTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BB024DE5763004D06C2 /* TextTag.swift */; };
 		578B3BB724DE7088004D06C2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BB624DE7088004D06C2 /* String+Extension.swift */; };
 		578B3BB924DE78B1004D06C2 /* DetailAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3BB824DE78B1004D06C2 /* DetailAvailability.swift */; };
@@ -95,8 +95,8 @@
 		578B3BA024DC05B2004D06C2 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		578B3BA224DC08B8004D06C2 /* Availability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 		578B3BA824DC1FAD004D06C2 /* TextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRow.swift; sourceTree = "<group>"; };
-		578B3BAA24DE4D90004D06C2 /* DetailHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeading.swift; sourceTree = "<group>"; };
-		578B3BAC24DE4F9D004D06C2 /* DetailHeadingPlatforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeadingPlatforms.swift; sourceTree = "<group>"; };
+		578B3BAA24DE4D90004D06C2 /* DetailOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOverview.swift; sourceTree = "<group>"; };
+		578B3BAC24DE4F9D004D06C2 /* DetailOverviewPlatforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOverviewPlatforms.swift; sourceTree = "<group>"; };
 		578B3BB024DE5763004D06C2 /* TextTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTag.swift; sourceTree = "<group>"; };
 		578B3BB624DE7088004D06C2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		578B3BB824DE78B1004D06C2 /* DetailAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAvailability.swift; sourceTree = "<group>"; };
@@ -199,8 +199,8 @@
 				57BB578224D7FD330090CDDF /* SidebarRow.swift */,
 				578B3B9424DAA318004D06C2 /* UnselectedDetail.swift */,
 				57BB578524D802270090CDDF /* Detail.swift */,
-				578B3BAA24DE4D90004D06C2 /* DetailHeading.swift */,
-				578B3BAC24DE4F9D004D06C2 /* DetailHeadingPlatforms.swift */,
+				578B3BAA24DE4D90004D06C2 /* DetailOverview.swift */,
+				578B3BAC24DE4F9D004D06C2 /* DetailOverviewPlatforms.swift */,
 				578B3B9624DAA522004D06C2 /* DetailInformation.swift */,
 				578B3BB824DE78B1004D06C2 /* DetailAvailability.swift */,
 				578B3BBC24DFB7CE004D06C2 /* DetailDiscussion.swift */,
@@ -401,7 +401,7 @@
 				57301B8824E2740200814349 /* UTType+Extension.swift in Sources */,
 				57301B7A24E273F300814349 /* UnselectedDetail.swift in Sources */,
 				57301B8024E273F300814349 /* SidebarRow.swift in Sources */,
-				57301B7D24E273F300814349 /* DetailHeadingPlatforms.swift in Sources */,
+				57301B7D24E273F300814349 /* DetailOverviewPlatforms.swift in Sources */,
 				578FFFEF24E675ED00DA8DF1 /* AttributedText.swift in Sources */,
 				57301B7E24E273F300814349 /* Sidebar.swift in Sources */,
 				57301B7624E273EF00814349 /* Availability.swift in Sources */,
@@ -425,7 +425,7 @@
 				57301B8324E273F300814349 /* DetailCertificate.swift in Sources */,
 				57301B6424E24C4D00814349 /* PreviewViewController.swift in Sources */,
 				57301B8424E273F300814349 /* Detail.swift in Sources */,
-				57301B8524E273F300814349 /* DetailHeading.swift in Sources */,
+				57301B8524E273F300814349 /* DetailOverview.swift in Sources */,
 				578FFFF824E7B49800DA8DF1 /* PropertyListText.swift in Sources */,
 				57301B7824E273F300814349 /* PayloadProperties.swift in Sources */,
 			);
@@ -442,14 +442,14 @@
 				578B3BC124E132D0004D06C2 /* AppDelegate.swift in Sources */,
 				57D4F7FE24D6E46400BC0648 /* UTType+Extension.swift in Sources */,
 				578B3BC324E143CD004D06C2 /* DetailCertificate.swift in Sources */,
-				578B3BAD24DE4F9D004D06C2 /* DetailHeadingPlatforms.swift in Sources */,
+				578B3BAD24DE4F9D004D06C2 /* DetailOverviewPlatforms.swift in Sources */,
 				57D4F7D424D6D6A500BC0648 /* ContentView.swift in Sources */,
 				578B3B9524DAA318004D06C2 /* UnselectedDetail.swift in Sources */,
 				57FB9DEA261D9837008F9DB1 /* CopyButton.swift in Sources */,
 				57D4F7FC24D6D8D100BC0648 /* Document.swift in Sources */,
 				57BB578124D78B2C0090CDDF /* Profile.swift in Sources */,
 				578F000524E8148D00DA8DF1 /* DocumentError.swift in Sources */,
-				578B3BAB24DE4D90004D06C2 /* DetailHeading.swift in Sources */,
+				578B3BAB24DE4D90004D06C2 /* DetailOverview.swift in Sources */,
 				578B3BBF24DFD64E004D06C2 /* PayloadProperties.swift in Sources */,
 				57BB578324D7FD330090CDDF /* SidebarRow.swift in Sources */,
 				578B3B9F24DC0444004D06C2 /* PlatformTag.swift in Sources */,
