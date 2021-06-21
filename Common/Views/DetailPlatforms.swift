@@ -1,5 +1,5 @@
 //
-//  DetailOverviewPlatforms.swift
+//  DetailPlatforms.swift
 //  Low Profile
 //
 //  Created by Nindi Gill on 8/8/20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailOverviewPlatforms: View {
+struct DetailPlatforms: View {
     var platforms: [Platform]
 
     var body: some View {
@@ -24,8 +24,8 @@ struct DetailOverviewPlatforms: View {
     }
 }
 
-struct DetailOverviewPlatforms_Previews: PreviewProvider {
+struct DetailPlatforms_Previews: PreviewProvider {
     static var previews: some View {
-        DetailOverviewPlatforms(platforms: [.example])
+        DetailPlatforms(platforms: [.example])
     }
 }

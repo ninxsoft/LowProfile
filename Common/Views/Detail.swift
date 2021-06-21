@@ -18,15 +18,43 @@ struct Detail: View {
     private let buttonLength: CGFloat = 24
     private let imageLength: CGFloat = 64
     private let cornerRadius: CGFloat = 5
-    private let height: CGFloat = 230
+    private let height: CGFloat = 235
 
     var body: some View {
         VStack {
             HStack {
-                Text(payload.name).font(.title)
-                    .contextMenu {
-                        CopyButton(string: payload.name)
+                VStack(alignment: .leading, spacing: spacing) {
+                    HStack(alignment: .lastTextBaseline) {
+                        Text(payload.name).font(.title)
+                            .contextMenu {
+                                CopyButton(string: payload.name)
+                            }
+                        Text("-")
+                            .font(.title3)
+                            .foregroundColor(.secondary)
+                        Text(payload.type)
+                            .font(.title3)
+                            .foregroundColor(.secondary)
+                            .contextMenu {
+                                CopyButton(string: payload.type)
+                            }
                     }
+                    Text(payload.description)
+                        .font(.title3)
+                        .foregroundColor(.secondary)
+                        .contextMenu {
+                            CopyButton(string: payload.description)
+                        }
+                    HStack {
+                        DetailPlatforms(platforms: payload.platforms)
+                        if payload.deprecated {
+                            TextTag(title: "Deprecated")
+                        }
+                        if payload.beta {
+                            TextTag(title: "Beta")
+                        }
+                    }
+                }
                 Spacer()
                 HStack {
                     if !payload.custom {
@@ -57,10 +85,6 @@ struct Detail: View {
                 }
             }
             TabView {
-                DetailOverview(payload: payload)
-                    .tabItem {
-                        Text("Overview")
-                    }
                 DetailInformation(payload: payload, spacing: spacing)
                     .tabItem {
                         Text("Information")
@@ -85,7 +109,7 @@ struct Detail: View {
                 }
             }
             .frame(height: height)
-            .padding(.bottom)
+            .padding(.vertical)
             TabView {
                 if !payload.payloadProperties.isEmpty {
                     PayloadProperties(type: .payload, properties: payload.payloadProperties, spacing: spacing)
