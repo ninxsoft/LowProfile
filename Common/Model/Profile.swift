@@ -50,7 +50,7 @@ struct Profile {
                 }
             }
         } catch {
-            //       print(error)
+//            print(error.localizedDescription)
         }
 
         do {
@@ -60,11 +60,11 @@ struct Profile {
 
             self.payloads = []
 
-            //      for type in PayloadHelper.shared.payloadTypes() {
-            //        let dictionary: [String: Any] = ["PayloadType": type]
-            //        let payload: Payload = Payload(dictionary: dictionary)
-            //        self.payloads.append(payload)
-            //      }
+//            for type in PayloadHelper.shared.payloadTypes() {
+//                let dictionary: [String: Any] = ["PayloadType": type]
+//                let payload: Payload = Payload(dictionary: dictionary)
+//                self.payloads.append(payload)
+//            }
 
             var topLevelDictionary: [String: Any] = dictionary
             topLevelDictionary.removeValue(forKey: "PayloadContent")
@@ -80,7 +80,7 @@ struct Profile {
 
             return
         } catch {
-            //      print(error)
+//            print(error.localizedDescription)
             return nil
         }
     }

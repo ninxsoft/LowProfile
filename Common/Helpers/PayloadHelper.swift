@@ -26,9 +26,29 @@ class PayloadHelper: NSObject {
 
     override init() {
 
-        guard let url: URL = Bundle.main.url(forResource: "Payloads", withExtension: "plist") else {
+        let directoryURL: URL = URL(fileURLWithPath: NSHomeDirectory() + "/Library/Application Support/Low Profile", isDirectory: true)
+        let payloadsURL: URL = directoryURL.appendingPathComponent("Payloads.plist")
+
+        if let url: URL = URL(string: .payloadsURL) {
+
+            do {
+                let plist: String = try String(contentsOf: url)
+
+                if !FileManager.default.fileExists(atPath: directoryURL.path) {
+                    try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
+                }
+
+                try plist.write(to: payloadsURL, atomically: true, encoding: .utf8)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+
+        guard let bundlePayloadsURL: URL = Bundle.main.url(forResource: "Payloads", withExtension: "plist") else {
             return
         }
+
+        let url: URL = FileManager.default.fileExists(atPath: payloadsURL.path) ? payloadsURL : bundlePayloadsURL
 
         do {
             let data: Data = try Data(contentsOf: url)
@@ -39,7 +59,7 @@ class PayloadHelper: NSObject {
 
             self.dictionaries = dictionaries
         } catch {
-            print("\(Date().description) - Payloads.plist failed to load with error: '\(error)'")
+            print(error.localizedDescription)
         }
     }
 
