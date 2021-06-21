@@ -20,7 +20,7 @@ struct AppCommands: Commands {
             Button("Close") {
                 close()
             }
-            .keyboardShortcut("w", modifiers: .command)
+            .keyboardShortcut("w")
         }
         CommandGroup(replacing: .systemServices) {
             // do nothing ?
