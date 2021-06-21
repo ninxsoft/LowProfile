@@ -1,3 +1,5 @@
+<img align="left" width="128" height="128" src="Readme%20Resources/App%20Icon.png">
+
 # Low Profile
 
 A Mac utility to help inspect Apple Configuration Profile [payloads](https://developer.apple.com/documentation/devicemanagement/profile-specific_payload_keys):
