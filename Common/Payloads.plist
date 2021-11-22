@@ -37,7 +37,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -95,7 +95,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -103,7 +103,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -111,7 +119,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -119,7 +127,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>8.0</string>
+				<string>8.3</string>
 				<key>introduced_at</key>
 				<string>2.0</string>
 				<key>name</key>
@@ -444,7 +452,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -650,7 +658,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -806,7 +814,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.13.4</string>
 				<key>name</key>
@@ -1188,7 +1196,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -1249,7 +1257,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.8</string>
 				<key>name</key>
@@ -1829,7 +1837,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -1902,7 +1910,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -2203,7 +2211,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -2436,7 +2444,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -2594,7 +2602,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -2685,7 +2693,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -2750,7 +2758,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.13</string>
 				<key>name</key>
@@ -2832,7 +2840,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>14.0</string>
 				<key>name</key>
@@ -2840,7 +2848,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>14.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.12</string>
 				<key>name</key>
@@ -3045,7 +3061,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -3119,7 +3135,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -3297,7 +3313,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -3358,7 +3374,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.14</string>
 				<key>name</key>
@@ -3419,7 +3435,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -3427,7 +3443,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>7.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.10</string>
 				<key>name</key>
@@ -3509,7 +3533,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -3614,7 +3638,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -3622,7 +3646,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>7.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.10</string>
 				<key>name</key>
@@ -3684,7 +3716,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -3693,6 +3725,18 @@
 				<string>4.0</string>
 				<key>name</key>
 				<string>iOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>15.2</string>
+				<key>deprecated</key>
+				<true/>
+				<key>deprecated_at</key>
+				<string>7.0</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
 			</dict>
 		</array>
 		<key>properties</key>
@@ -3770,7 +3814,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>6.0</string>
 				<key>name</key>
@@ -3778,7 +3822,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>6.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>10.2</string>
 				<key>name</key>
@@ -3839,7 +3891,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -3847,7 +3899,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -3855,7 +3915,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -4172,7 +4232,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, disables Apple Books. Requires a supervised device. Available in iOS 6 and later.</string>
+					<string>If &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, removes the Book Store tab from the Books app. Requires a supervised device. Available in iOS 6 and later.</string>
 				</array>
 				<key>name</key>
 				<string>allowBookstore</string>
@@ -4386,6 +4446,21 @@
 				</array>
 				<key>name</key>
 				<string>allowCloudPhotoLibrary</string>
+				<key>type</key>
+				<string>boolean</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
+					<string>true</string>
+				</dict>
+				<key>description</key>
+				<array>
+					<string>If &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt;, disables iCloud Private Relay.</string>
+				</array>
+				<key>name</key>
+				<string>allowCloudPrivateRelay</string>
 				<key>type</key>
 				<string>boolean</string>
 			</dict>
@@ -5558,6 +5633,21 @@
 				<key>attributes</key>
 				<dict>
 					<key>default</key>
+					<string>172800</string>
+				</dict>
+				<key>description</key>
+				<array>
+					<string>The value, in seconds, after which the fingerprint unlock will require a password to authenticate. The default value is 48 hours.</string>
+				</array>
+				<key>name</key>
+				<string>enforcedFingerprintTimeout</string>
+				<key>type</key>
+				<string>integer</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
 					<string>30</string>
 					<key>maximum</key>
 					<string>90</string>
@@ -5588,7 +5678,7 @@
 				<key>description</key>
 				<array>
 					<string>This restriction allows the admin to set how many days to delay a major software update on the device. When this restriction is in place the user sees a software update only after the specified delay after the release of the software update. This value controls the delay for &lt;&gt;&lt;code&gt;forceDelayedMajorSoftwareUpdates&lt;/code&gt;&lt;&gt;.</string>
-					<string>Available in iOS 11.3 and later.</string>
+					<string>Available in macOS 11.3 and later.</string>
 				</array>
 				<key>name</key>
 				<string>enforcedSoftwareUpdateMajorOSDeferredInstallDelay</string>
@@ -5608,7 +5698,7 @@
 				<key>description</key>
 				<array>
 					<string>This restriction allows the admin to set how many days to delay a minor OS software update on the device. When this restriction is in place the user see a software update only after the specified delay after the release of the software update. This value controls the delay for &lt;&gt;&lt;code&gt;forceDelayedSoftwareUpdates&lt;/code&gt;&lt;&gt;.</string>
-					<string>Available in iOS 11.3 and later.</string>
+					<string>Available in macOS 11.3 and later.</string>
 				</array>
 				<key>name</key>
 				<string>enforcedSoftwareUpdateMinorOSDeferredInstallDelay</string>
@@ -5628,7 +5718,7 @@
 				<key>description</key>
 				<array>
 					<string>This restriction allows the admin to set how many days to delay an app software update on the device. When this restriction is in place the user sees a non-OS software update only after the specified delay after the release of the software. This value controls the delay for &lt;&gt;&lt;code&gt;forceDelayedAppSoftwareUpdates&lt;/code&gt;&lt;&gt;.</string>
-					<string>Available in iOS 11.3 and later.</string>
+					<string>Available in macOS 11.3 and later.</string>
 				</array>
 				<key>name</key>
 				<string>enforcedSoftwareUpdateNonOSDeferredInstallDelay</string>
@@ -5826,7 +5916,8 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If set to true, delays user visibility of major OS Software Updates. Defaults to false.</string>
+					<string>If set to true, delays user visibility of major OS Software Updates.</string>
+					<string>Available in macOS 11.3 and later.</string>
 				</array>
 				<key>name</key>
 				<string>forceDelayedMajorSoftwareUpdates</string>
@@ -5903,7 +5994,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, disables connections to Siri servers for the purposes of dictation. Available in iOS 14.5 and later.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, disables connections to Siri servers for the purposes of dictation. Available in iOS 14.5 and later. Also available for user enrollment.</string>
 				</array>
 				<key>name</key>
 				<string>forceOnDeviceOnlyDictation</string>
@@ -5918,7 +6009,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, the device won’t connect to Siri servers for the purposes of translation. Available in iOS 15 and later.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, the device won’t connect to Siri servers for the purposes of translation. Available in iOS 15 and later. Also available for user enrollment.</string>
 				</array>
 				<key>name</key>
 				<string>forceOnDeviceOnlyTranslation</string>
@@ -6099,7 +6190,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, copy and paste functionality respects the &lt;&gt;&lt;code&gt;allowOpenFromManagedToUnmanaged&lt;/code&gt;&lt;&gt; and &lt;&gt;&lt;code&gt;allowOpenFromUnmanagedToManaged&lt;/code&gt;&lt;&gt; restrictions.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, copy and paste functionality respects the &lt;&gt;&lt;code&gt;allowOpenFromManagedToUnmanaged&lt;/code&gt;&lt;&gt; and &lt;&gt;&lt;code&gt;allowOpenFromUnmanagedToManaged&lt;/code&gt;&lt;&gt; restrictions. Also available for user enrollment.</string>
 				</array>
 				<key>name</key>
 				<string>requireManagedPasteboard</string>
@@ -6204,6 +6295,19 @@
 				<key>type</key>
 				<string>[string]</string>
 			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
+					<string>true</string>
+				</dict>
+				<key>description</key>
+				<array/>
+				<key>name</key>
+				<string>allowMailPrivacyProtection</string>
+				<key>type</key>
+				<string>boolean</string>
+			</dict>
 		</array>
 	</dict>
 	<key>com.apple.applicationaccess.new</key>
@@ -6247,7 +6351,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -6344,7 +6448,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -6451,7 +6555,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.13.4</string>
 				<key>name</key>
@@ -6513,7 +6617,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.15</string>
 				<key>name</key>
@@ -6574,7 +6678,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -6582,7 +6686,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -6686,7 +6798,10 @@
 				<key>attributes</key>
 				<dict/>
 				<key>description</key>
-				<array/>
+				<array>
+					<string>The VPNUUID of the per-app VPN the account uses for network communication.</string>
+					<string>Available in iOS 14 and later.</string>
+				</array>
 				<key>name</key>
 				<string>VPNUUID</string>
 				<key>type</key>
@@ -6729,7 +6844,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -6737,7 +6852,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -6852,7 +6975,10 @@
 				<key>attributes</key>
 				<dict/>
 				<key>description</key>
-				<array/>
+				<array>
+					<string>The VPNUUID of the per-app VPN the account uses for network communication.</string>
+					<string>Available in iOS 14 and later.</string>
+				</array>
 				<key>name</key>
 				<string>VPNUUID</string>
 				<key>type</key>
@@ -6895,7 +7021,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -6903,7 +7029,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>8.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>7.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>8.3</string>
 				<key>introduced_at</key>
 				<string>3.2</string>
 				<key>name</key>
@@ -6974,7 +7108,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>10.2</string>
 				<key>name</key>
@@ -7032,7 +7166,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -7093,7 +7227,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -7173,7 +7307,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.10</string>
 				<key>name</key>
@@ -7247,7 +7381,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -7255,7 +7389,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>11.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.15</string>
 				<key>name</key>
@@ -7340,7 +7482,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>14.0</string>
 				<key>name</key>
@@ -7348,7 +7490,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>14.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -7436,7 +7586,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -7978,7 +8128,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>8.0</string>
 				<key>name</key>
@@ -7986,7 +8136,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>8.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.10</string>
 				<key>name</key>
@@ -8071,11 +8229,19 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
 				<string>iOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
 			</dict>
 		</array>
 		<key>properties</key>
@@ -8467,7 +8633,7 @@
 				<key>attributes</key>
 				<dict>
 					<key>default</key>
-					<string>true</string>
+					<string>false</string>
 				</dict>
 				<key>description</key>
 				<array>
@@ -8691,7 +8857,8 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The VPN UUID of the per-app VPN to use for this account’s network communication. Available in iOS 14 and later.</string>
+					<string>The VPNUUID of the per-app VPN the account uses for network communication.</string>
+					<string>Available in iOS 14 and later.</string>
 				</array>
 				<key>name</key>
 				<string>VPNUUID</string>
@@ -8717,7 +8884,7 @@
 			<key>user_approved</key>
 			<string>-</string>
 			<key>user_enrol</key>
-			<string>-</string>
+			<string>iOS, macOS</string>
 		</dict>
 		<key>description</key>
 		<string>The payload for configuring the users, groups, and departments within an educational organization.</string>
@@ -8732,6 +8899,7 @@
 			<string>• All certificates must use a hashing algorithm of SHA256 or stronger.</string>
 			<string>• Leader certificates must have the common name prefix leader (case insensitive).</string>
 			<string>• Member certificates must have the common name prefix member (case insensitive).</string>
+			<string>• TLS server certificates issued on or after September 1, 2020 00:00 GMT/UTC must not have a validity period greater than 398 days. See  for more information.</string>
 		</array>
 		<key>name</key>
 		<string>Education</string>
@@ -8743,7 +8911,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -8751,7 +8919,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>9.3</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.14</string>
 				<key>name</key>
@@ -8968,7 +9144,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -9222,7 +9398,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>13.0</string>
 				<key>name</key>
@@ -9230,7 +9406,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>13.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.15</string>
 				<key>name</key>
@@ -9239,6 +9423,19 @@
 		</array>
 		<key>properties</key>
 		<array>
+			<dict>
+				<key>attributes</key>
+				<dict/>
+				<key>description</key>
+				<array>
+					<string>An array of bundle identifiers of apps that don’t use SSO provided by this extension.</string>
+					<string>Available in iOS 15 and later and macOS 12 and later.</string>
+				</array>
+				<key>name</key>
+				<string>DeniedBundleIdentifiers</string>
+				<key>type</key>
+				<string>[string]</string>
+			</dict>
 			<dict>
 				<key>attributes</key>
 				<dict/>
@@ -9259,7 +9456,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>The bundle identifier of the app extension that performs single sign-on (SSO) for the specified URLs.</string>
+					<string>The bundle identifier of the app extension that performs SSO for the specified URLs.</string>
 				</array>
 				<key>name</key>
 				<string>ExtensionIdentifier</string>
@@ -9271,10 +9468,10 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>An array of host names or domain names that can be authenticated through the app extension.</string>
+					<string>An array of host names or domain names that apps can authenticate through the app extension.</string>
 					<string>Required for &lt;&gt;&lt;code&gt;Credential&lt;/code&gt;&lt;&gt; payloads. Ignored for &lt;&gt;&lt;code&gt;Redirect&lt;/code&gt;&lt;&gt; payloads.</string>
 					<string>Host or domain names are matched case-insensitively, and all the host/domain names of all installed Extensible SSO payloads must be unique.</string>
-					<string>Hosts that begin with a “.” are wildcard suffixes and will match all subdomains, otherwise the host must be an exact match.</string>
+					<string>Hosts that begin with a “.” are wildcard suffixes and match all subdomains; otherwise the host must be an exact match.</string>
 				</array>
 				<key>name</key>
 				<string>Hosts</string>
@@ -9286,11 +9483,32 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The realm name for &lt;&gt;&lt;code&gt;Credential&lt;/code&gt;&lt;&gt; payloads. This value should be properly capitalized.</string>
+					<string>The realm name for &lt;&gt;&lt;code&gt;Credential&lt;/code&gt;&lt;&gt; payloads. Use proper capitalization for this value.</string>
 					<string>This key is ignored for &lt;&gt;&lt;code&gt;Redirect&lt;/code&gt;&lt;&gt; payloads.</string>
 				</array>
 				<key>name</key>
 				<string>Realm</string>
+				<key>type</key>
+				<string>string</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
+					<string>Cancel</string>
+					<key>possibleValues</key>
+					<array>
+						<string>Cancel</string>
+						<string>DoNotHandle</string>
+					</array>
+				</dict>
+				<key>description</key>
+				<array>
+					<string>If set to &lt;&gt;&lt;code&gt;Cancel&lt;/code&gt;&lt;&gt;, the system cancels authentication requests when the screen is locked. If set to &lt;&gt;&lt;code&gt;DoNotHandle&lt;/code&gt;&lt;&gt;, the request continues without SSO instead. This does not apply to requests where &lt;&gt;&lt;code&gt;userInterfaceEnabled&lt;/code&gt;&lt;&gt; is set to &lt;&gt;&lt;code&gt;false&lt;/code&gt;&lt;&gt; or background &lt;&gt;[URLSession](https://developer.apple.com/documentation/foundation/urlsession)&lt;&gt; requests.</string>
+					<string>Available in iOS 15 and later and macOS 12 and later.</string>
+				</array>
+				<key>name</key>
+				<string>ScreenLockedBehavior</string>
 				<key>type</key>
 				<string>string</string>
 			</dict>
@@ -9475,7 +9693,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -9603,7 +9821,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -9674,7 +9892,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -9735,7 +9953,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -9922,7 +10140,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -9973,7 +10191,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -10018,7 +10236,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -10026,7 +10244,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>7.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -10100,7 +10326,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -10211,7 +10437,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.13</string>
 				<key>name</key>
@@ -10258,11 +10484,19 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
 				<string>iOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>9.3</string>
+				<key>name</key>
+				<string>iPadOS</string>
 			</dict>
 		</array>
 		<key>properties</key>
@@ -10322,7 +10556,10 @@
 				<key>attributes</key>
 				<dict/>
 				<key>description</key>
-				<array/>
+				<array>
+					<string>The VPNUUID of the per-app VPN the account uses for network communication.</string>
+					<string>Available in iOS 14 and later.</string>
+				</array>
 				<key>name</key>
 				<string>VPNUUID</string>
 				<key>type</key>
@@ -10368,7 +10605,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -10376,7 +10613,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>9.3</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -10449,7 +10694,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -10529,7 +10774,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -10683,7 +10928,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -10691,7 +10936,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -10782,7 +11035,10 @@
 				<key>attributes</key>
 				<dict/>
 				<key>description</key>
-				<array/>
+				<array>
+					<string>The VPNUUID of the per-app VPN the account uses for network communication.</string>
+					<string>Available in iOS 14 and later.</string>
+				</array>
 				<key>name</key>
 				<string>VPNUUID</string>
 				<key>type</key>
@@ -10825,7 +11081,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.13</string>
 				<key>name</key>
@@ -10886,7 +11142,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -11240,7 +11496,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>11.0</string>
 				<key>name</key>
@@ -11334,7 +11590,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -11342,7 +11598,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -11853,7 +12117,8 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>The VPN UUID of the per-app VPN to use for this account’s network communication. Available in iOS 14 and later.</string>
+					<string>The VPNUUID of the per-app VPN the account uses for network communication.</string>
+					<string>Available in iOS 14 and later.</string>
 				</array>
 				<key>name</key>
 				<string>VPNUUID</string>
@@ -11897,7 +12162,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -12287,7 +12552,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -12388,7 +12653,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -12580,7 +12845,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -12588,7 +12853,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -12596,7 +12869,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -12637,6 +12910,19 @@
 				<dict/>
 				<key>description</key>
 				<array>
+					<string>The Managed Apple ID pre-assigned to the authenticated user. This is only used with the BYOD enrollment flow.</string>
+					<string>Available in iOS 15 and later.</string>
+				</array>
+				<key>name</key>
+				<string>AssignedManagedAppleID</string>
+				<key>type</key>
+				<string>string</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict/>
+				<key>description</key>
+				<array>
 					<string>The URL that the device should use to check in during installation. The URL must begin with the &lt;&gt;&lt;code&gt;https://&lt;/code&gt;&lt;&gt; URL scheme and may contain a port number (&lt;&gt;&lt;code&gt;:1234&lt;/code&gt;&lt;&gt;, for example). If this URL isn't given, &lt;&gt;&lt;code&gt;ServerURL&lt;/code&gt;&lt;&gt; is used for both purposes.</string>
 				</array>
 				<key>name</key>
@@ -12670,6 +12956,24 @@
 				<string>CheckOutWhenRemoved</string>
 				<key>type</key>
 				<string>boolean</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>possibleValues</key>
+					<array>
+						<string>BYOD</string>
+					</array>
+				</dict>
+				<key>description</key>
+				<array>
+					<string>The enrollment mode the server indicates must be used when enrolling. This must be present for BYOD enrollments.</string>
+					<string>Available in iOS 15 and later.</string>
+				</array>
+				<key>name</key>
+				<string>EnrollmentMode</string>
+				<key>type</key>
+				<string>string</string>
 			</dict>
 			<dict>
 				<key>attributes</key>
@@ -12726,6 +13030,7 @@
 					<string>The &lt;&gt;[SettingsCommand.Command.Settings.MDMOptions.MDMOptions](https://developer.apple.com/documentation/devicemanagement/settingscommand/command/settings/mdmoptions/mdmoptions)&lt;&gt; command overrides this default value.</string>
 					<string>This setting only applies to devices that have &lt;&gt;&lt;code&gt;BootstrapTokenRequiredForSoftwareUpdate&lt;/code&gt;&lt;&gt; or &lt;&gt;&lt;code&gt;BootstrapTokenRequiredForKernelExtensionApproval&lt;/code&gt;&lt;&gt; set to &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt; in their &lt;&gt;[SecurityInfoResponse.SecurityInfo](https://developer.apple.com/documentation/devicemanagement/securityinforesponse/securityinfo)&lt;&gt;.</string>
 					<string>DEP-enrolled devices are automatically allowed to use the Bootstrap Token for authentication.</string>
+					<string>Available in macOS 11 and later.</string>
 				</array>
 				<key>name</key>
 				<string>PromptUserToAllowBootstrapTokenForAuthentication</string>
@@ -12786,7 +13091,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>An array of strings, each containing the &lt;&gt;&lt;code&gt;PayloadUUID&lt;/code&gt;&lt;&gt; of a certificate to be used when evaluating trust to the &lt;&gt;&lt;code&gt;.../connect/&lt;/code&gt;&lt;&gt; URLs of MDM servers.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, each message coming from the device carries the additional &lt;&gt;&lt;code&gt;Mdm-Signature&lt;/code&gt;&lt;&gt; HTTP header.</string>
 				</array>
 				<key>name</key>
 				<string>SignMessage</string>
@@ -12823,31 +13128,6 @@
 				<string>UseDevelopmentAPNS</string>
 				<key>type</key>
 				<string>boolean</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict/>
-				<key>description</key>
-				<array/>
-				<key>name</key>
-				<string>AssignedManagedAppleID</string>
-				<key>type</key>
-				<string>string</string>
-			</dict>
-			<dict>
-				<key>attributes</key>
-				<dict>
-					<key>possibleValues</key>
-					<array>
-						<string>BYOD</string>
-					</array>
-				</dict>
-				<key>description</key>
-				<array/>
-				<key>name</key>
-				<string>EnrollmentMode</string>
-				<key>type</key>
-				<string>string</string>
 			</dict>
 			<dict>
 				<key>attributes</key>
@@ -12901,7 +13181,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -12909,7 +13189,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -13151,11 +13439,19 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
 				<string>iOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>9.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
 			</dict>
 		</array>
 		<key>properties</key>
@@ -13221,7 +13517,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
@@ -13229,7 +13525,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>9.3</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.15</string>
 				<key>name</key>
@@ -13290,7 +13594,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -13299,6 +13603,18 @@
 				<string>9.0</string>
 				<key>name</key>
 				<string>iOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>15.2</string>
+				<key>deprecated</key>
+				<true/>
+				<key>deprecated_at</key>
+				<string>12.0</string>
+				<key>introduced_at</key>
+				<string>9.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
 			</dict>
 		</array>
 		<key>properties</key>
@@ -13409,7 +13725,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.10</string>
 				<key>name</key>
@@ -13500,7 +13816,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.12</string>
 				<key>name</key>
@@ -13562,7 +13878,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -13570,7 +13886,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -13578,7 +13902,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -13637,7 +13961,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>6.0</string>
 				<key>name</key>
@@ -13645,7 +13969,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>6.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -13653,7 +13985,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -13815,7 +14147,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.11</string>
 				<key>name</key>
@@ -13925,7 +14257,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.11</string>
 				<key>name</key>
@@ -14014,7 +14346,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -14065,7 +14397,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -14120,7 +14452,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.13</string>
 				<key>name</key>
@@ -14213,7 +14545,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -14295,7 +14627,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.12</string>
 				<key>name</key>
@@ -14371,7 +14703,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>12.1.1</string>
 				<key>name</key>
@@ -14379,7 +14711,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>12.1.1</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.14.2</string>
 				<key>name</key>
@@ -14387,7 +14727,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>12.1.1</string>
 				<key>name</key>
@@ -14395,7 +14735,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>8.0</string>
+				<string>8.3</string>
 				<key>introduced_at</key>
 				<string>5.1.1</string>
 				<key>name</key>
@@ -14473,7 +14813,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.12</string>
 				<key>name</key>
@@ -14532,12 +14872,48 @@
 				</dict>
 				<key>description</key>
 				<array>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, enables logging.</string>
+					<string>Available in macOS 12 and later.</string>
+				</array>
+				<key>name</key>
+				<string>EnableLogging</string>
+				<key>type</key>
+				<string>boolean</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>default</key>
+					<string>false</string>
+				</dict>
+				<key>description</key>
+				<array>
 					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, enables stealth mode.</string>
 				</array>
 				<key>name</key>
 				<string>EnableStealthMode</string>
 				<key>type</key>
 				<string>boolean</string>
+			</dict>
+			<dict>
+				<key>attributes</key>
+				<dict>
+					<key>possibleValues</key>
+					<array>
+						<string>throttled</string>
+						<string>brief</string>
+						<string>detail</string>
+					</array>
+				</dict>
+				<key>description</key>
+				<array>
+					<string>This string specifies the type of logging.</string>
+					<string>Available in macOS 12 and later.</string>
+				</array>
+				<key>name</key>
+				<string>LoggingOption</string>
+				<key>type</key>
+				<string>string</string>
 			</dict>
 		</array>
 	</dict>
@@ -14579,7 +14955,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.12</string>
 				<key>name</key>
@@ -14655,7 +15031,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14663,7 +15039,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -14671,7 +15055,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14679,7 +15063,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>8.0</string>
+				<string>8.3</string>
 				<key>introduced_at</key>
 				<string>3.0</string>
 				<key>name</key>
@@ -14752,7 +15136,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14760,7 +15144,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -14768,7 +15160,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14776,7 +15168,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>8.0</string>
+				<string>8.3</string>
 				<key>introduced_at</key>
 				<string>3.0</string>
 				<key>name</key>
@@ -14849,7 +15241,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14857,7 +15249,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -14865,7 +15265,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -14873,7 +15273,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>8.0</string>
+				<string>8.3</string>
 				<key>introduced_at</key>
 				<string>3.0</string>
 				<key>name</key>
@@ -14989,7 +15389,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -14997,7 +15397,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -15005,7 +15413,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -15013,7 +15421,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>8.0</string>
+				<string>8.3</string>
 				<key>introduced_at</key>
 				<string>3.0</string>
 				<key>name</key>
@@ -15087,7 +15495,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -15095,7 +15503,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -15103,7 +15519,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -15164,7 +15580,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.12.4</string>
 				<key>name</key>
@@ -15315,11 +15731,19 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.3</string>
 				<key>name</key>
 				<string>iOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>9.3</string>
+				<key>name</key>
+				<string>iPadOS</string>
 			</dict>
 		</array>
 		<key>properties</key>
@@ -15397,11 +15821,19 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
 				<string>iOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>7.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
 			</dict>
 		</array>
 		<key>properties</key>
@@ -15470,11 +15902,19 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
 				<string>iOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
 			</dict>
 		</array>
 		<key>properties</key>
@@ -15549,7 +15989,10 @@
 				<key>attributes</key>
 				<dict/>
 				<key>description</key>
-				<array/>
+				<array>
+					<string>The VPNUUID of the per-app VPN the account uses for network communication.</string>
+					<string>Available in iOS 14 and later.</string>
+				</array>
 				<key>name</key>
 				<string>VPNUUID</string>
 				<key>type</key>
@@ -15592,7 +16035,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.13.2</string>
 				<key>name</key>
@@ -15697,7 +16140,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.15</string>
 				<key>name</key>
@@ -15726,7 +16169,7 @@
 				<key>description</key>
 				<array>
 					<string>A dictionary that maps a team identifier to an array of strings, where each string is a type of system extension that you can install for that team identifier. The allowed extension types are &lt;&gt;&lt;code&gt;DriverExtension&lt;/code&gt;&lt;&gt;, &lt;&gt;&lt;code&gt;NetworkExtension&lt;/code&gt;&lt;&gt;, and &lt;&gt;&lt;code&gt;EndpointSecurityExtension&lt;/code&gt;&lt;&gt;.</string>
-					<string>If there is no entry for a specified team identifier in the dictionary, the system allows all extension types.</string>
+					<string>If there’s no entry for a specified team identifier in the dictionary, the system allows all extension types.</string>
 				</array>
 				<key>name</key>
 				<string>AllowedSystemExtensionTypes</string>
@@ -15739,7 +16182,7 @@
 				<key>description</key>
 				<array>
 					<string>An array of team identifiers that defines valid, signed system extensions that are allowable to load. Approved system extensions are those signed with any of the specified team identifiers.</string>
-					<string>To avoid requiring an administrator to authorize the operation, you can activate system extensions that this key specifies using  &lt;&gt;[activationRequest(forExtensionWithIdentifier:queue:)](https://developer.apple.com/documentation/systemextensions/ossystemextensionrequest/3295272-activationrequest)&lt;&gt;.</string>
+					<string>To avoid requiring an administrator to authorize the operation, you can activate system extensions that this key specifies using &lt;&gt;[activationRequest(forExtensionWithIdentifier:queue:)](https://developer.apple.com/documentation/systemextensions/ossystemextensionrequest/3295272-activationrequest)&lt;&gt;.</string>
 					<string>It’s an error for the same team identifier to appear in both this array and as a key in the &lt;&gt;&lt;code&gt;AllowedSystemExtensions&lt;/code&gt;&lt;&gt; dictionary.</string>
 				</array>
 				<key>name</key>
@@ -15766,7 +16209,10 @@
 				<key>attributes</key>
 				<dict/>
 				<key>description</key>
-				<array/>
+				<array>
+					<string>A dictionary of system extensions that are allowed to remove themselves from the machine. The dictionary maps team identifiers (keys) to arrays of bundle identifiers, where the bundle identifier defines the system extension. An application using the &lt;&gt;&lt;code&gt;OSSystemExtensionDeactivationRequest&lt;/code&gt;&lt;&gt; API can deactivate the specified system extensions without requiring an administrator to authorize the operation.</string>
+					<string>Available in macOS 12 and later.</string>
+				</array>
 				<key>name</key>
 				<string>RemovableSystemExtensions</string>
 				<key>type</key>
@@ -15809,7 +16255,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.12</string>
 				<key>name</key>
@@ -15891,7 +16337,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.12.4</string>
 				<key>name</key>
@@ -15949,7 +16395,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.8</string>
 				<key>name</key>
@@ -16021,7 +16467,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.8</string>
 				<key>name</key>
@@ -16084,7 +16530,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.8</string>
 				<key>name</key>
@@ -16211,7 +16657,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -16374,7 +16820,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>deprecated</key>
 				<true/>
 				<key>deprecated_at</key>
@@ -16466,7 +16912,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -16517,7 +16963,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -16562,7 +17008,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>11.3</string>
 				<key>name</key>
@@ -16570,7 +17016,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>11.3</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>11.3</string>
 				<key>name</key>
@@ -16640,7 +17094,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -17011,7 +17465,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -17019,7 +17473,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -17234,7 +17696,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -17242,7 +17704,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>7.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -17270,7 +17740,7 @@
 				<key>description</key>
 				<array>
 					<string>An array with entries that must each specify a domain that triggers this VPN connection in Calendar. Each entry is in the format &lt;&gt;&lt;code&gt;www.apple.com&lt;/code&gt;&lt;&gt;.</string>
-					<string>Available in iOS 13 and later, and macOS 10.15 and later.</string>
+					<string>This property is deprecated in iOS 13.4 and later; use the &lt;&gt;&lt;code&gt;VPNUUID&lt;/code&gt;&lt;&gt; property of the &lt;&gt;[CalDAV](https://developer.apple.com/documentation/devicemanagement/caldav)&lt;&gt; payload instead.</string>
 				</array>
 				<key>name</key>
 				<string>CalendarDomains</string>
@@ -17283,7 +17753,7 @@
 				<key>description</key>
 				<array>
 					<string>An array with entries that must each specify a domain that triggers this VPN connection in Contacts. Each entry is in the format &lt;&gt;&lt;code&gt;www.apple.com&lt;/code&gt;&lt;&gt;.</string>
-					<string>Available in iOS 13 and later, and macOS 10.15 and later.</string>
+					<string>This property is deprecated in iOS 13.4 and later; use the &lt;&gt;&lt;code&gt;VPNUUID&lt;/code&gt;&lt;&gt; property of the &lt;&gt;[CardDAV](https://developer.apple.com/documentation/devicemanagement/carddav)&lt;&gt; payload instead.</string>
 				</array>
 				<key>name</key>
 				<string>ContactsDomains</string>
@@ -17309,7 +17779,7 @@
 				<key>description</key>
 				<array>
 					<string>An array with entries that must each specify a domain that triggers this VPN connection in Mail. Each entry is in the format &lt;&gt;&lt;code&gt;www.apple.com&lt;/code&gt;&lt;&gt;.</string>
-					<string>Available in iOS 13 and later, and macOS 10.15 and later.</string>
+					<string>This property is deprecated in iOS 13.4 and later; use the &lt;&gt;&lt;code&gt;VPNUUID&lt;/code&gt;&lt;&gt; property of the &lt;&gt;[Mail](https://developer.apple.com/documentation/devicemanagement/mail)&lt;&gt; or &lt;&gt;[ExchangeActiveSync](https://developer.apple.com/documentation/devicemanagement/exchangeactivesync)&lt;&gt; payload instead.</string>
 				</array>
 				<key>name</key>
 				<string>MailDomains</string>
@@ -17327,7 +17797,7 @@
 				</dict>
 				<key>description</key>
 				<array>
-					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, automatically connects the VPN when  associated apps for this Per-App VPN service initiate network communication. Otherwise, the user must initiate the connection manually before those apps can initiate network communication. If this key isn't present, the value of the &lt;&gt;&lt;code&gt;OnDemandEnabled&lt;/code&gt;&lt;&gt; key determines the status of Per-App VPN On Demand.</string>
+					<string>If &lt;&gt;&lt;code&gt;true&lt;/code&gt;&lt;&gt;, automatically connects the VPN when associated apps for this Per-App VPN service initiate network communication. Otherwise, the user must initiate the connection manually before those apps can initiate network communication. If this key isn’t present, the value of the &lt;&gt;&lt;code&gt;OnDemandEnabled&lt;/code&gt;&lt;&gt; key determines the status of Per-App VPN On Demand.</string>
 				</array>
 				<key>name</key>
 				<string>OnDemandMatchAppEnabled</string>
@@ -17351,7 +17821,7 @@
 				<dict/>
 				<key>description</key>
 				<array>
-					<string>An array of SMB domains that is accessible through this VPN connection.</string>
+					<string>An array of SMB domains that’s accessible through this VPN connection.</string>
 					<string>Available in iOS 13 and later.</string>
 				</array>
 				<key>name</key>
@@ -17423,7 +17893,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.9</string>
 				<key>name</key>
@@ -17488,7 +17958,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -17496,7 +17966,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -17660,7 +18138,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>7.0</string>
 				<key>name</key>
@@ -17668,7 +18146,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>7.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.15</string>
 				<key>name</key>
@@ -17693,7 +18179,7 @@
 				<key>attributes</key>
 				<dict>
 					<key>default</key>
-					<string>true</string>
+					<string>false</string>
 				</dict>
 				<key>description</key>
 				<array>
@@ -18026,7 +18512,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>4.0</string>
 				<key>name</key>
@@ -18034,7 +18520,15 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>15.2</string>
+				<key>introduced_at</key>
+				<string>4.0</string>
+				<key>name</key>
+				<string>iPadOS</string>
+			</dict>
+			<dict>
+				<key>current</key>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
@@ -18042,7 +18536,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>15.0</string>
+				<string>15.2</string>
 				<key>introduced_at</key>
 				<string>9.0</string>
 				<key>name</key>
@@ -18050,7 +18544,7 @@
 			</dict>
 			<dict>
 				<key>current</key>
-				<string>8.0</string>
+				<string>8.3</string>
 				<key>introduced_at</key>
 				<string>3.2</string>
 				<key>name</key>
@@ -18536,7 +19030,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.10</string>
 				<key>name</key>
@@ -18663,7 +19157,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.11</string>
 				<key>name</key>
@@ -18772,7 +19266,7 @@
 		<array>
 			<dict>
 				<key>current</key>
-				<string>12.0</string>
+				<string>12.1</string>
 				<key>introduced_at</key>
 				<string>10.7</string>
 				<key>name</key>
