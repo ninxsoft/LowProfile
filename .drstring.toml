@@ -1,0 +1,5 @@
+include = ["**/*.swift"]
+align-after-colon = ["parameters", "throws", "returns"]
+parameter-style = "grouped"
+needs-separation = ["description", "parameters", "throws"]
+vertical-align = true
