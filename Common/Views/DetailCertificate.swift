@@ -13,10 +13,10 @@ struct DetailCertificate: View {
     private var subjectString: String {
 
         // CN = 2.5.4.3
-        let oid: String = "2.5.4.3"
 
-        guard let certificate: X509Certificate = certificate,
-            let string: String = certificate.subject(oid: oid) else {
+        guard let oid: OID = OID(rawValue: "2.5.4.3"),
+            let certificate: X509Certificate = certificate,
+            let string: String = certificate.subject(oid: oid)?.first else {
             return ""
         }
 
@@ -26,9 +26,9 @@ struct DetailCertificate: View {
     private var issuerString: String {
 
         // CN = 2.5.4.3
-        let oid: String = "2.5.4.3"
 
-        guard let certificate: X509Certificate = certificate,
+        guard let oid: OID = OID(rawValue: "2.5.4.3"),
+            let certificate: X509Certificate = certificate,
             let string: String = certificate.issuer(oid: oid) else {
             return ""
         }

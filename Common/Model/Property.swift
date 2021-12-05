@@ -14,7 +14,6 @@ struct Property: Identifiable {
         return property
     }
 
-    // swiftlint:disable:next identifier_name
     var id: String
     var name: String
     var type: String

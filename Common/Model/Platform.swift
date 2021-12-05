@@ -14,7 +14,6 @@ struct Platform: Identifiable {
         return platform
     }
 
-    // swiftlint:disable:next identifier_name
     var id: String
     var name: String
     var introducedAt: String
@@ -23,8 +22,7 @@ struct Platform: Identifiable {
     var deprecatedAt: String
     var beta: Bool
     var description: String {
-        let string: String = "\(name) \(introducedAt) - \(deprecated ? deprecatedAt : current)"
-        return string
+        "\(name) \(introducedAt) - \(deprecated ? deprecatedAt : current)"
     }
 
     init() {

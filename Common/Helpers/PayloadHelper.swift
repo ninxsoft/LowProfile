@@ -199,7 +199,7 @@ class PayloadHelper: NSObject {
                 continue
             }
 
-            if !availableProperties.map({$0.name}).contains(key),
+            if !availableProperties.map({ $0.name }).contains(key),
                 let value: Any = dictionary[key] {
                 let property: Property = Property(unknownName: key, unknownValue: value)
                 properties.append(property)

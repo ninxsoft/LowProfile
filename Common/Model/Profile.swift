@@ -50,7 +50,7 @@ struct Profile {
                 }
             }
         } catch {
-            // print(error.localizedDescription)
+            print(error.localizedDescription)
         }
 
         do {
@@ -80,7 +80,7 @@ struct Profile {
 
             return
         } catch {
-            // print(error.localizedDescription)
+            print(error.localizedDescription)
             return nil
         }
     }

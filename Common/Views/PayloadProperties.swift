@@ -14,7 +14,6 @@ struct PayloadProperties: View {
         case available = "Available"
         case unknown = "Unknown"
 
-        // swiftlint:disable:next identifier_name
         var id: String {
             self.rawValue
         }

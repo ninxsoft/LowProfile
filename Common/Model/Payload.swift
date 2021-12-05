@@ -16,7 +16,6 @@ struct Payload: Identifiable, Hashable {
         return payload
     }
 
-    // swiftlint:disable:next identifier_name
     var id: String
     var type: String
     var name: String
@@ -46,7 +45,7 @@ struct Payload: Identifiable, Hashable {
                 propertyListString = string
             }
         } catch {
-            //       print(error)
+            print(error.localizedDescription)
         }
 
         return propertyListString

@@ -15,7 +15,9 @@ struct PlatformTag: View {
         case "macOS":
             return "desktopcomputer"
         case "iOS":
-            return "ipad"
+            return "iphone"
+        case "iPadOS":
+            return "ipad.landscape"
         case "tvOS":
             return "appletv"
         case "watchOS":

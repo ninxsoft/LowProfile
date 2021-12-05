@@ -34,11 +34,13 @@ class PreviewViewController: NSViewController, QLPreviewingController {
             subView.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(subView)
             let attributes: [NSLayoutConstraint.Attribute] = [.top, .bottom, .left, .right]
-            NSLayoutConstraint.activate(attributes.map {
-                NSLayoutConstraint(item: subView, attribute: $0, relatedBy: .equal, toItem: view, attribute: $0, multiplier: 1, constant: 0)
-            })
+            NSLayoutConstraint.activate(
+                attributes.map {
+                    NSLayoutConstraint(item: subView, attribute: $0, relatedBy: .equal, toItem: view, attribute: $0, multiplier: 1, constant: 0)
+                }
+            )
         } catch {
-            //      print(error)
+            print(error.localizedDescription)
         }
 
         handler(nil)

@@ -9,7 +9,8 @@ import Foundation
 
 extension String {
 
-    static var payloadsURL: String = "https://raw.githubusercontent.com/ninxsoft/LowProfile/main/Common/Payloads.plist"
+    static let homepage: String = "https://github.com/ninxsoft/LowProfile"
+    static let payloadsURL: String = "https://raw.githubusercontent.com/ninxsoft/LowProfile/main/Common/Payloads.plist"
 
     static func ~= (lhs: String, rhs: String) -> Bool {
         guard let regex: NSRegularExpression = try? NSRegularExpression(pattern: rhs) else {

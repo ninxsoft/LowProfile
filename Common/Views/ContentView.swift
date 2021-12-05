@@ -11,7 +11,7 @@ struct ContentView: View {
     @Environment(\.openURL) var openURL: OpenURLAction
     var profile: Profile
     @State private var selection: Payload?
-    private let width: CGFloat = 1200
+    private let width: CGFloat = 1_200
     private let height: CGFloat = 720
 
     var body: some View {
@@ -42,9 +42,7 @@ struct ContentView: View {
 
     private func homepage() {
 
-        let string: String = "https://github.com/ninxsoft/LowProfile"
-
-        guard let url: URL = URL(string: string) else {
+        guard let url: URL = URL(string: .homepage) else {
             return
         }
 
