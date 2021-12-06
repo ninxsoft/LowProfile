@@ -37,7 +37,6 @@
 		57301B8824E2740200814349 /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */; };
 		57301B8924E2741D00814349 /* PayloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578924D81AB00090CDDF /* PayloadHelper.swift */; };
 		57301BA124E3FE2600814349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D4F7D524D6D6A700BC0648 /* Assets.xcassets */; };
-		57301BA324E41CEB00814349 /* Payloads.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57BB578724D818F00090CDDF /* Payloads.plist */; };
 		573F4D0424E81EB000E6136F /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F4D0324E81EB000E6136F /* AppCommands.swift */; };
 		578B3B9324DAA193004D06C2 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9224DAA193004D06C2 /* Sidebar.swift */; };
 		578B3B9524DAA318004D06C2 /* UnselectedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9424DAA318004D06C2 /* UnselectedDetail.swift */; };
@@ -69,7 +68,6 @@
 		57BB578124D78B2C0090CDDF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578024D78B2C0090CDDF /* Profile.swift */; };
 		57BB578324D7FD330090CDDF /* SidebarRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578224D7FD330090CDDF /* SidebarRow.swift */; };
 		57BB578624D802270090CDDF /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578524D802270090CDDF /* Detail.swift */; };
-		57BB578824D818F00090CDDF /* Payloads.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57BB578724D818F00090CDDF /* Payloads.plist */; };
 		57BB578A24D81AB00090CDDF /* PayloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578924D81AB00090CDDF /* PayloadHelper.swift */; };
 		57D4F7D224D6D6A500BC0648 /* LowProfileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7D124D6D6A500BC0648 /* LowProfileApp.swift */; };
 		57D4F7D424D6D6A500BC0648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7D324D6D6A500BC0648 /* ContentView.swift */; };
@@ -113,7 +111,6 @@
 		57BB578024D78B2C0090CDDF /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		57BB578224D7FD330090CDDF /* SidebarRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarRow.swift; sourceTree = "<group>"; };
 		57BB578524D802270090CDDF /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
-		57BB578724D818F00090CDDF /* Payloads.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Payloads.plist; sourceTree = "<group>"; };
 		57BB578924D81AB00090CDDF /* PayloadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadHelper.swift; sourceTree = "<group>"; };
 		57D4F7CE24D6D6A500BC0648 /* Low Profile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Low Profile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D4F7D124D6D6A500BC0648 /* LowProfileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowProfileApp.swift; sourceTree = "<group>"; };
@@ -163,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				57D4F7D524D6D6A700BC0648 /* Assets.xcassets */,
-				57BB578724D818F00090CDDF /* Payloads.plist */,
 				39C419F8275D9AA2001F4B4E /* Payloads.yaml */,
 				57BB577C24D789F00090CDDF /* Extensions */,
 				57BB578B24D81AB50090CDDF /* Helpers */,
@@ -362,7 +358,6 @@
 			files = (
 				57301BA124E3FE2600814349 /* Assets.xcassets in Resources */,
 				57301B6724E24C4D00814349 /* PreviewViewController.xib in Resources */,
-				57301BA324E41CEB00814349 /* Payloads.plist in Resources */,
 				39C419FA275D9AA2001F4B4E /* Payloads.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,7 +368,6 @@
 			files = (
 				39C419F9275D9AA2001F4B4E /* Payloads.yaml in Resources */,
 				57D4F7D624D6D6A700BC0648 /* Assets.xcassets in Resources */,
-				57BB578824D818F00090CDDF /* Payloads.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

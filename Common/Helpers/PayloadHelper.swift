@@ -16,12 +16,12 @@ class PayloadHelper: NSObject {
         [
             "PayloadDescription",
             "PayloadDisplayName",
+            "PayloadEnabled",
             "PayloadIdentifier",
             "PayloadOrganization",
             "PayloadType",
             "PayloadUUID",
-            "PayloadVersion",
-            "PayloadEnabled"
+            "PayloadVersion"
         ]
     }
 
@@ -32,7 +32,6 @@ class PayloadHelper: NSObject {
         for url in urls {
 
             guard let url: URL = url else {
-                print("invalid url")
                 continue
             }
 
@@ -40,31 +39,19 @@ class PayloadHelper: NSObject {
                 let string: String = try String(contentsOf: url)
 
                 guard let dictionaries: [String: Any] = try Yams.load(yaml: string) as? [String: Any] else {
-                    print("invalid dictionaries")
                     continue
                 }
 
-                print("dictionaries: \(dictionaries)")
-
                 self.dictionaries = dictionaries
-                print("happy: \(url)")
                 return
             } catch {
-                print("what")
                 print(error.localizedDescription)
             }
         }
     }
 
     func payloadTypes() -> [String] {
-
-        var types: [String] = []
-
-        for key in dictionaries.keys.sorted() {
-            types.append(key)
-        }
-
-        return types
+        dictionaries.keys.sorted()
     }
 
     func name(for type: String) -> String {
@@ -104,14 +91,7 @@ class PayloadHelper: NSObject {
             return []
         }
 
-        var platforms: [Platform] = []
-
-        for item in array {
-            let platform: Platform = Platform(dictionary: item)
-            platforms.append(platform)
-        }
-
-        return platforms
+        return array.map { Platform(dictionary: $0) }
     }
 
     func availability(for type: String) -> Availability {
@@ -152,11 +132,7 @@ class PayloadHelper: NSObject {
         let availableProperties: [Property] = knownProperties(for: type)
         var properties: [Property] = []
 
-        for key in dictionary.keys.sorted() {
-
-            guard !keysToIgnore.contains(key) else {
-                continue
-            }
+        for key in dictionary.keys.filter({ !keysToIgnore.contains($0) }).sorted() {
 
             for availableProperty in availableProperties where key == availableProperty.name {
                 if let value: Any = dictionary[key] {
@@ -170,15 +146,8 @@ class PayloadHelper: NSObject {
     }
 
     func availableProperties(for type: String, in dictionary: [String: Any]) -> [Property] {
-
         let availableProperties: [Property] = knownProperties(for: type)
-        var properties: [Property] = []
-
-        for availableProperty in availableProperties where !dictionary.keys.contains(availableProperty.name) {
-            properties.append(availableProperty)
-        }
-
-        return properties
+        return availableProperties.filter { !dictionary.keys.contains($0.name) }
     }
 
     func unknownProperties(for type: String, in dictionary: [String: Any]) -> [Property] {
@@ -186,11 +155,7 @@ class PayloadHelper: NSObject {
         let availableProperties: [Property] = knownProperties(for: type)
         var properties: [Property] = []
 
-        for key in dictionary.keys.sorted() {
-
-            guard !keysToIgnore.contains(key) else {
-                continue
-            }
+        for key in dictionary.keys.filter({ !keysToIgnore.contains($0) }).sorted() {
 
             if !availableProperties.map({ $0.name }).contains(key),
                 let value: Any = dictionary[key] {
@@ -204,17 +169,11 @@ class PayloadHelper: NSObject {
 
     private func knownProperties(for type: String) -> [Property] {
 
-        var properties: [Property] = []
-
-        if let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
-            let propertyDictionaries: [[String: Any]] = dictionary["properties"] as? [[String: Any]] {
-
-            for propertyDictionary in propertyDictionaries {
-                let property: Property = Property(availableDictionary: propertyDictionary)
-                properties.append(property)
-            }
+        guard let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
+            let propertyDictionaries: [[String: Any]] = dictionary["properties"] as? [[String: Any]] else {
+            return []
         }
 
-        return properties
+        return propertyDictionaries.map { Property(availableDictionary: $0) }
     }
 }
