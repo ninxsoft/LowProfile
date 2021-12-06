@@ -22,7 +22,7 @@ struct ContentView: View {
                 }
             }
             .frame(width: sidebarWidth)
-            Text("Select a Payload")
+            Text("Select a Payload to view its contents 🙂")
                 .font(.title)
                 .foregroundColor(.secondary)
         }
