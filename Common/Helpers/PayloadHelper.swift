@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import Yams
 
 class PayloadHelper: NSObject {
 
@@ -13,53 +14,45 @@ class PayloadHelper: NSObject {
     private var dictionaries: [String: Any] = [:]
     private var keysToIgnore: [String] {
         [
-            "PayloadType",
-            "PayloadVersion",
-            "PayloadIdentifier",
-            "PayloadUUID",
-            "PayloadDisplayName",
             "PayloadDescription",
+            "PayloadDisplayName",
+            "PayloadIdentifier",
             "PayloadOrganization",
+            "PayloadType",
+            "PayloadUUID",
+            "PayloadVersion",
             "PayloadEnabled"
         ]
     }
 
     override init() {
 
-        let directoryURL: URL = URL(fileURLWithPath: NSHomeDirectory() + "/Library/Application Support/Low Profile", isDirectory: true)
-        let payloadsURL: URL = directoryURL.appendingPathComponent("Payloads.plist")
+        let urls: [URL?] = [URL(string: .payloadsURL), Bundle.main.url(forResource: "Payloads", withExtension: "yaml")]
 
-        if let url: URL = URL(string: .payloadsURL) {
+        for url in urls {
+
+            guard let url: URL = url else {
+                print("invalid url")
+                continue
+            }
 
             do {
-                let plist: String = try String(contentsOf: url)
+                let string: String = try String(contentsOf: url)
 
-                if !FileManager.default.fileExists(atPath: directoryURL.path) {
-                    try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
+                guard let dictionaries: [String: Any] = try Yams.load(yaml: string) as? [String: Any] else {
+                    print("invalid dictionaries")
+                    continue
                 }
 
-                try plist.write(to: payloadsURL, atomically: true, encoding: .utf8)
+                print("dictionaries: \(dictionaries)")
+
+                self.dictionaries = dictionaries
+                print("happy: \(url)")
+                return
             } catch {
+                print("what")
                 print(error.localizedDescription)
             }
-        }
-
-        guard let bundlePayloadsURL: URL = Bundle.main.url(forResource: "Payloads", withExtension: "plist") else {
-            return
-        }
-
-        let url: URL = FileManager.default.fileExists(atPath: payloadsURL.path) ? payloadsURL : bundlePayloadsURL
-
-        do {
-            let data: Data = try Data(contentsOf: url)
-
-            guard let dictionaries = try PropertyListSerialization.propertyList(from: data, options: .mutableContainersAndLeaves, format: nil) as? [String: Any] else {
-                return
-            }
-
-            self.dictionaries = dictionaries
-        } catch {
-            print(error.localizedDescription)
         }
     }
 

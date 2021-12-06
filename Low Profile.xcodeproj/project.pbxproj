@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39C419F9275D9AA2001F4B4E /* Payloads.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 39C419F8275D9AA2001F4B4E /* Payloads.yaml */; };
+		39C419FA275D9AA2001F4B4E /* Payloads.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 39C419F8275D9AA2001F4B4E /* Payloads.yaml */; };
+		39C419FD275D9AEC001F4B4E /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 39C419FC275D9AEC001F4B4E /* Yams */; };
 		57301B6124E24C4D00814349 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D4F7EA24D6D85D00BC0648 /* Quartz.framework */; };
 		57301B6424E24C4D00814349 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57301B6324E24C4D00814349 /* PreviewViewController.swift */; };
 		57301B6724E24C4D00814349 /* PreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57301B6524E24C4D00814349 /* PreviewViewController.xib */; };
@@ -78,6 +81,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39C419F8275D9AA2001F4B4E /* Payloads.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = Payloads.yaml; sourceTree = "<group>"; };
 		57301B6024E24C4D00814349 /* Low Profile - Quick Look.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Low Profile - Quick Look.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57301B6324E24C4D00814349 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		57301B6624E24C4D00814349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreviewViewController.xib; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C419FD275D9AEC001F4B4E /* Yams in Frameworks */,
 				5794E85D254A6B1A004A5942 /* ASN1Decoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +164,7 @@
 			children = (
 				57D4F7D524D6D6A700BC0648 /* Assets.xcassets */,
 				57BB578724D818F00090CDDF /* Payloads.plist */,
+				39C419F8275D9AA2001F4B4E /* Payloads.yaml */,
 				57BB577C24D789F00090CDDF /* Extensions */,
 				57BB578B24D81AB50090CDDF /* Helpers */,
 				57BB577D24D78A270090CDDF /* Model */,
@@ -303,6 +309,7 @@
 			name = "Low Profile";
 			packageProductDependencies = (
 				5794E85C254A6B1A004A5942 /* ASN1Decoder */,
+				39C419FC275D9AEC001F4B4E /* Yams */,
 			);
 			productName = "Low Profile";
 			productReference = 57D4F7CE24D6D6A500BC0648 /* Low Profile.app */;
@@ -336,6 +343,7 @@
 			mainGroup = 57D4F7C524D6D6A500BC0648;
 			packageReferences = (
 				5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */,
+				39C419FB275D9AEC001F4B4E /* XCRemoteSwiftPackageReference "Yams" */,
 			);
 			productRefGroup = 57D4F7CF24D6D6A500BC0648 /* Products */;
 			projectDirPath = "";
@@ -355,6 +363,7 @@
 				57301BA124E3FE2600814349 /* Assets.xcassets in Resources */,
 				57301B6724E24C4D00814349 /* PreviewViewController.xib in Resources */,
 				57301BA324E41CEB00814349 /* Payloads.plist in Resources */,
+				39C419FA275D9AA2001F4B4E /* Payloads.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C419F9275D9AA2001F4B4E /* Payloads.yaml in Resources */,
 				57D4F7D624D6D6A700BC0648 /* Assets.xcassets in Resources */,
 				57BB578824D818F00090CDDF /* Payloads.plist in Resources */,
 			);
@@ -668,7 +678,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 110;
+				CURRENT_PROJECT_VERSION = 200;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -679,7 +689,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ninxsoft.lowprofile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -695,7 +705,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 110;
+				CURRENT_PROJECT_VERSION = 200;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -706,7 +716,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ninxsoft.lowprofile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -746,6 +756,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		39C419FB275D9AEC001F4B4E /* XCRemoteSwiftPackageReference "Yams" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jpsim/Yams.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.6;
+			};
+		};
 		5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/filom/ASN1Decoder.git";
@@ -757,6 +775,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		39C419FC275D9AEC001F4B4E /* Yams */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39C419FB275D9AEC001F4B4E /* XCRemoteSwiftPackageReference "Yams" */;
+			productName = Yams;
+		};
 		5794E85C254A6B1A004A5942 /* ASN1Decoder */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */;
