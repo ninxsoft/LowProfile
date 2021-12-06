@@ -17,31 +17,24 @@ struct Detail: View {
             DetailHeading(payload: payload)
             DetailHighLevel(payload: payload)
             TabView {
-                DetailInformation(payload: payload)
-                    .tabItem { Text("Information") }
+                DetailInformation(payload: payload).tabItem { Text("Information") }
                 if !payload.custom {
-                    DetailDiscussion(discussion: payload.discussion)
-                        .tabItem { Text("Discussion") }
+                    DetailDiscussion(discussion: payload.discussion).tabItem { Text("Discussion") }
                 }
                 if payload.general && certificate != nil {
-                    DetailCertificate(certificate: certificate)
-                        .tabItem { Text("Certificate") }
+                    DetailCertificate(certificate: certificate).tabItem { Text("Certificate") }
                 }
                 if !payload.payloadProperties.isEmpty {
-                    DetailPayloadProperties(type: .payload, properties: payload.payloadProperties)
-                        .tabItem { Text("Payload Properties") }
+                    DetailPayloadProperties(type: .payload, properties: payload.payloadProperties).tabItem { Text("Payload Properties") }
                 }
                 if !payload.availableProperties.isEmpty {
-                    DetailPayloadProperties(type: .available, properties: payload.availableProperties)
-                        .tabItem { Text("Available Properties") }
+                    DetailPayloadProperties(type: .available, properties: payload.availableProperties).tabItem { Text("Available Properties") }
                 }
                 if !payload.unknownProperties.isEmpty {
-                    DetailPayloadProperties(type: .unknown, properties: payload.unknownProperties)
-                        .tabItem { Text("Unknown Properties") }
+                    DetailPayloadProperties(type: .unknown, properties: payload.unknownProperties).tabItem { Text("Unknown Properties") }
                 }
                 if !payload.general, let propertyList: String = payload.propertyList {
-                    DetailPropertyList(string: propertyList)
-                        .tabItem { Text("Property List") }
+                    DetailPropertyList(string: propertyList).tabItem { Text("Property List") }
                 }
             }
         }
