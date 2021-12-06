@@ -9,7 +9,9 @@ import SwiftUI
 
 struct TextTag: View {
     var title: String
-    var color: Color {
+    private let padding: CGFloat = 5
+    private let cornerRadius: CGFloat = 5
+    private var color: Color {
         switch title {
         case "Deprecated":
             return .red
@@ -19,15 +21,14 @@ struct TextTag: View {
             return .primary
         }
     }
-    private let padding: CGFloat = 3
-    private let cornerRadius: CGFloat = 5
-    private let lineWidth: CGFloat = 1
 
     var body: some View {
         Text(title)
-            .foregroundColor(color)
+            .bold()
+            .foregroundColor(.white)
             .padding(padding)
-            .overlay(RoundedRectangle(cornerRadius: cornerRadius).stroke(color, lineWidth: lineWidth))
+            .background(color)
+            .cornerRadius(cornerRadius)
     }
 }
 

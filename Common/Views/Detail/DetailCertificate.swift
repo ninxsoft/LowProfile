@@ -10,6 +10,9 @@ import SwiftUI
 
 struct DetailCertificate: View {
     var certificate: X509Certificate?
+    private let spacing: CGFloat = 10
+    private let certificateImageLength: CGFloat = 100
+    private let validImagelength: CGFloat = 18
     private var subjectString: String {
 
         // CN = 2.5.4.3
@@ -22,7 +25,6 @@ struct DetailCertificate: View {
 
         return string
     }
-
     private var issuerString: String {
 
         // CN = 2.5.4.3
@@ -35,7 +37,6 @@ struct DetailCertificate: View {
 
         return "Issued by: " + string
     }
-
     private var dateString: String {
 
         guard let certificate: X509Certificate = certificate,
@@ -61,38 +62,34 @@ struct DetailCertificate: View {
     private var validString: String {
         "This certificate is " + (valid ? "" : "in") + "valid"
     }
-    private let spacing: CGFloat = 15
-    private let certificateImageLength: CGFloat = 100
-    private let validImagelength: CGFloat = 18
+    private var systemName: String {
+        valid ? "checkmark.seal.fill" : "xmark.seal.fill"
+    }
 
     var body: some View {
         VStack {
             Text("This profile is signed with the following certificate:")
                 .font(.title3)
                 .foregroundColor(.secondary)
-            HStack(spacing: spacing) {
-                Spacer()
-                Image("Certificate")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: certificateImageLength, height: certificateImageLength)
-                VStack(alignment: .leading) {
-                    Text(subjectString)
-                        .bold()
-                    Text(issuerString)
-                        .fontWeight(.medium)
-                    Text(dateString)
-                    HStack {
-                        Image(systemName: valid ? "checkmark.seal.fill" : "xmark.seal.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: validImagelength, height: validImagelength)
-                            .foregroundColor(valid ? .green : .red)
-                        Text(validString)
-                            .foregroundColor(.secondary)
+            ScrollView(.vertical) {
+                HStack(spacing: spacing) {
+                    Spacer()
+                    ScaledImage(name: "Certificate", length: certificateImageLength)
+                    VStack(alignment: .leading) {
+                        Text(subjectString)
+                            .bold()
+                        Text(issuerString)
+                            .fontWeight(.medium)
+                        Text(dateString)
+                        HStack {
+                            ScaledSystemImage(systemName: systemName, length: validImagelength)
+                                .foregroundColor(valid ? .green : .red)
+                            Text(validString)
+                                .foregroundColor(.secondary)
+                        }
                     }
+                    Spacer()
                 }
-                Spacer()
             }
         }
         .padding()

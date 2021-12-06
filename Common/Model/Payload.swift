@@ -34,21 +34,20 @@ struct Payload: Identifiable, Hashable {
     var availableProperties: [Property]
     var unknownProperties: [Property]
     var dictionary: [String: Any]
-    var propertyListString: String {
-
-        var propertyListString: String = ""
+    var propertyList: String? {
 
         do {
             let data: Data = try PropertyListSerialization.data(fromPropertyList: dictionary, format: .xml, options: 0)
 
-            if let string: String = String(data: data, encoding: .utf8) {
-                propertyListString = string
+            guard let string: String = String(data: data, encoding: .utf8) else {
+                return nil
             }
+
+            return string
         } catch {
             print(error.localizedDescription)
+            return nil
         }
-
-        return propertyListString
     }
     var general: Bool {
         paths.contains("toplevel")
@@ -59,27 +58,11 @@ struct Payload: Identifiable, Hashable {
     var custom: Bool {
         paths.isEmpty
     }
-    var completeDiscussion: String {
-        discussion.joined(separator: "\n\n")
-    }
-    var image: NSImage {
-        PayloadHelper.shared.image(for: name)
-    }
     var deprecated: Bool {
-
-        for platform in platforms where platform.deprecated {
-            return true
-        }
-
-        return false
+        !platforms.filter { $0.deprecated }.isEmpty
     }
     var beta: Bool {
-
-        for platform in platforms where platform.beta {
-            return true
-        }
-
-        return false
+        !platforms.filter { $0.beta }.isEmpty
     }
 
     init() {
@@ -89,7 +72,7 @@ struct Payload: Identifiable, Hashable {
         paths = []
         description = ""
         platforms = []
-        availability = Availability()
+        availability = Availability(dictionary: [:])
         discussion = []
         payloadVersion = 0
         payloadIdentifier = ""

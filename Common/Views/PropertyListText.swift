@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PropertyListText: View {
     var string: String
-    var propertyListText: Text {
+    private var propertyListText: Text {
         let seperator: String = "<>"
         let xml: String = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
         let doctype: String = "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">"

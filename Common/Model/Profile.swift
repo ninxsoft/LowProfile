@@ -8,20 +8,26 @@
 import ASN1Decoder
 import Foundation
 
+/// Configuration Profile struct
 struct Profile {
 
+    /// Example Profile
     static var example: Profile {
         let profile: Profile = Profile()
         return profile
     }
 
+    /// Array of configuration profile payload objects
     var payloads: [Payload]
+    /// Optional certificate used to sign the configuration profile
     var certificate: X509Certificate?
 
+    /// Default initializer
     init() {
         self.payloads = []
     }
 
+    /// Initializer accepting (an optionally signed) data blob
     init?(from signedData: Data) {
 
         var data: Data = signedData
@@ -60,11 +66,9 @@ struct Profile {
 
             self.payloads = []
 
-            // for type in PayloadHelper.shared.payloadTypes() {
-            //     let dictionary: [String: Any] = ["PayloadType": type]
-            //     let payload: Payload = Payload(dictionary: dictionary)
-            //     self.payloads.append(payload)
-            // }
+            // testing
+            // self.payloads = PayloadHelper.shared.payloadTypes().map { Payload(dictionary: ["PayloadType": $0]) }
+            // return
 
             var topLevelDictionary: [String: Any] = dictionary
             topLevelDictionary.removeValue(forKey: "PayloadContent")

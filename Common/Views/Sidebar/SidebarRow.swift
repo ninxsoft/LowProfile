@@ -11,19 +11,16 @@ struct SidebarRow: View {
     var payload: Payload
     private let length: CGFloat = 48
     private let spacing: CGFloat = 5
+    private let padding: CGFloat = 5
 
     var body: some View {
         HStack(spacing: 0) {
-            Image(nsImage: payload.image)
-                .resizable()
-                .scaledToFit()
-                .frame(width: length, height: length)
+            ScaledImage(name: payload.name, length: length)
                 .padding(.trailing)
             VStack(alignment: .leading, spacing: spacing) {
                 Text(payload.name)
                     .bold()
-                    .lineLimit(2)
-                    .fixedSize(horizontal: false, vertical: false)
+                    .lineLimit(nil)
                 HStack {
                     ForEach(payload.platforms) { platform in
                         PlatformTag(title: platform.name)
@@ -37,7 +34,7 @@ struct SidebarRow: View {
                 }
             }
         }
-        .padding(.vertical)
+        .padding(.vertical, padding)
     }
 }
 

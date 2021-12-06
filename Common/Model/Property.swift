@@ -10,7 +10,7 @@ import Cocoa
 struct Property: Identifiable {
 
     static var example: Property {
-        let property: Property = Property()
+        let property: Property = Property(availableDictionary: [:])
         return property
     }
 
@@ -66,10 +66,64 @@ struct Property: Identifiable {
         description.joined(separator: "\n\n")
     }
 
-    init() {
+    // payload property
+    init(availableProperty: Property, payloadValue: Any) {
         id = UUID().uuidString
-        name = ""
-        type = ""
+        name = availableProperty.name
+        type = availableProperty.type
+        description = availableProperty.description
+        attributes = availableProperty.attributes
+        required = attributes["required"] as? Bool ?? false
+        defaultValue = attributes["default"] as? String ?? ""
+        possibleValues = attributes["possibleValues"] as? [String] ?? []
+        minimum = attributes["minimum"] as? String ?? ""
+        maximum = attributes["maximum"] as? String ?? ""
+        value = payloadValue
+    }
+
+    // available property
+    init(availableDictionary: [String: Any]) {
+        id = UUID().uuidString
+        name = availableDictionary["name"] as? String ?? ""
+        type = availableDictionary["type"] as? String ?? ""
+        description = availableDictionary["description"] as? [String] ?? []
+        attributes = availableDictionary["attributes"] as? [String: Any] ?? [:]
+        required = attributes["required"] as? Bool ?? false
+        defaultValue = attributes["default"] as? String ?? ""
+        possibleValues = attributes["possibleValues"] as? [String] ?? []
+        minimum = attributes["minimum"] as? String ?? ""
+        maximum = attributes["maximum"] as? String ?? ""
+        value = ""
+    }
+
+    // unknown property
+    init(unknownName: String, unknownValue: Any) {
+        id = UUID().uuidString
+        name = unknownName
+        value = unknownValue
+
+        if let _: Bool = unknownValue as? Bool {
+            type = "boolean"
+        } else if let _: Data = unknownValue as? Data {
+            type = "data"
+        } else if let _: Date = unknownValue as? Date {
+            type = "date"
+        } else if let _: Int = unknownValue as? Int {
+            type = "integer"
+        } else if let _: NSNumber = unknownValue as? NSNumber {
+            type = "number"
+        } else if let _: String = unknownValue as? String {
+            type = "string"
+        } else if let _: [String] = unknownValue as? [String] {
+            type = "[string]"
+        } else if let _: [String: Any] = unknownValue as? [String: Any] {
+            type = "dictionary"
+        } else if let _: [[String: Any]] = unknownValue as? [[String: Any]] {
+            type = "[dictionary]"
+        } else {
+            type = "Unknown type"
+        }
+
         description = []
         attributes = [:]
         required = false
@@ -78,106 +132,5 @@ struct Property: Identifiable {
         minimum = ""
         maximum = ""
         value = ""
-    }
-
-    // payload property
-    init(availableProperty: Property, payloadValue: Any) {
-        self.init()
-        self.name = availableProperty.name
-        self.type = availableProperty.type
-        self.description = availableProperty.description
-        self.attributes = availableProperty.attributes
-
-        if let boolean: Bool = attributes["required"] as? Bool {
-            required = boolean
-        }
-
-        if let string: String = attributes["default"] as? String {
-            defaultValue = string
-        }
-
-        if let strings: [String] = attributes["possibleValues"] as? [String] {
-            possibleValues = strings
-        }
-
-        if let string: String = attributes["minimum"] as? String {
-            minimum = string
-        }
-
-        if let string: String = attributes["maximum"] as? String {
-            maximum = string
-        }
-
-        self.value = payloadValue
-    }
-
-    // available property
-    init(availableDictionary: [String: Any]) {
-        self.init()
-
-        if let string: String = availableDictionary["name"] as? String {
-            name = string
-        }
-
-        if let string: String = availableDictionary["type"] as? String {
-            type = string
-        }
-
-        if let strings: [String] = availableDictionary["description"] as? [String] {
-            description = strings
-        }
-
-        if let dictionary: [String: Any] = availableDictionary["attributes"] as? [String: Any] {
-            attributes = dictionary
-        }
-
-        if let boolean: Bool = attributes["required"] as? Bool {
-            required = boolean
-        }
-
-        if let string: String = attributes["default"] as? String {
-            defaultValue = string
-        }
-
-        if let strings: [String] = attributes["possibleValues"] as? [String] {
-            possibleValues = strings
-        }
-
-        if let string: String = attributes["minimum"] as? String {
-            minimum = string
-        }
-
-        if let string: String = attributes["maximum"] as? String {
-            maximum = string
-        }
-    }
-
-    // unknown property
-    init(unknownName: String, unknownValue: Any) {
-        self.init()
-        self.name = unknownName
-        self.value = unknownValue
-
-        if let _: Bool = unknownValue as? Bool {
-            self.type = "boolean"
-        } else if let _: Data = unknownValue as? Data {
-            self.type = "data"
-        } else if let _: Date = unknownValue as? Date {
-            self.type = "date"
-        } else if let _: Int = unknownValue as? Int {
-            self.type = "integer"
-        } else if let _: NSNumber = unknownValue as? NSNumber {
-            self.type = "number"
-        } else if let _: String = unknownValue as? String {
-            self.type = "string"
-        } else if let _: [String] = unknownValue as? [String] {
-            self.type = "[string]"
-        } else if let _: [String: Any] = unknownValue as? [String: Any] {
-            self.type = "dictionary"
-        } else if let _: [[String: Any]] = unknownValue as? [[String: Any]] {
-            self.type = "[dictionary]"
-        } else {
-            self.type = "Unknown type"
-        }
     }
 }

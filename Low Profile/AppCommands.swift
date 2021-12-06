@@ -29,9 +29,7 @@ struct AppCommands: Commands {
 
     func help() {
 
-        let string: String = "https://github.com/ninxsoft/LowProfile"
-
-        guard let url: URL = URL(string: string) else {
+        guard let url: URL = URL(string: .homepage) else {
             return
         }
 

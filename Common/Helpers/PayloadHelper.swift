@@ -98,7 +98,7 @@ class PayloadHelper: NSObject {
 
         guard let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
             let availabilityDictionary: [String: Any] = dictionary["availability"] as? [String: Any] else {
-            return Availability()
+            return Availability(dictionary: [:])
         }
 
         return Availability(dictionary: availabilityDictionary)
@@ -112,19 +112,6 @@ class PayloadHelper: NSObject {
         }
 
         return strings
-    }
-
-    func image(for type: String) -> NSImage {
-
-        if let image: NSImage = NSImage(named: type) {
-            return image
-        }
-
-        if let image: NSImage = NSImage(named: "Custom") {
-            return image
-        }
-
-        return NSApplication.shared.applicationIconImage
     }
 
     func payloadProperties(for type: String, in dictionary: [String: Any]) -> [Property] {

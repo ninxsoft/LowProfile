@@ -10,7 +10,7 @@ import SwiftUI
 struct TextRow: View {
     var leading: String
     var trailing: String
-    var formattedTrailing: String {
+    private var formattedTrailing: String {
         trailing.isEmpty ? "-" : trailing
     }
 
@@ -22,9 +22,6 @@ struct TextRow: View {
             Spacer()
             Text(formattedTrailing)
                 .foregroundColor(.secondary)
-                .contextMenu {
-                    CopyButton(string: formattedTrailing)
-                }
         }
     }
 }

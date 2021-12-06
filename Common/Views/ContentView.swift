@@ -10,23 +10,21 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.openURL) var openURL: OpenURLAction
     var profile: Profile
-    @State private var selection: Payload?
-    private let width: CGFloat = 1_200
+    private let sidebarWidth: CGFloat = 250
+    private let width: CGFloat = 1_080
     private let height: CGFloat = 720
 
     var body: some View {
-        HStack(spacing: 0) {
-            Sidebar(payloads: profile.payloads, selection: $selection)
-            Divider()
-            if selection == nil {
-                UnselectedDetail(profile: profile)
-            } else {
-                ForEach(profile.payloads) { payload in
-                    if payload == selection {
-                        Detail(payload: payload, certificate: profile.certificate)
-                    }
+        NavigationView {
+            List(profile.payloads) { payload in
+                NavigationLink(destination: Detail(payload: payload, certificate: profile.certificate)) {
+                    SidebarRow(payload: payload)
                 }
             }
+            .frame(width: sidebarWidth)
+            Text("Select a Payload")
+                .font(.title)
+                .foregroundColor(.secondary)
         }
         .toolbar {
             ToolbarItem {
@@ -34,10 +32,11 @@ struct ContentView: View {
                     homepage()
                 }, label: {
                     Image(systemName: "questionmark.circle")
+                        .foregroundColor(.accentColor)
                 })
             }
         }
-        .frame(minWidth: width, maxWidth: .infinity, minHeight: height, maxHeight: .infinity)
+        .frame(minWidth: width, minHeight: height)
     }
 
     private func homepage() {

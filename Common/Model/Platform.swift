@@ -10,7 +10,7 @@ import SwiftUI
 struct Platform: Identifiable {
 
     static var example: Platform {
-        let platform: Platform = Platform()
+        let platform: Platform = Platform(dictionary: [:])
         return platform
     }
 
@@ -25,41 +25,13 @@ struct Platform: Identifiable {
         "\(name) \(introducedAt) - \(deprecated ? deprecatedAt : current)"
     }
 
-    init() {
-        id = UUID().uuidString
-        name = ""
-        introducedAt = ""
-        current = ""
-        deprecated = false
-        deprecatedAt = ""
-        beta = false
-    }
-
     init(dictionary: [String: Any]) {
-        self.init()
-
-        if let string: String = dictionary["name"] as? String {
-            name = string
-        }
-
-        if let string: String = dictionary["introduced_at"] as? String {
-            introducedAt = string
-        }
-
-        if let string: String = dictionary["current"] as? String {
-            current = string
-        }
-
-        if let boolean: Bool = dictionary["deprecated"] as? Bool {
-            deprecated = boolean
-        }
-
-        if let string: String = dictionary["deprecated_at"] as? String {
-            deprecatedAt = string
-        }
-
-        if let boolean: Bool = dictionary["beta"] as? Bool {
-            beta = boolean
-        }
+        id = UUID().uuidString
+        name = dictionary["name"] as? String ?? ""
+        introducedAt = dictionary["introduced_at"] as? String ?? ""
+        current = dictionary["current"] as? String ?? ""
+        deprecated = dictionary["deprecated"] as? Bool ?? false
+        deprecatedAt = dictionary["deprecated_at"] as? String ?? ""
+        beta = dictionary["beta"] as? Bool ?? false
     }
 }

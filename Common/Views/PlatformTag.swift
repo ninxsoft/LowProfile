@@ -10,7 +10,7 @@ import SwiftUI
 struct PlatformTag: View {
     var title: String
     private let length: CGFloat = 24
-    private var symbolName: String {
+    private var systemName: String {
         switch title {
         case "macOS":
             return "desktopcomputer"
@@ -28,10 +28,8 @@ struct PlatformTag: View {
     }
 
     var body: some View {
-        Image(systemName: symbolName)
-            .resizable()
-            .scaledToFit()
-            .frame(width: length, height: length)
+        ScaledSystemImage(systemName: systemName, length: length)
+            .foregroundColor(.primary)
     }
 }
 

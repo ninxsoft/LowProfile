@@ -1,5 +1,5 @@
 //
-//  PayloadProperties.swift
+//  DetailPayloadProperties.swift
 //  Low Profile
 //
 //  Created by Nindi Gill on 9/8/20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PayloadProperties: View {
+struct DetailPayloadProperties: View {
 
     enum PropertyType: String, Identifiable, CaseIterable {
         case payload = "Payload"
@@ -32,7 +32,7 @@ struct PayloadProperties: View {
 
     var type: PropertyType
     var properties: [Property]
-    var spacing: CGFloat
+    private let spacing: CGFloat = 0
 
     var body: some View {
         VStack(spacing: spacing) {
@@ -42,7 +42,10 @@ struct PayloadProperties: View {
                 .padding(.bottom)
             ScrollView(.vertical) {
                 ForEach(properties) { property in
-                    PayloadProperty(property: property, type: type)
+                    HStack {
+                        DetailPayloadPropertiesLeading(property: property)
+                        DetailPayloadPropertiesTrailing(property: property, type: type)
+                    }
                 }
             }
         }
@@ -50,11 +53,11 @@ struct PayloadProperties: View {
     }
 }
 
-struct PayloadProperties_Previews: PreviewProvider {
+struct DetailPayloadProperties_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ForEach(PayloadProperties.PropertyType.allCases) { type in
-                PayloadProperties(type: type, properties: [.example], spacing: 10)
+            ForEach(DetailPayloadProperties.PropertyType.allCases) { type in
+                DetailPayloadProperties(type: type, properties: [.example])
             }
         }
     }
