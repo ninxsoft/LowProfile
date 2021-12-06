@@ -100,7 +100,6 @@ struct Property: Identifiable {
     init(unknownName: String, unknownValue: Any) {
         id = UUID().uuidString
         name = unknownName
-        value = unknownValue
 
         if let _: Bool = unknownValue as? Bool {
             type = "boolean"
@@ -131,6 +130,6 @@ struct Property: Identifiable {
         possibleValues = []
         minimum = ""
         maximum = ""
-        value = ""
+        value = unknownValue
     }
 }
