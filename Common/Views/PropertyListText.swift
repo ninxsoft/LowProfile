@@ -79,7 +79,6 @@ struct PropertyListText: View {
 
     var body: some View {
         propertyListText
-            .font(.system(.body, design: .monospaced))
     }
 
     private func xmlTag() -> Text {
