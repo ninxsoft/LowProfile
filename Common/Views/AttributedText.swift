@@ -22,7 +22,7 @@ struct AttributedText: View {
             } else if string ~= "\\*.*\\*" {
                 formattedText = Text(.init(string)).foregroundColor(.green)
             } else {
-                formattedText = Text(.init(string))
+                formattedText = Text(.init(string)).foregroundColor(.secondary)
             }
 
             // swiftlint:disable:next shorthand_operator

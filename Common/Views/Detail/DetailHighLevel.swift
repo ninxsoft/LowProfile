@@ -21,11 +21,14 @@ struct DetailHighLevel: View {
                         .font(.title3)
                     Text(payload.type)
                         .font(.title3)
-                    HStack {
+                    HStack(spacing: spacing + padding) {
                         ForEach(payload.platforms) { platform in
                             HStack {
-                                PlatformTag(title: platform.name)
-                                Text(platform.description)
+                                PlatformImage(title: platform.name)
+                                VStack(alignment: .leading) {
+                                    Text(platform.name)
+                                    Text(platform.supportedVersions)
+                                }
                             }
                             .padding(.trailing, padding)
                         }

@@ -17,7 +17,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(profile.payloads) { payload in
-                NavigationLink(destination: Detail(payload: payload, certificate: profile.certificate)) {
+                NavigationLink(destination: Detail(payload: payload, certificates: profile.certificates)) {
                     SidebarRow(payload: payload)
                 }
             }
@@ -34,6 +34,7 @@ struct ContentView: View {
                     Image(systemName: "questionmark.circle")
                         .foregroundColor(.accentColor)
                 })
+                    .help("Visit Website")
             }
         }
         .frame(minWidth: width, minHeight: height)

@@ -5,19 +5,19 @@
 //  Created by Nindi Gill on 6/12/21.
 //
 
+import ASN1Decoder
 import SwiftUI
 
 struct DetailPayloadPropertiesTrailing: View {
     var property: Property
     var type: DetailPayloadProperties.PropertyType
     private let spacing: CGFloat = 0
-    private let padding: CGFloat = 5
 
     var body: some View {
         VStack(alignment: .leading, spacing: spacing) {
             if [.payload, .unknown].contains(type) {
                 HStack {
-                    Text(property.valueString)
+                    CustomValue(value: property.value)
                     Spacer()
                 }
             }

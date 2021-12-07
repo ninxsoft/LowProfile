@@ -19,16 +19,18 @@ struct Profile {
 
     /// Array of configuration profile payload objects
     var payloads: [Payload]
-    /// Optional certificate used to sign the configuration profile
-    var certificate: X509Certificate?
+    /// Optional certificates used to sign the configuration profile
+    var certificates: [X509Certificate]
 
     /// Default initializer
     init() {
         self.payloads = []
+        self.certificates = []
     }
 
     /// Initializer accepting (an optionally signed) data blob
     init?(from signedData: Data) {
+        self.init()
 
         var data: Data = signedData
 
@@ -39,21 +41,13 @@ struct Profile {
                 data = unsignedData
             }
 
-            var subjects: [String] = []
-
-            for certificate in pkcs7.certificates {
-                if let subject: String = certificate.subjectDistinguishedName {
-                    subjects.append(subject)
+            certificates = pkcs7.certificates.sorted {
+                guard let subject: String = $0.subjectDistinguishedName,
+                    let issuer: String = $1.issuerDistinguishedName else {
+                    return false
                 }
-            }
 
-            for certificate in pkcs7.certificates {
-
-                if let issuer: String = certificate.issuerDistinguishedName,
-                    subjects.contains(issuer) {
-                    self.certificate = certificate
-                    break
-                }
+                return !subject.contains(issuer)
             }
         } catch {
             print(error.localizedDescription)

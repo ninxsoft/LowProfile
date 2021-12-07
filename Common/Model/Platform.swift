@@ -21,8 +21,8 @@ struct Platform: Identifiable {
     var deprecated: Bool
     var deprecatedAt: String
     var beta: Bool
-    var description: String {
-        "\(name) \(introducedAt) - \(deprecated ? deprecatedAt : current)"
+    var supportedVersions: String {
+        "\(introducedAt) - \(deprecated ? deprecatedAt : current)"
     }
 
     init(dictionary: [String: Any]) {

@@ -1,5 +1,5 @@
 //
-//  PlatformTag.swift
+//  PlatformImage.swift
 //  Low Profile
 //
 //  Created by Nindi Gill on 6/8/20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PlatformTag: View {
+struct PlatformImage: View {
     var title: String
     private let length: CGFloat = 24
     private var systemName: String {
@@ -33,11 +33,11 @@ struct PlatformTag: View {
     }
 }
 
-struct PlatformTag_Previews: PreviewProvider {
+struct PlatformImage_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ForEach(["macOS", "iOS", "tvOS", "watchOS"], id: \.self) { title in
-                PlatformTag(title: title)
+                PlatformImage(title: title)
             }
         }
     }

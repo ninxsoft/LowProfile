@@ -9,14 +9,13 @@ import SwiftUI
 
 struct PropertyListText: View {
     var string: String
+    var wrappedInPropertyListTags: Bool = true
     private var propertyListText: Text {
         let seperator: String = "<>"
         let xml: String = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
         let doctype: String = "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">"
         let plist: String = "<plist version=\"1.0\">"
-        let unformattedStrings: [String] = string.surroundingOccurrences(of: xml, with: seperator)
-            .surroundingOccurrences(of: doctype, with: seperator)
-            .surroundingOccurrences(of: plist, with: seperator)
+        var unformattedString: String = string
             .surroundingOccurrences(of: "<dict>", with: seperator)
             .surroundingOccurrences(of: "</dict>", with: seperator)
             .surroundingOccurrences(of: "<array>", with: seperator)
@@ -35,7 +34,20 @@ struct PropertyListText: View {
             .replacingOccurrences(of: "</real>", with: "</value><></real><>")
             .replacingOccurrences(of: "<string>", with: "<><string><><value>")
             .replacingOccurrences(of: "</string>", with: "</value><></string><>")
-            .components(separatedBy: seperator)
+
+        if wrappedInPropertyListTags {
+            unformattedString = unformattedString.surroundingOccurrences(of: xml, with: seperator)
+                .surroundingOccurrences(of: doctype, with: seperator)
+                .surroundingOccurrences(of: plist, with: seperator)
+        } else {
+            unformattedString = unformattedString.replacingOccurrences(of: xml, with: "")
+                .replacingOccurrences(of: doctype, with: "")
+                .replacingOccurrences(of: plist, with: "")
+                .replacingOccurrences(of: "</plist>", with: "")
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+
+        let unformattedStrings: [String] = unformattedString.components(separatedBy: seperator)
         var propertyListText: Text = Text("")
 
         for unformattedString in unformattedStrings {

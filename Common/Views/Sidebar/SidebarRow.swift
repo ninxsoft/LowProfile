@@ -23,7 +23,7 @@ struct SidebarRow: View {
                     .lineLimit(nil)
                 HStack {
                     ForEach(payload.platforms) { platform in
-                        PlatformTag(title: platform.name)
+                        PlatformImage(title: platform.name)
                     }
                     if payload.deprecated {
                         TextTag(title: "Deprecated")

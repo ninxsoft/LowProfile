@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Detail: View {
     var payload: Payload
-    var certificate: X509Certificate?
+    var certificates: [X509Certificate]
 
     var body: some View {
         VStack {
@@ -21,8 +21,8 @@ struct Detail: View {
                 if !payload.custom {
                     DetailDiscussion(discussion: payload.discussion).tabItem { Text("Discussion") }
                 }
-                if payload.general && certificate != nil {
-                    DetailCertificate(certificate: certificate).tabItem { Text("Certificate") }
+                if payload.general && !certificates.isEmpty {
+                    DetailCertificates(certificates: certificates).tabItem { Text("Certificates") }
                 }
                 if !payload.payloadProperties.isEmpty {
                     DetailPayloadProperties(type: .payload, properties: payload.payloadProperties).tabItem { Text("Payload Properties") }
@@ -45,6 +45,6 @@ struct Detail: View {
 
 struct Detail_Previews: PreviewProvider {
     static var previews: some View {
-        Detail(payload: .example, certificate: nil)
+        Detail(payload: .example, certificates: [])
     }
 }

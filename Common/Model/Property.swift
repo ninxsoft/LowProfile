@@ -5,6 +5,7 @@
 //  Created by Nindi Gill on 5/8/20.
 //
 
+import ASN1Decoder
 import Cocoa
 
 struct Property: Identifiable {
@@ -25,43 +26,6 @@ struct Property: Identifiable {
     var minimum: String
     var maximum: String
     var value: Any
-    var valueString: String {
-
-        if let boolean: Bool = value as? Bool {
-            return boolean ? "True" : "False"
-        }
-
-        if let data: Data = value as? Data {
-            return "Data: \(data.description)"
-        }
-
-        if let date: Date = value as? Date {
-            let dateFormatter: DateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .full
-            dateFormatter.timeStyle = .long
-            return dateFormatter.string(from: date)
-        }
-
-        if let number: NSNumber = value as? NSNumber {
-            return number.stringValue
-        }
-
-        if let string: String = value as? String {
-            return string
-        }
-
-        if let strings: [String] = value as? [String] {
-            let string: String = strings.joined(separator: ", ")
-            return string.description
-        }
-
-        if let data: Data = try? JSONSerialization.data(withJSONObject: value, options: [.prettyPrinted, .sortedKeys]),
-            let string: String = String(data: data, encoding: .utf8) {
-            return string
-        }
-
-        return "Unknown type"
-    }
     var descriptionString: String {
         description.joined(separator: "\n\n")
     }
