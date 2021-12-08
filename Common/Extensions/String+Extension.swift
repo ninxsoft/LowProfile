@@ -11,6 +11,8 @@ extension String {
 
     static let homepage: String = "https://github.com/ninxsoft/LowProfile"
     static let payloadsURL: String = "https://raw.githubusercontent.com/ninxsoft/LowProfile/main/Common/Payloads.yaml"
+    static let releasesURL: String = "https://github.com/ninxsoft/LowProfile/releases"
+    static let latestReleaseURL: String = "https://api.github.com/repos/ninxsoft/LowProfile/releases/latest"
     static let documentationPrefix: String = "https://developer.apple.com/documentation/devicemanagement/"
 
     static func ~= (lhs: String, rhs: String) -> Bool {

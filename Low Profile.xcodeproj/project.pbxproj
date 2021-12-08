@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3994426527605B2B00EC0337 /* UNNotificationAction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994426327605B2B00EC0337 /* UNNotificationAction+Extension.swift */; };
+		3994426627605B2B00EC0337 /* UNNotificationCategory+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994426427605B2B00EC0337 /* UNNotificationCategory+Extension.swift */; };
+		3994426827605C8B00EC0337 /* UserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994426727605C8B00EC0337 /* UserNotificationCenterDelegate.swift */; };
 		39C419F9275D9AA2001F4B4E /* Payloads.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 39C419F8275D9AA2001F4B4E /* Payloads.yaml */; };
 		39C419FD275D9AEC001F4B4E /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 39C419FC275D9AEC001F4B4E /* Yams */; };
 		39C41A01275DAED9001F4B4E /* DetailHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C41A00275DAED9001F4B4E /* DetailHeading.swift */; };
@@ -52,6 +55,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3994426327605B2B00EC0337 /* UNNotificationAction+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UNNotificationAction+Extension.swift"; sourceTree = "<group>"; };
+		3994426427605B2B00EC0337 /* UNNotificationCategory+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UNNotificationCategory+Extension.swift"; sourceTree = "<group>"; };
+		3994426727605C8B00EC0337 /* UserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationCenterDelegate.swift; sourceTree = "<group>"; };
 		39C419F8275D9AA2001F4B4E /* Payloads.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = Payloads.yaml; sourceTree = "<group>"; };
 		39C41A00275DAED9001F4B4E /* DetailHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeading.swift; sourceTree = "<group>"; };
 		39C41A03275DB04E001F4B4E /* DetailHighLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHighLevel.swift; sourceTree = "<group>"; };
@@ -189,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				578B3BB624DE7088004D06C2 /* String+Extension.swift */,
+				3994426327605B2B00EC0337 /* UNNotificationAction+Extension.swift */,
+				3994426427605B2B00EC0337 /* UNNotificationCategory+Extension.swift */,
 				57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */,
 			);
 			path = Extensions;
@@ -229,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				57BB578924D81AB00090CDDF /* PayloadHelper.swift */,
+				3994426727605C8B00EC0337 /* UserNotificationCenterDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -429,12 +438,14 @@
 				57D4F7FE24D6E46400BC0648 /* UTType+Extension.swift in Sources */,
 				39C41A17275DDA5F001F4B4E /* DetailDiscussion.swift in Sources */,
 				39C41A07275DC410001F4B4E /* ScaledSystemImage.swift in Sources */,
+				3994426527605B2B00EC0337 /* UNNotificationAction+Extension.swift in Sources */,
 				578B3BC324E143CD004D06C2 /* DetailCertificates.swift in Sources */,
 				57D4F7D424D6D6A500BC0648 /* ContentView.swift in Sources */,
 				39C41A20275F2038001F4B4E /* CustomValue.swift in Sources */,
 				57D4F7FC24D6D8D100BC0648 /* Document.swift in Sources */,
 				39C41A14275DCED3001F4B4E /* DetailPayloadPropertiesTrailing.swift in Sources */,
 				57BB578124D78B2C0090CDDF /* Profile.swift in Sources */,
+				3994426627605B2B00EC0337 /* UNNotificationCategory+Extension.swift in Sources */,
 				578F000524E8148D00DA8DF1 /* DocumentError.swift in Sources */,
 				39C41A1A275DEDB1001F4B4E /* Certificate.swift in Sources */,
 				39C41A0E275DCCE8001F4B4E /* DetailPayloadPropertiesMetadata.swift in Sources */,
@@ -457,6 +468,7 @@
 				57BB578624D802270090CDDF /* Detail.swift in Sources */,
 				578FFFF124E7AB5D00DA8DF1 /* DetailPropertyList.swift in Sources */,
 				39C41A11275DCE52001F4B4E /* DetailPayloadPropertiesLeading.swift in Sources */,
+				3994426827605C8B00EC0337 /* UserNotificationCenterDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +482,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Low Profile Quick Look/Low Profile Quick Look.entitlements";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 200;
 				DEVELOPMENT_TEAM = 7K3HVCLV7Z;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -483,7 +495,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ninxsoft.lowprofile.quicklook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -500,7 +512,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Low Profile Quick Look/Low Profile Quick Look.entitlements";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 200;
 				DEVELOPMENT_TEAM = 7K3HVCLV7Z;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -513,7 +525,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ninxsoft.lowprofile.quicklook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
