@@ -10,14 +10,15 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.openURL) var openURL: OpenURLAction
     var profile: Profile
+    @State private var selectedPayload: Payload?
     private let sidebarWidth: CGFloat = 250
     private let width: CGFloat = 1_080
     private let height: CGFloat = 720
 
     var body: some View {
         NavigationView {
-            List(profile.payloads) { payload in
-                NavigationLink(destination: Detail(payload: payload, certificates: profile.certificates)) {
+            List(profile.payloads, selection: $selectedPayload) { payload in
+                NavigationLink(destination: Detail(payload: payload, certificates: profile.certificates), tag: payload, selection: $selectedPayload) {
                     SidebarRow(payload: payload)
                 }
             }
@@ -38,6 +39,9 @@ struct ContentView: View {
             }
         }
         .frame(minWidth: width, minHeight: height)
+        .onAppear {
+            selectedPayload = profile.payloads.first
+        }
     }
 
     private func homepage() {
