@@ -15,9 +15,8 @@ If the answer is yes to any of the above, then **Low Profile** is the app for **
 ## Features
 
 * [x] Displays details for all Apple [supported payloads](https://developer.apple.com/documentation/devicemanagement/profile-specific_payload_keys):
-  * Description
-  * Payload Type
-  * Supported Platforms (iOS, macOS, tvOS, watchOS)
+  * Description + Payload Type
+  * Supported Platforms (iOS, iPadOS, macOS, tvOS, watchOS)
   * Payload-specific information (ie. Identifier, UUID, Display Name, Organisation, etc.)
   * Payload Availability
   * Properties:
@@ -28,6 +27,8 @@ If the answer is yes to any of the above, then **Low Profile** is the app for **
     ![Payload](Readme%20Resources/Payload.png)
 
 * [x] Displays details for custom 3rd-party payloads:
+  * Including certificate data
+  * Including custom arrays and dictionaries
 
   ![Custom](Readme%20Resources/Custom.png)
 
@@ -43,7 +44,7 @@ If the answer is yes to any of the above, then **Low Profile** is the app for **
 
 * Swift **5.5**.
 * Xcode **13.0**.
-* Runs on macOS Big Sur **11.0** and later.
+* Runs on macOS Monterey **12.0** and later.
 
 ## Download
 
@@ -54,10 +55,23 @@ Grab the latest version of **Low Profile** from the [releases page](https://gith
 * Project created and maintained by Nindi Gill ([ninxsoft](https://github.com/ninxsoft)).
 * Documentation and icons sourced from [here](https://developer.apple.com/documentation/devicemanagement) and [here](https://support.apple.com/en-au/guide/mdm/welcome/web).
 * Filippo Maguolo ([filom](https://github.com/filom)) for [AS1NDecoder](https://github.com/filom/ASN1Decoder), used in reading certificate data.
+* JP Simard ([jpsim](https://github.com/jpsim)) for [Yams](https://github.com/jpsim/Yams), used to import YAML.
 * Marcus Ransom ([@marcusransom](https://twitter.com/marcusransom)) for the awesome app name.
 * James Smith ([smithjw](https://github.com/smithjw)) for the shiny new app icon.
 
 ## Version History
+
+* 2.0
+  * Payload information is now downloaded dynamically
+    * Switched from Property List to YAML format (smaller file size)
+    * If unable to download payload information, default to app bundle
+  * Entire certificate chains are now shown for signed configuration profiles
+  * Added support for certificate data within payload properties
+  * Improved formatting of payload properties with custom arrays and dictionaries
+  * Low Profile will now check for updates on app launch
+  * Significant UI cleanup (condensed tabs and overlapping views)
+  * All text strings can be highlighted and copied to clipboard
+  * General code cleanup
 
 * 1.0
   * Shiny new app icon (thanks [smithjw](https://github.com/smithjw))
