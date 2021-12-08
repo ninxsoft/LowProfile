@@ -21,7 +21,6 @@
 		39C41A20275F2038001F4B4E /* CustomValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C41A1F275F2038001F4B4E /* CustomValue.swift */; };
 		39C41A7E276017C7001F4B4E /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C41A43275F3D9F001F4B4E /* Quartz.framework */; };
 		39C41A83276017C7001F4B4E /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C41A82276017C7001F4B4E /* PreviewProvider.swift */; };
-		39C41A8B276017C7001F4B4E /* Low Profile Quick Look.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 39C41A7D276017C7001F4B4E /* Low Profile Quick Look.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		39C41A8F276018D4001F4B4E /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */; };
 		573F4D0424E81EB000E6136F /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F4D0324E81EB000E6136F /* AppCommands.swift */; };
 		578B3B9724DAA522004D06C2 /* DetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9624DAA522004D06C2 /* DetailInformation.swift */; };
@@ -51,30 +50,6 @@
 		57D4F7FC24D6D8D100BC0648 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7FB24D6D8D100BC0648 /* Document.swift */; };
 		57D4F7FE24D6E46400BC0648 /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		39C41A89276017C7001F4B4E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 57D4F7C624D6D6A500BC0648 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 39C41A7C276017C7001F4B4E;
-			remoteInfo = "Low Profile Quick Look";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		39C41A3C275F3D39001F4B4E /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				39C41A8B276017C7001F4B4E /* Low Profile Quick Look.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		39C419F8275D9AA2001F4B4E /* Payloads.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = Payloads.yaml; sourceTree = "<group>"; };
@@ -321,12 +296,10 @@
 				57D4F7CC24D6D6A500BC0648 /* Resources */,
 				57D4F7E124D6D6DA00BC0648 /* Run SwiftLint */,
 				39C419F7275CD5AE001F4B4E /* Run DrString */,
-				39C41A3C275F3D39001F4B4E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				39C41A8A276017C7001F4B4E /* PBXTargetDependency */,
 			);
 			name = "Low Profile";
 			packageProductDependencies = (
@@ -344,7 +317,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					39C41A7C276017C7001F4B4E = {
 						CreatedOnToolsVersion = 13.1;
@@ -488,14 +461,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		39C41A8A276017C7001F4B4E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 39C41A7C276017C7001F4B4E /* Low Profile Quick Look */;
-			targetProxy = 39C41A89276017C7001F4B4E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		39C41A8D276017C7001F4B4E /* Debug */ = {
@@ -676,7 +641,6 @@
 		57D4F7DF24D6D6A700BC0648 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Low Profile/Low Profile.entitlements";
@@ -705,7 +669,6 @@
 		57D4F7E024D6D6A700BC0648 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Low Profile/Low Profile.entitlements";
