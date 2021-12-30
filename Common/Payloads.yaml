@@ -1625,7 +1625,7 @@ com.apple.airplay:
   availability:
     device: iOS, macOS, Shared iPad
     manual: iOS, macOS
-    multiple: macOS
+    multiple: iOS, macOS
     supervision: '-'
     user: macOS
     user_approved: '-'
@@ -1656,12 +1656,15 @@ com.apple.airplay:
   - attributes: {}
     description:
     - If present, sets passwords for known AirPlay destinations.
+    - Using multiple entries for the same destination, whether within the same payload
+      or across multiple installed payloads, is an error and results in undefined
+      behavior.
     name: Passwords
     type: '[AirPlay.PasswordsItem]'
   - attributes: {}
     description:
     - "Use \u2219`AllowList`\u2219 instead. As of macOS 11.3 and iOS 14.5 this key\
-      \ is deprecated"
+      \ is deprecated."
     name: Whitelist
     type: '[AirPlay.AllowListItem]'
 com.apple.airplay.security:
@@ -3950,11 +3953,11 @@ com.apple.domains:
     type: '[string]'
   - attributes: {}
     description:
-    - An array of domains. Users can only save passwords in Safari from URLs matching
-      the patterns listed here.
-    - Without this payload, if the device is configured as Shared iPad, no password
-      can be saved. If the device isn't configured as Shared iPad, all passwords can
-      be saved.
+    - "An array of domains. Users can only save passwords in Safari from URLs matching\
+      \ the patterns listed here. This property doesn\u2019t disable the autofill\
+      \ feature itself."
+    - Supervised devices or Shared iPads need this property to enable saving passwords
+      in Safari.
     - Available in iOS 9.3 and later.
     name: SafariPasswordAutoFillDomains
     type: '[string]'
@@ -4926,6 +4929,8 @@ com.apple.firstactiveethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
+  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
+    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
   - "Payloads with \u2219`active`\u2219 in their name apply to Ethernet interfaces\
     \ that are working at the time of profile installation. If there is no active\
     \ Ethernet interface working, this payload will configure the interface with the\
@@ -4955,6 +4960,8 @@ com.apple.firstethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
+  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
+    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
   - This payload applies to Ethernet interfaces according to service order, regardless
     of whether the interface is working or not.
   name: First Ethernet
@@ -5069,6 +5076,8 @@ com.apple.globalethernet.managed:
   - "Interface (String)\n\tThis payload uses the value \u2219`AnyEthernet`\u2219."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
+  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
+    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
   name: Global Ethernet
   paths:
   - 8021xglobalethernet
@@ -6159,7 +6168,7 @@ com.apple.mdm:
     \ to designate that this payload is an MDM payload."
   - "\u2219`PayloadVersion`\u2219\n\tThe version number of the profile format, which\
     \ describes the version of the configuration profile as a whole, not of the individual\
-    \ profiles within it.\LSet this value to \u2219`1`\u2219."
+    \ profiles within it. Set this value to \u2219`1`\u2219."
   name: MDM
   paths:
   - mdm
@@ -6280,6 +6289,21 @@ com.apple.mdm:
     - Available in macOS 11 and later.
     name: PromptUserToAllowBootstrapTokenForAuthentication
     type: boolean
+  - attributes: {}
+    description:
+    - This property specifies an iTunes Store ID for an app the system can install
+      with the [InstallApplicationCommand](https://developer.apple.com/documentation/devicemanagement/installapplicationcommand),
+      without any approval from the user. The MDM vendor or managing organization
+      generally provides this app, which enhances the management experience for the
+      user. The device shows the user details about this app in the account-driven
+      enrollment process prior to installing the MDM profile. Use this property with
+      account-driven MDM enrollments that normally require user approval for app installs
+      through MDM.
+    - Only account-driven user enrollments support this property and other enrollment
+      types ignore it.
+    - Available in iOS 15.1 and later.
+    name: RequiredAppIDForMDM
+    type: integer
   - attributes:
       possibleValues:
       - com.apple.mdm.per-user-connections
@@ -6335,10 +6359,6 @@ com.apple.mdm:
       \ issues certificates for the production push environment."
     name: UseDevelopmentAPNS
     type: boolean
-  - attributes: {}
-    description: []
-    name: RequiredAppIDForMDM
-    type: integer
 com.apple.mobiledevice.passwordpolicy:
   availability:
     device: iOS, macOS
@@ -6354,8 +6374,8 @@ com.apple.mobiledevice.passwordpolicy:
   - The presence of this payload type prompts an iOS or macOS device to present the
     user with a passcode entry mechanism. The complexity of the passcode can be customized
     with this payload.
-  - 'On iOS User Enrollments, the Passcode payload type is allowed, but all keys are
-    ignored. Instead, the presence of the Passcode payload forces these settings:'
+  - 'On iOS User Enrollments, the system allows the Passcode payload type, but ignores
+    all keys. Instead, the presence of the Passcode payload forces these settings:'
   - "- \u2219`allowSimple`\u2219 = \u2219`false`\u2219"
   - "- \u2219`forcePIN`\u2219 = \u2219`true`\u2219"
   - "- \u2219`minLength`\u2219 = \u2219`6`\u2219"
@@ -6446,6 +6466,7 @@ com.apple.mobiledevice.passwordpolicy:
     - "The minimum number of complex characters that a passcode must contain. A \u2219\
       *complex*\u2219 character is a character other than a number or a letter, such\
       \ as \u2219*& % $ #*\u2219."
+    - This property is ignored for User Enrollments.
     name: minComplexChars
     type: integer
   - attributes:
@@ -6838,7 +6859,8 @@ com.apple.screensaver:
     type: string
   - attributes:
       required: true
-    description: []
+    description:
+    - The name of the screen saver module.
     name: moduleName
     type: string
 com.apple.screensaver.user:
@@ -6894,6 +6916,8 @@ com.apple.secondactiveethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
+  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
+    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
   - "Payloads with \u2219`active`\u2219 in their name apply to Ethernet interfaces\
     \ that are working at the time of profile installation. If there is no active\
     \ Ethernet interface working, this payload will configure the interface with the\
@@ -6923,6 +6947,8 @@ com.apple.secondethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
+  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
+    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
   - This payload applies to Ethernet interfaces according to service order, regardless
     of whether the interface is working or not.
   name: Second Ethernet
@@ -8225,6 +8251,8 @@ com.apple.thirdactiveethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
+  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
+    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
   - "Payloads with \u2219`active`\u2219 in their name apply to Ethernet interfaces\
     \ that are working at the time of profile installation. If there is no active\
     \ Ethernet interface working, this payload will configure the interface with the\
@@ -8254,6 +8282,8 @@ com.apple.thirdethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
+  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
+    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
   - This payload applies to Ethernet interfaces according to service order, regardless
     of whether the interface is working or not.
   name: Third Ethernet
@@ -8270,7 +8300,7 @@ com.apple.tvremote:
     manual: iOS, tvOS
     multiple: '-'
     supervision: iOS, tvOS
-    user: '-'
+    user: iOS
     user_approved: '-'
     user_enrol: '-'
   description: The payload for configuring the Apple TV remote.
@@ -8585,8 +8615,8 @@ com.apple.vpn.managed.applayer:
   description: The payload for configuring add-on VPN software.
   discussion:
   - "Specify \u2219`com.apple.vpn.managed.applayer`\u2219 as the payload type."
-  - "This profile only applies to VPN services of type \u2219`VPN`\u2219,\u2219` IPsec`\u2219\
-    , and \u2219`IKEv2`\u2219."
+  - "This profile defines per-app VPN behavior and only applies to VPN services of\
+    \ type \u2219`VPN`\u2219,\u2219` IPsec`\u2219, and \u2219`IKEv2`\u2219."
   name: VPN (App Layer)
   paths:
   - applayervpn
@@ -8653,10 +8683,10 @@ com.apple.vpn.managed.applayer:
       - '1'
     description:
     - "If \u2219`true`\u2219, automatically connects the VPN when associated apps\
-      \ for this Per-App VPN service initiate network communication. Otherwise, the\
+      \ for this per-app VPN service initiate network communication. Otherwise, the\
       \ user must initiate the connection manually before those apps can initiate\
       \ network communication. If this key isn\u2019t present, the value of the \u2219\
-      `OnDemandEnabled`\u2219 key determines the status of Per-App VPN On Demand."
+      `OnDemandEnabled`\u2219 key determines the status of per-app VPN On Demand."
     name: OnDemandMatchAppEnabled
     type: integer
   - attributes: {}
