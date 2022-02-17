@@ -14,7 +14,7 @@
   paths:
   - globalpreferences
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -42,19 +42,19 @@ Configuration:
   paths:
   - toplevel
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: tvOS
-  - current: '8.3'
+  - current: '8.5'
     introduced_at: '2.0'
     name: watchOS
   properties:
@@ -236,7 +236,7 @@ com.apple.ADCertificate.managed:
   paths:
   - activedirectorycertificate
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -338,7 +338,7 @@ com.apple.AIM.account:
   paths:
   - aimaccount
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     deprecated: true
     deprecated_at: '10.13'
     introduced_at: '10.7'
@@ -404,7 +404,7 @@ com.apple.AssetCache.managed:
   paths:
   - contentcaching
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: 10.13.4
     name: macOS
   properties:
@@ -637,7 +637,7 @@ com.apple.Dictionary:
   paths:
   - parentalcontrolsdictionary
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -663,7 +663,7 @@ com.apple.DirectoryService.managed:
   paths:
   - directoryservice
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.8'
     name: macOS
   properties:
@@ -906,7 +906,7 @@ com.apple.DiscRecording:
   paths:
   - mediamanagementdiscburning
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -945,7 +945,7 @@ com.apple.MCX:
   - energysaver
   - timeserver
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -1080,7 +1080,7 @@ com.apple.MCX.FileVault2:
   paths:
   - fdefilevault
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.9'
     name: macOS
   properties:
@@ -1190,7 +1190,7 @@ com.apple.MCX.TimeMachine:
   paths:
   - timemachine
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -1256,7 +1256,7 @@ com.apple.MCX.WiFi:
   paths:
   - wifimanagedsettings
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.9'
     name: macOS
   properties:
@@ -1297,7 +1297,7 @@ com.apple.ManagedClient.preferences:
   paths:
   - managedpreferences
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -1338,7 +1338,7 @@ com.apple.NSExtension:
   paths:
   - nsextensionmanagement
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.13'
     name: macOS
   properties:
@@ -1374,13 +1374,13 @@ com.apple.SetupAssistant.managed:
   paths:
   - setupassistant
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '14.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '14.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.12'
     name: macOS
   properties:
@@ -1465,7 +1465,7 @@ com.apple.ShareKitHelper:
   paths:
   - sharekit
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     deprecated: true
     deprecated_at: '10.12'
     introduced_at: '10.9'
@@ -1499,7 +1499,7 @@ com.apple.SoftwareUpdate:
   paths:
   - softwareupdate
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -1582,7 +1582,7 @@ com.apple.SystemConfiguration:
   paths:
   - networkproxyconfiguration
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -1609,7 +1609,7 @@ com.apple.TCC.configuration-profile-policy:
   paths:
   - privacypreferencespolicycontrol
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.14'
     name: macOS
   properties:
@@ -1637,13 +1637,13 @@ com.apple.airplay:
   paths:
   - airplay
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.10'
     name: macOS
   properties:
@@ -1684,7 +1684,7 @@ com.apple.airplay.security:
   paths:
   - airplaysecurity
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '11.0'
     name: tvOS
   properties:
@@ -1741,13 +1741,13 @@ com.apple.airprint:
   paths:
   - airprint
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.10'
     name: macOS
   properties:
@@ -1775,12 +1775,12 @@ com.apple.apn.managed:
   paths:
   - apn
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     deprecated: true
     deprecated_at: '7.0'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     deprecated: true
     deprecated_at: '7.0'
     introduced_at: '4.0'
@@ -1820,13 +1820,13 @@ com.apple.app.lock:
   paths:
   - applock
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '6.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '6.0'
     name: iPadOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '10.2'
     name: tvOS
   properties:
@@ -1852,16 +1852,16 @@ com.apple.applicationaccess:
   paths:
   - restrictions
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: tvOS
   properties:
@@ -3114,6 +3114,11 @@ com.apple.applicationaccess:
     description: []
     name: allowMailPrivacyProtection
     type: boolean
+  - attributes:
+      default: 'true'
+    description: []
+    name: allowAutomaticScreenSaver
+    type: boolean
 com.apple.applicationaccess.new:
   availability:
     device: macOS
@@ -3142,7 +3147,7 @@ com.apple.applicationaccess.new:
   paths:
   - parentalcontrolsapplicationrestrictions
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -3185,7 +3190,7 @@ com.apple.appstore:
   paths:
   - appstore
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.9'
     name: macOS
   properties:
@@ -3239,7 +3244,7 @@ com.apple.asam:
   paths:
   - autonomoussingleappmode
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: 10.13.4
     name: macOS
   properties:
@@ -3268,7 +3273,7 @@ com.apple.associated-domains:
   paths:
   - associateddomains
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.15'
     name: macOS
   properties:
@@ -3294,13 +3299,13 @@ com.apple.caldav.account:
   paths:
   - caldav
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -3364,13 +3369,13 @@ com.apple.carddav.account:
   paths:
   - carddav
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -3438,13 +3443,13 @@ com.apple.cellular:
   paths:
   - cellular
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iPadOS
-  - current: '8.3'
+  - current: '8.5'
     introduced_at: '3.2'
     name: watchOS
   properties:
@@ -3477,7 +3482,7 @@ com.apple.conferenceroomdisplay:
   paths:
   - conferenceroomdisplay
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '10.2'
     name: tvOS
   properties:
@@ -3503,7 +3508,7 @@ com.apple.configurationprofile.identification:
   paths:
   - identification
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -3529,7 +3534,7 @@ com.apple.dashboard:
   paths:
   - parentalcontrolsdashboardwidgetrestrictions
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     deprecated: true
     deprecated_at: '10.15'
     introduced_at: '10.7'
@@ -3563,7 +3568,7 @@ com.apple.desktop:
   paths:
   - desktop
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.10'
     name: macOS
   properties:
@@ -3597,13 +3602,13 @@ com.apple.dnsProxy.managed:
   paths:
   - dnsproxy
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '11.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '11.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.15'
     name: macOS
   properties:
@@ -3641,13 +3646,13 @@ com.apple.dnsSettings.managed:
   paths:
   - dnssettings
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '14.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '14.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '11.0'
     name: macOS
   properties:
@@ -3687,7 +3692,7 @@ com.apple.dock:
   paths:
   - dock
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -3934,13 +3939,13 @@ com.apple.domains:
   paths:
   - domains
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '8.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '8.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.10'
     name: macOS
   properties:
@@ -3982,10 +3987,10 @@ com.apple.eas.account:
   paths:
   - exchangeactivesync
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
   properties:
@@ -4334,13 +4339,13 @@ com.apple.education:
   paths:
   - educationconfiguration
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.3'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.3'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.14'
     name: macOS
   properties:
@@ -4433,7 +4438,8 @@ com.apple.education:
       \ their teacher's permissions for screen observation on their device."
     name: ScreenObservationPermissionModificationAllowed
     type: boolean
-  - attributes: {}
+  - attributes:
+      required: true
     description:
     - The unique string that identifies the user of this device within the organization.
     - If this payload is intended to configure the Shared iPad login screen, this
@@ -4470,7 +4476,7 @@ com.apple.ews.account:
   paths:
   - exchangewebservices
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -4586,13 +4592,13 @@ com.apple.extensiblesso:
   - extensiblesinglesignon
   - extensiblesinglesignonkerberos
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '13.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '13.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.15'
     name: macOS
   properties:
@@ -4737,7 +4743,7 @@ com.apple.familycontrols.contentfilter:
   paths:
   - parentalcontrolscontentfilter
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -4798,7 +4804,7 @@ com.apple.familycontrols.timelimits.v2:
   paths:
   - parentalcontrolstimelimits
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -4828,7 +4834,7 @@ com.apple.fileproviderd:
   paths:
   - fileprovider
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '11.0'
     name: macOS
   properties:
@@ -4855,7 +4861,7 @@ com.apple.finder:
   paths:
   - finder
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -4939,7 +4945,7 @@ com.apple.firstactiveethernet.managed:
   paths:
   - 8021xfirstactiveethernet
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties: []
@@ -4968,7 +4974,7 @@ com.apple.firstethernet.managed:
   paths:
   - 8021xfirstethernet
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties: []
@@ -4988,13 +4994,13 @@ com.apple.font:
   paths:
   - font
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.9'
     name: macOS
   properties:
@@ -5032,7 +5038,7 @@ com.apple.gamed:
   paths:
   - parentalcontrolsgamecenter
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.9'
     name: macOS
   properties:
@@ -5082,7 +5088,7 @@ com.apple.globalethernet.managed:
   paths:
   - 8021xglobalethernet
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.13'
     name: macOS
   properties: []
@@ -5107,10 +5113,10 @@ com.apple.google-oauth:
   paths:
   - googleaccount
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.3'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.3'
     name: iPadOS
   properties:
@@ -5166,13 +5172,13 @@ com.apple.homescreenlayout:
   paths:
   - homescreenlayout
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.3'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.3'
     name: iPadOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '11.0'
     name: tvOS
   properties:
@@ -5205,7 +5211,7 @@ com.apple.ironwood.support:
   paths:
   - parentalcontroldictationandprofanity
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     deprecated: true
     deprecated_at: '10.13'
     introduced_at: '10.9'
@@ -5239,7 +5245,7 @@ com.apple.jabber.account:
   paths:
   - jabberaccount
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     deprecated: true
     deprecated_at: '10.14'
     introduced_at: '10.7'
@@ -5304,13 +5310,13 @@ com.apple.ldap.account:
   paths:
   - ldap
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -5368,7 +5374,7 @@ com.apple.loginitems.managed:
   paths:
   - loginitemsmanageditems
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.13'
     name: macOS
   properties:
@@ -5394,7 +5400,7 @@ com.apple.loginwindow:
   paths:
   - loginwindow
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -5554,7 +5560,7 @@ com.apple.lom:
   paths:
   - lightsoutmanagementlom
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '11.0'
     name: macOS
   properties:
@@ -5600,13 +5606,13 @@ com.apple.mail.managed:
   paths:
   - mail
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -5869,7 +5875,7 @@ com.apple.mcxMenuExtras:
   paths:
   - managedmenuextras
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -6041,7 +6047,7 @@ com.apple.mcxloginscripts:
   paths:
   - loginwindowscripts
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -6085,7 +6091,7 @@ com.apple.mcxprinting:
   paths:
   - printing
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -6173,16 +6179,16 @@ com.apple.mdm:
   paths:
   - mdm
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: tvOS
   properties:
@@ -6383,13 +6389,13 @@ com.apple.mobiledevice.passwordpolicy:
   paths:
   - passcode
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -6519,10 +6525,10 @@ com.apple.networkusagerules:
   paths:
   - networkusagerules
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: iPadOS
   properties:
@@ -6552,13 +6558,13 @@ com.apple.notificationsettings:
   paths:
   - notifications
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.3'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.3'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.15'
     name: macOS
   properties:
@@ -6584,12 +6590,12 @@ com.apple.osxserver.account:
   paths:
   - macosserveraccount
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     deprecated: true
     deprecated_at: '12.0'
     introduced_at: '9.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     deprecated: true
     deprecated_at: '12.0'
     introduced_at: '9.0'
@@ -6639,7 +6645,7 @@ com.apple.preference.security:
   paths:
   - securitypreferences
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.10'
     name: macOS
   properties:
@@ -6677,7 +6683,7 @@ com.apple.preference.users:
   paths:
   - userpreferences
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.12'
     name: macOS
   properties:
@@ -6707,16 +6713,16 @@ com.apple.profileRemovalPassword:
   paths:
   - profileremovalpassword
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: tvOS
   properties:
@@ -6742,16 +6748,16 @@ com.apple.proxy.http.global:
   paths:
   - globalhttpproxy
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '6.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '6.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.9'
     name: macOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: tvOS
   properties:
@@ -6825,7 +6831,7 @@ com.apple.screensaver:
   paths:
   - screensaver
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.11'
     name: macOS
   properties:
@@ -6879,7 +6885,7 @@ com.apple.screensaver.user:
   paths:
   - screensaveruser
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.11'
     name: macOS
   properties:
@@ -6926,7 +6932,7 @@ com.apple.secondactiveethernet.managed:
   paths:
   - 8021xsecondactiveethernet
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties: []
@@ -6955,7 +6961,7 @@ com.apple.secondethernet.managed:
   paths:
   - 8021xsecondethernet
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties: []
@@ -7002,7 +7008,7 @@ com.apple.security.FDERecoveryKeyEscrow:
   paths:
   - fderecoverykeyescrow
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.13'
     name: macOS
   properties:
@@ -7054,7 +7060,7 @@ com.apple.security.FDERecoveryRedirect:
   paths:
   - fderecoverykeyredirection
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     deprecated: true
     deprecated_at: '10.13'
     introduced_at: '10.9'
@@ -7099,7 +7105,7 @@ com.apple.security.certificatepreference:
   paths:
   - certificatepreference
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.12'
     name: macOS
   properties:
@@ -7134,10 +7140,10 @@ com.apple.security.certificaterevocation:
   paths:
   - certificaterevocation
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '14.2'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '14.2'
     name: iPadOS
   properties:
@@ -7168,19 +7174,19 @@ com.apple.security.certificatetransparency:
   paths:
   - certificatetransparency
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: 12.1.1
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: 12.1.1
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: 10.14.2
     name: macOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: 12.1.1
     name: tvOS
-  - current: '8.3'
+  - current: '8.5'
     introduced_at: 5.1.1
     name: watchOS
   properties:
@@ -7236,7 +7242,7 @@ com.apple.security.firewall:
   paths:
   - firewall
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.12'
     name: macOS
   properties:
@@ -7245,8 +7251,7 @@ com.apple.security.firewall:
     - The list of apps with connections controlled by the firewall.
     name: Applications
     type: '[Firewall.ApplicationsItem]'
-  - attributes:
-      default: 'false'
+  - attributes: {}
     description:
     - "If \u2219`true`\u2219, enables blocking of all incoming connections."
     name: BlockAllIncoming
@@ -7257,15 +7262,13 @@ com.apple.security.firewall:
     - "If \u2219`true`\u2219, enables the firewall."
     name: EnableFirewall
     type: boolean
-  - attributes:
-      default: 'false'
+  - attributes: {}
     description:
     - "If \u2219`true`\u2219, enables logging."
     - Available in macOS 12 and later.
     name: EnableLogging
     type: boolean
-  - attributes:
-      default: 'false'
+  - attributes: {}
     description:
     - "If \u2219`true`\u2219, enables stealth mode."
     name: EnableStealthMode
@@ -7280,6 +7283,14 @@ com.apple.security.firewall:
     - Available in macOS 12 and later.
     name: LoggingOption
     type: string
+  - attributes: {}
+    description: []
+    name: AllowSigned
+    type: boolean
+  - attributes: {}
+    description: []
+    name: AllowSignedApp
+    type: boolean
 com.apple.security.identitypreference:
   availability:
     device: '-'
@@ -7303,7 +7314,7 @@ com.apple.security.identitypreference:
   paths:
   - identitypreference
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.12'
     name: macOS
   properties:
@@ -7337,19 +7348,19 @@ com.apple.security.pem:
   paths:
   - certificatepem
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: tvOS
-  - current: '8.3'
+  - current: '8.5'
     introduced_at: '3.0'
     name: watchOS
   properties:
@@ -7380,19 +7391,19 @@ com.apple.security.pkcs1:
   paths:
   - certificatepkcs1
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: tvOS
-  - current: '8.3'
+  - current: '8.5'
     introduced_at: '3.0'
     name: watchOS
   properties:
@@ -7423,19 +7434,19 @@ com.apple.security.pkcs12:
   paths:
   - certificatepkcs12
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: tvOS
-  - current: '8.3'
+  - current: '8.5'
     introduced_at: '3.0'
     name: watchOS
   properties:
@@ -7485,19 +7496,19 @@ com.apple.security.root:
   paths:
   - certificateroot
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: tvOS
-  - current: '8.3'
+  - current: '8.5'
     introduced_at: '3.0'
     name: watchOS
   properties:
@@ -7531,16 +7542,16 @@ com.apple.security.scep:
   paths:
   - scep
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: tvOS
   properties:
@@ -7567,7 +7578,7 @@ com.apple.security.smartcard:
   paths:
   - smartcard
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: 10.12.4
     name: macOS
   properties:
@@ -7650,10 +7661,10 @@ com.apple.shareddeviceconfiguration:
   paths:
   - lockscreenmessage
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.3'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.3'
     name: iPadOS
   properties:
@@ -7689,10 +7700,10 @@ com.apple.sso:
   paths:
   - singlesignon
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iPadOS
   properties:
@@ -7723,10 +7734,10 @@ com.apple.subscribedcalendar.account:
   paths:
   - subscribedcalendars
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
   properties:
@@ -7780,7 +7791,7 @@ com.apple.syspolicy.kernel-extension-policy:
   paths:
   - systempolicykernelextensions
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: 10.13.2
     name: macOS
   properties:
@@ -7838,7 +7849,7 @@ com.apple.system-extension-policy:
   paths:
   - systemextensions
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.15'
     name: macOS
   properties:
@@ -7908,7 +7919,7 @@ com.apple.system.logging:
   paths:
   - systemlogging
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.12'
     name: macOS
   properties:
@@ -7946,7 +7957,7 @@ com.apple.systemmigration:
   paths:
   - systemmigration
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: 10.12.4
     name: macOS
   properties:
@@ -7971,7 +7982,7 @@ com.apple.systempolicy.control:
   paths:
   - systempolicycontrol
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.8'
     name: macOS
   properties:
@@ -8006,7 +8017,7 @@ com.apple.systempolicy.managed:
   paths:
   - systempolicymanaged
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.8'
     name: macOS
   properties:
@@ -8038,7 +8049,7 @@ com.apple.systempolicy.rule:
   paths:
   - systempolicyrule
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.8'
     name: macOS
   properties:
@@ -8096,7 +8107,7 @@ com.apple.systempreferences:
   paths:
   - systempreferences
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -8213,7 +8224,7 @@ com.apple.systemuiserver:
   paths:
   - mediamanagementallowedmedia
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     deprecated: true
     deprecated_at: '11.0'
     introduced_at: '10.7'
@@ -8261,7 +8272,7 @@ com.apple.thirdactiveethernet.managed:
   paths:
   - 8021xthirdactiveethernet
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties: []
@@ -8290,7 +8301,7 @@ com.apple.thirdethernet.managed:
   paths:
   - 8021xthirdethernet
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties: []
@@ -8310,13 +8321,13 @@ com.apple.tvremote:
   paths:
   - tvremote
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '11.3'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '11.3'
     name: iPadOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '11.3'
     name: tvOS
   properties:
@@ -8346,7 +8357,7 @@ com.apple.universalaccess:
   paths:
   - accessibility
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.9'
     name: macOS
   properties:
@@ -8501,13 +8512,13 @@ com.apple.vpn.managed:
   paths:
   - vpn
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -8621,13 +8632,13 @@ com.apple.vpn.managed.applayer:
   paths:
   - applayervpn
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.9'
     name: macOS
   properties:
@@ -8729,7 +8740,7 @@ com.apple.vpn.managed.appmapping:
   paths:
   - apptoapplayervpnmapping
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.9'
     name: macOS
   properties:
@@ -8764,13 +8775,13 @@ com.apple.webClip.managed:
   paths:
   - webclip
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
@@ -8856,13 +8867,13 @@ com.apple.webcontent-filter:
   paths:
   - webcontentfilter
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '7.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.15'
     name: macOS
   properties:
@@ -9042,19 +9053,19 @@ com.apple.wifi.managed:
   paths:
   - wifi
   platforms:
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '4.0'
     name: iPadOS
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
-  - current: '15.2'
+  - current: '15.4'
     introduced_at: '9.0'
     name: tvOS
-  - current: '8.3'
+  - current: '8.5'
     introduced_at: '3.2'
     name: watchOS
   properties:
@@ -9293,7 +9304,7 @@ com.apple.xsan:
   paths:
   - xsan
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.10'
     name: macOS
   properties:
@@ -9363,7 +9374,7 @@ com.apple.xsan.preferences:
   paths:
   - xsanpreferences
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.11'
     name: macOS
   properties:
@@ -9421,7 +9432,7 @@ loginwindow:
   paths:
   - loginwindowloginitems
   platforms:
-  - current: '12.1'
+  - current: '12.3'
     introduced_at: '10.7'
     name: macOS
   properties:
