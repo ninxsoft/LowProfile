@@ -9189,13 +9189,6 @@ com.apple.wifi.managed:
     name: PayloadCertificateUUID
     type: string
   - attributes:
-      default: '0'
-    description:
-    - "If multiple networks are available, the device chooses the network\_with the\
-      \ lowest priority number. Negative numbers are acceptable."
-    name: Priority
-    type: integer
-  - attributes:
       default: 'false'
     description:
     - "If \u2219`true`\u2219, allows connecting directly to the destination if the\
