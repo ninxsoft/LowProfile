@@ -31,6 +31,7 @@ struct Payload: Identifiable, Hashable {
     var payloadDescription: String
     var payloadOrganisation: String
     var payloadProperties: [Property]
+    var managedPayloads: [Payload]
     var availableProperties: [Property]
     var unknownProperties: [Property]
     var dictionary: [String: Any]
@@ -52,9 +53,6 @@ struct Payload: Identifiable, Hashable {
     var general: Bool {
         paths.contains("toplevel")
     }
-    var managedPreferences: Bool {
-        paths.contains("com.apple.ManagedClient.preferences")
-    }
     var custom: Bool {
         paths.isEmpty
     }
@@ -63,6 +61,9 @@ struct Payload: Identifiable, Hashable {
     }
     var beta: Bool {
         !platforms.filter { $0.beta }.isEmpty
+    }
+    var managed: Bool {
+        payloadDescription.isEmpty && payloadDisplayName.isEmpty && payloadIdentifier.isEmpty && payloadOrganisation.isEmpty && payloadUUID.isEmpty && payloadVersion == 0
     }
 
     init() {
@@ -81,6 +82,7 @@ struct Payload: Identifiable, Hashable {
         payloadDescription = ""
         payloadOrganisation = ""
         payloadProperties = []
+        managedPayloads = []
         availableProperties = []
         unknownProperties = []
         dictionary = [:]
@@ -127,6 +129,7 @@ struct Payload: Identifiable, Hashable {
         availability = PayloadHelper.shared.availability(for: type)
         discussion = PayloadHelper.shared.discussion(for: type)
         payloadProperties = PayloadHelper.shared.payloadProperties(for: type, in: dictionary)
+        managedPayloads = PayloadHelper.shared.managedPayloads(for: type, in: dictionary)
         availableProperties = PayloadHelper.shared.availableProperties(for: type, in: dictionary)
         unknownProperties = PayloadHelper.shared.unknownProperties(for: type, in: dictionary)
         self.dictionary = dictionary

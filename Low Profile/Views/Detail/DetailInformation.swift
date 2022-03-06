@@ -14,13 +14,15 @@ struct DetailInformation: View {
 
     var body: some View {
         ScrollView(.vertical) {
-            VStack(spacing: spacing) {
-                TextRow(leading: "Description", trailing: payload.payloadDescription)
-                TextRow(leading: "Display Name", trailing: payload.payloadDisplayName)
-                TextRow(leading: "Identifier", trailing: payload.payloadIdentifier)
-                TextRow(leading: "Organisation", trailing: payload.payloadOrganisation)
-                TextRow(leading: "UUID", trailing: payload.payloadUUID)
-                TextRow(leading: "Version", trailing: "\(payload.payloadVersion)")
+            if !payload.managed {
+                VStack(spacing: spacing) {
+                    TextRow(leading: "Description", trailing: payload.payloadDescription)
+                    TextRow(leading: "Display Name", trailing: payload.payloadDisplayName)
+                    TextRow(leading: "Identifier", trailing: payload.payloadIdentifier)
+                    TextRow(leading: "Organisation", trailing: payload.payloadOrganisation)
+                    TextRow(leading: "UUID", trailing: payload.payloadUUID)
+                    TextRow(leading: "Version", trailing: "\(payload.payloadVersion)")
+                }
             }
             if !payload.general && !payload.custom {
                 VStack(spacing: spacing) {

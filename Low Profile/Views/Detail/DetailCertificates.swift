@@ -19,7 +19,7 @@ struct DetailCertificates: View {
                 .foregroundColor(.secondary)
             ScrollView(.vertical) {
                 VStack(alignment: .leading) {
-                    ForEach(0..<certificates.count) { index in
+                    ForEach(0..<certificates.count, id: \.self) { index in
                         Certificate(certificate: certificates[index], certificateImageLength: certificateImageLength)
                         if index != certificates.count - 1 {
                             HStack {

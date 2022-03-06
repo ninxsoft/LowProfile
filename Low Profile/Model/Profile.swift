@@ -9,7 +9,7 @@ import ASN1Decoder
 import Foundation
 
 /// Configuration Profile struct
-struct Profile {
+struct Profile: Identifiable, Hashable {
 
     /// Example Profile
     static var example: Profile {
@@ -17,6 +17,10 @@ struct Profile {
         return profile
     }
 
+    /// Unique configuration profile identifier
+    var id: String
+    /// Configuration profile display name
+    var name: String
     /// Array of configuration profile payload objects
     var payloads: [Payload]
     /// Optional certificates used to sign the configuration profile
@@ -24,8 +28,10 @@ struct Profile {
 
     /// Default initializer
     init() {
-        self.payloads = []
-        self.certificates = []
+        id = ""
+        name = ""
+        payloads = []
+        certificates = []
     }
 
     /// Initializer accepting (an optionally signed) data blob
@@ -50,7 +56,7 @@ struct Profile {
                 return !subject.contains(issuer)
             }
         } catch {
-            print(error.localizedDescription)
+            // print(error.localizedDescription)
         }
 
         do {
@@ -66,6 +72,15 @@ struct Profile {
 
             var topLevelDictionary: [String: Any] = dictionary
             topLevelDictionary.removeValue(forKey: "PayloadContent")
+
+            if let id: String = topLevelDictionary["PayloadIdentifier"] as? String {
+                self.id = id
+            }
+
+            if let name: String = topLevelDictionary["PayloadDisplayName"] as? String {
+                self.name = name
+            }
+
             let payload: Payload = Payload(dictionary: topLevelDictionary)
             self.payloads.append(payload)
 
@@ -81,5 +96,13 @@ struct Profile {
             print(error.localizedDescription)
             return nil
         }
+    }
+
+    static func == (lhs: Profile, rhs: Profile) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
