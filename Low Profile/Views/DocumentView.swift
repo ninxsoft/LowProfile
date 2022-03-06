@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DocumentView.swift
 //  Low Profile
 //
 //  Created by Nindi Gill on 2/8/20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DocumentView: View {
     @Environment(\.openURL) var openURL: OpenURLAction
     var profile: Profile
     @State private var selectedPayload: Payload?
@@ -19,7 +19,7 @@ struct ContentView: View {
         NavigationView {
             List(profile.payloads, selection: $selectedPayload) { payload in
                 NavigationLink(destination: Detail(payload: payload, certificates: profile.certificates), tag: payload, selection: $selectedPayload) {
-                    SidebarRow(payload: payload)
+                    SidebarPayloadRow(payload: payload)
                 }
             }
             .frame(width: sidebarWidth)
@@ -54,8 +54,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct DocumentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(profile: .example)
+        DocumentView(profile: .example)
     }
 }

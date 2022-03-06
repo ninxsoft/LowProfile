@@ -14,6 +14,7 @@ class PayloadHelper: NSObject {
     private var dictionaries: [String: Any] = [:]
     private var keysToIgnore: [String] {
         [
+            "PayloadContent",
             "PayloadDescription",
             "PayloadDisplayName",
             "PayloadEnabled",
@@ -132,6 +133,38 @@ class PayloadHelper: NSObject {
         return properties
     }
 
+    func managedPayloads(for type: String, in dictionary: [String: Any]) -> [Payload] {
+
+        guard type == "com.apple.ManagedClient.preferences",
+            let payloadContent: [String: Any] = dictionary["PayloadContent"] as? [String: Any] else {
+            return []
+        }
+
+        var managedPayloads: [Payload] = []
+
+        for type in payloadContent.keys {
+
+            guard let payload: [String: Any] = payloadContent[type] as? [String: Any],
+                let array: [[String: Any]] = payload["Forced"] as? [[String: Any]] else {
+                continue
+            }
+
+            for item in array {
+
+                guard var dictionary: [String: Any] = item["mcx_preference_settings"] as? [String: Any] else {
+                    continue
+                }
+
+                dictionary["PayloadType"] = type
+
+                let managedPayload: Payload = Payload(dictionary: dictionary)
+                managedPayloads.append(managedPayload)
+            }
+        }
+
+        return managedPayloads
+    }
+
     func availableProperties(for type: String, in dictionary: [String: Any]) -> [Property] {
         let availableProperties: [Property] = knownProperties(for: type)
         return availableProperties.filter { !dictionary.keys.contains($0.name) }
@@ -161,6 +194,12 @@ class PayloadHelper: NSObject {
             return []
         }
 
-        return propertyDictionaries.map { Property(availableDictionary: $0) }
+        var properties: [Property] = propertyDictionaries.map { Property(availableDictionary: $0) }
+
+        if type == "com.apple.ManagedClient.preferences" {
+            properties = properties.filter { $0.name != "PreferenceDomain" }
+        }
+
+        return properties
     }
 }

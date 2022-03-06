@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		392BC50927CF7940009D77D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392BC50827CF7940009D77D8 /* ContentView.swift */; };
 		3994426527605B2B00EC0337 /* UNNotificationAction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994426327605B2B00EC0337 /* UNNotificationAction+Extension.swift */; };
 		3994426627605B2B00EC0337 /* UNNotificationCategory+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994426427605B2B00EC0337 /* UNNotificationCategory+Extension.swift */; };
 		3994426827605C8B00EC0337 /* UserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994426727605C8B00EC0337 /* UserNotificationCenterDelegate.swift */; };
@@ -22,9 +23,9 @@
 		39C41A17275DDA5F001F4B4E /* DetailDiscussion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C41A16275DDA5F001F4B4E /* DetailDiscussion.swift */; };
 		39C41A1A275DEDB1001F4B4E /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C41A19275DEDB1001F4B4E /* Certificate.swift */; };
 		39C41A20275F2038001F4B4E /* CustomValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C41A1F275F2038001F4B4E /* CustomValue.swift */; };
-		39C41A7E276017C7001F4B4E /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C41A43275F3D9F001F4B4E /* Quartz.framework */; };
-		39C41A83276017C7001F4B4E /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C41A82276017C7001F4B4E /* PreviewProvider.swift */; };
-		39C41A8F276018D4001F4B4E /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */; };
+		39D0056827D0916B0027A6E5 /* SidebarProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D0056727D0916B0027A6E5 /* SidebarProfileRow.swift */; };
+		39D0056A27D09E800027A6E5 /* SidebarPayloadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D0056927D09E800027A6E5 /* SidebarPayloadsView.swift */; };
+		39D0056C27D31D220027A6E5 /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D0056B27D31D220027A6E5 /* RefreshView.swift */; };
 		573F4D0424E81EB000E6136F /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F4D0324E81EB000E6136F /* AppCommands.swift */; };
 		578B3B9724DAA522004D06C2 /* DetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9624DAA522004D06C2 /* DetailInformation.swift */; };
 		578B3B9B24DAB51F004D06C2 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9A24DAB51F004D06C2 /* Property.swift */; };
@@ -44,17 +45,18 @@
 		5794E85D254A6B1A004A5942 /* ASN1Decoder in Frameworks */ = {isa = PBXBuildFile; productRef = 5794E85C254A6B1A004A5942 /* ASN1Decoder */; };
 		57BB577B24D789E70090CDDF /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB577A24D789E70090CDDF /* Payload.swift */; };
 		57BB578124D78B2C0090CDDF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578024D78B2C0090CDDF /* Profile.swift */; };
-		57BB578324D7FD330090CDDF /* SidebarRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578224D7FD330090CDDF /* SidebarRow.swift */; };
+		57BB578324D7FD330090CDDF /* SidebarPayloadRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578224D7FD330090CDDF /* SidebarPayloadRow.swift */; };
 		57BB578624D802270090CDDF /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578524D802270090CDDF /* Detail.swift */; };
 		57BB578A24D81AB00090CDDF /* PayloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578924D81AB00090CDDF /* PayloadHelper.swift */; };
 		57D4F7D224D6D6A500BC0648 /* LowProfileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7D124D6D6A500BC0648 /* LowProfileApp.swift */; };
-		57D4F7D424D6D6A500BC0648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7D324D6D6A500BC0648 /* ContentView.swift */; };
+		57D4F7D424D6D6A500BC0648 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7D324D6D6A500BC0648 /* DocumentView.swift */; };
 		57D4F7D624D6D6A700BC0648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D4F7D524D6D6A700BC0648 /* Assets.xcassets */; };
 		57D4F7FC24D6D8D100BC0648 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7FB24D6D8D100BC0648 /* Document.swift */; };
 		57D4F7FE24D6E46400BC0648 /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		392BC50827CF7940009D77D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3994426327605B2B00EC0337 /* UNNotificationAction+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UNNotificationAction+Extension.swift"; sourceTree = "<group>"; };
 		3994426427605B2B00EC0337 /* UNNotificationCategory+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UNNotificationCategory+Extension.swift"; sourceTree = "<group>"; };
 		3994426727605C8B00EC0337 /* UserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationCenterDelegate.swift; sourceTree = "<group>"; };
@@ -69,11 +71,9 @@
 		39C41A16275DDA5F001F4B4E /* DetailDiscussion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDiscussion.swift; sourceTree = "<group>"; };
 		39C41A19275DEDB1001F4B4E /* Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
 		39C41A1F275F2038001F4B4E /* CustomValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomValue.swift; sourceTree = "<group>"; };
-		39C41A43275F3D9F001F4B4E /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
-		39C41A7D276017C7001F4B4E /* Low Profile Quick Look.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Low Profile Quick Look.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		39C41A82276017C7001F4B4E /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
-		39C41A87276017C7001F4B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39C41A88276017C7001F4B4E /* Low Profile Quick Look.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Low Profile Quick Look.entitlements"; sourceTree = "<group>"; };
+		39D0056727D0916B0027A6E5 /* SidebarProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarProfileRow.swift; sourceTree = "<group>"; };
+		39D0056927D09E800027A6E5 /* SidebarPayloadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPayloadsView.swift; sourceTree = "<group>"; };
+		39D0056B27D31D220027A6E5 /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		573F4D0324E81EB000E6136F /* AppCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
 		578B3B9624DAA522004D06C2 /* DetailInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformation.swift; sourceTree = "<group>"; };
 		578B3B9A24DAB51F004D06C2 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
@@ -92,28 +92,19 @@
 		578FFFF624E7B49800DA8DF1 /* PropertyListText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListText.swift; sourceTree = "<group>"; };
 		57BB577A24D789E70090CDDF /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		57BB578024D78B2C0090CDDF /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		57BB578224D7FD330090CDDF /* SidebarRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarRow.swift; sourceTree = "<group>"; };
+		57BB578224D7FD330090CDDF /* SidebarPayloadRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPayloadRow.swift; sourceTree = "<group>"; };
 		57BB578524D802270090CDDF /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		57BB578924D81AB00090CDDF /* PayloadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadHelper.swift; sourceTree = "<group>"; };
 		57D4F7CE24D6D6A500BC0648 /* Low Profile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Low Profile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D4F7D124D6D6A500BC0648 /* LowProfileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowProfileApp.swift; sourceTree = "<group>"; };
-		57D4F7D324D6D6A500BC0648 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		57D4F7D324D6D6A500BC0648 /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
 		57D4F7D524D6D6A700BC0648 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57D4F7DA24D6D6A700BC0648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57D4F7DB24D6D6A700BC0648 /* Low Profile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Low Profile.entitlements"; sourceTree = "<group>"; };
 		57D4F7FB24D6D8D100BC0648 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTType+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		39C41A7A276017C7001F4B4E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				39C41A7E276017C7001F4B4E /* Quartz.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		57D4F7CB24D6D6A500BC0648 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,7 +120,9 @@
 		39C419FE275DA3BB001F4B4E /* Sidebar */ = {
 			isa = PBXGroup;
 			children = (
-				57BB578224D7FD330090CDDF /* SidebarRow.swift */,
+				39D0056727D0916B0027A6E5 /* SidebarProfileRow.swift */,
+				39D0056927D09E800027A6E5 /* SidebarPayloadsView.swift */,
+				57BB578224D7FD330090CDDF /* SidebarPayloadRow.swift */,
 			);
 			path = Sidebar;
 			sourceTree = "<group>";
@@ -160,37 +153,6 @@
 			path = "Payload Properties";
 			sourceTree = "<group>";
 		};
-		39C41A42275F3D9F001F4B4E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				39C41A43275F3D9F001F4B4E /* Quartz.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		39C41A7F276017C7001F4B4E /* Low Profile Quick Look */ = {
-			isa = PBXGroup;
-			children = (
-				39C41A82276017C7001F4B4E /* PreviewProvider.swift */,
-				39C41A87276017C7001F4B4E /* Info.plist */,
-				39C41A88276017C7001F4B4E /* Low Profile Quick Look.entitlements */,
-			);
-			path = "Low Profile Quick Look";
-			sourceTree = "<group>";
-		};
-		57301BA424E41D6D00814349 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				57D4F7D524D6D6A700BC0648 /* Assets.xcassets */,
-				39C419F8275D9AA2001F4B4E /* Payloads.yaml */,
-				57BB577C24D789F00090CDDF /* Extensions */,
-				57BB578B24D81AB50090CDDF /* Helpers */,
-				57BB577D24D78A270090CDDF /* Model */,
-				57BB578424D7FDBB0090CDDF /* Views */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		57BB577C24D789F00090CDDF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +179,9 @@
 		57BB578424D7FDBB0090CDDF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				57D4F7D324D6D6A500BC0648 /* ContentView.swift */,
+				392BC50827CF7940009D77D8 /* ContentView.swift */,
+				57D4F7D324D6D6A500BC0648 /* DocumentView.swift */,
+				39D0056B27D31D220027A6E5 /* RefreshView.swift */,
 				39C419FE275DA3BB001F4B4E /* Sidebar */,
 				39C419FF275DA3CC001F4B4E /* Detail */,
 				578FFFED24E675EC00DA8DF1 /* AttributedText.swift */,
@@ -245,10 +209,7 @@
 		57D4F7C524D6D6A500BC0648 = {
 			isa = PBXGroup;
 			children = (
-				57301BA424E41D6D00814349 /* Common */,
 				57D4F7D024D6D6A500BC0648 /* Low Profile */,
-				39C41A7F276017C7001F4B4E /* Low Profile Quick Look */,
-				39C41A42275F3D9F001F4B4E /* Frameworks */,
 				57D4F7CF24D6D6A500BC0648 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -257,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				57D4F7CE24D6D6A500BC0648 /* Low Profile.app */,
-				39C41A7D276017C7001F4B4E /* Low Profile Quick Look.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,11 +227,16 @@
 			children = (
 				573F4D0324E81EB000E6136F /* AppCommands.swift */,
 				578B3BC024E132D0004D06C2 /* AppDelegate.swift */,
+				57D4F7D524D6D6A700BC0648 /* Assets.xcassets */,
 				57D4F7FB24D6D8D100BC0648 /* Document.swift */,
 				578F000424E8148D00DA8DF1 /* DocumentError.swift */,
 				57D4F7DA24D6D6A700BC0648 /* Info.plist */,
 				57D4F7D124D6D6A500BC0648 /* LowProfileApp.swift */,
-				57D4F7DB24D6D6A700BC0648 /* Low Profile.entitlements */,
+				39C419F8275D9AA2001F4B4E /* Payloads.yaml */,
+				57BB577C24D789F00090CDDF /* Extensions */,
+				57BB578B24D81AB50090CDDF /* Helpers */,
+				57BB577D24D78A270090CDDF /* Model */,
+				57BB578424D7FDBB0090CDDF /* Views */,
 			);
 			path = "Low Profile";
 			sourceTree = "<group>";
@@ -279,23 +244,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		39C41A7C276017C7001F4B4E /* Low Profile Quick Look */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 39C41A8C276017C7001F4B4E /* Build configuration list for PBXNativeTarget "Low Profile Quick Look" */;
-			buildPhases = (
-				39C41A79276017C7001F4B4E /* Sources */,
-				39C41A7A276017C7001F4B4E /* Frameworks */,
-				39C41A7B276017C7001F4B4E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Low Profile Quick Look";
-			productName = "Low Profile Quick Look";
-			productReference = 39C41A7D276017C7001F4B4E /* Low Profile Quick Look.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		57D4F7CD24D6D6A500BC0648 /* Low Profile */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57D4F7DE24D6D6A700BC0648 /* Build configuration list for PBXNativeTarget "Low Profile" */;
@@ -326,11 +274,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					39C41A7C276017C7001F4B4E = {
-						CreatedOnToolsVersion = 13.1;
-					};
 					57D4F7CD24D6D6A500BC0648 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -354,19 +299,11 @@
 			projectRoot = "";
 			targets = (
 				57D4F7CD24D6D6A500BC0648 /* Low Profile */,
-				39C41A7C276017C7001F4B4E /* Low Profile Quick Look */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		39C41A7B276017C7001F4B4E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		57D4F7CC24D6D6A500BC0648 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,19 +355,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		39C41A79276017C7001F4B4E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				39C41A8F276018D4001F4B4E /* UTType+Extension.swift in Sources */,
-				39C41A83276017C7001F4B4E /* PreviewProvider.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		57D4F7CA24D6D6A500BC0648 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39D0056C27D31D220027A6E5 /* RefreshView.swift in Sources */,
 				578B3BA124DC05B2004D06C2 /* Platform.swift in Sources */,
 				578B3B9B24DAB51F004D06C2 /* Property.swift in Sources */,
 				578B3BA924DC1FAD004D06C2 /* TextRow.swift in Sources */,
@@ -440,7 +369,7 @@
 				39C41A07275DC410001F4B4E /* ScaledSystemImage.swift in Sources */,
 				3994426527605B2B00EC0337 /* UNNotificationAction+Extension.swift in Sources */,
 				578B3BC324E143CD004D06C2 /* DetailCertificates.swift in Sources */,
-				57D4F7D424D6D6A500BC0648 /* ContentView.swift in Sources */,
+				57D4F7D424D6D6A500BC0648 /* DocumentView.swift in Sources */,
 				39C41A20275F2038001F4B4E /* CustomValue.swift in Sources */,
 				57D4F7FC24D6D8D100BC0648 /* Document.swift in Sources */,
 				39C41A14275DCED3001F4B4E /* DetailPayloadPropertiesTrailing.swift in Sources */,
@@ -450,8 +379,9 @@
 				39C41A1A275DEDB1001F4B4E /* Certificate.swift in Sources */,
 				39C41A0E275DCCE8001F4B4E /* DetailPayloadPropertiesMetadata.swift in Sources */,
 				578B3BBF24DFD64E004D06C2 /* DetailPayloadProperties.swift in Sources */,
-				57BB578324D7FD330090CDDF /* SidebarRow.swift in Sources */,
+				57BB578324D7FD330090CDDF /* SidebarPayloadRow.swift in Sources */,
 				578B3B9F24DC0444004D06C2 /* PlatformImage.swift in Sources */,
+				39D0056827D0916B0027A6E5 /* SidebarProfileRow.swift in Sources */,
 				39C41A01275DAED9001F4B4E /* DetailHeading.swift in Sources */,
 				578B3BB124DE5763004D06C2 /* TextTag.swift in Sources */,
 				39C41A04275DB04E001F4B4E /* DetailHighLevel.swift in Sources */,
@@ -462,8 +392,10 @@
 				578FFFF724E7B49800DA8DF1 /* PropertyListText.swift in Sources */,
 				57BB577B24D789E70090CDDF /* Payload.swift in Sources */,
 				578FFFEE24E675ED00DA8DF1 /* AttributedText.swift in Sources */,
+				39D0056A27D09E800027A6E5 /* SidebarPayloadsView.swift in Sources */,
 				573F4D0424E81EB000E6136F /* AppCommands.swift in Sources */,
 				57D4F7D224D6D6A500BC0648 /* LowProfileApp.swift in Sources */,
+				392BC50927CF7940009D77D8 /* ContentView.swift in Sources */,
 				578B3B9724DAA522004D06C2 /* DetailInformation.swift in Sources */,
 				57BB578624D802270090CDDF /* Detail.swift in Sources */,
 				578FFFF124E7AB5D00DA8DF1 /* DetailPropertyList.swift in Sources */,
@@ -475,66 +407,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		39C41A8D276017C7001F4B4E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_ENTITLEMENTS = "Low Profile Quick Look/Low Profile Quick Look.entitlements";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 200;
-				DEVELOPMENT_TEAM = 7K3HVCLV7Z;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Low Profile Quick Look/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Low Profile Quick Look";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ninxsoft.lowprofile.quicklook;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		39C41A8E276017C7001F4B4E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_ENTITLEMENTS = "Low Profile Quick Look/Low Profile Quick Look.entitlements";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 200;
-				DEVELOPMENT_TEAM = 7K3HVCLV7Z;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Low Profile Quick Look/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Low Profile Quick Look";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ninxsoft.lowprofile.quicklook;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		57D4F7DC24D6D6A700BC0648 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -655,11 +527,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Low Profile/Low Profile.entitlements";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 200;
+				CURRENT_PROJECT_VERSION = 300;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 7K3HVCLV7Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -670,7 +541,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ninxsoft.lowprofile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -683,11 +554,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Low Profile/Low Profile.entitlements";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 200;
+				CURRENT_PROJECT_VERSION = 300;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 7K3HVCLV7Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -698,7 +568,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ninxsoft.lowprofile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -709,15 +579,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		39C41A8C276017C7001F4B4E /* Build configuration list for PBXNativeTarget "Low Profile Quick Look" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				39C41A8D276017C7001F4B4E /* Debug */,
-				39C41A8E276017C7001F4B4E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		57D4F7C924D6D6A500BC0648 /* Build configuration list for PBXProject "Low Profile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -744,7 +605,7 @@
 			repositoryURL = "https://github.com/jpsim/Yams.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.6;
+				minimumVersion = 5.0.0;
 			};
 		};
 		5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */ = {
