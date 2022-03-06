@@ -13,8 +13,14 @@ struct LowProfileApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate: AppDelegate
 
     var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+        .commands {
+            AppCommands()
+        }
         DocumentGroup(viewing: Document.self) { file in
-            ContentView(profile: file.document.profile)
+            DocumentView(profile: file.document.profile)
         }
         .commands {
             AppCommands()
