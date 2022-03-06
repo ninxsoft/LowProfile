@@ -11,10 +11,11 @@ struct AppCommands: Commands {
     @Environment(\.openURL) var openURL: OpenURLAction
 
     @CommandsBuilder var body: some Commands {
-        CommandGroup(replacing: .help) {
-            Button("Low Profile Help") {
-                help()
+        CommandGroup(replacing: .newItem) {
+            Button("Open") {
+                open()
             }
+            .keyboardShortcut("o")
         }
         CommandGroup(replacing: .saveItem) {
             Button("Close") {
@@ -22,21 +23,28 @@ struct AppCommands: Commands {
             }
             .keyboardShortcut("w")
         }
-        CommandGroup(replacing: .systemServices) {
-            // do nothing ?
+        CommandGroup(replacing: .systemServices) { }
+        CommandGroup(replacing: .help) {
+            Button("Low Profile Help") {
+                help()
+            }
         }
     }
 
-    func help() {
+    private func open() {
+        NSDocumentController.shared.openDocument(nil)
+    }
+
+    private func close() {
+        NSApplication.shared.keyWindow?.close()
+    }
+
+    private func help() {
 
         guard let url: URL = URL(string: .homepage) else {
             return
         }
 
         openURL(url)
-    }
-
-    func close() {
-        NSApplication.shared.keyWindow?.close()
     }
 }
