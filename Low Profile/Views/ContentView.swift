@@ -33,6 +33,7 @@ struct ContentView: View {
         "spconfigprofile_version",
         "spconfigprofile_RemovalDisallowed",
         "spconfigprofile_install_date",
+        "spconfigprofile_certificate_payload_uuid",
         "spconfigprofile_verification_state",
         "spconfigprofile_payload_identifier",
         "spconfigprofile_payload_display_name",
