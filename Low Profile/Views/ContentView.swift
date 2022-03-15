@@ -145,24 +145,24 @@ struct ContentView: View {
 
             let data: Data = try Data(contentsOf: url)
             var format: PropertyListSerialization.PropertyListFormat = .xml
+            var profiles: [Profile] = []
 
-            guard let array: [[String: Any]] = try PropertyListSerialization.propertyList(from: data, options: [], format: &format) as? [[String: Any]],
-                !array.isEmpty,
-                let parentItems: [[String: Any]] = array[0]["_items"] as? [[String: Any]],
-                !parentItems.isEmpty,
-                let items: [[String: Any]] = parentItems[0]["_items"] as? [[String: Any]] else {
+            guard let array: [[String: Any]] = try PropertyListSerialization.propertyList(from: data, options: [], format: &format) as? [[String: Any]] else {
                 return []
             }
 
-            var profiles: [Profile] = []
-
-            for item in items {
-
-                guard let profile: Profile = profile(for: item) else {
+            for dictionary in array {
+                guard let parentItems: [[String: Any]] = dictionary["_items"] as? [[String: Any]] else {
                     continue
                 }
 
-                profiles.append(profile)
+                for parentItem in parentItems {
+                    guard let items: [[String: Any]] = parentItem["_items"] as? [[String: Any]] else {
+                        continue
+                    }
+
+                    profiles.append(contentsOf: items.compactMap { profile(for: $0) })
+                }
             }
 
             return profiles.sorted { $0.name < $1.name }

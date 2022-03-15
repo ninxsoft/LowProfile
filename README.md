@@ -69,6 +69,10 @@ Grab the latest version of **Low Profile** from the [releases page](https://gith
 
 ## Version History
 
+- 3.0.1
+
+  - Fixed a bug that asumed no User Configuration Profiles were installed (thanks [dhcav](https://github.com/dhcav) for discovering this!)
+
 - 3.0
 
   - Added support for installed configuration profiles (thanks [hkystar35](https://github.com/hkystar35) for the awesome suggestion!)
