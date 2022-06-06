@@ -42,10 +42,10 @@ Configuration:
   paths:
   - toplevel
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -231,7 +231,7 @@ com.apple.ADCertificate.managed:
   discussion:
   - "Specify \u2219`com.apple.ADCertificate.managed`\u2219 as the payload type."
   - To get a certificate from a Microsoft CA, follow the instructions at [Request
-    a certificate from a Microsoft Certificate Authority](https://support.apple.com/en-us/HT204602).
+    a certificate from a Microsoft Certificate Authority](https://developer.apple.comhttps://support.apple.com/en-us/HT204602).
   name: Active Directory Certificate
   paths:
   - activedirectorycertificate
@@ -1374,10 +1374,10 @@ com.apple.SetupAssistant.managed:
   paths:
   - setupassistant
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '14.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '14.0'
     name: iPadOS
   - current: '12.3'
@@ -1637,10 +1637,10 @@ com.apple.airplay:
   paths:
   - airplay
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iPadOS
   - current: '12.3'
@@ -1717,7 +1717,8 @@ com.apple.airplay.security:
     - "\u2219`PASSCODE_ONCE`\u2219 requires an onscreen passcode on first connection\
       \ from a device. Subsequent connections from the same device aren't prompted."
     - "\u2219`PASSCODE_ALWAYS`\u2219 requires an onscreen passcode for every AirPlay\
-      \ connection."
+      \ connection. After an AirPlay connection ends, reconnecting within 30 seconds\
+      \ is allowed without a password."
     - "\u2219`PASSWORD`\u2219 requires a passphrase as specified in the \u2219`Password`\u2219\
       \ key."
     - "\u2219`NONE`\u2219 was deprecated in tvOS 11.3. Existing profiles using \u2219\
@@ -1741,10 +1742,10 @@ com.apple.airprint:
   paths:
   - airprint
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iPadOS
   - current: '12.3'
@@ -1775,12 +1776,12 @@ com.apple.apn.managed:
   paths:
   - apn
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     deprecated: true
     deprecated_at: '7.0'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     deprecated: true
     deprecated_at: '7.0'
     introduced_at: '4.0'
@@ -1820,10 +1821,10 @@ com.apple.app.lock:
   paths:
   - applock
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '6.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '6.0'
     name: iPadOS
   - current: '15.4'
@@ -1852,10 +1853,10 @@ com.apple.applicationaccess:
   paths:
   - restrictions
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -2001,6 +2002,13 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
+    - "If \u2219`false`\u2219, disables Apple TV\u2019s automatic screen saver. Available\
+      \ in tvOS 15.4 and later."
+    name: allowAutomaticScreenSaver
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
     - "If \u2219`false`\u2219, disallows auto unlock.\_Available in macOS 10.12 and\
       \ later, and iOS 14.5 and later."
     name: allowAutoUnlock
@@ -2099,7 +2107,7 @@ com.apple.applicationaccess:
     description:
     - "If \u2219`false`\u2219, disables iCloud keychain synchronization. This restriction\
       \ is deprecated on unsupervised devices  and will be supervised only in a future\
-      \ release. Available in iOS 7 and later, and macOS 10.12 and later."
+      \ release. Available in iOS 7 and later and macOS 10.12 and later."
     name: allowCloudKeychainSync
     type: boolean
   - attributes:
@@ -2127,7 +2135,9 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, disables iCloud Private Relay."
+    - "If \u2219`false`\u2219, disables iCloud Private Relay. For iOS devices, this\
+      \ restriction requires a supervised device. Available in macOS 12 and later,\
+      \ and iOS 15 and later."
     name: allowCloudPrivateRelay
     type: boolean
   - attributes:
@@ -2154,15 +2164,16 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, disables definition lookup. Requires a supervised device.\
-      \ Available in iOS 8.1.3 and later."
+    - "If \u2219`false`\u2219, disables definition lookup. Requires a supervised device\
+      \ on iOS. Available in iOS 8.1.3 and later and macOS 10.11 and later."
     name: allowDefinitionLookup
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, prevents the device name from being changed.\_Requires\
-      \ a supervised device. Available in iOS 9 and later, and tvOS 11.0 and later."
+    - "If \u2219`false`\u2219, prevents the user from changing the device name.\_\
+      Requires a supervised device. Available in iOS 9 and later, and tvOS 11.0 and\
+      \ later."
     name: allowDeviceNameModification
     type: boolean
   - attributes:
@@ -2389,6 +2400,13 @@ com.apple.applicationaccess:
     - "If \u2219`false`\u2219, disables the Today view in Notification Center on the\
       \ lock screen. Available in iOS 7 and later. Also available for user enrollment."
     name: allowLockScreenTodayView
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, disables Mail Privacy Protection on the device. Available\
+      \ in iOS 15.2 and later."
+    name: allowMailPrivacyProtection
     type: boolean
   - attributes:
       default: 'true'
@@ -2756,8 +2774,8 @@ com.apple.applicationaccess:
       minimum: '1'
     description:
     - "This restriction allows the admin to set how many days to delay a major software\
-      \ update on the device. When this restriction is in place the user sees a software\
-      \ update only after the specified delay after the release of the software update.\
+      \ upgrade on the device. When this restriction is in place the user sees a software\
+      \ upgrade only after the specified delay after the release of the software upgrade.\
       \ This value controls the delay for \u2219`forceDelayedMajorSoftwareUpdates`\u2219\
       ."
     - Available in macOS 11.3 and later.
@@ -2898,7 +2916,7 @@ com.apple.applicationaccess:
   - attributes:
       default: 'false'
     description:
-    - If set to true, delays user visibility of major OS Software Updates.
+    - If set to true, delays user visibility of major upgrades to OS Software.
     - Available in macOS 11.3 and later.
     name: forceDelayedMajorSoftwareUpdates
     type: boolean
@@ -3109,16 +3127,6 @@ com.apple.applicationaccess:
     - "Use \u2219`allowListedAppBundleIDs`\u2219 instead."
     name: whitelistedAppBundleIDs
     type: '[string]'
-  - attributes:
-      default: 'true'
-    description: []
-    name: allowMailPrivacyProtection
-    type: boolean
-  - attributes:
-      default: 'true'
-    description: []
-    name: allowAutomaticScreenSaver
-    type: boolean
 com.apple.applicationaccess.new:
   availability:
     device: macOS
@@ -3299,10 +3307,10 @@ com.apple.caldav.account:
   paths:
   - caldav
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -3369,10 +3377,10 @@ com.apple.carddav.account:
   paths:
   - carddav
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -3443,10 +3451,10 @@ com.apple.cellular:
   paths:
   - cellular
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iPadOS
   - current: '8.5'
@@ -3602,10 +3610,10 @@ com.apple.dnsProxy.managed:
   paths:
   - dnsproxy
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '11.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '11.0'
     name: iPadOS
   - current: '12.3'
@@ -3646,10 +3654,10 @@ com.apple.dnsSettings.managed:
   paths:
   - dnssettings
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '14.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '14.0'
     name: iPadOS
   - current: '12.3'
@@ -3939,10 +3947,10 @@ com.apple.domains:
   paths:
   - domains
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '8.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '8.0'
     name: iPadOS
   - current: '12.3'
@@ -3987,10 +3995,10 @@ com.apple.eas.account:
   paths:
   - exchangeactivesync
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   properties:
@@ -4333,16 +4341,15 @@ com.apple.education:
   - '- Leader certificates must have the common name prefix leader (case insensitive).'
   - '- Member certificates must have the common name prefix member (case insensitive).'
   - '- TLS server certificates issued on or after September 1, 2020 00:00 GMT/UTC
-    must not have a validity period greater than 398 days. See [About Upcoming Limits
-    on Trusted Certificates](https://support.apple.com/en-us/HT211025) for more information.'
+    must not have a validity period greater than 398 days. See  for more information.'
   name: Education
   paths:
   - educationconfiguration
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '9.3'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '9.3'
     name: iPadOS
   - current: '12.3'
@@ -4592,10 +4599,10 @@ com.apple.extensiblesso:
   - extensiblesinglesignon
   - extensiblesinglesignonkerberos
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '13.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '13.0'
     name: iPadOS
   - current: '12.3'
@@ -4980,9 +4987,9 @@ com.apple.firstethernet.managed:
   properties: []
 com.apple.font:
   availability:
-    device: iOS, macOS, Shared iPad
+    device: iOS, macOS
     manual: iOS, macOS
-    multiple: iOS, macOS, Shared iPad
+    multiple: iOS, macOS
     supervision: '-'
     user: macOS
     user_approved: '-'
@@ -4994,10 +5001,10 @@ com.apple.font:
   paths:
   - font
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iPadOS
   - current: '12.3'
@@ -5113,10 +5120,10 @@ com.apple.google-oauth:
   paths:
   - googleaccount
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '9.3'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '9.3'
     name: iPadOS
   properties:
@@ -5172,10 +5179,10 @@ com.apple.homescreenlayout:
   paths:
   - homescreenlayout
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '9.3'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '9.3'
     name: iPadOS
   - current: '15.4'
@@ -5310,10 +5317,10 @@ com.apple.ldap.account:
   paths:
   - ldap
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -5606,10 +5613,10 @@ com.apple.mail.managed:
   paths:
   - mail
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -5651,7 +5658,8 @@ com.apple.mail.managed:
   - attributes: {}
     description:
     - The full email address for the account. If this string isn't present in the
-      payload, the device prompts for it during profile installation.
+      payload, the device prompts for this string during interactive profile installation
+      in Settings or System Preferences.
     name: EmailAddress
     type: string
   - attributes:
@@ -5688,7 +5696,7 @@ com.apple.mail.managed:
     - The user name for the email account, usually the same as the email address up
       to the @ character. If the user name isn't present in the payload and the account
       is set up to require authentication for incoming email, the device prompts for
-      this string during profile installation.
+      this string during interactive profile installation in Settings or System Preferences.
     name: IncomingMailServerUsername
     type: string
   - attributes:
@@ -5733,7 +5741,7 @@ com.apple.mail.managed:
     - The user name for the email account, usually the same as the email address up
       to the @ character. If the user name isn't present in the payload and the account
       is set up to require authentication for outgoing email, the device prompts for
-      this string during profile installation.
+      this string during interactive profile installation in Settings or System Preferences.
     name: OutgoingMailServerUsername
     type: string
   - attributes:
@@ -6179,10 +6187,10 @@ com.apple.mdm:
   paths:
   - mdm
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -6241,7 +6249,7 @@ com.apple.mdm:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, the device attempts to send a [CheckOut](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/2-MDM_Check_In_Protocol/MDM_Check_In_Protocol..html#//apple_ref/doc/uid/TP40017387-CH4-SW7)\
+    - "If \u2219`true`\u2219, the device attempts to send a [CheckOut](https://developer.apple.comhttps://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/2-MDM_Check_In_Protocol/MDM_Check_In_Protocol..html#//apple_ref/doc/uid/TP40017387-CH4-SW7)\
       \ message to the \u2219`CheckInURL`\u2219 when the profile is removed."
     name: CheckOutWhenRemoved
     type: boolean
@@ -6389,10 +6397,10 @@ com.apple.mobiledevice.passwordpolicy:
   paths:
   - passcode
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -6525,10 +6533,10 @@ com.apple.networkusagerules:
   paths:
   - networkusagerules
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '9.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '9.0'
     name: iPadOS
   properties:
@@ -6558,10 +6566,10 @@ com.apple.notificationsettings:
   paths:
   - notifications
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '9.3'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '9.3'
     name: iPadOS
   - current: '12.3'
@@ -6590,12 +6598,12 @@ com.apple.osxserver.account:
   paths:
   - macosserveraccount
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     deprecated: true
     deprecated_at: '12.0'
     introduced_at: '9.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     deprecated: true
     deprecated_at: '12.0'
     introduced_at: '9.0'
@@ -6713,10 +6721,10 @@ com.apple.profileRemovalPassword:
   paths:
   - profileremovalpassword
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -6748,10 +6756,10 @@ com.apple.proxy.http.global:
   paths:
   - globalhttpproxy
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '6.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '6.0'
     name: iPadOS
   - current: '12.3'
@@ -7140,10 +7148,10 @@ com.apple.security.certificaterevocation:
   paths:
   - certificaterevocation
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '14.2'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '14.2'
     name: iPadOS
   properties:
@@ -7153,7 +7161,7 @@ com.apple.security.certificaterevocation:
     - Specifying a certificate authority (CA) enables revocation checking for all
       certificates chaining up to that CA.
     - It is not necessary to specify trusted root certificates because they are implicitly
-      specified. See [https://support.apple.com/en-us/HT209143](https://support.apple.com/en-us/HT209143)
+      specified. See [https://support.apple.com/en-us/HT209143](https://developer.apple.comhttps://support.apple.com/en-us/HT209143)
       for the available trusted root certificates for Apple operating systems.
     name: EnabledForCerts
     type: '[CertificateRevocation.SubjectPublicKeyInfoHashDict]'
@@ -7174,10 +7182,10 @@ com.apple.security.certificatetransparency:
   paths:
   - certificatetransparency
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: 12.1.1
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: 12.1.1
     name: iPadOS
   - current: '12.3'
@@ -7248,6 +7256,19 @@ com.apple.security.firewall:
   properties:
   - attributes: {}
     description:
+    - "If \u2219`true`\u2219, allows built-in software to receive incoming connections."
+    - Available in macOS 12.3 and later.
+    name: AllowSigned
+    type: boolean
+  - attributes: {}
+    description:
+    - "If \u2219`true`\u2219, allows downloaded signed software to receive incoming\
+      \ connections."
+    - Available in macOS 12.3 and later.
+    name: AllowSignedApp
+    type: boolean
+  - attributes: {}
+    description:
     - The list of apps with connections controlled by the firewall.
     name: Applications
     type: '[Firewall.ApplicationsItem]'
@@ -7283,14 +7304,6 @@ com.apple.security.firewall:
     - Available in macOS 12 and later.
     name: LoggingOption
     type: string
-  - attributes: {}
-    description: []
-    name: AllowSigned
-    type: boolean
-  - attributes: {}
-    description: []
-    name: AllowSignedApp
-    type: boolean
 com.apple.security.identitypreference:
   availability:
     device: '-'
@@ -7348,10 +7361,10 @@ com.apple.security.pem:
   paths:
   - certificatepem
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -7391,10 +7404,10 @@ com.apple.security.pkcs1:
   paths:
   - certificatepkcs1
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -7434,10 +7447,10 @@ com.apple.security.pkcs12:
   paths:
   - certificatepkcs12
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -7496,10 +7509,10 @@ com.apple.security.root:
   paths:
   - certificateroot
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -7537,15 +7550,15 @@ com.apple.security.scep:
   discussion:
   - "Specify \u2219`com.apple.security.scep`\u2219 as the payload type."
   - An SCEP payload automates the request of a client certificate from an SCEP server,
-    as described in [Over-the-Air Profile Delivery and Configuration](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/iPhoneOTAConfiguration/Introduction/Introduction.html).
+    as described in [Over-the-Air Profile Delivery and Configuration](https://developer.apple.comhttps://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/iPhoneOTAConfiguration/Introduction/Introduction.html).
   name: SCEP
   paths:
   - scep
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -7661,10 +7674,10 @@ com.apple.shareddeviceconfiguration:
   paths:
   - lockscreenmessage
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '9.3'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '9.3'
     name: iPadOS
   properties:
@@ -7700,10 +7713,10 @@ com.apple.sso:
   paths:
   - singlesignon
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iPadOS
   properties:
@@ -7734,10 +7747,10 @@ com.apple.subscribedcalendar.account:
   paths:
   - subscribedcalendars
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   properties:
@@ -8088,7 +8101,7 @@ com.apple.systempolicy.rule:
   - attributes: {}
     description:
     - The policy requirement. This key must follow the syntax described in [Code Signing
-      Requirement Language](https://developer.apple.com/library/archive/documentation/Security/Conceptual/CodeSigningGuide/RequirementLang/RequirementLang.html#//apple_ref/doc/uid/TP40005929-CH5).
+      Requirement Language](https://developer.apple.comhttps://developer.apple.com/library/archive/documentation/Security/Conceptual/CodeSigningGuide/RequirementLang/RequirementLang.html#//apple_ref/doc/uid/TP40005929-CH5).
     name: Requirement
     type: string
 com.apple.systempreferences:
@@ -8311,7 +8324,7 @@ com.apple.tvremote:
     manual: iOS, tvOS
     multiple: '-'
     supervision: iOS, tvOS
-    user: iOS
+    user: Shared iPad
     user_approved: '-'
     user_enrol: '-'
   description: The payload for configuring the Apple TV remote.
@@ -8321,10 +8334,10 @@ com.apple.tvremote:
   paths:
   - tvremote
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '11.3'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '11.3'
     name: iPadOS
   - current: '15.4'
@@ -8512,10 +8525,10 @@ com.apple.vpn.managed:
   paths:
   - vpn
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -8632,10 +8645,10 @@ com.apple.vpn.managed.applayer:
   paths:
   - applayervpn
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iPadOS
   - current: '12.3'
@@ -8775,10 +8788,10 @@ com.apple.webClip.managed:
   paths:
   - webclip
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -8867,10 +8880,10 @@ com.apple.webcontent-filter:
   paths:
   - webcontentfilter
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '7.0'
     name: iPadOS
   - current: '12.3'
@@ -9053,10 +9066,10 @@ com.apple.wifi.managed:
   paths:
   - wifi
   platforms:
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iOS
-  - current: '15.4'
+  - current: '15.5'
     introduced_at: '4.0'
     name: iPadOS
   - current: '12.3'
@@ -9148,14 +9161,6 @@ com.apple.wifi.managed:
     - "If \u2219`true`\u2219, defines this network as hidden."
     name: HIDDEN_NETWORK
     type: boolean
-  - attributes: {}
-    description:
-    - "The wireless interface to use. The \u2219`com.apple.globalethernet.managed`\u2219\
-      \ payload uses the value \u2219`AnyEthernet`\u2219. The values for the other\
-      \ payloads are derived from their name; for example the \u2219`com.apple.firstethernet.managed`\u2219\
-      \ value would be \u2219`FirstEthernet`\u2219. (Links to 801.2 payloads)"
-    name: Interface
-    type: string
   - attributes:
       default: 'false'
     description:
@@ -9292,7 +9297,7 @@ com.apple.xsan:
   description: The payload for configuring an Xsan client system.
   discussion:
   - "Specify \u2219`com.apple.xsan`\u2219 as the payload type."
-  - "For more information, see\_[https://support.apple.com/en-us/HT205333](https://support.apple.com/en-us/HT205333)."
+  - "For more information, see\_[https://support.apple.com/en-us/HT205333](https://developer.apple.comhttps://support.apple.com/en-us/HT205333)."
   name: Xsan
   paths:
   - xsan
@@ -9362,7 +9367,7 @@ com.apple.xsan.preferences:
     that automatically mount at startup.
   discussion:
   - "Specify \u2219`com.apple.xsan.preferences`\u2219 as the payload type."
-  - "For more information, see\_[https://support.apple.com/en-us/HT205333](https://support.apple.com/en-us/HT205333)."
+  - "For more information, see\_[https://support.apple.com/en-us/HT205333](https://developer.apple.comhttps://support.apple.com/en-us/HT205333)."
   name: Xsan Preferences
   paths:
   - xsanpreferences
