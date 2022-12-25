@@ -1,14 +1,9 @@
 <?xml version="1.0" standalone="yes"?>
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
-        <title>Low Profile</title>
-        <item>
-            <title>3.0.1</title>
-            <pubDate>Wed, 16 Mar 2022 00:00:00 +1000</pubDate>
-            <sparkle:version>301</sparkle:version>
-            <sparkle:shortVersionString>3.0.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/ninxsoft/LowProfile/releases/download/v3.0.1/Low.Profile.3.0.1.dmg" sparkle:edSignature="43DjFhfB/bwEWzxspK0swZjiJsrH96F/S07ECtBiteLbLyrrk+yl5U/8Se8Q6C+GnHWiULPKNYKcY/hXLbQ9Dg==" length="2230479" type="application/octet-stream"/>
-        </item>
+        <title>Low Profile Changelog</title>
+        <description>A Mac utility to help inspect Apple Configuration Profile payloads.</description>
+        <language>en</language>
+        <link>https://github.com/ninxsoft/LowProfile</link>
     </channel>
 </rss>

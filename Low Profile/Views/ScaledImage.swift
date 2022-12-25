@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ScaledImage: View {
-    var name: String
+    var name: String?
     var length: CGFloat
 
     var body: some View {
-        Image(name)
-            .resizable()
-            .scaledToFit()
-            .frame(width: length, height: length)
+        if let name: String = name {
+            Image(name)
+                .resizable()
+                .scaledToFit()
+                .frame(width: length, height: length)
+        } else {
+            Image(nsImage: NSApplication.shared.applicationIconImage)
+                .resizable()
+                .scaledToFit()
+                .frame(width: length, height: length)
+        }
     }
 }
 

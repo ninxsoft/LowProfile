@@ -233,7 +233,7 @@ struct ContentView: View {
 
     private func homepage() {
 
-        guard let url: URL = URL(string: .homepage) else {
+        guard let url: URL = URL(string: .repositoryURL) else {
             return
         }
 
