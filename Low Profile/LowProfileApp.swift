@@ -11,19 +11,22 @@ import SwiftUI
 struct LowProfileApp: App {
     // swiftlint:disable:next weak_delegate
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate: AppDelegate
+    @StateObject var sparkleUpdater: SparkleUpdater = SparkleUpdater()
 
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        Group {
+            WindowGroup {
+                ContentView()
+            }
+            DocumentGroup(viewing: Document.self) { file in
+                DocumentView(profile: file.document.profile)
+            }
         }
         .commands {
-            AppCommands()
+            AppCommands(sparkleUpdater: sparkleUpdater)
         }
-        DocumentGroup(viewing: Document.self) { file in
-            DocumentView(profile: file.document.profile)
-        }
-        .commands {
-            AppCommands()
+        Settings {
+            SettingsView(sparkleUpdater: sparkleUpdater)
         }
     }
 }

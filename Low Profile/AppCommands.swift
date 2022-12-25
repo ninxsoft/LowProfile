@@ -9,8 +9,15 @@ import SwiftUI
 
 struct AppCommands: Commands {
     @Environment(\.openURL) var openURL: OpenURLAction
+    @ObservedObject var sparkleUpdater: SparkleUpdater
 
     @CommandsBuilder var body: some Commands {
+        CommandGroup(after: .appInfo) {
+            Button("Check for Updates...") {
+                sparkleUpdater.checkForUpdates()
+            }
+            .disabled(!sparkleUpdater.canCheckForUpdates)
+        }
         CommandGroup(replacing: .newItem) {
             Button("Open") {
                 open()
@@ -41,7 +48,7 @@ struct AppCommands: Commands {
 
     private func help() {
 
-        guard let url: URL = URL(string: .homepage) else {
+        guard let url: URL = URL(string: .repositoryURL) else {
             return
         }
 

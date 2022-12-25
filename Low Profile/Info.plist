@@ -37,6 +37,10 @@
 	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/ninxsoft/LowProfile/main/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>nlu+Y1R3jt2N60jLDpVBgZRPMNyh6Vkh2BwXtpUtd1Q=</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
