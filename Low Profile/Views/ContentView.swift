@@ -54,7 +54,8 @@ struct ContentView: View {
             EmptyView()
                 .frame(width: sidebarWidth)
             Text(selectionString)
-                .font(.title)
+                .font(.largeTitle)
+                .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
         }
         .toolbar {
