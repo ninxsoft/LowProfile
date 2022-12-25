@@ -2,6 +2,8 @@
 
 # Low Profile
 
+![Latest Release](https://img.shields.io/github/v/release/ninxsoft/LowProfile?display_name=tag&label=Latest%20Release&sort=semver) ![Downloads](https://img.shields.io/github/downloads/ninxsoft/LowProfile/total?label=Downloads) [![Linting](https://github.com/ninxsoft/LowProfile/actions/workflows/linting.yml/badge.svg)](https://github.com/ninxsoft/LowProfile/actions/workflows/linting.yml) [![Unit Tests](https://github.com/ninxsoft/LowProfile/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/ninxsoft/LowProfile/actions/workflows/unit_tests.yml) [![Build](https://github.com/ninxsoft/LowProfile/actions/workflows/build.yml/badge.svg)](https://github.com/ninxsoft/LowProfile/actions/workflows/build.yml)
+
 A Mac utility to help inspect Apple Configuration Profile [payloads](https://developer.apple.com/documentation/devicemanagement/profile-specific_payload_keys):
 
 ![Example](Readme%20Resources/Example.png)
@@ -50,8 +52,7 @@ If the answer is yes to any of the above, then **Low Profile** is the app for **
 
 ## Build Requirements
 
-- Swift **5.5**.
-- Xcode **13.0**.
+- Swift **5.5** | Xcode **13.0**.
 - Runs on macOS Monterey **12.0** and later.
 
 ## Download

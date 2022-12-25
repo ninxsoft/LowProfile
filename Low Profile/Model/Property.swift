@@ -65,23 +65,23 @@ struct Property: Identifiable {
         id = UUID().uuidString
         name = unknownName
 
-        if let _: Bool = unknownValue as? Bool {
+        if unknownValue as? Bool != nil {
             type = "boolean"
-        } else if let _: Data = unknownValue as? Data {
+        } else if unknownValue as? Data != nil {
             type = "data"
-        } else if let _: Date = unknownValue as? Date {
+        } else if unknownValue as? Date != nil {
             type = "date"
-        } else if let _: Int = unknownValue as? Int {
+        } else if unknownValue as? Int != nil {
             type = "integer"
-        } else if let _: NSNumber = unknownValue as? NSNumber {
+        } else if unknownValue as? NSNumber != nil {
             type = "number"
-        } else if let _: String = unknownValue as? String {
+        } else if unknownValue as? String != nil {
             type = "string"
-        } else if let _: [String] = unknownValue as? [String] {
+        } else if unknownValue as? [String] != nil {
             type = "[string]"
-        } else if let _: [String: Any] = unknownValue as? [String: Any] {
+        } else if unknownValue as? [String: Any] != nil {
             type = "dictionary"
-        } else if let _: [[String: Any]] = unknownValue as? [[String: Any]] {
+        } else if unknownValue as? [[String: Any]] != nil {
             type = "[dictionary]"
         } else {
             type = "Unknown type"

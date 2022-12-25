@@ -27,6 +27,7 @@
 		39D0056A27D09E800027A6E5 /* SidebarPayloadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D0056927D09E800027A6E5 /* SidebarPayloadsView.swift */; };
 		39D0056C27D31D220027A6E5 /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D0056B27D31D220027A6E5 /* RefreshView.swift */; };
 		573F4D0424E81EB000E6136F /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F4D0324E81EB000E6136F /* AppCommands.swift */; };
+		5770D8612958489D00297B46 /* LowProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770D8602958489D00297B46 /* LowProfileTests.swift */; };
 		578B3B9724DAA522004D06C2 /* DetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9624DAA522004D06C2 /* DetailInformation.swift */; };
 		578B3B9B24DAB51F004D06C2 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9A24DAB51F004D06C2 /* Property.swift */; };
 		578B3B9F24DC0444004D06C2 /* PlatformImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B3B9E24DC0444004D06C2 /* PlatformImage.swift */; };
@@ -75,6 +76,8 @@
 		39D0056927D09E800027A6E5 /* SidebarPayloadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPayloadsView.swift; sourceTree = "<group>"; };
 		39D0056B27D31D220027A6E5 /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		573F4D0324E81EB000E6136F /* AppCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
+		5770D85E2958489D00297B46 /* LowProfileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LowProfileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5770D8602958489D00297B46 /* LowProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowProfileTests.swift; sourceTree = "<group>"; };
 		578B3B9624DAA522004D06C2 /* DetailInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformation.swift; sourceTree = "<group>"; };
 		578B3B9A24DAB51F004D06C2 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		578B3B9E24DC0444004D06C2 /* PlatformImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformImage.swift; sourceTree = "<group>"; };
@@ -105,6 +108,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5770D85B2958489D00297B46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		57D4F7CB24D6D6A500BC0648 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,6 +161,14 @@
 				39C41A0D275DCCE8001F4B4E /* DetailPayloadPropertiesMetadata.swift */,
 			);
 			path = "Payload Properties";
+			sourceTree = "<group>";
+		};
+		5770D85F2958489D00297B46 /* Low Profile Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5770D8602958489D00297B46 /* LowProfileTests.swift */,
+			);
+			path = "Low Profile Tests";
 			sourceTree = "<group>";
 		};
 		57BB577C24D789F00090CDDF /* Extensions */ = {
@@ -210,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				57D4F7D024D6D6A500BC0648 /* Low Profile */,
+				5770D85F2958489D00297B46 /* Low Profile Tests */,
 				57D4F7CF24D6D6A500BC0648 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -218,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				57D4F7CE24D6D6A500BC0648 /* Low Profile.app */,
+				5770D85E2958489D00297B46 /* LowProfileTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,6 +264,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5770D85D2958489D00297B46 /* LowProfileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5770D8622958489D00297B46 /* Build configuration list for PBXNativeTarget "LowProfileTests" */;
+			buildPhases = (
+				5770D85A2958489D00297B46 /* Sources */,
+				5770D85B2958489D00297B46 /* Frameworks */,
+				5770D85C2958489D00297B46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LowProfileTests;
+			productName = "Low ProfileTests";
+			productReference = 5770D85E2958489D00297B46 /* LowProfileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		57D4F7CD24D6D6A500BC0648 /* Low Profile */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57D4F7DE24D6D6A700BC0648 /* Build configuration list for PBXNativeTarget "Low Profile" */;
@@ -273,9 +310,12 @@
 		57D4F7C624D6D6A500BC0648 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					5770D85D2958489D00297B46 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					57D4F7CD24D6D6A500BC0648 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -299,11 +339,19 @@
 			projectRoot = "";
 			targets = (
 				57D4F7CD24D6D6A500BC0648 /* Low Profile */,
+				5770D85D2958489D00297B46 /* LowProfileTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5770D85C2958489D00297B46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		57D4F7CC24D6D6A500BC0648 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,7 +381,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/usr/bin/env bash";
-			shellScript = "if which drstring > /dev/null ; then\n  drstring check --config-file \"$SRCROOT/.drstring.toml\" || true\nelse\n  echo \"warning: DrString not installed, download from https://github.com/dduan/DrString\"\nfi\n\nexit 0\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which drstring > /dev/null ; then\n  drstring check --config-file \"$SRCROOT/.drstring.toml\" || true\nelse\n  echo \"warning: DrString not installed, download from https://github.com/dduan/DrString\"\nfi\n\nexit 0\n";
 		};
 		57D4F7E124D6D6DA00BC0648 /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -352,11 +400,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/usr/bin/env bash";
-			shellScript = "if which swiftlint > /dev/null ; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\nexit 0\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null ; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\nexit 0\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5770D85A2958489D00297B46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5770D8612958489D00297B46 /* LowProfileTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		57D4F7CA24D6D6A500BC0648 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,6 +465,46 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		5770D8632958489D00297B46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 7K3HVCLV7Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = con.ninxsoft.lowprofile.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5770D8642958489D00297B46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 7K3HVCLV7Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = con.ninxsoft.lowprofile.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		57D4F7DC24D6D6A700BC0648 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -532,6 +628,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 301;
@@ -560,6 +657,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 301;
@@ -585,6 +683,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5770D8622958489D00297B46 /* Build configuration list for PBXNativeTarget "LowProfileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5770D8632958489D00297B46 /* Debug */,
+				5770D8642958489D00297B46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		57D4F7C924D6D6A500BC0648 /* Build configuration list for PBXProject "Low Profile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
