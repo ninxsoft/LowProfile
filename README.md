@@ -109,7 +109,7 @@ Grab the latest version of **Low Profile** from the [releases page](https://gith
 
 ## License
 
-> Copyright © 2022 Nindi Gill
+> Copyright © 2023 Nindi Gill
 >
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
