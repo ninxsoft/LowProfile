@@ -51,7 +51,7 @@ struct ContentView: View {
                 }
             }
             .searchable(text: $searchString)
-            .frame(width: sidebarWidth)
+            .frame(minWidth: sidebarWidth)
             EmptyView()
                 .frame(width: sidebarWidth)
             Text(selectionString)
