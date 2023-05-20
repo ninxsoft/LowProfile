@@ -1539,7 +1539,8 @@ com.apple.SoftwareUpdate:
       \ from the App Store\" option and prevents the user from changing the option."
     name: AutomaticDownload
     type: boolean
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - The URL of the software update catalog. This property is not supported in macOS
       11 and later.
@@ -1663,7 +1664,8 @@ com.apple.airplay:
       behavior.
     name: Passwords
     type: '[AirPlay.PasswordsItem]'
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - "Use \u2219`AllowList`\u2219 instead. As of macOS 11.3 and iOS 14.5 this key\
       \ is deprecated."
@@ -2746,7 +2748,8 @@ com.apple.applicationaccess:
       \ in iOS 7 and later."
     name: autonomousSingleAppModePermittedAppIDs
     type: '[string]'
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - Use blockedAppBundleIDs instead.
     name: blacklistedAppBundleIDs
@@ -3011,6 +3014,7 @@ com.apple.applicationaccess:
     type: boolean
   - attributes:
       default: 'false'
+      deprecated: true
     description:
     - "Use \u2219`forceWiFiToAllowedNetworksOnly`\u2219 instead."
     name: forceWiFiWhitelisting
@@ -3134,7 +3138,8 @@ com.apple.applicationaccess:
       \ in iOS 4 and later."
     name: safariAllowPopups
     type: boolean
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - "Use \u2219`allowListedAppBundleIDs`\u2219 instead."
     name: whitelistedAppBundleIDs
@@ -3196,13 +3201,15 @@ com.apple.applicationaccess.new:
     - "If \u2219`true`\u2219, enables app access restrictions."
     name: familyControlsEnabled
     type: boolean
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - The paths to apps in the deny list. This property is deprecated in macOS 10.15
       and later.
     name: pathBlackList
     type: '[string]'
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - The paths to apps in the allow list. This property is deprecated in macOS 10.15
       and later.
@@ -3249,6 +3256,7 @@ com.apple.appstore:
     type: boolean
   - attributes:
       default: 'false'
+      deprecated: true
     description:
     - "If \u2219`true`\u2219, restricts app installations to admin users only. Deprecated\
       \ in macOS 10.14. Use the \u2219`com.apple.SoftwareUpdate`\u2219 payload key\
@@ -3613,6 +3621,7 @@ com.apple.desktop:
   properties:
   - attributes:
       default: 'false'
+      deprecated: true
     description:
     - "If \u2219`true`\u2219, locks the desktop picture.\_Replaced with allowWallpaperModification\
       \ in macOS 10.13."
@@ -4091,7 +4100,8 @@ com.apple.eas.account:
       prompts for this string during profile installation.
     name: EmailAddress
     type: string
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - "The value of the \u2219`X-Apple-Config-Magic`\u2219 header in each EAS HTTP\
       \ request."
@@ -4152,6 +4162,7 @@ com.apple.eas.account:
     type: boolean
   - attributes:
       default: 'false'
+      deprecated: true
     description:
     - "If \u2219`true`\u2219, enables S/MIME encryption. In iOS 10.0 and later, this\
       \ key is ignored. Use \u2219`SMIMESigningEnabled`\u2219 instead."
@@ -4159,6 +4170,7 @@ com.apple.eas.account:
     type: boolean
   - attributes:
       default: 'false'
+      deprecated: true
     description:
     - "If \u2219`true`\u2219, enables S/MIME encryption for this account. Available\
       \ in iOS 10.0 and later. As of iOS 12.0, this key is deprecated. It is recommended\
@@ -4188,6 +4200,7 @@ com.apple.eas.account:
     type: boolean
   - attributes:
       default: 'false'
+      deprecated: true
     description:
     - "If \u2219`true`\u2219, displays the per-message encryption switch in the Mail\
       \ Compose UI."
@@ -4949,6 +4962,7 @@ com.apple.finder:
     name: ProhibitBurn
     type: boolean
   - attributes:
+      deprecated: true
       possibleValues:
       - Simple
       - Full
@@ -5127,18 +5141,21 @@ com.apple.gamed:
     type: boolean
   - attributes:
       default: 'true'
+      deprecated: true
     description:
     - "If \u2219`true`\u2219, allows adding Game Center friends."
     name: GKFeatureAddingGameCenterFriendsAllowed
     type: boolean
   - attributes:
       default: 'true'
+      deprecated: true
     description:
     - "If \u2219`true`\u2219, enables Game Center."
     name: GKFeatureGameCenterAllowed
     type: boolean
   - attributes:
       default: 'true'
+      deprecated: true
     description:
     - "If \u2219`true`\u2219, allows multiplayer gaming."
     name: GKFeatureMultiplayerGamingAllowed
@@ -5880,6 +5897,7 @@ com.apple.mail.managed:
     type: boolean
   - attributes:
       default: 'false'
+      deprecated: true
     description:
     - "If \u2219`true`\u2219, displays the per-message encryption switch in the Mail\
       \ Compose UI."
@@ -8729,6 +8747,7 @@ com.apple.universalaccess:
     type: boolean
   - attributes:
       default: 'false'
+      deprecated: true
     description:
     - "If \u2219`true`\u2219, enables \"Show preview rectangle\" in the Zoom options.\
       \ Only available in macOS 10.15 and earlier."
@@ -8753,6 +8772,7 @@ com.apple.universalaccess:
     type: boolean
   - attributes:
       default: 'false'
+      deprecated: true
     description:
     - "If \u2219`true`\u2219, enables \"Use grayscale\" in the Display options."
     - This option is deprecated in macOS 11.
@@ -8996,7 +9016,8 @@ com.apple.vpn.managed.applayer:
     - Available in iOS 14 and later, and macOS 11 and later.
     name: AssociatedDomains
     type: '[string]'
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - "An array with entries that must each specify a domain that triggers this VPN\
       \ connection in Calendar. Each entry is in the format \u2219`www.apple.com`\u2219\
@@ -9006,7 +9027,8 @@ com.apple.vpn.managed.applayer:
       \ payload instead."
     name: CalendarDomains
     type: '[string]'
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - "An array with entries that must each specify a domain that triggers this VPN\
       \ connection in Contacts. Each entry is in the format \u2219`www.apple.com`\u2219\
@@ -9023,7 +9045,8 @@ com.apple.vpn.managed.applayer:
     - Available in iOS 14 and later, and macOS 11 and later.
     name: ExcludedDomains
     type: '[string]'
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - "An array with entries that must each specify a domain that triggers this VPN\
       \ connection in Mail. Each entry is in the format \u2219`www.apple.com`\u2219\
@@ -9236,7 +9259,8 @@ com.apple.webcontent-filter:
     - Available in iOS 7 and later.
     name: AutoFilterEnabled
     type: boolean
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - "Use \u2219`DenyListURLs`\u2219 instead."
     name: BlacklistedURLs
@@ -9398,7 +9422,8 @@ com.apple.webcontent-filter:
     - Available in iOS 7 and later and macOS 10.15 and later.
     name: VendorConfig
     type: WebContentFilter.VendorConfig
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - "Use \u2219`AllowListBookmarks`\u2219 instead."
     name: WhitelistedBookmarks
