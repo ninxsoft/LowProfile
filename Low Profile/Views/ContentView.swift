@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.openURL) var openURL: OpenURLAction
+    @Environment(\.openURL)
+    var openURL: OpenURLAction
     @State private var profiles: [Profile] = []
     @State private var selectedProfile: Profile?
     @State private var searchString: String = ""

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct DocumentView: View {
-    @Environment(\.openURL) var openURL: OpenURLAction
+    @Environment(\.openURL)
+    var openURL: OpenURLAction
     var profile: Profile
     @State private var selectedPayload: Payload?
     private let sidebarWidth: CGFloat = 250

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct DetailHeading: View {
-    @Environment(\.openURL) var openURL: OpenURLAction
+    @Environment(\.openURL)
+    var openURL: OpenURLAction
     var payload: Payload
     @State private var hovering: Bool = false
     private let length: CGFloat = 32

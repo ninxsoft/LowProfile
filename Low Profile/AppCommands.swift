@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AppCommands: Commands {
-    @Environment(\.openURL) var openURL: OpenURLAction
+    @Environment(\.openURL)
+    var openURL: OpenURLAction
     @ObservedObject var sparkleUpdater: SparkleUpdater
 
     @CommandsBuilder var body: some Commands {
