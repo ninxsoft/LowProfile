@@ -10,8 +10,12 @@ import HighlightSwift
 import SwiftUI
 
 struct CustomValue: View {
-
     var value: Any
+    @AppStorage("SyntaxHighlightingTheme")
+    private var syntaxHighlightingTheme: String = "GitHub"
+    private var highlightStyleName: HighlightStyle.Name {
+        HighlightStyle.Name(rawValue: syntaxHighlightingTheme) ?? .github
+    }
     private let length: CGFloat = 50
     private var string: String {
 
@@ -57,10 +61,10 @@ struct CustomValue: View {
             Certificate(certificate: certificate, certificateImageLength: length)
         } else if let array: [Any] = value as? [Any],
             let propertyListString: String = propertyListString(for: array) {
-            CodeText(propertyListString, style: .github)
+            CodeText(propertyListString, style: highlightStyleName)
         } else if let dictionary: [String: Any] = value as? [String: Any],
             let propertyListString: String = propertyListString(for: dictionary) {
-            CodeText(propertyListString, style: .github)
+            CodeText(propertyListString, style: highlightStyleName)
         } else {
             Text(string)
         }

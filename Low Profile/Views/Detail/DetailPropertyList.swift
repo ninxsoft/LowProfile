@@ -10,38 +10,20 @@ import SwiftUI
 
 struct DetailPropertyList: View {
     var string: String
-    @State private var loading: Bool = true
-    @State private var propertyList: AttributedString = ""
+    @AppStorage("SyntaxHighlightingTheme")
+    private var syntaxHighlightingTheme: String = "GitHub"
+    private var highlightStyleName: HighlightStyle.Name {
+        HighlightStyle.Name(rawValue: syntaxHighlightingTheme) ?? .github
+    }
 
     var body: some View {
-        VStack {
-            if loading {
-                ProgressView()
-            } else {
-                ScrollView(.vertical) {
-                    HStack {
-                        Text(propertyList)
-                        Spacer()
-                    }
-                }
+        ScrollView(.vertical) {
+            HStack {
+                CodeText(string, style: highlightStyleName)
+                Spacer()
             }
         }
         .padding()
-        .onAppear {
-            Task {
-                await getAttributedPropertyList()
-            }
-        }
-    }
-
-    private func getAttributedPropertyList() async {
-        do {
-            propertyList = try await Highlight.text(string, style: .dark(.github)).attributed
-        } catch {
-            propertyList = AttributedString(string)
-        }
-
-        loading = false
     }
 }
 

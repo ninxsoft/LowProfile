@@ -15,6 +15,8 @@ struct SettingsView: View {
         TabView {
             SettingsGeneralView(sparkleUpdater: sparkleUpdater)
             .tabItem { Label("General", systemImage: "gear") }
+            SettingsSyntaxHighlightingView()
+            .tabItem { Label("Syntax Highlighting", systemImage: "highlighter") }
             SettingsAboutView()
             .tabItem { Label("About", systemImage: "info.circle") }
         }

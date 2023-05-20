@@ -51,6 +51,7 @@
 		57BB578624D802270090CDDF /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578524D802270090CDDF /* Detail.swift */; };
 		57BB578A24D81AB00090CDDF /* PayloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578924D81AB00090CDDF /* PayloadHelper.swift */; };
 		57BD33792A1916D400AC94DA /* HighlightSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 57BD33782A1916D400AC94DA /* HighlightSwift */; };
+		57BD337B2A19258100AC94DA /* SettingsSyntaxHighlightingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BD337A2A19258100AC94DA /* SettingsSyntaxHighlightingView.swift */; };
 		57D4F7D224D6D6A500BC0648 /* LowProfileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7D124D6D6A500BC0648 /* LowProfileApp.swift */; };
 		57D4F7D424D6D6A500BC0648 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7D324D6D6A500BC0648 /* DocumentView.swift */; };
 		57D4F7D624D6D6A700BC0648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D4F7D524D6D6A700BC0648 /* Assets.xcassets */; };
@@ -100,6 +101,7 @@
 		57BB578224D7FD330090CDDF /* SidebarPayloadRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPayloadRow.swift; sourceTree = "<group>"; };
 		57BB578524D802270090CDDF /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		57BB578924D81AB00090CDDF /* PayloadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadHelper.swift; sourceTree = "<group>"; };
+		57BD337A2A19258100AC94DA /* SettingsSyntaxHighlightingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSyntaxHighlightingView.swift; sourceTree = "<group>"; };
 		57D4F7CE24D6D6A500BC0648 /* Low Profile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Low Profile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D4F7D124D6D6A500BC0648 /* LowProfileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowProfileApp.swift; sourceTree = "<group>"; };
 		57D4F7D324D6D6A500BC0648 /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				5770D86A2958650E00297B46 /* SettingsView.swift */,
 				5770D86C2958677F00297B46 /* SettingsGeneralView.swift */,
+				57BD337A2A19258100AC94DA /* SettingsSyntaxHighlightingView.swift */,
 				5770D86E2958685700297B46 /* SettingsAboutView.swift */,
 			);
 			path = Settings;
@@ -435,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39D0056C27D31D220027A6E5 /* RefreshView.swift in Sources */,
+				57BD337B2A19258100AC94DA /* SettingsSyntaxHighlightingView.swift in Sources */,
 				578B3BA124DC05B2004D06C2 /* Platform.swift in Sources */,
 				578B3B9B24DAB51F004D06C2 /* Property.swift in Sources */,
 				5770D8692958613900297B46 /* SparkleUpdater.swift in Sources */,

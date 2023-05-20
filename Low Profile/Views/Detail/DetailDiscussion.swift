@@ -10,8 +10,11 @@ import SwiftUI
 
 struct DetailDiscussion: View {
     var payload: Payload
-    @State private var loading: Bool = true
-    @State private var propertyList: AttributedString = ""
+    @AppStorage("SyntaxHighlightingTheme")
+    private var syntaxHighlightingTheme: String = "GitHub"
+    private var highlightStyleName: HighlightStyle.Name {
+        HighlightStyle.Name(rawValue: syntaxHighlightingTheme) ?? .github
+    }
     private var discussionString: String {
         payload.discussion.joined(separator: "\n\n")
     }
@@ -28,20 +31,10 @@ struct DetailDiscussion: View {
                     Spacer()
                 }
                 GroupBox {
-                    if loading {
-                        Spacer()
+                    ScrollView(.vertical) {
                         HStack {
+                            CodeText(payload.example, style: highlightStyleName)
                             Spacer()
-                            ProgressView()
-                            Spacer()
-                        }
-                        Spacer()
-                    } else {
-                        ScrollView(.vertical) {
-                            HStack {
-                                Text(propertyList)
-                                Spacer()
-                            }
                         }
                     }
                 }
@@ -49,21 +42,6 @@ struct DetailDiscussion: View {
             Spacer()
         }
         .padding()
-        .onAppear {
-            Task {
-                await getAttributedPropertyList()
-            }
-        }
-    }
-
-    private func getAttributedPropertyList() async {
-        do {
-            propertyList = try await Highlight.text(payload.example, style: .dark(.github)).attributed
-        } catch {
-            propertyList = AttributedString(payload.example)
-        }
-
-        loading = false
     }
 }
 
