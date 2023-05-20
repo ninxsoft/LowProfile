@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct SettingsGeneralView: View {
-    @AppStorage("SUEnableAutomaticChecks") private var enableAutomaticChecks: Bool = true
-    @AppStorage("SUScheduledCheckInterval") private var scheduledCheckInterval: Int = 86_400
+    @AppStorage("SUEnableAutomaticChecks")
+    private var enableAutomaticChecks: Bool = true
+    @AppStorage("SUScheduledCheckInterval")
+    private var scheduledCheckInterval: Int = 86_400
     @ObservedObject var sparkleUpdater: SparkleUpdater
     private let width: CGFloat = 150
 

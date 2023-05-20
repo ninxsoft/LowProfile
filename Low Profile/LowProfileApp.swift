@@ -10,7 +10,8 @@ import SwiftUI
 @main
 struct LowProfileApp: App {
     // swiftlint:disable:next weak_delegate
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate: AppDelegate
+    @NSApplicationDelegateAdaptor(AppDelegate.self)
+    var appDelegate: AppDelegate
     @StateObject var sparkleUpdater: SparkleUpdater = SparkleUpdater()
 
     var body: some Scene {
