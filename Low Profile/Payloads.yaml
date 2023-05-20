@@ -7907,6 +7907,33 @@ com.apple.security.smartcard:
       \ pairings still work."
     name: UserPairing
     type: boolean
+com.apple.servicemanagement:
+  availability:
+    device: macOS
+    manual: '-'
+    multiple: '-'
+    supervision: '-'
+    user: '-'
+    user_approved: macOS
+    user_enrol: '-'
+  description: This payload for configuring managed login items, which auto-enables
+    and auto-allows matched items.
+  discussion:
+  - "Specify \u2219`com.apple.servicemanagement`\u2219 as the payload type."
+  name: Service Management Managed Login Items
+  paths:
+  - servicemanagementmanagedloginitems
+  platforms:
+  - current: '13.3'
+    introduced_at: '13.0'
+    name: macOS
+  properties:
+  - attributes:
+      required: true
+    description:
+    - An array of service management rules.
+    name: Rules
+    type: '[ServiceManagementManagedLoginItems.Rule]'
 com.apple.shareddeviceconfiguration:
   availability:
     device: iOS, Shared iPad
