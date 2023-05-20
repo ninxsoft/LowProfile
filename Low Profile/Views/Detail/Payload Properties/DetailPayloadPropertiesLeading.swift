@@ -20,6 +20,7 @@ struct DetailPayloadPropertiesLeading: View {
                     .font(.system(.body, design: .monospaced))
                     .bold()
                     .foregroundColor(.primary)
+                    .strikethrough(property.deprecated)
             }
             HStack {
                 Spacer()
