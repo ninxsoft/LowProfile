@@ -22,6 +22,7 @@ struct Payload: Identifiable, Hashable {
     var paths: [String]
     var description: String
     var discussion: [String]
+    var example: String
     var platforms: [Platform]
     var availability: Availability
     var payloadVersion: Int
@@ -75,6 +76,7 @@ struct Payload: Identifiable, Hashable {
         platforms = []
         availability = Availability(dictionary: [:])
         discussion = []
+        example = ""
         payloadVersion = 0
         payloadIdentifier = ""
         payloadUUID = ""
@@ -128,6 +130,7 @@ struct Payload: Identifiable, Hashable {
         platforms = PayloadHelper.shared.platforms(for: type)
         availability = PayloadHelper.shared.availability(for: type)
         discussion = PayloadHelper.shared.discussion(for: type)
+        example = PayloadHelper.shared.example(for: type)
         payloadProperties = PayloadHelper.shared.payloadProperties(for: type, in: dictionary)
         managedPayloads = PayloadHelper.shared.managedPayloads(for: type, in: dictionary)
         availableProperties = PayloadHelper.shared.availableProperties(for: type, in: dictionary)

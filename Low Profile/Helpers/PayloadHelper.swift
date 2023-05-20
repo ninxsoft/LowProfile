@@ -115,6 +115,16 @@ class PayloadHelper: NSObject {
         return strings
     }
 
+    func example(for type: String) -> String {
+
+        guard let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
+            let string: String = dictionary["example"] as? String else {
+            return ""
+        }
+
+        return string
+    }
+
     func payloadProperties(for type: String, in dictionary: [String: Any]) -> [Property] {
 
         let availableProperties: [Property] = knownProperties(for: type)
