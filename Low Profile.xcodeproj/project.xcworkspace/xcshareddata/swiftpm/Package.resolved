@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "highlightswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/appstefan/highlightswift",
+      "state" : {
+        "revision" : "3db2f351542a31c6e4efc032fdc8ee81b5d46e0b",
+        "version" : "1.0.5"
+      }
+    },
+    {
       "identity" : "sparkle",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sparkle-project/Sparkle",

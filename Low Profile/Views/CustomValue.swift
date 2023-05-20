@@ -6,6 +6,7 @@
 //
 
 import ASN1Decoder
+import HighlightSwift
 import SwiftUI
 
 struct CustomValue: View {
@@ -56,10 +57,10 @@ struct CustomValue: View {
             Certificate(certificate: certificate, certificateImageLength: length)
         } else if let array: [Any] = value as? [Any],
             let propertyListString: String = propertyListString(for: array) {
-            PropertyListText(string: propertyListString, wrappedInPropertyListTags: false)
+            CodeText(propertyListString, style: .github)
         } else if let dictionary: [String: Any] = value as? [String: Any],
             let propertyListString: String = propertyListString(for: dictionary) {
-            PropertyListText(string: propertyListString, wrappedInPropertyListTags: false)
+            CodeText(propertyListString, style: .github)
         } else {
             Text(string)
         }
@@ -74,7 +75,7 @@ struct CustomValue: View {
                 return nil
             }
 
-            return string
+            return string.strippingPropertyListWrapper()
         } catch {
             print(error.localizedDescription)
             return nil

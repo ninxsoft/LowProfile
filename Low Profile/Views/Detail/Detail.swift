@@ -21,7 +21,7 @@ struct Detail: View {
                     DetailInformation(payload: payload).tabItem { Text("Information") }
                 }
                 if !payload.custom {
-                    DetailDiscussion(discussion: payload.discussion).tabItem { Text("Discussion") }
+                    DetailDiscussion(payload: payload).tabItem { Text("Discussion") }
                 }
                 if payload.general && !certificates.isEmpty {
                     DetailCertificates(certificates: certificates).tabItem { Text("Certificates") }

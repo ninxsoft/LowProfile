@@ -17,6 +17,18 @@ extension String {
         lhs.range(of: rhs, options: .regularExpression) != nil
     }
 
+    func strippingPropertyListWrapper() -> String {
+        let xml: String = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        let doctype: String = "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">"
+        let plist: String = "<plist version=\"1.0\">"
+
+        return self.replacingOccurrences(of: xml, with: "")
+            .replacingOccurrences(of: doctype, with: "")
+            .replacingOccurrences(of: plist, with: "")
+            .replacingOccurrences(of: "</plist>", with: "")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
     func surroundingOccurrences(of string: String, with separator: String) -> String {
         self.replacingOccurrences(of: string, with: separator + string + separator)
     }

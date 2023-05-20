@@ -44,13 +44,13 @@
 		578F000524E8148D00DA8DF1 /* DocumentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F000424E8148D00DA8DF1 /* DocumentError.swift */; };
 		578FFFEE24E675ED00DA8DF1 /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FFFED24E675EC00DA8DF1 /* AttributedText.swift */; };
 		578FFFF124E7AB5D00DA8DF1 /* DetailPropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FFFF024E7AB5D00DA8DF1 /* DetailPropertyList.swift */; };
-		578FFFF724E7B49800DA8DF1 /* PropertyListText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FFFF624E7B49800DA8DF1 /* PropertyListText.swift */; };
 		5794E85D254A6B1A004A5942 /* ASN1Decoder in Frameworks */ = {isa = PBXBuildFile; productRef = 5794E85C254A6B1A004A5942 /* ASN1Decoder */; };
 		57BB577B24D789E70090CDDF /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB577A24D789E70090CDDF /* Payload.swift */; };
 		57BB578124D78B2C0090CDDF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578024D78B2C0090CDDF /* Profile.swift */; };
 		57BB578324D7FD330090CDDF /* SidebarPayloadRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578224D7FD330090CDDF /* SidebarPayloadRow.swift */; };
 		57BB578624D802270090CDDF /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578524D802270090CDDF /* Detail.swift */; };
 		57BB578A24D81AB00090CDDF /* PayloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578924D81AB00090CDDF /* PayloadHelper.swift */; };
+		57BD33792A1916D400AC94DA /* HighlightSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 57BD33782A1916D400AC94DA /* HighlightSwift */; };
 		57D4F7D224D6D6A500BC0648 /* LowProfileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7D124D6D6A500BC0648 /* LowProfileApp.swift */; };
 		57D4F7D424D6D6A500BC0648 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7D324D6D6A500BC0648 /* DocumentView.swift */; };
 		57D4F7D624D6D6A700BC0648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D4F7D524D6D6A700BC0648 /* Assets.xcassets */; };
@@ -95,7 +95,6 @@
 		578F000424E8148D00DA8DF1 /* DocumentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentError.swift; sourceTree = "<group>"; };
 		578FFFED24E675EC00DA8DF1 /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
 		578FFFF024E7AB5D00DA8DF1 /* DetailPropertyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPropertyList.swift; sourceTree = "<group>"; };
-		578FFFF624E7B49800DA8DF1 /* PropertyListText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListText.swift; sourceTree = "<group>"; };
 		57BB577A24D789E70090CDDF /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		57BB578024D78B2C0090CDDF /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		57BB578224D7FD330090CDDF /* SidebarPayloadRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPayloadRow.swift; sourceTree = "<group>"; };
@@ -125,6 +124,7 @@
 				5770D867295860DF00297B46 /* Sparkle in Frameworks */,
 				39C419FD275D9AEC001F4B4E /* Yams in Frameworks */,
 				5794E85D254A6B1A004A5942 /* ASN1Decoder in Frameworks */,
+				57BD33792A1916D400AC94DA /* HighlightSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +209,6 @@
 				39C41A19275DEDB1001F4B4E /* Certificate.swift */,
 				39C41A1F275F2038001F4B4E /* CustomValue.swift */,
 				578B3B9E24DC0444004D06C2 /* PlatformImage.swift */,
-				578FFFF624E7B49800DA8DF1 /* PropertyListText.swift */,
 				39C41A09275DC4C2001F4B4E /* ScaledImage.swift */,
 				39C41A06275DC410001F4B4E /* ScaledSystemImage.swift */,
 				578B3BA824DC1FAD004D06C2 /* TextRow.swift */,
@@ -313,6 +312,7 @@
 				5794E85C254A6B1A004A5942 /* ASN1Decoder */,
 				39C419FC275D9AEC001F4B4E /* Yams */,
 				5770D866295860DF00297B46 /* Sparkle */,
+				57BD33782A1916D400AC94DA /* HighlightSwift */,
 			);
 			productName = "Low Profile";
 			productReference = 57D4F7CE24D6D6A500BC0648 /* Low Profile.app */;
@@ -349,6 +349,7 @@
 				5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */,
 				39C419FB275D9AEC001F4B4E /* XCRemoteSwiftPackageReference "Yams" */,
 				5770D865295860DF00297B46 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				57BD33772A1916D400AC94DA /* XCRemoteSwiftPackageReference "highlightswift" */,
 			);
 			productRefGroup = 57D4F7CF24D6D6A500BC0648 /* Products */;
 			projectDirPath = "";
@@ -464,7 +465,6 @@
 				57BB578A24D81AB00090CDDF /* PayloadHelper.swift in Sources */,
 				578B3BB724DE7088004D06C2 /* String+Extension.swift in Sources */,
 				578B3BA324DC08B8004D06C2 /* Availability.swift in Sources */,
-				578FFFF724E7B49800DA8DF1 /* PropertyListText.swift in Sources */,
 				57BB577B24D789E70090CDDF /* Payload.swift in Sources */,
 				578FFFEE24E675ED00DA8DF1 /* AttributedText.swift in Sources */,
 				39D0056A27D09E800027A6E5 /* SidebarPayloadsView.swift in Sources */,
@@ -492,7 +492,7 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 7K3HVCLV7Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = con.ninxsoft.lowprofile.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -512,7 +512,7 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 7K3HVCLV7Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = con.ninxsoft.lowprofile.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -574,7 +574,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -630,7 +630,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -659,7 +659,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 3.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ninxsoft.lowprofile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -688,7 +688,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 3.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ninxsoft.lowprofile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -754,6 +754,14 @@
 				minimumVersion = 1.8.0;
 			};
 		};
+		57BD33772A1916D400AC94DA /* XCRemoteSwiftPackageReference "highlightswift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/appstefan/highlightswift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -771,6 +779,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */;
 			productName = ASN1Decoder;
+		};
+		57BD33782A1916D400AC94DA /* HighlightSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57BD33772A1916D400AC94DA /* XCRemoteSwiftPackageReference "highlightswift" */;
+			productName = HighlightSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
