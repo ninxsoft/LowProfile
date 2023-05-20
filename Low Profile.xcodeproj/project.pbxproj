@@ -324,8 +324,9 @@
 		57D4F7C624D6D6A500BC0648 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					5770D85D2958489D00297B46 = {
 						CreatedOnToolsVersion = 14.2;
@@ -734,7 +735,7 @@
 			repositoryURL = "https://github.com/jpsim/Yams.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
+				minimumVersion = 5.0.5;
 			};
 		};
 		5770D865295860DF00297B46 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
@@ -742,7 +743,7 @@
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.1;
+				minimumVersion = 2.4.1;
 			};
 		};
 		5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */ = {
