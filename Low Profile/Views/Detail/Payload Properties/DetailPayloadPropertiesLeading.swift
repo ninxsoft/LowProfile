@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailPayloadPropertiesLeading: View {
     var property: Property
     private let spacing: CGFloat = 0
+    private let padding: CGFloat = 5
 
     var body: some View {
         VStack(alignment: .trailing, spacing: spacing) {
@@ -31,6 +32,13 @@ struct DetailPayloadPropertiesLeading: View {
                     Spacer()
                     Text("Required")
                         .foregroundColor(.blue)
+                }
+            }
+            if property.deprecated {
+                HStack {
+                    Spacer()
+                    TextTag(title: "Deprecated")
+                        .padding(.top, padding)
                 }
             }
             Spacer()

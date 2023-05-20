@@ -25,6 +25,7 @@ struct Property: Identifiable {
     var possibleValues: [String]
     var minimum: String
     var maximum: String
+    var deprecated: Bool
     var value: Any
     var descriptionString: String {
         description.joined(separator: "\n\n")
@@ -42,6 +43,7 @@ struct Property: Identifiable {
         possibleValues = attributes["possibleValues"] as? [String] ?? []
         minimum = attributes["minimum"] as? String ?? ""
         maximum = attributes["maximum"] as? String ?? ""
+        deprecated = attributes["deprecated"] as? Bool ?? false
         value = payloadValue
     }
 
@@ -57,6 +59,7 @@ struct Property: Identifiable {
         possibleValues = attributes["possibleValues"] as? [String] ?? []
         minimum = attributes["minimum"] as? String ?? ""
         maximum = attributes["maximum"] as? String ?? ""
+        deprecated = attributes["deprecated"] as? Bool ?? false
         value = ""
     }
 
@@ -94,6 +97,7 @@ struct Property: Identifiable {
         possibleValues = []
         minimum = ""
         maximum = ""
+        deprecated = false
         value = unknownValue
     }
 }
