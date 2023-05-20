@@ -202,9 +202,7 @@
 				392BC50827CF7940009D77D8 /* ContentView.swift */,
 				57D4F7D324D6D6A500BC0648 /* DocumentView.swift */,
 				39D0056B27D31D220027A6E5 /* RefreshView.swift */,
-				5770D86A2958650E00297B46 /* SettingsView.swift */,
-				5770D86C2958677F00297B46 /* SettingsGeneralView.swift */,
-				5770D86E2958685700297B46 /* SettingsAboutView.swift */,
+				57BE56562A18EC5000715630 /* Settings */,
 				39C419FE275DA3BB001F4B4E /* Sidebar */,
 				39C419FF275DA3CC001F4B4E /* Detail */,
 				578FFFED24E675EC00DA8DF1 /* AttributedText.swift */,
@@ -227,6 +225,16 @@
 				5770D8682958613900297B46 /* SparkleUpdater.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		57BE56562A18EC5000715630 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5770D86A2958650E00297B46 /* SettingsView.swift */,
+				5770D86C2958677F00297B46 /* SettingsGeneralView.swift */,
+				5770D86E2958685700297B46 /* SettingsAboutView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		57D4F7C524D6D6A500BC0648 = {
