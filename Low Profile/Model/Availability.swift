@@ -32,6 +32,9 @@ struct Availability {
     var multiple: String
 
     /// Initializer accepting a profile availability dictionary
+    ///
+    /// - Parameters:
+    ///   - dictionary: The profile availability dictionary.
     init(dictionary: [String: Any]) {
         device = dictionary["device"] as? String ?? ""
         user = dictionary["user"] as? String ?? ""

@@ -35,6 +35,9 @@ struct Profile: Identifiable, Hashable {
     }
 
     /// Initializer accepting (an optionally signed) data blob
+    ///
+    /// - Parameters:
+    ///   - signedData: The (optionally signed) data blob.
     init?(from signedData: Data) {
         self.init()
 
