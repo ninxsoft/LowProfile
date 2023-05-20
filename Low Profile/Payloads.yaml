@@ -7202,7 +7202,7 @@ com.apple.security.acme:
     , and \u2219`ExtendedKeyUsage`\u2219 fields. The ACME server issues a certificate\
     \ and the device installs it in the keychain. Other payloads can reference the\
     \ resulting client identity by the payload\u2019s \u2219`PayloadUUID`\u2219."
-  name: Automated Certificate Management Environment (ACME) Certificate
+  name: ACME Certificate
   paths:
   - acmecertificate
   platforms:
@@ -7920,7 +7920,7 @@ com.apple.servicemanagement:
     and auto-allows matched items.
   discussion:
   - "Specify \u2219`com.apple.servicemanagement`\u2219 as the payload type."
-  name: Service Management Managed Login Items
+  name: Managed Login Items
   paths:
   - servicemanagementmanagedloginitems
   platforms:
