@@ -69,7 +69,7 @@ struct Profile: Identifiable, Hashable {
 
             self.payloads = []
 
-            // testing
+            // MARK: Testing
             // self.payloads = PayloadHelper.shared.payloadTypes().map { Payload(dictionary: ["PayloadType": $0]) }
             // return
 
