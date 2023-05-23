@@ -22,10 +22,6 @@ struct SettingsView: View {
         }
         .frame(width: width)
     }
-
-    private func checkForUpdates() {
-        sparkleUpdater.checkForUpdates()
-    }
 }
 
 struct SettingsView_Previews: PreviewProvider {

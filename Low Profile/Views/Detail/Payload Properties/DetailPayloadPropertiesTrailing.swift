@@ -5,7 +5,6 @@
 //  Created by Nindi Gill on 6/12/21.
 //
 
-import ASN1Decoder
 import SwiftUI
 
 struct DetailPayloadPropertiesTrailing: View {

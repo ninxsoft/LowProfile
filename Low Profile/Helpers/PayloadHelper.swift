@@ -5,7 +5,7 @@
 //  Created by Nindi Gill on 3/8/20.
 //
 
-import Cocoa
+import Foundation
 import Yams
 
 class PayloadHelper: NSObject {
@@ -49,10 +49,6 @@ class PayloadHelper: NSObject {
                 print(error.localizedDescription)
             }
         }
-    }
-
-    func payloadTypes() -> [String] {
-        dictionaries.keys.sorted()
     }
 
     func name(for type: String) -> String {

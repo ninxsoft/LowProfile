@@ -76,18 +76,6 @@ struct DetailPayloadProperties: View {
             .foregroundColor(.secondary)
             .padding(.bottom)
     }
-
-    func managedProperties(for payload: Payload) -> [Property] {
-
-        switch type {
-        case .payload:
-            return payload.payloadProperties
-        case .available:
-            return payload.availableProperties
-        case .unknown:
-            return payload.unknownProperties
-        }
-    }
 }
 
 struct DetailPayloadProperties_Previews: PreviewProvider {

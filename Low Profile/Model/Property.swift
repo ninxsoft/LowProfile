@@ -5,8 +5,7 @@
 //  Created by Nindi Gill on 5/8/20.
 //
 
-import ASN1Decoder
-import Cocoa
+import Foundation
 
 struct Property: Identifiable {
 

@@ -5,7 +5,7 @@
 //  Created by Nindi Gill on 10/8/20.
 //
 
-import Cocoa
+import AppKit
 
 class AppDelegate: NSObject, NSApplicationDelegate {
 

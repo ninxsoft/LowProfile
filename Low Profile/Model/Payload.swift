@@ -5,7 +5,7 @@
 //  Created by Nindi Gill on 3/8/20.
 //
 
-import Cocoa
+import Foundation
 
 struct Payload: Identifiable, Hashable {
 

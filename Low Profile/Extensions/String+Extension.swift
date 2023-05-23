@@ -29,10 +29,6 @@ extension String {
             .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
-    func surroundingOccurrences(of string: String, with separator: String) -> String {
-        self.replacingOccurrences(of: string, with: separator + string + separator)
-    }
-
     func toJSONString() -> String? {
 
         let identifier: String = UUID().uuidString

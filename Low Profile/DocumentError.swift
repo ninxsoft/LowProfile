@@ -5,8 +5,6 @@
 //  Created by Nindi Gill on 15/8/20.
 //
 
-import Foundation
-
 struct DocumentError: Error {
     let message: String
 

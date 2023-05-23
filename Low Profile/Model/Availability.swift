@@ -5,8 +5,6 @@
 //  Created by Nindi Gill on 6/8/20.
 //
 
-import Foundation
-
 /// Availability struct
 struct Availability {
 
