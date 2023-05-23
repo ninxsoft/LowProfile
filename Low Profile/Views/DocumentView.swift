@@ -17,16 +17,21 @@ struct DocumentView: View {
     private let height: CGFloat = 720
 
     var body: some View {
-        NavigationView {
-            List(profile.payloads, selection: $selectedPayload) { payload in
-                NavigationLink(destination: Detail(payload: payload, certificates: profile.certificates), tag: payload, selection: $selectedPayload) {
+        NavigationSplitView {
+            List(profile.payloads, id: \.id, selection: $selectedPayload) { payload in
+                NavigationLink(value: payload) {
                     SidebarPayloadRow(payload: payload)
                 }
             }
-            .frame(width: sidebarWidth)
-            Text("Select a Payload to view its contents 🙂")
-                .font(.title)
-                .foregroundColor(.secondary)
+            .frame(minWidth: sidebarWidth)
+        } detail: {
+            if let payload: Payload = selectedPayload {
+                Detail(payload: payload, certificates: profile.certificates)
+            } else {
+                Text("Select a Payload to view its contents 🙂")
+                    .font(.title)
+                    .foregroundColor(.secondary)
+            }
         }
         .toolbar {
             ToolbarItem {
