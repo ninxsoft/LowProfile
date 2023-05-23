@@ -17,43 +17,6 @@ struct CustomValue: View {
         HighlightStyle.Name(rawValue: syntaxHighlightingTheme) ?? .github
     }
     private let length: CGFloat = 50
-    private var string: String {
-
-        if let boolean: Bool = value as? Bool {
-            return boolean ? "True" : "False"
-        }
-
-        if let data: Data = value as? Data {
-            return data.base64EncodedString(options: [.lineLength64Characters, .endLineWithCarriageReturn])
-        }
-
-        if let date: Date = value as? Date {
-            let dateFormatter: DateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .full
-            dateFormatter.timeStyle = .long
-            return dateFormatter.string(from: date)
-        }
-
-        if let number: NSNumber = value as? NSNumber {
-            return number.stringValue
-        }
-
-        if let string: String = value as? String {
-            return string
-        }
-
-        if let strings: [String] = value as? [String] {
-            let string: String = strings.joined(separator: "\n")
-            return string.description
-        }
-
-        if let data: Data = try? JSONSerialization.data(withJSONObject: value, options: [.prettyPrinted, .sortedKeys]),
-            let string: String = String(data: data, encoding: .utf8) {
-            return string
-        }
-
-        return "Unknown type"
-    }
 
     var body: some View {
         if let data: Data = value as? Data,
@@ -66,7 +29,7 @@ struct CustomValue: View {
             let propertyListString: String = propertyListString(for: dictionary) {
             CodeText(propertyListString, style: highlightStyleName)
         } else {
-            Text(string)
+            Text(PayloadHelper.shared.string(for: value))
         }
     }
 

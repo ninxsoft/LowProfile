@@ -208,4 +208,42 @@ class PayloadHelper: NSObject {
 
         return properties
     }
+
+    func string(for value: Any) -> String {
+
+        if let boolean: Bool = value as? Bool {
+            return boolean ? "True" : "False"
+        }
+
+        if let data: Data = value as? Data {
+            return data.base64EncodedString(options: [.lineLength64Characters, .endLineWithCarriageReturn])
+        }
+
+        if let date: Date = value as? Date {
+            let dateFormatter: DateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .full
+            dateFormatter.timeStyle = .long
+            return dateFormatter.string(from: date)
+        }
+
+        if let number: NSNumber = value as? NSNumber {
+            return number.stringValue
+        }
+
+        if let string: String = value as? String {
+            return string
+        }
+
+        if let strings: [String] = value as? [String] {
+            let string: String = strings.joined(separator: "\n")
+            return string.description
+        }
+
+        if let data: Data = try? JSONSerialization.data(withJSONObject: value, options: [.prettyPrinted, .sortedKeys]),
+            let string: String = String(data: data, encoding: .utf8) {
+            return string
+        }
+
+        return "Unknown value type"
+    }
 }
