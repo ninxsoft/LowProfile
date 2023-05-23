@@ -20,6 +20,7 @@ struct SettingsView: View {
             SettingsAboutView()
             .tabItem { Label("About", systemImage: "info.circle") }
         }
+        .textSelection(.enabled)
         .frame(width: width)
     }
 }
