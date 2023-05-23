@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Property: Identifiable {
+struct Property: Identifiable, Hashable {
 
     static var example: Property {
         let property: Property = Property(availableDictionary: [:])
@@ -28,6 +28,34 @@ struct Property: Identifiable {
     var value: Any
     var descriptionString: String {
         description.joined(separator: "\n\n")
+    }
+
+    init(
+        id: String,
+        name: String,
+        type: String,
+        description: [String],
+        attributes: [String: Any],
+        required: Bool,
+        defaultValue: String,
+        possibleValues: [String],
+        minimum: String,
+        maximum: String,
+        deprecated: Bool,
+        value: Any
+    ) {
+        self.id = id
+        self.name = name
+        self.type = type
+        self.description = description
+        self.attributes = attributes
+        self.required = required
+        self.defaultValue = defaultValue
+        self.possibleValues = possibleValues
+        self.minimum = minimum
+        self.maximum = maximum
+        self.deprecated = deprecated
+        self.value = value
     }
 
     // payload property
@@ -98,5 +126,13 @@ struct Property: Identifiable {
         maximum = ""
         deprecated = false
         value = unknownValue
+    }
+
+    static func == (lhs: Property, rhs: Property) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
     }
 }
