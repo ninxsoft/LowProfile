@@ -37,9 +37,6 @@ struct SidebarPayloadRow: View {
                 Spacer()
             }
             .padding(.vertical, padding)
-            // Ugly hack to get list rows to display correctly
-            Text(UUID().uuidString)
-                .foregroundColor(.clear)
         }
     }
 }
