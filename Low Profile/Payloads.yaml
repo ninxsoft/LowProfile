@@ -123,7 +123,7 @@ Configuration:
       required: true
     description:
     - "The array of payload dictionaries. If \u2219`IsEncrypted`\u2219 is \u2219`true`\u2219\
-      , this array isn't needed."
+      , this array isn\u2019t needed."
     name: PayloadContent
     type: '[TopLevel.PayloadContentItem]'
   - attributes: {}
@@ -1364,7 +1364,7 @@ com.apple.MCX.TimeMachine:
   - attributes:
       default: 'false'
     description:
-    - If true, backs up only the startup volume by default.
+    - "If \u2219`true`\u2219, backs up only the startup volume by default."
     name: BackupAllVolumes
     type: boolean
   - attributes:
@@ -1620,37 +1620,43 @@ com.apple.SetupAssistant.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, skips the Choose Your Look window."
+    - "If \u2219`true`\u2219, the system skips the Accessibility window."
+    name: SkipAccessibility
+    type: boolean
+  - attributes:
+      default: 'false'
+    description:
+    - "If \u2219`true`\u2219, the system skips the Choose Your Look window."
     name: SkipAppearance
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, skips the Apple ID setup window."
+    - "If \u2219`true`\u2219, the system skips the Apple ID setup window."
     name: SkipCloudSetup
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, skips the iCloud Storage window."
+    - "If \u2219`true`\u2219, the system skips the iCloud Storage window."
     name: SkipiCloudStorageSetup
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, skips the Privacy consent window."
+    - "If \u2219`true`\u2219, the system skips the Privacy consent window."
     name: SkipPrivacySetup
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - If true, skips the Screen Time window.
+    - "If \u2219`true`\u2219, the system skips the Screen Time window."
     name: SkipScreenTime
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, skips the Siri setup window."
+    - "If \u2219`true`\u2219, the system skips the Siri setup window."
     name: SkipSiriSetup
     type: boolean
   - attributes: {}
@@ -1663,24 +1669,20 @@ com.apple.SetupAssistant.managed:
   - attributes:
       default: 'false'
     description:
-    - If true, skips the Touch ID setup window.
+    - "If \u2219`true`\u2219, the system skips the Touch ID setup window."
     name: SkipTouchIDSetup
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, skips the True Tone Display window."
+    - "If \u2219`true`\u2219, the system skips the True Tone Display window."
     name: SkipTrueTone
     type: boolean
   - attributes:
       default: 'false'
-    description: []
+    description:
+    - "If \u2219`true`\u2219, the system skips the Unlock With Apple Watch window."
     name: SkipUnlockWithWatch
-    type: boolean
-  - attributes:
-      default: 'false'
-    description: []
-    name: SkipAccessibility
     type: boolean
 com.apple.ShareKitHelper:
   availability:
@@ -3359,7 +3361,8 @@ com.apple.applicationaccess:
       default: 'false'
     description:
     - "If \u2219`true`\u2219, disables connections to Siri servers for the purposes\
-      \ of dictation. Available in iOS 14.5 and later. Also available for user enrollment."
+      \ of dictation. Available in iOS 14.5 and later, macOS 14 and later, and watchOS\
+      \ 10 and later. Also available for user enrollment."
     name: forceOnDeviceOnlyDictation
     type: boolean
   - attributes:
@@ -4240,7 +4243,7 @@ com.apple.desktop:
     supervision: '-'
     user: macOS
     user_approved: '-'
-    user_enrol: macOS
+    user_enrol: '-'
   description: The payload for configuring the desktop.
   discussion:
   - "Specify \u2219`com.apple.desktop`\u2219 as the payload type."
@@ -4391,7 +4394,9 @@ com.apple.dnsSettings.managed:
     name: OnDemandRules
     type: '[DNSSettings.OnDemandRulesElement]'
   - attributes: {}
-    description: []
+    description:
+    - The UUID that points to an identity certificate payload. The system uses this
+      identity to authenticate the user to the DNS resolver.
     name: PayloadCertificateUUID
     type: string
   - attributes:
@@ -5567,7 +5572,7 @@ com.apple.extensiblesso:
     description:
     - The Platform SSO authentication method the extension uses. Requires that the
       SSO Extension also supports the method.
-    - Available in macOS 13 and later.
+    - Available in macOS 13 and later and deprecated in macOS 14.
     name: AuthenticationMethod
     type: string
   - attributes: {}
@@ -5602,7 +5607,8 @@ com.apple.extensiblesso:
     name: Hosts
     type: '[string]'
   - attributes: {}
-    description: []
+    description:
+    - The dictionary to configure Platform SSO.
     name: PlatformSSO
     type: ExtensibleSingleSignOn.PlatformSSO
   - attributes: {}
@@ -5938,57 +5944,66 @@ com.apple.finder:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables the Finder's burn support."
+    - "If \u2219`true`\u2219, the system disables the Finder\u2019s burn support."
     name: ProhibitBurn
+    type: boolean
+  - attributes:
+      default: 'false'
+    description:
+    - "If \u2219`true`\u2219, the system disables Connect to Server."
+    name: ProhibitConnectTo
+    type: boolean
+  - attributes:
+      default: 'false'
+    description:
+    - "If \u2219`true`\u2219, the system disables Eject."
+    name: ProhibitEject
+    type: boolean
+  - attributes:
+      default: 'false'
+    description:
+    - "If \u2219`true`\u2219, the system disables Go to Folder."
+    name: ProhibitGoToFolder
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, external hard drives don\u2019t appear on the Desktop."
+    name: ShowExternalHardDrivesOnDesktop
+    type: boolean
+  - attributes:
+      default: 'false'
+    description:
+    - "If \u2219`false`\u2219, internal hard drives don\u2019t appear on the Desktop."
+    name: ShowHardDrivesOnDesktop
+    type: boolean
+  - attributes:
+      default: 'false'
+    description:
+    - "If \u2219`false`\u2219, mounted file servers don\u2019t appear on the Desktop."
+    name: ShowMountedServersOnDesktop
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, removable media items don\u2019t appear on the Desktop."
+    name: ShowRemovableMediaOnDesktop
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, the user isn\u2019t warned before emptying the trash."
+    name: WarnOnEmptyTrash
     type: boolean
   - attributes:
       deprecated: true
       possibleValues:
       - Simple
       - Full
-    description: []
+    description:
+    - Specifies whether Finder should operate in Simple or Full mode.
     name: InterfaceLevel
     type: string
-  - attributes:
-      default: 'false'
-    description: []
-    name: ProhibitConnectTo
-    type: boolean
-  - attributes:
-      default: 'false'
-    description: []
-    name: ProhibitEject
-    type: boolean
-  - attributes:
-      default: 'false'
-    description: []
-    name: ProhibitGoToFolder
-    type: boolean
-  - attributes:
-      default: 'true'
-    description: []
-    name: ShowExternalHardDrivesOnDesktop
-    type: boolean
-  - attributes:
-      default: 'false'
-    description: []
-    name: ShowHardDrivesOnDesktop
-    type: boolean
-  - attributes:
-      default: 'false'
-    description: []
-    name: ShowMountedServersOnDesktop
-    type: boolean
-  - attributes:
-      default: 'true'
-    description: []
-    name: ShowRemovableMediaOnDesktop
-    type: boolean
-  - attributes:
-      default: 'true'
-    description: []
-    name: WarnOnEmptyTrash
-    type: boolean
 com.apple.firstactiveethernet.managed:
   availability:
     device: macOS
@@ -6284,23 +6299,6 @@ com.apple.globalethernet.managed:
     description: []
     name: ANY
     type: any
-  - attributes: {}
-    description: []
-    name: ExcludedDomains
-    type: '[string]'
-  - attributes: {}
-    description: []
-    name: MatchDomains
-    type: '[string]'
-  - attributes:
-      required: true
-    description: []
-    name: Relays
-    type: '[Relay.Relay]'
-  - attributes: {}
-    description: []
-    name: RelayUUID
-    type: string
 com.apple.google-oauth:
   availability:
     device: iOS
@@ -6792,6 +6790,18 @@ com.apple.loginwindow:
     type: '[string]'
   - attributes: {}
     description:
+    - "An optional user password to set up auto login. If this key doesn\u2019t exist\
+      \ but a user name does exist, the system sets up auto login the next time the\
+      \ user logs in to the client."
+    name: AutologinPassword
+    type: string
+  - attributes: {}
+    description:
+    - The user short name to set up auto login.
+    name: AutologinUsername
+    type: string
+  - attributes: {}
+    description:
     - "The list of user GUIDs or group GUIDs of users that cannot log in. This list\
       \ takes priority over the list in the \u2219`AllowList`\u2219 key."
     name: DenyList
@@ -6902,24 +6912,16 @@ com.apple.loginwindow:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables the Shut Down menu item when the user is logged\
-      \ in."
-    name: ShutDownDisabledWhileLoggedIn
+    - "If \u2219`true`\u2219, disables the Sleep button."
+    name: SleepDisabled
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables the Sleep button."
-    name: SleepDisabled
+    - "If \u2219`true`\u2219, disables the Shut Down menu item when the user is logged\
+      \ in."
+    name: ShutDownDisabledWhileLoggedIn
     type: boolean
-  - attributes: {}
-    description: []
-    name: AutologinPassword
-    type: string
-  - attributes: {}
-    description: []
-    name: AutologinUsername
-    type: string
 com.apple.lom:
   availability:
     device: macOS
@@ -8154,18 +8156,19 @@ com.apple.mobiledevice.passwordpolicy:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, prevents use of a simple passcode. A simple passcode\
-      \ contains repeated characters, or increasing or decreasing characters (such\
-      \ as \u2219`123`\u2219 or \u2219`CBA`\u2219)."
+    - "If \u2219`false`\u2219, the system prevents use of a simple passcode. A simple\
+      \ passcode contains repeated characters, or increasing or decreasing characters,\
+      \ such as \u2219`123`\u2219 or \u2219`CBA`\u2219."
     name: allowSimple
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, causes a password reset to occur the next time the user\
-      \ tries to authenticate. If this key is set in a device profile, the setting\
-      \ takes effect for all users, and admin authentications may fail until the admin\
-      \ user password is also reset.\_Available in macOS 10.13 and later."
+    - "If \u2219`true`\u2219, the system causes a password reset to occur the next\
+      \ time the user tries to authenticate. If this key is set in a device profile,\
+      \ the setting takes effect for all users, and admin authentications may fail\
+      \ until the admin user password is also reset.\_Available in macOS 10.13 and\
+      \ later."
     name: changeAtNextAuth
     type: boolean
   - attributes: {}
@@ -8181,7 +8184,7 @@ com.apple.mobiledevice.passwordpolicy:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, forces the user to enter a PIN."
+    - "If \u2219`true`\u2219, the system forces the user to enter a PIN."
     name: forcePIN
     type: boolean
   - attributes:
@@ -8189,34 +8192,34 @@ com.apple.mobiledevice.passwordpolicy:
       maximum: '11'
       minimum: '2'
     description:
-    - "The number of allowed failed attempts to enter the passcode at the device's\
-      \ lock screen. After six failed attempts, a time delay is imposed before a passcode\
-      \ can be entered again. The delay increases with each attempt. In macOS, set\
-      \ \u2219`minutesUntilFailedLoginReset`\u2219 to define a delay before the next\
-      \ passcode can be entered. When this number is exceeded in macOS, the device\
-      \ is locked; in iOS, the device is wiped."
+    - "The number of allowed failed attempts to enter the passcode at the device\u2019\
+      s lock screen. After six failed attempts, the system imposes a time delay before\
+      \ a passcode can be entered again. The delay increases with each attempt. In\
+      \ macOS, set \u2219`minutesUntilFailedLoginReset`\u2219 to define a delay before\
+      \ the next passcode can be entered. When this number is exceeded in macOS, the\
+      \ system locks the device; in iOS, the system wipes the device."
     name: maxFailedAttempts
     type: integer
   - attributes:
       default: '0'
     description:
-    - The maximum grace period, in minutes, to unlock the phone without entering a
-      passcode. The default is 0, which is no grace period and requires a passcode
-      immediately. In macOS, this grace period value is translated to screen-saver
-      settings.
+    - "The maximum grace period, in minutes, to unlock the phone without entering\
+      \ a passcode. The default is \u2219`0`\u2219, which is no grace period and requires\
+      \ a passcode immediately. In macOS, the system translates this grace period\
+      \ value to screen-saver settings."
     name: maxGracePeriod
     type: integer
   - attributes:
       maximum: '15'
       minimum: '0'
     description:
-    - "The maximum number of minutes for which the device can be idle, without being\
-      \ unlocked by the user, before it gets locked by the system. When this limit\
-      \ is reached, the device is locked and the passcode must be entered. The user\
-      \ can edit this setting, but the value cannot exceed the \u2219`maxInactivity`\u2219\
+    - "The maximum number of minutes for which the device can be idle without the\
+      \ user unlocking it, before the system locks it. When this limit is reached,\
+      \ the system locks the device and the passcode is required to unlock it. The\
+      \ user can edit this setting, but the value can\u2019t exceed the \u2219`maxInactivity`\u2219\
       \ value."
-    - In macOS, this inactivity value is translated to screen-saver settings. The
-      maximum value for macOS is 60 minutes.
+    - "In macOS, the system translates this inactivity value to screen-saver settings.\
+      \ The maximum value for macOS is \u2219`60`\u2219."
     - "Setting this key removes the \u2219`never`\u2219 option in the Settings UI\
       \ on user enrolled devices."
     name: maxInactivity
@@ -8226,7 +8229,8 @@ com.apple.mobiledevice.passwordpolicy:
       minimum: '0'
     description:
     - The number of days for which the passcode can remain unchanged. After this number
-      of days, the user is forced to change the passcode before the device is unlocked.
+      of days, the system forces the user to change the passcode before it unlocks
+      the device.
     name: maxPINAgeInDays
     type: integer
   - attributes:
@@ -8234,10 +8238,11 @@ com.apple.mobiledevice.passwordpolicy:
       maximum: '4'
       minimum: '0'
     description:
-    - "The minimum number of complex characters that a passcode must contain. A \u2219\
-      *complex*\u2219 character is a character other than a number or a letter, such\
-      \ as \u2219*& % $ #*\u2219."
-    - This property is ignored for User Enrollments.
+    - "The minimum number of complex characters that a passcode needs to contain.\
+      \ A \u2219*complex*\u2219 character is a character other than a number or a\
+      \ letter, such as \u2219`&`\u2219, \u2219`%`\u2219, \u2219`$`\u2219, and \u2219\
+      `#`\u2219."
+    - The system ignores this property for User Enrollments.
     name: minComplexChars
     type: integer
   - attributes:
@@ -8245,15 +8250,15 @@ com.apple.mobiledevice.passwordpolicy:
       maximum: '16'
       minimum: '0'
     description:
-    - The minimum overall length of the passcode. This parameter is independent of
-      the also optional minComplexChars argument.
+    - "The minimum overall length of the passcode. This value is independent of the\
+      \ value for \u2219`minComplexChars`\u2219."
     name: minLength
     type: integer
   - attributes: {}
     description:
-    - "The number of minutes before the login is reset after the maximum number of\
-      \ unsuccessful login attempts is reached. This key requires setting \u2219`maxFailedAttempts`\u2219\
-      .\_Available in macOS 10.10 and later."
+    - "The number of minutes before the system resets the login after the maximum\
+      \ number of unsuccessful login attempts is reached. This key requires setting\
+      \ \u2219`maxFailedAttempts`\u2219.\_Available in macOS 10.10 and later."
     name: minutesUntilFailedLoginReset
     type: integer
   - attributes:
@@ -8267,8 +8272,8 @@ com.apple.mobiledevice.passwordpolicy:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, requires alphabetic characters (\u2219*abcd*\u2219)\
-      \ instead of only numeric characters."
+    - "If \u2219`true`\u2219, the system requires alphabetic characters instead of\
+      \ only numeric characters."
     name: requireAlphanumeric
     type: boolean
 com.apple.networkusagerules:
@@ -8648,14 +8653,12 @@ com.apple.proxy.http.global:
     - The password used to authenticate to the proxy server.
     name: ProxyPassword
     type: string
-  - attributes:
-      required: true
+  - attributes: {}
     description:
     - The proxy server's network address.
     name: ProxyServer
     type: string
-  - attributes:
-      required: true
+  - attributes: {}
     description:
     - The proxy server's port number.
     name: ProxyServerPort
@@ -8790,15 +8793,16 @@ com.apple.screensaver.user:
       `0`\u2219 = Never activate)."
     name: idleTime
     type: integer
+  - attributes:
+      required: true
+    description:
+    - The name of the screen saver module.
+    name: moduleName
+    type: string
   - attributes: {}
     description:
     - A full path to the screen-saver module to use.
     name: modulePath
-    type: string
-  - attributes:
-      required: true
-    description: []
-    name: moduleName
     type: string
 com.apple.secondactiveethernet.managed:
   availability:
@@ -9506,13 +9510,15 @@ com.apple.security.firewall:
     introduced_at: '10.12'
     name: macOS
   properties:
-  - attributes: {}
+  - attributes:
+      default: 'true'
     description:
     - "If \u2219`true`\u2219, allows built-in software to receive incoming connections."
     - Available in macOS 12.3 and later.
     name: AllowSigned
     type: boolean
-  - attributes: {}
+  - attributes:
+      default: 'true'
     description:
     - "If \u2219`true`\u2219, allows downloaded signed software to receive incoming\
       \ connections."
@@ -10051,12 +10057,20 @@ com.apple.security.scep:
     \               <key>Key Usage</key>\n                <integer>5</integer>\n \
     \               <key>Keysize</key>\n                <integer>0</integer>\n   \
     \             <key>Name</key>\n                <string>example.org</string>\n\
-    \                <key>Subject</key>\n                <string>`/C=US/O=Example\
-    \ Inc./CN=foo/1.2.5.3=bar`</string>\n                <key>SubjectAltName</key>\n\
-    \                <dict>\n                    <key>dNSName</key>\n            \
-    \        <string>example.com</string>\n                    <key>ntPrincipalName</key>\n\
-    \                    <string>hostname.example.com</string>\n                </dict>\n\
-    \                <key>URL</key>\n                <string>hostname.example.com</string>\n\
+    \                <key>Subject</key>\n                <array>\n               \
+    \     <array>\n                        <array>\n                            <string>C</string>\n\
+    \                            <string>US</string>\n                        </array>\n\
+    \                        <array>\n                            <string>O</string>\n\
+    \                            <string>Example Inc.</string>\n                 \
+    \       </array>\n                        <array>\n                          \
+    \  <string>CN</string>\n                            <string>foo</string>\n   \
+    \                     </array>\n                        <array>\n            \
+    \                <string>1.2.5.3</string>\n                            <string>bar</string>\n\
+    \                        </array>\n                    </array>\n            \
+    \    </array>\n                <key>SubjectAltName</key>\n                <dict>\n\
+    \                    <key>dNSName</key>\n                    <string>example.com</string>\n\
+    \                    <key>ntPrincipalName</key>\n                    <string>hostname.example.com</string>\n\
+    \                </dict>\n                <key>URL</key>\n                <string>https://hostname.example.com/</string>\n\
     \            </dict>\n            <key>PayloadIdentifier</key>\n            <string>com.example.myscepcertpayload</string>\n\
     \            <key>PayloadType</key>\n            <string>com.apple.security.scep</string>\n\
     \            <key>PayloadUUID</key>\n            <string>c0264fd7-1d89-4385-8806-759fbe78a622</string>\n\
@@ -11488,83 +11502,89 @@ com.apple.vpn.managed:
   properties:
   - attributes: {}
     description:
-    - "The dictionary used when \u2219`VPNType`\u2219 is set to \u2219`AlwaysOn`\u2219\
-      ."
+    - "The dictionary to use when \u2219`VPNType`\u2219 is \u2219`AlwaysOn`\u2219\
+      . Not available in watchOS."
     name: AlwaysOn
     type: VPN.AlwaysOn
   - attributes: {}
     description:
-    - A dictionary used for all VPN types.
+    - A dictionary to use for all VPN types.
     name: DNS
     type: VPN.DNS
   - attributes: {}
     description:
-    - "The dictionary used when \u2219`VPNType`\u2219 is set to \u2219`IKEv2.`\u2219"
+    - "The dictionary to use when \u2219`VPNType`\u2219 is \u2219`IKEv2`\u2219."
     name: IKEv2
     type: VPN.IKEv2
   - attributes: {}
     description:
-    - The dictionary containing IPSec settings.
+    - The dictionary that contains IPSec settings. Not available in watchOS.
     name: IPSec
     type: VPN.IPSec
   - attributes: {}
     description:
-    - The dictionary containing IPv4 settings.
+    - The dictionary that contains IPv4 settings. Not available in watchOS.
     name: IPv4
     type: VPN.IPv4
   - attributes: {}
     description:
-    - "The dictionary used when \u2219`VPNType`\u2219 is set to \u2219`L2TP`\u2219\
-      \ or \u2219`PTPP`\u2219."
+    - "The dictionary to use when \u2219`VPNType`\u2219 is \u2219`L2TP`\u2219 or \u2219\
+      `PTPP`\u2219. Not available in watchOS."
     name: PPP
     type: VPN.PPP
   - attributes: {}
     description:
-    - "The dictionary used to configure \u2219`Proxies`\u2219 for use with \u2219\
+    - "The dictionary to use to configure \u2219`Proxies`\u2219 for use with \u2219\
       `VPN`\u2219."
     name: Proxies
     type: VPN.Proxies
   - attributes: {}
-    description: []
+    description:
+    - "The dictionary to use when \u2219`VPNType`\u2219 is \u2219`TransparentProxy`\u2219\
+      . The keys in this dictionary are the same as the keys in the \u2219`VPN`\u2219\
+      \ dictionary with the addition of the fields shown in the [VPN.TransparentProxy](https://developer.apple.com/documentation/devicemanagement/vpn/transparentproxy)\
+      \ dictionary. Not available in watchOS."
     name: TransparentProxy
     type: VPN.TransparentProxy
   - attributes:
       required: true
     description:
-    - The description of the VPN connection displayed on the device.
+    - The description of the VPN connection that the system displays on the device.
+      Not available in watchOS.
     name: UserDefinedName
     type: string
   - attributes: {}
     description:
-    - "The vendor-specific configuration dictionary. This dictionary is read only\
-      \ if \u2219`VPNSubType`\u2219 is specified."
+    - "The vendor-specific configuration dictionary, which the system reads only when\
+      \ \u2219`VPNSubType`\u2219 has a value. Not available in watchOS."
     name: VendorConfig
     type: VPN.VendorConfig
   - attributes: {}
     description:
-    - "A dictionary used to specify a VPN when \u2219`VPNType`\u2219 is set to \u2219\
+    - "The dictionary to use to specify a VPN when \u2219`VPNType`\u2219 is \u2219\
       `VPN`\u2219, \u2219`IPSec`\u2219, or \u2219`IKEv2`\u2219."
     name: VPN
     type: VPN.VPN
   - attributes: {}
     description:
-    - "An identifier for a vendor-specified configuration dictionary if \u2219`VPNType`\u2219\
-      \ is \u2219`VPN`\u2219."
-    - "If \u2219`VPNType`\u2219 is \u2219`VPN`\u2219, this field is required. If the\
-      \ configuration is targeted at a VPN solution that uses a VPN plugin, then this\
+    - "An identifier for a vendor-specified configuration dictionary when the value\
+      \ for \u2219`VPNType`\u2219 is \u2219`VPN`\u2219."
+    - "If \u2219`VPNType`\u2219 is \u2219`VPN`\u2219, the system requires this field.\
+      \ If the configuration targets a VPN solution that uses a VPN plugin, then this\
       \ field contains the bundle identifier of the plugin. Here are some examples:"
-    - "- CiscoAnyConnect: \L\u2219`com.cisco.anyconnect.applevpn.plugin`\u2219"
-    - "- JuniperSSL: \u2219`net.juniper.sslvpn`\u2219"
-    - "- F5SSL: \u2219`com.f5.F5-Edge-Client.vpnplugin`\u2219"
-    - "- SonicWALLMobileConnect: \L\u2219`com.sonicwall.SonicWALL-SSLVPN.vpnplugin\
+    - "- Cisco AnyConnect: \L\u2219`com.cisco.anyconnect.applevpn.plugin`\u2219"
+    - "- Juniper SSL: \u2219`net.juniper.sslvpn`\u2219"
+    - "- F5 SSL: \u2219`com.f5.F5-Edge-Client.vpnplugin`\u2219"
+    - "- SonicWALL Mobile Connect: \L\u2219`com.sonicwall.SonicWALL-SSLVPN.vpnplugin\
       \ `\u2219"
-    - "- ArubaVIA: \L\u2219`com.arubanetworks.aruba-via.vpnplugin`\u2219"
-    - If the configuration is targeted at a VPN solution that uses a network extension
-      provider, then this field contains the bundle identifier of the app that contains
-      the provider. Contact the VPN solution vendor for the value of the identifier.
+    - "- Aruba VIA: \L\u2219`com.arubanetworks.aruba-via.vpnplugin`\u2219"
+    - If the configuration targets a VPN solution that uses a network extension provider,
+      then this field contains the bundle identifier of the app that contains the
+      provider. Contact the VPN solution vendor for the value of the identifier.
     - "If \u2219`VPNType`\u2219 is \u2219`IKEv2`\u2219, then the \u2219`VPNSubType`\u2219\
-      \ field is optional and is reserved for future use. If it is specified, it must\
-      \ contain the empty string."
+      \ field is optional and reserved for future use. If it\u2019s specified, it\
+      \ needs to contain an empty string."
+    - Not available in watchOS.
     name: VPNSubType
     type: string
   - attributes:
@@ -11579,7 +11599,14 @@ com.apple.vpn.managed:
     description:
     - The type of the VPN, which defines which settings are appropriate for this VPN
       payload.
-    - "If the type is \u2219`VPN`\u2219, then \u2219`VPNSubType`\u2219 is required."
+    - "If the type is \u2219`VPN`\u2219, then the system requires a value for \u2219\
+      `VPNSubType`\u2219."
+    - "\u2219`TransparentProxy`\u2219 is only available in macOS. \u2219`L2TP`\u2219\
+      \ and \u2219`IPSec`\u2219 aren\u2019t available in tvOS. \u2219`AlwaysOn`\u2219\
+      \ is only available on iOS and Apple Watch pairing isn\u2019t supported with\
+      \ \u2219`AlwaysOn`\u2219. For a previously paired Apple Watch, all phone-watch\
+      \ communications cease when \u2219`AlwaysOn`\u2219 is enabled. Not available\
+      \ in watchOS."
     name: VPNType
     type: string
 com.apple.vpn.managed.applayer:
@@ -11723,8 +11750,7 @@ com.apple.vpn.managed.applayer:
     - Available in iOS 14 and later, and macOS 11 and later.
     name: AssociatedDomains
     type: '[string]'
-  - attributes:
-      deprecated: true
+  - attributes: {}
     description:
     - "An array with entries that must each specify a domain that triggers this VPN\
       \ connection in Calendar. Each entry is in the format \u2219`www.apple.com`\u2219\
@@ -11734,8 +11760,7 @@ com.apple.vpn.managed.applayer:
       \ payload instead."
     name: CalendarDomains
     type: '[string]'
-  - attributes:
-      deprecated: true
+  - attributes: {}
     description:
     - "An array with entries that must each specify a domain that triggers this VPN\
       \ connection in Contacts. Each entry is in the format \u2219`www.apple.com`\u2219\
@@ -11752,8 +11777,7 @@ com.apple.vpn.managed.applayer:
     - Available in iOS 14 and later, and macOS 11 and later.
     name: ExcludedDomains
     type: '[string]'
-  - attributes:
-      deprecated: true
+  - attributes: {}
     description:
     - "An array with entries that must each specify a domain that triggers this VPN\
       \ connection in Mail. Each entry is in the format \u2219`www.apple.com`\u2219\
