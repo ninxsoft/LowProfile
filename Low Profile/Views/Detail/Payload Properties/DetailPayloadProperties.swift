@@ -43,17 +43,32 @@ struct DetailPayloadProperties: View {
     var type: PropertyType
     var properties: [Property]
     var managedPayloads: [Payload]
+    @Binding var selectedProperty: Property?
+    @State private var selectedDetailTab: DetailTab = .information
     private let spacing: CGFloat = 0
 
     var body: some View {
         VStack(spacing: spacing) {
             if !properties.isEmpty {
                 text(for: type.propertiesDescription)
-                ScrollView(.vertical) {
-                    ForEach(properties) { property in
-                        HStack {
-                            DetailPayloadPropertiesLeading(property: property)
-                            DetailPayloadPropertiesTrailing(property: property, type: type)
+                ScrollViewReader { proxy in
+                    ScrollView(.vertical) {
+                        ForEach(properties) { property in
+                            HStack {
+                                DetailPayloadPropertiesLeading(property: property)
+                                DetailPayloadPropertiesTrailing(property: property, type: type)
+                            }
+                            .tag(property)
+                        }
+                    }
+                    .onChange(of: selectedProperty) { property in
+
+                        guard let property: Property = property, properties.contains(property) else {
+                            return
+                        }
+
+                        withAnimation(.easeOut(duration: 1)) {
+                            proxy.scrollTo(property, anchor: .center)
                         }
                     }
                 }
@@ -62,7 +77,7 @@ struct DetailPayloadProperties: View {
                 text(for: type.managedPayloadsDescription)
                 ScrollView(.vertical) {
                     ForEach(managedPayloads) { payload in
-                        Detail(payload: payload, certificates: [])
+                        Detail(payload: payload, certificates: [], selectedDetailTab: $selectedDetailTab, selectedProperty: .constant(nil))
                     }
                 }
             }
@@ -82,7 +97,7 @@ struct DetailPayloadProperties_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ForEach(DetailPayloadProperties.PropertyType.allCases) { type in
-                DetailPayloadProperties(type: type, properties: [.example], managedPayloads: [.example])
+                DetailPayloadProperties(type: type, properties: [.example], managedPayloads: [.example], selectedProperty: .constant(.example))
             }
         }
     }

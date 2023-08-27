@@ -58,6 +58,8 @@
 		57D4F7D624D6D6A700BC0648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D4F7D524D6D6A700BC0648 /* Assets.xcassets */; };
 		57D4F7FC24D6D8D100BC0648 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7FB24D6D8D100BC0648 /* Document.swift */; };
 		57D4F7FE24D6E46400BC0648 /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */; };
+		57EBBCDF2A49742700A31F2B /* DetailTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBBCDE2A49742700A31F2B /* DetailTab.swift */; };
+		57EBBCED2A49D2F200A31F2B /* PropertySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBBCEC2A49D2F200A31F2B /* PropertySection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +113,8 @@
 		57D4F7DA24D6D6A700BC0648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D4F7FB24D6D8D100BC0648 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTType+Extension.swift"; sourceTree = "<group>"; };
+		57EBBCDE2A49742700A31F2B /* DetailTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTab.swift; sourceTree = "<group>"; };
+		57EBBCEC2A49D2F200A31F2B /* PropertySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertySection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 				57BB578524D802270090CDDF /* Detail.swift */,
 				39C41A00275DAED9001F4B4E /* DetailHeading.swift */,
 				39C41A03275DB04E001F4B4E /* DetailHighLevel.swift */,
+				57EBBCDE2A49742700A31F2B /* DetailTab.swift */,
 				578B3B9624DAA522004D06C2 /* DetailInformation.swift */,
 				39C41A16275DDA5F001F4B4E /* DetailDiscussion.swift */,
 				578B3BC224E143CD004D06C2 /* DetailCertificates.swift */,
@@ -196,6 +201,7 @@
 				578B3BA024DC05B2004D06C2 /* Platform.swift */,
 				578B3BA224DC08B8004D06C2 /* Availability.swift */,
 				578B3B9A24DAB51F004D06C2 /* Property.swift */,
+				57EBBCEC2A49D2F200A31F2B /* PropertySection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 				578B3BB724DE7088004D06C2 /* String+Extension.swift in Sources */,
 				578B3BA324DC08B8004D06C2 /* Availability.swift in Sources */,
 				57BB577B24D789E70090CDDF /* Payload.swift in Sources */,
+				57EBBCDF2A49742700A31F2B /* DetailTab.swift in Sources */,
 				578FFFEE24E675ED00DA8DF1 /* AttributedText.swift in Sources */,
 				578F79302A1C457400260FEF /* ProfileHelper.swift in Sources */,
 				5770D86D2958677F00297B46 /* SettingsGeneralView.swift in Sources */,
@@ -484,6 +491,7 @@
 				57BB578624D802270090CDDF /* Detail.swift in Sources */,
 				578FFFF124E7AB5D00DA8DF1 /* DetailPropertyList.swift in Sources */,
 				39C41A11275DCE52001F4B4E /* DetailPayloadPropertiesLeading.swift in Sources */,
+				57EBBCED2A49D2F200A31F2B /* PropertySection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
