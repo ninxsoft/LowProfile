@@ -19,18 +19,21 @@ struct SidebarPayloadRow: View {
                 ScaledImage(name: payload.name, length: length)
                     .padding(.trailing)
                 VStack(alignment: .leading, spacing: spacing) {
-                    Text(payload.name)
-                        .bold()
-                        .lineLimit(nil)
-                    HStack {
-                        ForEach(payload.platforms) { platform in
-                            PlatformImage(title: platform.name)
-                        }
+                    HStack(alignment: .firstTextBaseline) {
+                        Text(payload.name)
+                            .bold()
+                            .lineLimit(nil)
                         if payload.deprecated {
                             TextTag(title: "Deprecated")
                         }
                         if payload.beta {
                             TextTag(title: "Beta")
+                                .padding(.bottom, padding)
+                        }
+                    }
+                    HStack {
+                        ForEach(payload.platforms) { platform in
+                            PlatformImage(title: platform.name)
                         }
                     }
                 }
