@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RegexBuilder
 
 extension String {
 
@@ -28,6 +29,34 @@ extension String {
             .replacingOccurrences(of: plist, with: "")
             .replacingOccurrences(of: "</plist>", with: "")
             .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    func replacingUnicode() -> String {
+
+        let regex: Regex = Regex {
+            "\\U"
+            Capture {
+                One(.hexDigit)
+                One(.hexDigit)
+                One(.hexDigit)
+                One(.hexDigit)
+            }
+        }
+
+        let matches: [Regex<Regex<Regex<(Substring, Regex<Substring>.RegexOutput)>.RegexOutput>.RegexOutput>.Match] = self.matches(of: regex)
+        var string: String = self
+
+        for match in matches {
+
+            guard let hexadecimal: Int = Int(String(match.output.1), radix: 16),
+                let scalar: UnicodeScalar = UnicodeScalar(hexadecimal) else {
+                continue
+            }
+
+            string = string.replacingOccurrences(of: match.output.0, with: String(scalar))
+        }
+
+        return string
     }
 
     func toJSONString() -> String? {
@@ -71,7 +100,7 @@ extension String {
             string = string.replacingOccurrences(of: line, with: components.joined())
         }
 
-        string = string.replacingOccurrences(of: identifier, with: ":")
+        string = string.replacingOccurrences(of: identifier, with: ":").replacingUnicode()
 
         guard let data: Data = string.data(using: .utf8) else {
             return nil
