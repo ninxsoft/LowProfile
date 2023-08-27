@@ -20,6 +20,7 @@ class PayloadHelper: NSObject {
             "PayloadEnabled",
             "PayloadIdentifier",
             "PayloadOrganization",
+            "PayloadRemovalDisallowed",
             "PayloadType",
             "PayloadUUID",
             "PayloadVersion"
