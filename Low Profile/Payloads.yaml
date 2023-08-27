@@ -11502,7 +11502,8 @@ com.apple.vpn.managed:
   properties:
   - attributes: {}
     description:
-    - "The dictionary to use when \u2219`VPNType`\u2219 is \u2219`AlwaysOn`\u2219."
+    - "The dictionary to use when \u2219`VPNType`\u2219 is \u2219`AlwaysOn`\u2219\
+      . Not available in watchOS."
     name: AlwaysOn
     type: VPN.AlwaysOn
   - attributes: {}
@@ -11517,18 +11518,18 @@ com.apple.vpn.managed:
     type: VPN.IKEv2
   - attributes: {}
     description:
-    - The dictionary that contains IPSec settings.
+    - The dictionary that contains IPSec settings. Not available in watchOS.
     name: IPSec
     type: VPN.IPSec
   - attributes: {}
     description:
-    - The dictionary that contains IPv4 settings.
+    - The dictionary that contains IPv4 settings. Not available in watchOS.
     name: IPv4
     type: VPN.IPv4
   - attributes: {}
     description:
     - "The dictionary to use when \u2219`VPNType`\u2219 is \u2219`L2TP`\u2219 or \u2219\
-      `PTPP`\u2219."
+      `PTPP`\u2219. Not available in watchOS."
     name: PPP
     type: VPN.PPP
   - attributes: {}
@@ -11542,19 +11543,20 @@ com.apple.vpn.managed:
     - "The dictionary to use when \u2219`VPNType`\u2219 is \u2219`TransparentProxy`\u2219\
       . The keys in this dictionary are the same as the keys in the \u2219`VPN`\u2219\
       \ dictionary with the addition of the fields shown in the [VPN.TransparentProxy](https://developer.apple.com/documentation/devicemanagement/vpn/transparentproxy)\
-      \ dictionary."
+      \ dictionary. Not available in watchOS."
     name: TransparentProxy
     type: VPN.TransparentProxy
   - attributes:
       required: true
     description:
     - The description of the VPN connection that the system displays on the device.
+      Not available in watchOS.
     name: UserDefinedName
     type: string
   - attributes: {}
     description:
-    - "The vendor-specific configuration dictionary, which is read only when \u2219\
-      `VPNSubType`\u2219 has a value."
+    - "The vendor-specific configuration dictionary, which the system reads only when\
+      \ \u2219`VPNSubType`\u2219 has a value. Not available in watchOS."
     name: VendorConfig
     type: VPN.VendorConfig
   - attributes: {}
@@ -11570,18 +11572,19 @@ com.apple.vpn.managed:
     - "If \u2219`VPNType`\u2219 is \u2219`VPN`\u2219, the system requires this field.\
       \ If the configuration targets a VPN solution that uses a VPN plugin, then this\
       \ field contains the bundle identifier of the plugin. Here are some examples:"
-    - "- CiscoAnyConnect: \L\u2219`com.cisco.anyconnect.applevpn.plugin`\u2219"
-    - "- JuniperSSL: \u2219`net.juniper.sslvpn`\u2219"
-    - "- F5SSL: \u2219`com.f5.F5-Edge-Client.vpnplugin`\u2219"
-    - "- SonicWALLMobileConnect: \L\u2219`com.sonicwall.SonicWALL-SSLVPN.vpnplugin\
+    - "- Cisco AnyConnect: \L\u2219`com.cisco.anyconnect.applevpn.plugin`\u2219"
+    - "- Juniper SSL: \u2219`net.juniper.sslvpn`\u2219"
+    - "- F5 SSL: \u2219`com.f5.F5-Edge-Client.vpnplugin`\u2219"
+    - "- SonicWALL Mobile Connect: \L\u2219`com.sonicwall.SonicWALL-SSLVPN.vpnplugin\
       \ `\u2219"
-    - "- ArubaVIA: \L\u2219`com.arubanetworks.aruba-via.vpnplugin`\u2219"
+    - "- Aruba VIA: \L\u2219`com.arubanetworks.aruba-via.vpnplugin`\u2219"
     - If the configuration targets a VPN solution that uses a network extension provider,
       then this field contains the bundle identifier of the app that contains the
       provider. Contact the VPN solution vendor for the value of the identifier.
     - "If \u2219`VPNType`\u2219 is \u2219`IKEv2`\u2219, then the \u2219`VPNSubType`\u2219\
       \ field is optional and reserved for future use. If it\u2019s specified, it\
       \ needs to contain an empty string."
+    - Not available in watchOS.
     name: VPNSubType
     type: string
   - attributes:
@@ -11602,7 +11605,8 @@ com.apple.vpn.managed:
       \ and \u2219`IPSec`\u2219 aren\u2019t available in tvOS. \u2219`AlwaysOn`\u2219\
       \ is only available on iOS and Apple Watch pairing isn\u2019t supported with\
       \ \u2219`AlwaysOn`\u2219. For a previously paired Apple Watch, all phone-watch\
-      \ communications cease when \u2219`AlwaysOn`\u2219 is enabled."
+      \ communications cease when \u2219`AlwaysOn`\u2219 is enabled. Not available\
+      \ in watchOS."
     name: VPNType
     type: string
 com.apple.vpn.managed.applayer:
