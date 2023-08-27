@@ -5,22 +5,32 @@
 //  Created by Nindi Gill on 15/8/20.
 //
 
-import HighlightSwift
+import Highlightr
 import SwiftUI
 
 struct DetailPropertyList: View {
     var string: String
     @AppStorage("SyntaxHighlightingTheme")
-    private var syntaxHighlightingTheme: String = "GitHub"
-    private var highlightStyleName: HighlightStyle.Name {
-        HighlightStyle.Name(rawValue: syntaxHighlightingTheme) ?? .github
+    private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
+    private var propertyList: AttributedString? {
+
+        guard let highlightr: Highlightr = Highlightr() else {
+            return nil
+        }
+
+        if !highlightr.setTheme(to: syntaxHighlightingTheme) {
+            highlightr.setTheme(to: .syntaxHighlightingThemeDefault)
+        }
+
+        return highlightr.highlight(string)
     }
 
     var body: some View {
-        ScrollView(.vertical) {
+        ScrollView([.horizontal, .vertical]) {
             HStack {
-                CodeText(string, style: highlightStyleName)
-                Spacer()
+                ScrollView([.horizontal, .vertical]) {
+                    Text(propertyList ?? "")
+                }
             }
         }
         .padding()

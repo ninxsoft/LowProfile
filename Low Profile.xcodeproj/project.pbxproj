@@ -23,6 +23,8 @@
 		39D0056827D0916B0027A6E5 /* SidebarProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D0056727D0916B0027A6E5 /* SidebarProfileRow.swift */; };
 		39D0056C27D31D220027A6E5 /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D0056B27D31D220027A6E5 /* RefreshView.swift */; };
 		573F4D0424E81EB000E6136F /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F4D0324E81EB000E6136F /* AppCommands.swift */; };
+		5745C7282A9B070200744AAE /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = 5745C7272A9B070200744AAE /* Highlightr */; };
+		5745C72A2A9B09BB00744AAE /* Highlightr+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5745C7292A9B09BB00744AAE /* Highlightr+Extension.swift */; };
 		5770D8612958489D00297B46 /* LowProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770D8602958489D00297B46 /* LowProfileTests.swift */; };
 		5770D867295860DF00297B46 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 5770D866295860DF00297B46 /* Sparkle */; };
 		5770D8692958613900297B46 /* SparkleUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770D8682958613900297B46 /* SparkleUpdater.swift */; };
@@ -50,7 +52,6 @@
 		57BB578324D7FD330090CDDF /* SidebarPayloadRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578224D7FD330090CDDF /* SidebarPayloadRow.swift */; };
 		57BB578624D802270090CDDF /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578524D802270090CDDF /* Detail.swift */; };
 		57BB578A24D81AB00090CDDF /* PayloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB578924D81AB00090CDDF /* PayloadHelper.swift */; };
-		57BD33792A1916D400AC94DA /* HighlightSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 57BD33782A1916D400AC94DA /* HighlightSwift */; };
 		57BD337B2A19258100AC94DA /* SettingsSyntaxHighlightingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BD337A2A19258100AC94DA /* SettingsSyntaxHighlightingView.swift */; };
 		57D4F7D224D6D6A500BC0648 /* LowProfileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7D124D6D6A500BC0648 /* LowProfileApp.swift */; };
 		57D4F7D424D6D6A500BC0648 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F7D324D6D6A500BC0648 /* DocumentView.swift */; };
@@ -75,6 +76,7 @@
 		39D0056727D0916B0027A6E5 /* SidebarProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarProfileRow.swift; sourceTree = "<group>"; };
 		39D0056B27D31D220027A6E5 /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		573F4D0324E81EB000E6136F /* AppCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
+		5745C7292A9B09BB00744AAE /* Highlightr+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Highlightr+Extension.swift"; sourceTree = "<group>"; };
 		5770D85E2958489D00297B46 /* LowProfileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LowProfileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5770D8602958489D00297B46 /* LowProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowProfileTests.swift; sourceTree = "<group>"; };
 		5770D8682958613900297B46 /* SparkleUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUpdater.swift; sourceTree = "<group>"; };
@@ -123,10 +125,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5745C7282A9B070200744AAE /* Highlightr in Frameworks */,
 				5770D867295860DF00297B46 /* Sparkle in Frameworks */,
 				39C419FD275D9AEC001F4B4E /* Yams in Frameworks */,
 				5794E85D254A6B1A004A5942 /* ASN1Decoder in Frameworks */,
-				57BD33792A1916D400AC94DA /* HighlightSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +181,7 @@
 		57BB577C24D789F00090CDDF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5745C7292A9B09BB00744AAE /* Highlightr+Extension.swift */,
 				578B3BB624DE7088004D06C2 /* String+Extension.swift */,
 				57D4F7FD24D6E46400BC0648 /* UTType+Extension.swift */,
 			);
@@ -315,7 +318,7 @@
 				5794E85C254A6B1A004A5942 /* ASN1Decoder */,
 				39C419FC275D9AEC001F4B4E /* Yams */,
 				5770D866295860DF00297B46 /* Sparkle */,
-				57BD33782A1916D400AC94DA /* HighlightSwift */,
+				5745C7272A9B070200744AAE /* Highlightr */,
 			);
 			productName = "Low Profile";
 			productReference = 57D4F7CE24D6D6A500BC0648 /* Low Profile.app */;
@@ -352,7 +355,7 @@
 				5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */,
 				39C419FB275D9AEC001F4B4E /* XCRemoteSwiftPackageReference "Yams" */,
 				5770D865295860DF00297B46 /* XCRemoteSwiftPackageReference "Sparkle" */,
-				57BD33772A1916D400AC94DA /* XCRemoteSwiftPackageReference "highlightswift" */,
+				5745C7262A9B070200744AAE /* XCRemoteSwiftPackageReference "Highlightr" */,
 			);
 			productRefGroup = 57D4F7CF24D6D6A500BC0648 /* Products */;
 			projectDirPath = "";
@@ -477,6 +480,7 @@
 				57D4F7D224D6D6A500BC0648 /* LowProfileApp.swift in Sources */,
 				392BC50927CF7940009D77D8 /* ContentView.swift in Sources */,
 				578B3B9724DAA522004D06C2 /* DetailInformation.swift in Sources */,
+				5745C72A2A9B09BB00744AAE /* Highlightr+Extension.swift in Sources */,
 				57BB578624D802270090CDDF /* Detail.swift in Sources */,
 				578FFFF124E7AB5D00DA8DF1 /* DetailPropertyList.swift in Sources */,
 				39C41A11275DCE52001F4B4E /* DetailPayloadPropertiesLeading.swift in Sources */,
@@ -776,6 +780,11 @@
 			package = 39C419FB275D9AEC001F4B4E /* XCRemoteSwiftPackageReference "Yams" */;
 			productName = Yams;
 		};
+		5745C7272A9B070200744AAE /* Highlightr */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5745C7262A9B070200744AAE /* XCRemoteSwiftPackageReference "Highlightr" */;
+			productName = Highlightr;
+		};
 		5770D866295860DF00297B46 /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5770D865295860DF00297B46 /* XCRemoteSwiftPackageReference "Sparkle" */;
@@ -785,11 +794,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */;
 			productName = ASN1Decoder;
-		};
-		57BD33782A1916D400AC94DA /* HighlightSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 57BD33772A1916D400AC94DA /* XCRemoteSwiftPackageReference "highlightswift" */;
-			productName = HighlightSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
