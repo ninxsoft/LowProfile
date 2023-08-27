@@ -12,6 +12,7 @@ extension String {
     static let repositoryURL: String = "https://github.com/ninxsoft/LowProfile"
     static let payloadsURL: String = "https://raw.githubusercontent.com/ninxsoft/LowProfile/main/Low%20Profile/Payloads.yaml"
     static let documentationPrefix: String = "https://developer.apple.com/documentation/devicemanagement/"
+    static let syntaxHighlightingThemeDefault: String = "xcode"
 
     static func ~= (lhs: String, rhs: String) -> Bool {
         lhs.range(of: rhs, options: .regularExpression) != nil

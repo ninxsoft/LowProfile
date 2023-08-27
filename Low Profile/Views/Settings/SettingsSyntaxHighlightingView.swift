@@ -5,15 +5,13 @@
 //  Created by Nindi Gill on 21/5/2023.
 //
 
-import HighlightSwift
+import Highlightr
 import SwiftUI
 
 struct SettingsSyntaxHighlightingView: View {
     @AppStorage("SyntaxHighlightingTheme")
-    private var syntaxHighlightingTheme: String = "GitHub"
-    private var highlightStyleName: HighlightStyle.Name {
-        HighlightStyle.Name(rawValue: syntaxHighlightingTheme) ?? .github
-    }
+    private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
+    @State private var availableThemes: [String] = Highlightr()?.availableThemes().sorted() ?? []
     private var width: CGFloat = 300
     private var height: CGFloat = 400
     private var string: String = """
@@ -36,6 +34,18 @@ struct SettingsSyntaxHighlightingView: View {
     </dict>
     </plist>
     """
+    private var propertyList: AttributedString? {
+
+        guard let highlightr: Highlightr = Highlightr() else {
+            return nil
+        }
+
+        if !highlightr.setTheme(to: syntaxHighlightingTheme) {
+            highlightr.setTheme(to: .syntaxHighlightingThemeDefault)
+        }
+
+        return highlightr.highlight(string)
+    }
 
     var body: some View {
         VStack {
@@ -44,15 +54,14 @@ struct SettingsSyntaxHighlightingView: View {
                 Spacer()
             }
             HStack {
-                List(HighlightStyle.Name.allCases, selection: $syntaxHighlightingTheme) { name in
-                    Text(name.rawValue)
+                List(availableThemes, id: \.self, selection: $syntaxHighlightingTheme) { name in
+                    Text(name)
                 }
                 Divider()
                 GroupBox {
-                    ScrollView(.horizontal) {
+                    ScrollView([.horizontal, .vertical]) {
                         VStack {
-                            CodeText(string, style: highlightStyleName)
-                            Spacer()
+                            Text(propertyList ?? "")
                         }
                     }
                 }

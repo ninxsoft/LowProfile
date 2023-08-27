@@ -10,12 +10,12 @@
       }
     },
     {
-      "identity" : "highlightswift",
+      "identity" : "highlightr",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/appstefan/highlightswift",
+      "location" : "https://github.com/raspu/Highlightr",
       "state" : {
-        "revision" : "3db2f351542a31c6e4efc032fdc8ee81b5d46e0b",
-        "version" : "1.0.5"
+        "revision" : "93199b9e434f04bda956a613af8f571933f9f037",
+        "version" : "2.1.2"
       }
     },
     {

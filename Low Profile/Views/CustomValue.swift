@@ -6,16 +6,13 @@
 //
 
 import ASN1Decoder
-import HighlightSwift
+import Highlightr
 import SwiftUI
 
 struct CustomValue: View {
     var value: Any
     @AppStorage("SyntaxHighlightingTheme")
-    private var syntaxHighlightingTheme: String = "GitHub"
-    private var highlightStyleName: HighlightStyle.Name {
-        HighlightStyle.Name(rawValue: syntaxHighlightingTheme) ?? .github
-    }
+    private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
     private let length: CGFloat = 50
 
     var body: some View {
@@ -24,10 +21,10 @@ struct CustomValue: View {
             Certificate(certificate: certificate, certificateImageLength: length)
         } else if let array: [Any] = value as? [Any],
             let propertyListString: String = propertyListString(for: array) {
-            CodeText(propertyListString, style: highlightStyleName)
+            Text(attributedString(propertyListString) ?? "")
         } else if let dictionary: [String: Any] = value as? [String: Any],
             let propertyListString: String = propertyListString(for: dictionary) {
-            CodeText(propertyListString, style: highlightStyleName)
+            Text(attributedString(propertyListString) ?? "")
         } else {
             Text(PayloadHelper.shared.string(for: value))
         }
@@ -47,6 +44,19 @@ struct CustomValue: View {
             print(error.localizedDescription)
             return nil
         }
+    }
+
+    private func attributedString(_ string: String) -> AttributedString? {
+
+        guard let highlightr: Highlightr = Highlightr() else {
+            return nil
+        }
+
+        if !highlightr.setTheme(to: syntaxHighlightingTheme) {
+            highlightr.setTheme(to: .syntaxHighlightingThemeDefault)
+        }
+
+        return highlightr.highlight(string)
     }
 }
 
