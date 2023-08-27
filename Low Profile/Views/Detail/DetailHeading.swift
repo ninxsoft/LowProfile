@@ -39,6 +39,7 @@ struct DetailHeading: View {
                 .onHover { hovering in
                     self.hovering = hovering
                 }
+                .help("View documentation")
             }
         }
     }
