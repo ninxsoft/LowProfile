@@ -17,6 +17,13 @@ struct ContentView: View {
     @State private var selectedProperty: Property?
     @State private var searchString: String = ""
     @State private var refreshing: Bool = false
+    @State private var issues: [Issue] = []
+    @State private var showIssuesPopover: Bool = false
+    private var issuesButtonSystemName: String {
+        issues.isEmpty ? "checkmark.circle" : "exclamationmark.triangle"
+    }
+    private var issuesButtonForegroundColor: Color {
+        issues.isEmpty ? .green : .orange
     }
     private let sidebarWidth: CGFloat = 250
     private let width: CGFloat = 1_080
@@ -61,8 +68,55 @@ struct ContentView: View {
             }
         }
         .searchable(text: $searchString, prompt: "Name, identifier or property")
+        .searchSuggestions {
+            ForEach(filteredProfiles()) { profile in
+                ResultsTitleView(title: profile.name, image: "Profile")
+                    .tag(profile.id)
+                    .onTapGesture {
+                        selectedProfile = profile
+                        selectedPayload = nil
+                        selectedDetailTab = .information
+                        searchString = ""
+                    }
+                ForEach(filteredPayloads(for: profile)) { payload in
+                    ResultsTitleView(title: payload.name, image: payload.name, indentation: 1)
+                        .tag(payload.payloadUUID)
+                        .onTapGesture {
+                            selectedProfile = profile
+                            selectedPayload = payload
+                            selectedDetailTab = .information
+                            searchString = ""
+                        }
+                    ForEach(PropertySection.allCases) { propertySection in
+                        ForEach(filteredProperties(for: propertySection, using: payload)) { property in
+                            ResultsKeyView(title: property.name, bold: false, indentation: 2)
+                                .tag("\(payload.payloadUUID).\(property.name)")
+                                .onTapGesture {
+                                    setSelectedPropertyState(profile: profile, payload: payload, detailTab: detailTab(for: propertySection), property: property)
+                                }
+                        }
+                    }
+                }
+            }
+        }
         .toolbar {
             ToolbarItemGroup {
+                if !issues.isEmpty {
+                    Text("\(issues.count) issue\(issues.count == 1 ? "" : "s") detected")
+                }
+                Button(action: {
+                    showIssuesPopover = true
+                }, label: {
+                    Image(systemName: issuesButtonSystemName)
+                        .foregroundColor(issuesButtonForegroundColor)
+                }).help("Issues")
+                .popover(isPresented: $showIssuesPopover, arrowEdge: .bottom) {
+                    if !issues.isEmpty {
+                        IssuesView(issues: issues, selectedProfile: $selectedProfile, selectedPayload: $selectedPayload, selectedDetailTab: $selectedDetailTab, selectedProperty: $selectedProperty)
+                    } else {
+                        Text("No issues detected, everything looks good 🥳").padding()
+                    }
+                }
                 Button {
                     refreshProfiles()
                 } label: {
@@ -95,6 +149,7 @@ struct ContentView: View {
             self.profiles = profiles
             selectedProfile = profiles.first
             selectedPayload = selectedProfile?.payloads.first
+            issues = IssuesHelper.shared.getIssues(for: profiles)
             refreshing = false
         }
     }

@@ -14,6 +14,15 @@ struct DocumentView: View {
     @State private var selectedPayload: Payload?
     @State private var selectedDetailTab: DetailTab = .information
     @State private var selectedProperty: Property?
+    @State private var issues: [Issue] = []
+    @State private var showIssuesPopover: Bool = false
+    @State private var searchString: String = ""
+    private var issuesButtonSystemName: String {
+        issues.isEmpty ? "checkmark.circle" : "exclamationmark.triangle"
+    }
+    private var issuesButtonForegroundColor: Color {
+        issues.isEmpty ? .green : .orange
+    }
     private let sidebarWidth: CGFloat = 250
     private let width: CGFloat = 1_080
     private let height: CGFloat = 720
@@ -36,7 +45,48 @@ struct DocumentView: View {
             }
         }
         .searchable(text: $searchString, prompt: Text("Name, identifier or property"))
+        .searchSuggestions {
+            ForEach(filteredPayloads()) { payload in
+                ResultsTitleView(title: payload.name, image: payload.name)
+                    .tag(payload.payloadUUID)
+                    .onTapGesture {
+                        selectedPayload = payload
+                        selectedDetailTab = .information
+                        searchString = ""
+                    }
+                ForEach(PropertySection.allCases) { propertySection in
+                    ForEach(filteredProperties(for: propertySection, using: payload)) { property in
+                        ResultsKeyView(title: property.name, bold: false, indentation: 1)
+                            .tag("\(payload.payloadUUID).\(property.name)")
+                            .onTapGesture {
+                                setSelectedPropertyState(payload: payload, detailTab: detailTab(for: propertySection), property: property)
+                            }
+                    }
+                }
+            }
+        }
         .toolbar {
+            if !issues.isEmpty {
+                ToolbarItem {
+                    Text("\(issues.count) issue\(issues.count == 1 ? "" : "s") detected")
+                }
+            }
+            ToolbarItem {
+                Button(action: {
+                    showIssuesPopover = true
+                }, label: {
+                    Image(systemName: issuesButtonSystemName)
+                        .foregroundColor(issuesButtonForegroundColor)
+                })
+                .help("Issues")
+                .popover(isPresented: $showIssuesPopover, arrowEdge: .bottom) {
+                    if !issues.isEmpty {
+                        IssuesView(issues: issues, selectedProfile: .constant(profile), selectedPayload: $selectedPayload, selectedDetailTab: $selectedDetailTab, selectedProperty: $selectedProperty)
+                    } else {
+                        Text("No issues detected, everything looks good 🥳").padding()
+                    }
+                }
+            }
             ToolbarItem {
                 Button(action: {
                     homepage()
@@ -50,6 +100,9 @@ struct DocumentView: View {
         .frame(minWidth: width, minHeight: height)
         .onAppear {
             selectedPayload = profile.payloads.first
+            issues = IssuesHelper.shared.getIssues(for: profile)
+        }
+    }
 
     private func filteredPayloads() -> [Payload] {
         profile.payloads.filter {
