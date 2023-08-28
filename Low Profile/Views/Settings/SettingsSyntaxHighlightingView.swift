@@ -9,9 +9,11 @@ import Highlightr
 import SwiftUI
 
 struct SettingsSyntaxHighlightingView: View {
+    @Environment(\.colorScheme)
+    var colorScheme: ColorScheme
     @AppStorage("SyntaxHighlightingTheme")
     private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
-    @State private var availableThemes: [String] = Highlightr()?.availableThemes().sorted() ?? []
+    @State private var propertyList: AttributedString = AttributedString()
     private var width: CGFloat = 300
     private var height: CGFloat = 400
     private var string: String = """
@@ -34,18 +36,6 @@ struct SettingsSyntaxHighlightingView: View {
     </dict>
     </plist>
     """
-    private var propertyList: AttributedString? {
-
-        guard let highlightr: Highlightr = Highlightr() else {
-            return nil
-        }
-
-        if !highlightr.setTheme(to: syntaxHighlightingTheme) {
-            highlightr.setTheme(to: .syntaxHighlightingThemeDefault)
-        }
-
-        return highlightr.highlight(string)
-    }
 
     var body: some View {
         VStack {
@@ -54,14 +44,15 @@ struct SettingsSyntaxHighlightingView: View {
                 Spacer()
             }
             HStack {
-                List(availableThemes, id: \.self, selection: $syntaxHighlightingTheme) { name in
+                List(Highlightr.propertyListThemes(), id: \.self, selection: $syntaxHighlightingTheme) { name in
                     Text(name)
+                        .tag(name)
                 }
                 Divider()
                 GroupBox {
                     ScrollView([.horizontal, .vertical]) {
                         VStack {
-                            Text(propertyList ?? "")
+                            Text(propertyList)
                         }
                     }
                 }
@@ -70,6 +61,28 @@ struct SettingsSyntaxHighlightingView: View {
         }
         .padding()
         .frame(height: height)
+        .onAppear {
+            updatePropertyList(using: colorScheme)
+        }
+        .onChange(of: syntaxHighlightingTheme) { _ in
+            updatePropertyList(using: colorScheme)
+        }
+        .onChange(of: colorScheme) { colorScheme in
+            updatePropertyList(using: colorScheme)
+        }
+    }
+
+    private func updatePropertyList(using colorScheme: ColorScheme) {
+
+        guard let highlightr: Highlightr = Highlightr() else {
+            return
+        }
+
+        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
+            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
+        }
+
+        propertyList = highlightr.highlight(string)
     }
 }
 

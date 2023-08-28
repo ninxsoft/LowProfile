@@ -9,31 +9,44 @@ import Highlightr
 import SwiftUI
 
 struct DetailPropertyList: View {
+    @Environment(\.colorScheme)
+    var colorScheme: ColorScheme
     var string: String
     @AppStorage("SyntaxHighlightingTheme")
     private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
-    private var propertyList: AttributedString? {
-
-        guard let highlightr: Highlightr = Highlightr() else {
-            return nil
-        }
-
-        if !highlightr.setTheme(to: syntaxHighlightingTheme) {
-            highlightr.setTheme(to: .syntaxHighlightingThemeDefault)
-        }
-
-        return highlightr.highlight(string)
-    }
+    @State private var propertyList: AttributedString = AttributedString()
 
     var body: some View {
         ScrollView([.horizontal, .vertical]) {
             HStack {
                 ScrollView([.horizontal, .vertical]) {
-                    Text(propertyList ?? "")
+                    Text(propertyList)
                 }
             }
         }
         .padding()
+        .onAppear {
+            updatePropertyList(using: colorScheme)
+        }
+        .onChange(of: syntaxHighlightingTheme) { _ in
+            updatePropertyList(using: colorScheme)
+        }
+        .onChange(of: colorScheme) { colorScheme in
+            updatePropertyList(using: colorScheme)
+        }
+    }
+
+    private func updatePropertyList(using colorScheme: ColorScheme) {
+
+        guard let highlightr: Highlightr = Highlightr() else {
+            return
+        }
+
+        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
+            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
+        }
+
+        propertyList = highlightr.highlight(string)
     }
 }
 
