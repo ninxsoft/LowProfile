@@ -122,6 +122,41 @@ class PayloadHelper: NSObject {
         return string
     }
 
+    func transformedDictionary(for type: String, using dictionary: [String: Any]) -> [String: Any] {
+        var dictionary: [String: Any] = dictionary
+        let knownProperties: [Property] = knownProperties(for: type)
+
+        for (key, value) in dictionary where knownProperties.map({ $0.name }).contains(key) && !keysToIgnore.contains(key) {
+
+            guard let property: Property = knownProperties.first(where: { $0.name == key }) else {
+                continue
+            }
+
+            switch property.type {
+            case "boolean":
+                if (property.value as? Bool) != nil {
+                    continue
+                }
+
+                if let integer: Int = value as? Int {
+                    dictionary[key] = Bool(integer == 1)
+                }
+            case "integer":
+                if (property.value as? Int) != nil {
+                    continue
+                }
+
+                if let boolean: Bool = value as? Bool {
+                    dictionary[key] = boolean ? 1 : 0
+                }
+            default:
+                continue
+            }
+        }
+
+        return dictionary
+    }
+
     func payloadProperties(for type: String, in dictionary: [String: Any]) -> [Property] {
 
         let availableProperties: [Property] = knownProperties(for: type)

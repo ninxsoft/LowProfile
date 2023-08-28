@@ -93,35 +93,32 @@ struct Payload: Identifiable, Hashable {
     init(dictionary: [String: Any]) {
         self.init()
 
-        for key in dictionary.keys {
+        if let string: String = dictionary["PayloadType"] as? String {
+            type = string
+        }
 
-            if key == "PayloadType", let string: String = dictionary[key] as? String {
-                type = string
-            }
+        if let integer: Int = dictionary["PayloadVersion"] as? Int {
+            payloadVersion = integer
+        }
 
-            if key == "PayloadVersion", let integer: Int = dictionary[key] as? Int {
-                payloadVersion = integer
-            }
+        if let string: String = dictionary["PayloadIdentifier"] as? String {
+            payloadIdentifier = string
+        }
 
-            if key == "PayloadIdentifier", let string: String = dictionary[key] as? String {
-                payloadIdentifier = string
-            }
+        if let string: String = dictionary["PayloadUUID"] as? String {
+            payloadUUID = string
+        }
 
-            if key == "PayloadUUID", let string: String = dictionary[key] as? String {
-                payloadUUID = string
-            }
+        if let string: String = dictionary["PayloadDisplayName"] as? String {
+            payloadDisplayName = string
+        }
 
-            if key == "PayloadDisplayName", let string: String = dictionary[key] as? String {
-                payloadDisplayName = string
-            }
+        if let string: String = dictionary["PayloadDescription"] as? String {
+            payloadDescription = string
+        }
 
-            if key == "PayloadDescription", let string: String = dictionary[key] as? String {
-                payloadDescription = string
-            }
-
-            if key == "PayloadOrganization", let string: String = dictionary[key] as? String {
-                payloadOrganisation = string
-            }
+        if let string: String = dictionary["PayloadOrganization"] as? String {
+            payloadOrganisation = string
         }
 
         name = PayloadHelper.shared.name(for: type)
@@ -131,11 +128,11 @@ struct Payload: Identifiable, Hashable {
         availability = PayloadHelper.shared.availability(for: type)
         discussion = PayloadHelper.shared.discussion(for: type)
         example = PayloadHelper.shared.example(for: type)
-        payloadProperties = PayloadHelper.shared.payloadProperties(for: type, in: dictionary)
-        managedPayloads = PayloadHelper.shared.managedPayloads(for: type, in: dictionary)
-        availableProperties = PayloadHelper.shared.availableProperties(for: type, in: dictionary)
-        unknownProperties = PayloadHelper.shared.unknownProperties(for: type, in: dictionary)
-        self.dictionary = dictionary
+        self.dictionary = PayloadHelper.shared.transformedDictionary(for: type, using: dictionary)
+        payloadProperties = PayloadHelper.shared.payloadProperties(for: type, in: self.dictionary)
+        managedPayloads = PayloadHelper.shared.managedPayloads(for: type, in: self.dictionary)
+        availableProperties = PayloadHelper.shared.availableProperties(for: type, in: self.dictionary)
+        unknownProperties = PayloadHelper.shared.unknownProperties(for: type, in: self.dictionary)
     }
 
     static func == (lhs: Payload, rhs: Payload) -> Bool {
