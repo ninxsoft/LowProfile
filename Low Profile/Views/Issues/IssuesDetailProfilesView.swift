@@ -44,9 +44,7 @@ struct IssuesDetailProfilesView: View {
                         }
                         .buttonStyle(.plain)
 
-                        if payloadIndex < profiles[profileIndex].payloads.count - 1 || (profiles[profileIndex].payloads.count == 1 && profileIndex < profiles.count - 1) {
-                            Divider()
-                        }
+                        Divider()
                     }
                 }
             }
