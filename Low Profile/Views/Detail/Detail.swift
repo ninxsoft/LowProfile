@@ -22,7 +22,7 @@ struct Detail: View {
                 if !(payload.managed && payload.custom) {
                     DetailInformation(payload: payload).tabItem { Text(DetailTab.information.description) }.tag(DetailTab.information)
                 }
-                if !payload.custom {
+                if !payload.custom && !payload.discussion.isEmpty {
                     DetailDiscussion(payload: payload).tabItem { Text(DetailTab.discussion.description) }.tag(DetailTab.discussion)
                 }
                 if payload.general && !certificates.isEmpty {
