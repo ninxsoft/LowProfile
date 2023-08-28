@@ -19,7 +19,7 @@ struct PlatformImage: View {
         case "iPadOS":
             return "ipad.landscape"
         case "tvOS":
-            return "appletv"
+            return "appletv.fill"
         case "watchOS":
             return "applewatch"
         default:
