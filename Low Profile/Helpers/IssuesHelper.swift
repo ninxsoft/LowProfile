@@ -28,9 +28,8 @@ class IssuesHelper: NSObject {
                     var profilesWithDuplicatedProperties: [Profile] = []
 
                     for innerProfile in profiles {
-                        for innerPayload in innerProfile.payloads where !innerPayload.general &&
-                            innerPayload.payloadProperties.map({ $0.name }).contains(property.name) &&
-                            !profilesWithDuplicatedProperties.flatMap({ $0.payloads }).map({ $0.payloadUUID }).contains(innerPayload.payloadUUID) {
+                        for innerPayload in innerProfile.payloads where innerPayload != outerPayload && !innerPayload.general &&
+                            innerPayload.payloadProperties.map({ $0.name }).contains(property.name) {
                             profilesWithDuplicatedProperties.append(innerProfile)
                         }
                     }
