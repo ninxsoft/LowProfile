@@ -9,24 +9,15 @@ import Highlightr
 import SwiftUI
 
 struct DetailDiscussion: View {
+    @Environment(\.colorScheme)
+    var colorScheme: ColorScheme
     var payload: Payload
     @AppStorage("SyntaxHighlightingTheme")
     private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
     private var discussionString: String {
         payload.discussion.joined(separator: "\n\n")
     }
-    private var propertyList: AttributedString? {
-
-        guard let highlightr: Highlightr = Highlightr() else {
-            return nil
-        }
-
-        if !highlightr.setTheme(to: syntaxHighlightingTheme) {
-            highlightr.setTheme(to: .syntaxHighlightingThemeDefault)
-        }
-
-        return highlightr.highlight(payload.example)
-    }
+    @State private var propertyList: AttributedString = AttributedString()
 
     var body: some View {
         VStack {
@@ -41,13 +32,35 @@ struct DetailDiscussion: View {
                 }
                 GroupBox {
                     ScrollView([.horizontal, .vertical]) {
-                        Text(propertyList ?? "")
+                        Text(propertyList)
                     }
                 }
             }
             Spacer()
         }
         .padding()
+        .onAppear {
+            updatePropertyList(using: colorScheme)
+        }
+        .onChange(of: syntaxHighlightingTheme) { _ in
+            updatePropertyList(using: colorScheme)
+        }
+        .onChange(of: colorScheme) { colorScheme in
+            updatePropertyList(using: colorScheme)
+        }
+    }
+
+    private func updatePropertyList(using colorScheme: ColorScheme) {
+
+        guard let highlightr: Highlightr = Highlightr() else {
+            return
+        }
+
+        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
+            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
+        }
+
+        propertyList = highlightr.highlight(payload.example)
     }
 }
 

@@ -10,23 +10,35 @@ import Highlightr
 import SwiftUI
 
 struct CustomValue: View {
+    @Environment(\.colorScheme)
+    var colorScheme: ColorScheme
     var value: Any
     @AppStorage("SyntaxHighlightingTheme")
     private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
+    @State private var propertyList: AttributedString = AttributedString()
     private let length: CGFloat = 50
 
     var body: some View {
-        if let data: Data = value as? Data,
-            let certificate: X509Certificate = try? X509Certificate(data: data) {
-            Certificate(certificate: certificate, certificateImageLength: length)
-        } else if let array: [Any] = value as? [Any],
-            let propertyListString: String = propertyListString(for: array) {
-            Text(attributedString(propertyListString) ?? "")
-        } else if let dictionary: [String: Any] = value as? [String: Any],
-            let propertyListString: String = propertyListString(for: dictionary) {
-            Text(attributedString(propertyListString) ?? "")
-        } else {
-            Text(PayloadHelper.shared.string(for: value))
+        Group {
+            if let data: Data = value as? Data,
+                let certificate: X509Certificate = try? X509Certificate(data: data) {
+                Certificate(certificate: certificate, certificateImageLength: length)
+            } else if (value as? [Any]) != nil {
+                Text(propertyList)
+            } else if (value as? [String: Any]) != nil {
+                Text(propertyList)
+            } else {
+                Text(PayloadHelper.shared.string(for: value))
+            }
+        }
+        .onAppear {
+            updatePropertyList(using: colorScheme)
+        }
+        .onChange(of: syntaxHighlightingTheme) { _ in
+            updatePropertyList(using: colorScheme)
+        }
+        .onChange(of: colorScheme) { colorScheme in
+            updatePropertyList(using: colorScheme)
         }
     }
 
@@ -46,17 +58,23 @@ struct CustomValue: View {
         }
     }
 
-    private func attributedString(_ string: String) -> AttributedString? {
+    private func updatePropertyList(using colorScheme: ColorScheme) {
 
         guard let highlightr: Highlightr = Highlightr() else {
-            return nil
+            return
         }
 
-        if !highlightr.setTheme(to: syntaxHighlightingTheme) {
-            highlightr.setTheme(to: .syntaxHighlightingThemeDefault)
+        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
+            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
         }
 
-        return highlightr.highlight(string)
+        if let array: [Any] = value as? [Any],
+            let string: String = propertyListString(for: array) {
+            propertyList = highlightr.highlight(string)
+        } else if let dictionary: [String: Any] = value as? [String: Any],
+            let string: String = propertyListString(for: dictionary) {
+            propertyList = highlightr.highlight(string)
+        }
     }
 }
 
