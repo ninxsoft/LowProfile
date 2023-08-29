@@ -25,6 +25,12 @@ struct AppCommands: Commands {
             }
             .keyboardShortcut("o")
         }
+        CommandGroup(after: .newItem) {
+            Divider()
+            Button("Export Report...") {
+                export()
+            }
+        }
         CommandGroup(replacing: .saveItem) {
             Button("Close") {
                 close()
@@ -41,6 +47,43 @@ struct AppCommands: Commands {
 
     private func open() {
         NSDocumentController.shared.openDocument(nil)
+    }
+
+    private func export() {
+
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date: String = dateFormatter.string(from: Date())
+
+        let savePanel: NSSavePanel = NSSavePanel()
+        savePanel.title = "Export Low Profile Report"
+        savePanel.prompt = "Export"
+        savePanel.nameFieldStringValue = "Low Profile Report \(date)"
+        savePanel.canCreateDirectories = true
+        savePanel.canSelectHiddenExtension = true
+        savePanel.isExtensionHidden = false
+        savePanel.allowedContentTypes = [.lowprofilereport]
+
+        let response: NSApplication.ModalResponse = savePanel.runModal()
+
+        guard response == .OK,
+            let url: URL = savePanel.url else {
+            return
+        }
+
+        let array: [[String: Any]] = ProfileHelper.shared.getProfiles().map { $0.dictionary }
+
+        do {
+            let data: Data = try PropertyListSerialization.data(fromPropertyList: array, format: .xml, options: .bitWidth)
+
+            guard let string: String = String(data: data, encoding: .utf8) else {
+                return
+            }
+
+            try string.write(to: url, atomically: true, encoding: .utf8)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     private func close() {

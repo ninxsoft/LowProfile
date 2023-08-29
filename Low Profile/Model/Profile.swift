@@ -25,6 +25,13 @@ struct Profile: Identifiable, Hashable {
     var payloads: [Payload]
     /// Optional certificates used to sign the configuration profile
     var certificates: [X509Certificate]
+    var dictionary: [String: Any] {
+        [
+            "id": id,
+            "name": name,
+            "payloads": payloads.map { $0.dictionary }
+        ]
+    }
 
     /// Default initializer
     init() {
