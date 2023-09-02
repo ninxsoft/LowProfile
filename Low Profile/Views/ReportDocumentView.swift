@@ -25,8 +25,8 @@ struct ReportDocumentView: View {
         issues.isEmpty ? .green : .orange
     }
     private let sidebarWidth: CGFloat = 250
-    private let width: CGFloat = 1_440
-    private let height: CGFloat = 960
+    private let width: CGFloat = 1_260
+    private let height: CGFloat = 720
 
     var body: some View {
         NavigationSplitView {
