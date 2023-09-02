@@ -12,18 +12,18 @@ struct Issue: Identifiable, Hashable {
     static var example: Issue {
         Issue(
             id: UUID().uuidString,
+            type: .deprecated,
+            propertyName: Property.example.name,
             profiles: [.example],
-            payloads: [.example],
-            duplicatedProperty: Property.example.name,
-            deprecatedProperty: Property.example.name
+            payloads: [.example]
         )
     }
 
     var id: String
+    var type: IssueType
+    var propertyName: String
     var profiles: [Profile] = []
     var payloads: [Payload] = []
-    var duplicatedProperty: String?
-    var deprecatedProperty: String?
 
     static func == (lhs: Issue, rhs: Issue) -> Bool {
         lhs.id == rhs.id

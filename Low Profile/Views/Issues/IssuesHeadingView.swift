@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct IssuesHeadingView: View {
-    var propertyName: String
-    var description: String
+    var issue: Issue
 
     var body: some View {
         Text("The ") +
-        Text(propertyName)
+        Text(issue.propertyName)
             .font(.system(.body, design: .monospaced))
             .bold() +
-        Text(" property is \(description) in the following payloads:")
+        Text(" property is \(issue.type.description) in the following payloads:")
     }
 }
 
 struct IssuesHeadingView_Previews: PreviewProvider {
     static var previews: some View {
-        IssuesHeadingView(propertyName: Property.example.name, description: "duplicated")
+        IssuesHeadingView(issue: .example)
     }
 }

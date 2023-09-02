@@ -19,16 +19,16 @@ struct IssuesDetailPayloadsView: View {
 
     var body: some View {
         GroupBox {
-            ForEach(payloads.indices, id: \.self) { index in
-                if let property: Property = payloads[index].payloadProperties.first(where: { $0.name == propertyName }) {
+            ForEach(payloads) { payload in
+                if let property: Property = payload.payloadProperties.first(where: { $0.name == propertyName }) {
                     Button {
-                        selectedPayload = payloads[index]
+                        selectedPayload = payload
                         selectedDetailTab = .payloadProperties
                         selectedProperty = property
                         presentationMode.wrappedValue.dismiss()
                     } label: {
                         VStack {
-                            ResultsTitleView(title: "\(payloads[index].name) (\(payloads[index].payloadUUID))", image: payloads[index].name)
+                            ResultsTitleView(title: "\(payload.name) (\(payload.payloadUUID))", image: payload.name)
                             ResultsKeyView(title: propertyName, bold: true, indentation: 1)
                             ResultsValueView(title: PayloadHelper.shared.string(for: property.value), indentation: 2)
                         }
@@ -36,7 +36,7 @@ struct IssuesDetailPayloadsView: View {
                     }
                     .buttonStyle(.plain)
 
-                    if index < payloads.count - 1 {
+                    if payload != payloads.last {
                         Divider()
                     }
                 }

@@ -20,21 +20,21 @@ struct IssuesDetailProfilesView: View {
 
     var body: some View {
         GroupBox {
-            ForEach(profiles.indices, id: \.self) { profileIndex in
-                ForEach(profiles[profileIndex].payloads.indices, id: \.self) { payloadIndex in
-                    if let property: Property = profiles[profileIndex].payloads[payloadIndex].payloadProperties.first(where: { $0.name == propertyName }) {
+            ForEach(profiles) { profile in
+                ForEach(profile.payloads.filter { $0.payloadProperties.map { $0.name }.contains(propertyName) }) { payload in
+                    if let property: Property = payload.payloadProperties.first(where: { $0.name == propertyName }) {
                         Button {
-                            selectedProfile = profiles[profileIndex]
-                            selectedPayload = profiles[profileIndex].payloads[payloadIndex]
+                            selectedProfile = profile
+                            selectedPayload = payload
                             selectedDetailTab = .payloadProperties
                             selectedProperty = property
                             presentationMode.wrappedValue.dismiss()
                         } label: {
                             VStack {
-                                ResultsTitleView(title: profiles[profileIndex].name, image: "Profile")
+                                ResultsTitleView(title: profile.name, image: "Profile")
                                 ResultsTitleView(
-                                    title: "\(profiles[profileIndex].payloads[payloadIndex].name) (\(profiles[profileIndex].payloads[payloadIndex].payloadUUID))",
-                                    image: profiles[profileIndex].payloads[payloadIndex].name,
+                                    title: "\(payload.name) (\(payload.payloadUUID))",
+                                    image: payload.name,
                                     indentation: 1
                                 )
                                 ResultsKeyView(title: propertyName, bold: true, indentation: 2)
@@ -44,7 +44,9 @@ struct IssuesDetailProfilesView: View {
                         }
                         .buttonStyle(.plain)
 
-                        Divider()
+                        if profile != profiles.last || payload != profile.payloads.last(where: { $0.payloadProperties.map { $0.name }.contains(propertyName) }) {
+                            Divider()
+                        }
                     }
                 }
             }
