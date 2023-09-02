@@ -61,6 +61,10 @@ extension String {
 
     func toJSONString() -> String? {
 
+        guard !self.isEmpty else {
+            return "{}"
+        }
+
         let identifier: String = UUID().uuidString
         var string: String = self
         string = string.replacingOccurrences(of: "(\n", with: "[\n")
