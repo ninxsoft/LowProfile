@@ -24,7 +24,8 @@ struct ReportDocumentView: View {
     private var issuesButtonForegroundColor: Color {
         issues.isEmpty ? .green : .orange
     }
-    private let sidebarWidth: CGFloat = 250
+    private let profilesSidebarWidth: CGFloat = 250
+    private let payloadsSidebarWidth: CGFloat = 275
     private let width: CGFloat = 1_260
     private let height: CGFloat = 720
 
@@ -35,7 +36,7 @@ struct ReportDocumentView: View {
                     SidebarProfileRow(profile: profile)
                 }
             }
-            .frame(minWidth: sidebarWidth)
+            .frame(minWidth: profilesSidebarWidth)
         } content: {
             if let profile: Profile = selectedProfile {
                 List(profile.payloads, selection: $selectedPayload) { payload in
@@ -44,10 +45,10 @@ struct ReportDocumentView: View {
                     }
                     .listRowSeparator(.hidden)
                 }
-                .frame(minWidth: sidebarWidth)
+                .frame(minWidth: payloadsSidebarWidth)
             } else {
                 EmptyView()
-                    .frame(width: sidebarWidth)
+                    .frame(width: payloadsSidebarWidth)
             }
         } detail: {
             if let profile: Profile = selectedProfile {
