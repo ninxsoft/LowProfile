@@ -91,7 +91,6 @@ class ProfileHelper: NSObject {
         dictionary["PayloadDescription"] = dictionary["spconfigprofile_description"]
         dictionary["PayloadOrganization"] = dictionary["spconfigprofile_organization"]
         dictionary["PayloadVersion"] = dictionary["spconfigprofile_version"]
-        dictionary["PayloadRemovalDisallowed"] = dictionary["spconfigprofile_RemovalDisallowed"]
 
         guard let array: [[String: Any]] = dictionary["_items"] as? [[String: Any]] else {
             return nil
