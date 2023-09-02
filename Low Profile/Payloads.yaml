@@ -4102,6 +4102,56 @@ com.apple.cellular:
     - A configuration dictionary.
     name: AttachAPN
     type: Cellular.AttachAPN
+com.apple.cellularprivatenetwork.managed:
+  availability: {}
+  description: The payload to provide device info on private network deployments,
+    including geographical location, preference over Wi-Fi, and network deployment
+    type.
+  discussion: []
+  example: ''
+  name: Cellular Private Network
+  paths:
+  - cellularprivatenetwork
+  platforms:
+  - beta: true
+    current: '17.0'
+    introduced_at: '17.0'
+    name: iOS
+  - beta: true
+    current: '17.0'
+    introduced_at: '17.0'
+    name: iPadOS
+  properties:
+  - attributes:
+      default: 'false'
+    description:
+    - "Set to \u2219`true`\u2219 to prefer this private network over Wi-Fi."
+    name: CellularDataPreferred
+    type: boolean
+  - attributes:
+      required: true
+    description:
+    - The name of the private network configuration data set.
+    name: DataSetName
+    type: string
+  - attributes:
+      default: 'false'
+    description:
+    - "Set to \u2219`true`\u2219 if this private network is NR Standalone."
+    name: EnableNRStandalone
+    type: boolean
+  - attributes: {}
+    description:
+    - A list of up to 1000 geofences for private networks. Geofencing is only used
+      on iPhone.
+    name: Geofences
+    type: '[CellularPrivateNetwork.GeofenceItem]'
+  - attributes:
+      required: true
+    description:
+    - The version number of this dataset that the system uses to track updates.
+    name: VersionNumber
+    type: string
 com.apple.conferenceroomdisplay:
   availability:
     device: tvOS
@@ -4235,6 +4285,47 @@ com.apple.dashboard:
     - "If \u2219`true`\u2219, enables the widget allow list."
     name: whiteListEnabled
     type: boolean
+com.apple.declarations:
+  availability: {}
+  description: The payload to apply a set of declaration to the device through the
+    Settings app.
+  discussion:
+  - "This profile needs to be installed manually, not through an MDM server, which\
+    \ enables manual installations of declarations when an MDM enrollment isn\u2019\
+    t present."
+  example: ''
+  name: Declarations
+  paths:
+  - declarations-t8t
+  platforms:
+  - beta: true
+    current: '17.0'
+    introduced_at: '17.0'
+    name: iOS
+  - beta: true
+    current: '17.0'
+    introduced_at: '17.0'
+    name: iPadOS
+  - beta: true
+    current: '14.0'
+    introduced_at: '14.0'
+    name: macOS
+  - beta: true
+    current: '17.0'
+    introduced_at: '17.0'
+    name: tvOS
+  - beta: true
+    current: '10.0'
+    introduced_at: '10.0'
+    name: watchOS
+  properties:
+  - attributes:
+      required: true
+    description:
+    - The set of declarations to apply. The items in this array are Base64-encoded
+      data representations of the declaration JSON data.
+    name: Declarations
+    type: '[data]'
 com.apple.desktop:
   availability:
     device: macOS
@@ -8678,6 +8769,45 @@ com.apple.proxy.http.global:
     description:
     - The user name used to authenticate to the proxy server.
     name: ProxyUsername
+    type: string
+com.apple.relay.managed:
+  availability: {}
+  description: ''
+  discussion: []
+  example: ''
+  name: Relay
+  paths:
+  - relay
+  platforms:
+  - beta: true
+    current: '17.0'
+    introduced_at: '17.0'
+    name: iOS
+  - beta: true
+    current: '17.0'
+    introduced_at: '17.0'
+    name: iPadOS
+  - beta: true
+    current: '14.0'
+    introduced_at: '14.0'
+    name: macOS
+  properties:
+  - attributes: {}
+    description: []
+    name: ExcludedDomains
+    type: '[string]'
+  - attributes: {}
+    description: []
+    name: MatchDomains
+    type: '[string]'
+  - attributes:
+      required: true
+    description: []
+    name: Relays
+    type: '[Relay.Relay]'
+  - attributes: {}
+    description: []
+    name: RelayUUID
     type: string
 com.apple.screensaver:
   availability:
