@@ -77,7 +77,7 @@ struct Profile: Identifiable, Hashable {
             self.payloads = []
 
             // MARK: Testing
-            // self.payloads = PayloadHelper.shared.payloadTypes().map { Payload(dictionary: ["PayloadType": $0]) }.sorted { $0.name < $1.name }
+            // self.payloads = PayloadHelper.shared.dictionaries.map { Payload(dictionary: ["PayloadType": $0.key]) }.sorted { $0.name < $1.name }
             // return
 
             var topLevelDictionary: [String: Any] = dictionary
