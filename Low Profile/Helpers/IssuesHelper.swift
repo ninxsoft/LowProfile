@@ -86,7 +86,7 @@ class IssuesHelper: NSObject {
             for outerPayload in outerProfile.payloads {
                 for outerProperty in outerPayload.payloadProperties {
                     for innerProfile in profiles {
-                        for innerPayload in innerProfile.payloads where innerPayload != outerPayload && innerPayload.type == outerPayload.type {
+                        for innerPayload in innerProfile.payloads where !innerPayload.availability.multiple.isEmpty && innerPayload != outerPayload && innerPayload.type == outerPayload.type {
                             for innerProperty in innerPayload.payloadProperties where innerProperty.name == outerProperty.name {
                                 duplicatedPropertyNames.insert(outerProperty.name)
                             }
@@ -122,7 +122,7 @@ class IssuesHelper: NSObject {
 
         for outerPayload in profile.payloads {
             for outerProperty in outerPayload.payloadProperties {
-                for innerPayload in profile.payloads where innerPayload != outerPayload && innerPayload.type == outerPayload.type {
+                for innerPayload in profile.payloads where !innerPayload.availability.multiple.isEmpty && innerPayload != outerPayload && innerPayload.type == outerPayload.type {
                     for innerProperty in innerPayload.payloadProperties where innerProperty.name == outerProperty.name {
                         duplicatedPropertyNames.insert(outerProperty.name)
                     }
