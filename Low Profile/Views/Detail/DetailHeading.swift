@@ -18,7 +18,7 @@ struct DetailHeading: View {
     }
 
     var body: some View {
-        HStack(alignment: .firstTextBaseline) {
+        HStack {
             Text(payload.name)
                 .font(.title)
             if payload.deprecated {
