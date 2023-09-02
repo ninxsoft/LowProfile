@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Relay.png",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
