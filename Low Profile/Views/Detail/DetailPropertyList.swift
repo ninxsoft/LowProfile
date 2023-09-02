@@ -18,7 +18,13 @@ struct DetailPropertyList: View {
 
     var body: some View {
         ScrollView([.horizontal, .vertical]) {
-            Text(propertyList)
+            ScrollViewReader { value in
+                Text(propertyList)
+                    .id(0)
+                    .onAppear {
+                        value.scrollTo(0, anchor: .topLeading)
+                    }
+            }
         }
         .padding()
         .onAppear {

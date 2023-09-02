@@ -51,8 +51,12 @@ struct SettingsSyntaxHighlightingView: View {
                 Divider()
                 GroupBox {
                     ScrollView([.horizontal, .vertical]) {
-                        VStack {
+                        ScrollViewReader { value in
                             Text(propertyList)
+                                .id(0)
+                                .onAppear {
+                                    value.scrollTo(0, anchor: .topLeading)
+                                }
                         }
                     }
                 }
