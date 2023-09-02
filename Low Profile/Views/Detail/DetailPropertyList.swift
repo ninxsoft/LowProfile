@@ -18,11 +18,7 @@ struct DetailPropertyList: View {
 
     var body: some View {
         ScrollView([.horizontal, .vertical]) {
-            HStack {
-                ScrollView([.horizontal, .vertical]) {
-                    Text(propertyList)
-                }
-            }
+            Text(propertyList)
         }
         .padding()
         .onAppear {

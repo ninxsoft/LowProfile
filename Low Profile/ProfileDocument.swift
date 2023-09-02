@@ -1,5 +1,5 @@
 //
-//  Document.swift
+//  ProfileDocument.swift
 //  Low Profile
 //
 //  Created by Nindi Gill on 2/8/20.
@@ -8,7 +8,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-struct Document: FileDocument {
+struct ProfileDocument: FileDocument {
 
     static var readableContentTypes: [UTType] = [.mobileconfig]
     var profile: Profile = Profile()

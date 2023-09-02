@@ -25,6 +25,13 @@ struct Profile: Identifiable, Hashable {
     var payloads: [Payload]
     /// Optional certificates used to sign the configuration profile
     var certificates: [X509Certificate]
+    var dictionary: [String: Any] {
+        [
+            "id": id,
+            "name": name,
+            "payloads": payloads.map { $0.dictionary }
+        ]
+    }
 
     /// Default initializer
     init() {
@@ -99,6 +106,13 @@ struct Profile: Identifiable, Hashable {
             print(error.localizedDescription)
             return nil
         }
+    }
+
+    init(id: String, name: String, payloads: [[String: Any]]) {
+        self.id = id
+        self.name = name
+        self.payloads = payloads.map { Payload(dictionary: $0) }
+        self.certificates = []
     }
 
     static func == (lhs: Profile, rhs: Profile) -> Bool {

@@ -1,5 +1,5 @@
 //
-//  DocumentView.swift
+//  ProfileDocumentView.swift
 //  Low Profile
 //
 //  Created by Nindi Gill on 2/8/20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DocumentView: View {
+struct ProfileDocumentView: View {
     @Environment(\.openURL)
     var openURL: OpenURLAction
     var profile: Profile
@@ -24,8 +24,8 @@ struct DocumentView: View {
         issues.isEmpty ? .green : .orange
     }
     private let sidebarWidth: CGFloat = 250
-    private let width: CGFloat = 1_080
-    private let height: CGFloat = 720
+    private let width: CGFloat = 1_440
+    private let height: CGFloat = 960
 
     var body: some View {
         NavigationSplitView {
@@ -153,8 +153,8 @@ struct DocumentView: View {
     }
 }
 
-struct DocumentView_Previews: PreviewProvider {
+struct ProfileDocumentView_Previews: PreviewProvider {
     static var previews: some View {
-        DocumentView(profile: .example)
+        ProfileDocumentView(profile: .example)
     }
 }

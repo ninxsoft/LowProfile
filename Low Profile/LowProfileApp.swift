@@ -19,8 +19,11 @@ struct LowProfileApp: App {
             WindowGroup {
                 ContentView()
             }
-            DocumentGroup(viewing: Document.self) { file in
-                DocumentView(profile: file.document.profile)
+            DocumentGroup(viewing: ProfileDocument.self) { file in
+                ProfileDocumentView(profile: file.document.profile)
+            }
+            DocumentGroup(viewing: ReportDocument.self) { file in
+                ReportDocumentView(profiles: file.document.profiles)
             }
         }
         .commands {
