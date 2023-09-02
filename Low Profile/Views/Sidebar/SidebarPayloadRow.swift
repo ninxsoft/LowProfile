@@ -12,35 +12,29 @@ struct SidebarPayloadRow: View {
     private let length: CGFloat = 48
     private let spacing: CGFloat = 5
     private let padding: CGFloat = 5
+    private let cornerRadius: CGFloat = 5
 
     var body: some View {
-        ZStack {
-            HStack(spacing: 0) {
-                ScaledImage(name: payload.name, length: length)
-                    .padding(.trailing)
-                VStack(alignment: .leading, spacing: spacing) {
-                    HStack(alignment: .firstTextBaseline) {
-                        Text(payload.name)
-                            .bold()
-                            .lineLimit(nil)
-                        if payload.deprecated {
-                            TextTag(title: "Deprecated")
-                        }
-                        if payload.beta {
-                            TextTag(title: "Beta")
-                                .padding(.bottom, padding)
-                        }
-                    }
-                    HStack {
-                        ForEach(payload.platforms) { platform in
-                            PlatformImage(title: platform.name)
-                        }
+        HStack(spacing: 0) {
+            ScaledImage(name: payload.name, length: length)
+                .padding(.trailing)
+            VStack(alignment: .leading, spacing: spacing) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text(payload.name)
+                        .bold()
+                        .lineLimit(nil)
+                }
+                HStack {
+                    ForEach(payload.platforms) { platform in
+                        PlatformImage(title: platform.name)
                     }
                 }
-                Spacer()
             }
-            .padding(.vertical, padding)
+            Spacer()
         }
+        .padding(padding)
+        .background(payload.deprecated ? .red : payload.beta ? .orange : .clear)
+        .cornerRadius(cornerRadius)
     }
 }
 
