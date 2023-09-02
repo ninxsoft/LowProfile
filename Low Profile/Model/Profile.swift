@@ -108,6 +108,13 @@ struct Profile: Identifiable, Hashable {
         }
     }
 
+    init(id: String, name: String, payloads: [[String: Any]]) {
+        self.id = id
+        self.name = name
+        self.payloads = payloads.map { Payload(dictionary: $0) }
+        self.certificates = []
+    }
+
     static func == (lhs: Profile, rhs: Profile) -> Bool {
         lhs.id == rhs.id
     }

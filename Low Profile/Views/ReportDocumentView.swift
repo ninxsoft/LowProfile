@@ -1,22 +1,21 @@
 //
-//  ContentView.swift
+//  ReportDocumentView.swift
 //  Low Profile
 //
-//  Created by Nindi Gill on 2/3/2022.
+//  Created by Nindi Gill on 29/8/2023.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct ReportDocumentView: View {
     @Environment(\.openURL)
     var openURL: OpenURLAction
-    @State private var profiles: [Profile] = []
+    var profiles: [Profile]
     @State private var selectedProfile: Profile?
     @State private var selectedPayload: Payload?
     @State private var selectedDetailTab: DetailTab = .information
     @State private var selectedProperty: Property?
     @State private var searchString: String = ""
-    @State private var refreshing: Bool = false
     @State private var issues: [Issue] = []
     @State private var showIssuesPopover: Bool = false
     private var issuesButtonSystemName: String {
@@ -61,7 +60,7 @@ struct ContentView: View {
                         .foregroundColor(.secondary)
                 }
             } else {
-                Text(profiles.isEmpty ? "There are no Profiles installed, lucky you 🙂" : "Select a Profile to view its contents 🙂")
+                Text(profiles.isEmpty ? "There are no Profiles in this report 🙃" : "Select a Profile to view its contents 🙂")
                     .font(.largeTitle)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.secondary)
@@ -100,72 +99,36 @@ struct ContentView: View {
             }
         }
         .toolbar {
-            toolbarItemGroup()
+            ToolbarItemGroup {
+                if !issues.isEmpty {
+                    Text("\(issues.count) issue\(issues.count == 1 ? "" : "s") detected")
+                }
+                Button(action: {
+                    showIssuesPopover = true
+                }, label: {
+                    Image(systemName: issuesButtonSystemName)
+                        .foregroundColor(issuesButtonForegroundColor)
+                }).help("Issues")
+                .popover(isPresented: $showIssuesPopover, arrowEdge: .bottom) {
+                    if !issues.isEmpty {
+                        IssuesView(issues: issues, selectedProfile: $selectedProfile, selectedPayload: $selectedPayload, selectedDetailTab: $selectedDetailTab, selectedProperty: $selectedProperty)
+                    } else {
+                        Text("No issues detected, everything looks good 🥳").padding()
+                    }
+                }
+                Button {
+                    homepage()
+                } label: {
+                    Label("Visit Website", systemImage: "questionmark.circle")
+                        .foregroundColor(.accentColor)
+                }.help("Visit Website")
+            }
         }
         .frame(minWidth: width, minHeight: height)
-        .sheet(isPresented: $refreshing) {
-            RefreshView()
-        }
         .onAppear {
-            refreshProfiles()
-        }
-    }
-
-    private func toolbarItemGroup() -> ToolbarItemGroup<some View> {
-        // swiftlint:disable:next closure_body_length
-        ToolbarItemGroup {
-            if !issues.isEmpty {
-                Text("\(issues.count) issue\(issues.count == 1 ? "" : "s") detected")
-            }
-            Button(action: {
-                showIssuesPopover = true
-            }, label: {
-                Image(systemName: issuesButtonSystemName)
-                    .foregroundColor(issuesButtonForegroundColor)
-            })
-            .help("Issues")
-            .popover(isPresented: $showIssuesPopover, arrowEdge: .bottom) {
-                if !issues.isEmpty {
-                    IssuesView(issues: issues, selectedProfile: $selectedProfile, selectedPayload: $selectedPayload, selectedDetailTab: $selectedDetailTab, selectedProperty: $selectedProperty)
-                } else {
-                    Text("No issues detected, everything looks good 🥳").padding()
-                }
-            }
-            Button {
-                refreshProfiles()
-            } label: {
-                Label("Refresh Profiles", systemImage: "arrow.clockwise")
-                    .foregroundColor(.accentColor)
-            }
-            .help("Refresh Profiles")
-            Button {
-                export()
-            } label: {
-                Label("Export Installed Profiles Report", systemImage: "square.and.arrow.up")
-                    .foregroundColor(.accentColor)
-            }
-            .help("Export Installed Profiles Report")
-            Button {
-                homepage()
-            } label: {
-                Label("Visit Website", systemImage: "questionmark.circle")
-                    .foregroundColor(.accentColor)
-            }
-            .help("Visit Website")
-        }
-    }
-
-    func refreshProfiles() {
-
-        refreshing = true
-
-        Task {
-            let profiles: [Profile] = ProfileHelper.shared.getProfiles()
-            self.profiles = profiles
             selectedProfile = profiles.first
             selectedPayload = selectedProfile?.payloads.first
             issues = IssuesHelper.shared.getIssues(for: profiles)
-            refreshing = false
         }
     }
 
@@ -223,43 +186,6 @@ struct ContentView: View {
         searchString = ""
     }
 
-    private func export() {
-
-        let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date: String = dateFormatter.string(from: Date())
-
-        let savePanel: NSSavePanel = NSSavePanel()
-        savePanel.title = "Export Low Profile Report"
-        savePanel.prompt = "Export"
-        savePanel.nameFieldStringValue = "Low Profile Report \(date)"
-        savePanel.canCreateDirectories = true
-        savePanel.canSelectHiddenExtension = true
-        savePanel.isExtensionHidden = false
-        savePanel.allowedContentTypes = [.lowprofilereport]
-
-        let response: NSApplication.ModalResponse = savePanel.runModal()
-
-        guard response == .OK,
-            let url: URL = savePanel.url else {
-            return
-        }
-
-        let array: [[String: Any]] = profiles.map { $0.dictionary }
-
-        do {
-            let data: Data = try PropertyListSerialization.data(fromPropertyList: array, format: .xml, options: .bitWidth)
-
-            guard let string: String = String(data: data, encoding: .utf8) else {
-                return
-            }
-
-            try string.write(to: url, atomically: true, encoding: .utf8)
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-
     private func homepage() {
 
         guard let url: URL = URL(string: .repositoryURL) else {
@@ -270,8 +196,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ReportDocumentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ReportDocumentView(profiles: [.example])
     }
 }
