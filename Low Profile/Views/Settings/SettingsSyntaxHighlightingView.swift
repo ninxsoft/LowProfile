@@ -13,9 +13,6 @@ struct SettingsSyntaxHighlightingView: View {
     var colorScheme: ColorScheme
     @AppStorage("SyntaxHighlightingTheme")
     private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
-    @State private var propertyList: AttributedString = AttributedString()
-    private var width: CGFloat = 300
-    private var height: CGFloat = 350
     private var string: String = """
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -36,6 +33,20 @@ struct SettingsSyntaxHighlightingView: View {
     </dict>
     </plist>
     """
+    private var propertyList: AttributedString {
+
+        guard let highlightr: Highlightr = Highlightr() else {
+            return AttributedString()
+        }
+
+        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
+            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
+        }
+
+        return highlightr.highlight(string)
+    }
+    private var width: CGFloat = 300
+    private var height: CGFloat = 350
 
     var body: some View {
         VStack {
@@ -65,28 +76,6 @@ struct SettingsSyntaxHighlightingView: View {
         }
         .padding()
         .frame(height: height)
-        .onAppear {
-            updatePropertyList(using: colorScheme)
-        }
-        .onChange(of: syntaxHighlightingTheme) { _ in
-            updatePropertyList(using: colorScheme)
-        }
-        .onChange(of: colorScheme) { colorScheme in
-            updatePropertyList(using: colorScheme)
-        }
-    }
-
-    private func updatePropertyList(using colorScheme: ColorScheme) {
-
-        guard let highlightr: Highlightr = Highlightr() else {
-            return
-        }
-
-        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
-            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
-        }
-
-        propertyList = highlightr.highlight(string)
     }
 }
 

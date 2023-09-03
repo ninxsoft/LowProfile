@@ -17,7 +17,18 @@ struct DetailDiscussion: View {
     private var discussionString: String {
         payload.discussion.joined(separator: "\n\n")
     }
-    @State private var propertyList: AttributedString = AttributedString()
+    private var propertyList: AttributedString {
+
+        guard let highlightr: Highlightr = Highlightr() else {
+            return AttributedString()
+        }
+
+        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
+            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
+        }
+
+        return highlightr.highlight(payload.example)
+    }
 
     var body: some View {
         VStack {
@@ -45,28 +56,6 @@ struct DetailDiscussion: View {
             Spacer()
         }
         .padding()
-        .onAppear {
-            updatePropertyList(using: colorScheme)
-        }
-        .onChange(of: syntaxHighlightingTheme) { _ in
-            updatePropertyList(using: colorScheme)
-        }
-        .onChange(of: colorScheme) { colorScheme in
-            updatePropertyList(using: colorScheme)
-        }
-    }
-
-    private func updatePropertyList(using colorScheme: ColorScheme) {
-
-        guard let highlightr: Highlightr = Highlightr() else {
-            return
-        }
-
-        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
-            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
-        }
-
-        propertyList = highlightr.highlight(payload.example)
     }
 }
 

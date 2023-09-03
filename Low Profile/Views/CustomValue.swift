@@ -15,7 +15,29 @@ struct CustomValue: View {
     var value: Any
     @AppStorage("SyntaxHighlightingTheme")
     private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
-    @State private var propertyList: AttributedString = AttributedString()
+    private var propertyList: AttributedString {
+
+        guard let highlightr: Highlightr = Highlightr() else {
+            return AttributedString()
+        }
+
+        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
+            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
+        }
+
+        do {
+            let data: Data = try PropertyListSerialization.data(fromPropertyList: value, format: .xml, options: 0)
+
+            guard let string: String = String(data: data, encoding: .utf8) else {
+                return AttributedString()
+            }
+
+            return highlightr.highlight(string.strippingPropertyListWrapper())
+        } catch {
+            print(error.localizedDescription)
+            return AttributedString()
+        }
+    }
     private let length: CGFloat = 50
 
     var body: some View {
@@ -30,50 +52,6 @@ struct CustomValue: View {
             } else {
                 Text(PayloadHelper.shared.string(for: value))
             }
-        }
-        .onAppear {
-            updatePropertyList(using: colorScheme)
-        }
-        .onChange(of: syntaxHighlightingTheme) { _ in
-            updatePropertyList(using: colorScheme)
-        }
-        .onChange(of: colorScheme) { colorScheme in
-            updatePropertyList(using: colorScheme)
-        }
-    }
-
-    private func propertyListString(for value: Any) -> String? {
-
-        do {
-            let data: Data = try PropertyListSerialization.data(fromPropertyList: value, format: .xml, options: 0)
-
-            guard let string: String = String(data: data, encoding: .utf8) else {
-                return nil
-            }
-
-            return string.strippingPropertyListWrapper()
-        } catch {
-            print(error.localizedDescription)
-            return nil
-        }
-    }
-
-    private func updatePropertyList(using colorScheme: ColorScheme) {
-
-        guard let highlightr: Highlightr = Highlightr() else {
-            return
-        }
-
-        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
-            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
-        }
-
-        if let array: [Any] = value as? [Any],
-            let string: String = propertyListString(for: array) {
-            propertyList = highlightr.highlight(string)
-        } else if let dictionary: [String: Any] = value as? [String: Any],
-            let string: String = propertyListString(for: dictionary) {
-            propertyList = highlightr.highlight(string)
         }
     }
 }
