@@ -13,46 +13,25 @@ struct IssuesView: View {
     @Binding var selectedPayload: Payload?
     @Binding var selectedDetailTab: DetailTab
     @Binding var selectedProperty: Property?
+    @State private var issueType: IssueType = .deprecated
     private let width: CGFloat = 540
     private let height: CGFloat = 400
-    private var hasDeprecatedProperties: Bool {
-        !issues.filter { $0.type == .deprecated }.isEmpty
-    }
-    private var hasDuplicatedProperties: Bool {
-        !issues.filter { $0.type == .duplicated }.isEmpty
-    }
 
     var body: some View {
         // swiftlint:disable:next closure_body_length
-        List {
-            if hasDeprecatedProperties {
-                Section(header: Text("Deprecated Properties")) {
-                    ForEach(issues.filter { $0.type == .deprecated }) { issue in
-                        IssuesHeadingView(issue: issue)
-                        if !issue.profiles.isEmpty {
-                            IssuesDetailProfilesView(
-                                propertyName: issue.propertyName,
-                                profiles: issue.profiles,
-                                selectedProfile: $selectedProfile,
-                                selectedPayload: $selectedPayload,
-                                selectedDetailTab: $selectedDetailTab,
-                                selectedProperty: $selectedProperty
-                            )
-                        } else if !issue.payloads.isEmpty {
-                            IssuesDetailPayloadsView(
-                                propertyName: issue.propertyName,
-                                payloads: issue.payloads,
-                                selectedPayload: $selectedPayload,
-                                selectedDetailTab: $selectedDetailTab,
-                                selectedProperty: $selectedProperty
-                            )
-                        }
-                    }
+        VStack(spacing: 0) {
+            Picker("Issue Type", selection: $issueType) {
+                ForEach(IssueType.allCases) { issueType in
+                    Text("\(issueType.pluralDescription.capitalized) (\(issues.filter { $0.type == issueType }.count))")
+                        .tag(issueType)
                 }
             }
-            if hasDuplicatedProperties {
-                Section(header: Text("Duplicated Properties")) {
-                    ForEach(issues.filter { $0.type == .duplicated }) { issue in
+            .pickerStyle(.segmented)
+            .labelsHidden()
+            .padding()
+            if !issues.filter({ $0.type == issueType }).isEmpty {
+                List {
+                    ForEach(issues.filter { $0.type == issueType }) { issue in
                         IssuesHeadingView(issue: issue)
                         if !issue.profiles.isEmpty {
                             IssuesDetailProfilesView(
@@ -74,10 +53,15 @@ struct IssuesView: View {
                         }
                     }
                 }
+            } else {
+                Text("No \(issueType.pluralDescription) detected 🥳")
+                    .font(.largeTitle)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.secondary)
             }
         }
         .textSelection(.enabled)
-        .frame(minWidth: width, minHeight: height)
+        .frame(width: width, height: height)
     }
 }
 
