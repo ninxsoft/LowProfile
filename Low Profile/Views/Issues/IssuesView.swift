@@ -29,7 +29,6 @@ struct IssuesView: View {
             .pickerStyle(.segmented)
             .labelsHidden()
             .padding()
-            Spacer()
             if !issues.filter({ $0.type == issueType }).isEmpty {
                 List {
                     ForEach(issues.filter { $0.type == issueType }) { issue in
@@ -55,10 +54,12 @@ struct IssuesView: View {
                     }
                 }
             } else {
+                Spacer()
                 Text("No \(issueType.pluralDescription) detected 🥳")
                     .font(.largeTitle)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.secondary)
+                Spacer()
             }
         }
         .textSelection(.enabled)
