@@ -11472,11 +11472,13 @@ com.apple.universalaccess:
     - "If \u2219`true`\u2219, enables \"Smooth images\" in the Zoom options."
     name: closeViewSmoothImages
     type: boolean
-  - attributes: {}
+  - attributes:
+      maximum: '1'
+      minimum: '0'
     description:
     - The contrast value in the Display options.
     name: contrast
-    type: integer
+    type: number
   - attributes:
       default: 'false'
     description:
