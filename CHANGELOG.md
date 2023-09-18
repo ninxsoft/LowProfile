@@ -17,6 +17,7 @@
   - A list of known issues can be viewed via the Issues button located in the toolbar
   - Duplicated properties across payloads / profiles are listed in the Issues popover
   - Deprecated properties are also listed in the Issues popover
+  - Click on an individual issue to view the payload property details
   - Thanks [kevinmcox](https://github.com/kevinmcox)!
 - Added support for exporting Low Profile reports:
   - A report of installed profiles can be exported as a `.lowprofile` file via the Export button located in the toolbar
@@ -28,6 +29,7 @@
   - Supports [dynamic appearance](https://support.apple.com/en-us/HT208976) (i.e. light mode / dark mode)
 - Fixed a bug that prevented payload properties with unicode characters from loading correctly - thanks [hkystar35](https://github.com/hkystar35)!
 - Fix a bug that displayed property value types incorrectly - thanks [kevinmcox](https://github.com/kevinmcox)!
+- The Search bar now supports profile / payload names, identifiers and property keys
 - Sidebars are now wider by default and can be resized
 - Payload properties now indicate if they are deprecated
 - An example Property List for each payload is now shown in the Discussion tab
