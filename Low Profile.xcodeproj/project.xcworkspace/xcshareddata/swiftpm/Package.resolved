@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/filom/ASN1Decoder.git",
       "state" : {
-        "revision" : "65953a42a0f039f53c73e48fd88c02809f7db607",
-        "version" : "1.8.0"
+        "revision" : "d30708c89cbbf8f0f27122a53fbd98d0cda079fd",
+        "version" : "1.9.0"
       }
     },
     {
