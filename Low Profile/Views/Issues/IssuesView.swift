@@ -29,6 +29,7 @@ struct IssuesView: View {
             .pickerStyle(.segmented)
             .labelsHidden()
             .padding()
+            Spacer()
             if !issues.filter({ $0.type == issueType }).isEmpty {
                 List {
                     ForEach(issues.filter { $0.type == issueType }) { issue in
