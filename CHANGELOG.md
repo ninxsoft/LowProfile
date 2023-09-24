@@ -34,7 +34,8 @@
 - Payload properties now indicate if they are deprecated
 - An example Property List for each payload is now shown in the Discussion tab
 - The Discussion tab is now hidden if it is empty
-- The currently selected tab is now remembered when switching between profiles / payloads
+- The previously selected payload is now remembered when switching between profiles
+- The previously selected tab is now remembered when switching between profiles / payloads
 - Text selection has been enabled for the app Settings
 - Added the missing tooltip for each payload's "View Documentation" button
 - Bumped [AS1NDecoder](https://github.com/filom/ASN1Decoder) version to **1.9.0**
