@@ -7,12 +7,14 @@
 
 import SwiftUI
 
+// swiftlint:disable:next type_body_length
 struct ContentView: View {
     @Environment(\.openURL)
     var openURL: OpenURLAction
     @State private var profiles: [Profile] = []
     @State private var selectedProfile: Profile?
     @State private var selectedPayload: Payload?
+    @State private var previousSelections: [String: String] = [:]
     @State private var selectedDetailTab: DetailTab = .information
     @State private var selectedProperty: Property?
     @State private var searchString: String = ""
@@ -109,6 +111,23 @@ struct ContentView: View {
         }
         .onAppear {
             refreshProfiles()
+        }
+        .onChange(of: selectedProfile) { profile in
+
+            guard let profile: Profile = selectedProfile else {
+                return
+            }
+
+            selectedPayload = profile.payloads.first { $0.id == previousSelections[profile.id] } ?? profile.payloads.first
+        }
+        .onChange(of: selectedPayload) { _ in
+
+            guard let profile: Profile = selectedProfile,
+                let payload: Payload = selectedPayload else {
+                return
+            }
+
+            previousSelections[profile.id] = payload.id
         }
     }
 
