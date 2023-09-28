@@ -104,7 +104,7 @@ extension String {
             string = string.replacingOccurrences(of: line, with: components.joined())
         }
 
-        string = string.replacingOccurrences(of: identifier, with: ":").replacingOccurrences(of: "\"\"", with: "\"").replacing(/"?(\s""\\n"")+/, with: "\\n\\n").replacingUnicode()
+        string = string.replacingOccurrences(of: identifier, with: ":").replacing(/\: ""[^,]/, with: ": \"").replacing(/"?(\s""""\\n"""")+/, with: "\\n\\n").replacingUnicode()
 
         guard let data: Data = string.data(using: .utf8) else {
             return nil
