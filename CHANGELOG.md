@@ -30,7 +30,7 @@
 - Fixed a bug that prevented payload properties with unicode characters from loading correctly - thanks [hkystar35](https://github.com/hkystar35)!
 - Fix a bug that displayed property value types incorrectly - thanks [kevinmcox](https://github.com/kevinmcox)!
 - The Search bar now supports profile / payload names, identifiers and property keys
-- Sidebars are now wider by default and can be resized
+- Sidebars columns are now wider by default and can be resized
 - Payload properties now indicate if they are deprecated
 - An example Property List for each payload is now shown in the Discussion tab
 - The Discussion tab is now hidden if it is empty
