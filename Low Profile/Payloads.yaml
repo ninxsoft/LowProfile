@@ -2241,8 +2241,7 @@ com.apple.applicationaccess:
   - current: '17.0'
     introduced_at: '9.0'
     name: tvOS
-  - beta: true
-    current: '10.0'
+  - current: '10.0'
     introduced_at: '10.0'
     name: watchOS
   properties:
@@ -4113,12 +4112,10 @@ com.apple.cellularprivatenetwork.managed:
   paths:
   - cellularprivatenetwork
   platforms:
-  - beta: true
-    current: '17.0'
+  - current: '17.0'
     introduced_at: '17.0'
     name: iOS
-  - beta: true
-    current: '17.0'
+  - current: '17.0'
     introduced_at: '17.0'
     name: iPadOS
   properties:
@@ -4298,24 +4295,19 @@ com.apple.declarations:
   paths:
   - declarations-t8t
   platforms:
-  - beta: true
-    current: '17.0'
+  - current: '17.0'
     introduced_at: '17.0'
     name: iOS
-  - beta: true
-    current: '17.0'
+  - current: '17.0'
     introduced_at: '17.0'
     name: iPadOS
-  - beta: true
-    current: '14.0'
+  - current: '14.0'
     introduced_at: '14.0'
     name: macOS
-  - beta: true
-    current: '17.0'
+  - current: '17.0'
     introduced_at: '17.0'
     name: tvOS
-  - beta: true
-    current: '10.0'
+  - current: '10.0'
     introduced_at: '10.0'
     name: watchOS
   properties:
@@ -6370,19 +6362,16 @@ com.apple.globalethernet.managed:
   paths:
   - 8021xglobalethernet
   platforms:
-  - beta: true
-    current: '17.0'
+  - current: '17.0'
     introduced_at: '17.0'
     name: iOS
-  - beta: true
-    current: '17.0'
+  - current: '17.0'
     introduced_at: '17.0'
     name: iPadOS
   - current: '14.0'
     introduced_at: '10.13'
     name: macOS
-  - beta: true
-    current: '17.0'
+  - current: '17.0'
     introduced_at: '17.0'
     name: tvOS
   properties:
@@ -8002,8 +7991,7 @@ com.apple.mdm:
   - current: '17.0'
     introduced_at: '9.0'
     name: tvOS
-  - beta: true
-    current: '10.0'
+  - current: '10.0'
     introduced_at: '10.0'
     name: watchOS
   properties:
@@ -8239,8 +8227,7 @@ com.apple.mobiledevice.passwordpolicy:
   - current: '14.0'
     introduced_at: '10.7'
     name: macOS
-  - beta: true
-    current: '10.0'
+  - current: '10.0'
     introduced_at: '10.0'
     name: watchOS
   properties:
@@ -8779,16 +8766,13 @@ com.apple.relay.managed:
   paths:
   - relay
   platforms:
-  - beta: true
-    current: '17.0'
+  - current: '17.0'
     introduced_at: '17.0'
     name: iOS
-  - beta: true
-    current: '17.0'
+  - current: '17.0'
     introduced_at: '17.0'
     name: iPadOS
-  - beta: true
-    current: '14.0'
+  - current: '14.0'
     introduced_at: '14.0'
     name: macOS
   properties:
@@ -11627,8 +11611,7 @@ com.apple.vpn.managed:
   - current: '14.0'
     introduced_at: '10.7'
     name: macOS
-  - beta: true
-    current: '17.0'
+  - current: '17.0'
     introduced_at: '17.0'
     name: tvOS
   properties:
@@ -11869,8 +11852,7 @@ com.apple.vpn.managed.applayer:
   - current: '14.0'
     introduced_at: '10.9'
     name: macOS
-  - beta: true
-    current: '10.0'
+  - current: '10.0'
     introduced_at: '10.0'
     name: watchOS
   properties:

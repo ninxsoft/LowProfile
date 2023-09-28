@@ -74,7 +74,7 @@ extension String {
 
         string.enumerateLines { line, _ in
 
-            var components: [String] = line.components(separatedBy: "=")
+            var components: [String] = line.lowercased().contains("authorization: basic") ? [line] : line.components(separatedBy: "=")
 
             if components.count > 1 {
                 components.insert(identifier, at: 1)
@@ -104,7 +104,7 @@ extension String {
             string = string.replacingOccurrences(of: line, with: components.joined())
         }
 
-        string = string.replacingOccurrences(of: identifier, with: ":").replacingUnicode()
+        string = string.replacingOccurrences(of: identifier, with: ":").replacingOccurrences(of: "\"\"", with: "\"").replacing(/"?(\s""\\n"")+/, with: "\\n\\n").replacingUnicode()
 
         guard let data: Data = string.data(using: .utf8) else {
             return nil

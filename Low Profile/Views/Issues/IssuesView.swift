@@ -54,10 +54,12 @@ struct IssuesView: View {
                     }
                 }
             } else {
+                Spacer()
                 Text("No \(issueType.pluralDescription) detected 🥳")
                     .font(.largeTitle)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.secondary)
+                Spacer()
             }
         }
         .textSelection(.enabled)

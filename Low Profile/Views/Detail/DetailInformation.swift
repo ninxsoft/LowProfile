@@ -10,33 +10,45 @@ import SwiftUI
 struct DetailInformation: View {
     var payload: Payload
     private let spacing: CGFloat = 10
-    private let padding: CGFloat = 30
+    private var information: [(key: String, value: String)] {
+        [
+            (key: "Description", value: payload.payloadDescription),
+            (key: "Display Name", value: payload.payloadDisplayName),
+            (key: "Identifier", value: payload.payloadIdentifier),
+            (key: "Organisation", value: payload.payloadOrganisation),
+            (key: "UUID", value: payload.payloadUUID),
+            (key: "Version", value: "\(payload.payloadVersion)")
+        ]
+    }
+    private var availability: [(key: String, value: String)] {
+        [
+            (key: "Device Channel", value: payload.availability.device),
+            (key: "User Channel", value: payload.availability.user),
+            (key: "Allow Manual Install", value: payload.availability.manual),
+            (key: "Requires Supervision", value: payload.availability.supervision),
+            (key: "Requires User Approved MDM", value: payload.availability.userApproved),
+            (key: "Allowed in User Enrollment", value: payload.availability.userEnrol),
+            (key: "Allow Multiple Payloads", value: payload.availability.multiple)
+        ]
+    }
 
     var body: some View {
         ScrollView(.vertical) {
-            if !payload.managed {
-                VStack(spacing: spacing) {
-                    TextRow(leading: "Description", trailing: payload.payloadDescription)
-                    TextRow(leading: "Display Name", trailing: payload.payloadDisplayName)
-                    TextRow(leading: "Identifier", trailing: payload.payloadIdentifier)
-                    TextRow(leading: "Organisation", trailing: payload.payloadOrganisation)
-                    TextRow(leading: "UUID", trailing: payload.payloadUUID)
-                    TextRow(leading: "Version", trailing: "\(payload.payloadVersion)")
+            Grid(alignment: .centerFirstTextBaseline, horizontalSpacing: spacing, verticalSpacing: spacing) {
+                if !payload.managed {
+                    ForEach(information, id: \.key) { item in
+                        InformationGridRow(key: item.key, value: item.value)
+                    }
+                }
+                if !payload.general && !payload.custom {
+                    if !payload.managed {
+                        Divider()
+                    }
+                    ForEach(availability, id: \.key) { item in
+                        InformationGridRow(key: item.key, value: item.value)
+                    }
                 }
             }
-            if !payload.general && !payload.custom {
-                VStack(spacing: spacing) {
-                    TextRow(leading: "Device Channel", trailing: payload.availability.device)
-                    TextRow(leading: "User Channel", trailing: payload.availability.user)
-                    TextRow(leading: "Allow Manual Install", trailing: payload.availability.manual)
-                    TextRow(leading: "Requires Supervision", trailing: payload.availability.supervision)
-                    TextRow(leading: "Requires User Approved MDM", trailing: payload.availability.userApproved)
-                    TextRow(leading: "Allowed in User Enrollment", trailing: payload.availability.userEnrol)
-                    TextRow(leading: "Allow Multiple Payloads", trailing: payload.availability.multiple)
-                }
-                .padding(.top, padding)
-            }
-            Spacer()
         }
         .padding()
     }

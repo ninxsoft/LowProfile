@@ -1,4 +1,4 @@
-<img align="left" width="128" height="128" src="Readme%20Resources/App%20Icon.png">
+<img align="left" width="128" height="128" src="README%20Resources/App%20Icon.png">
 
 # Low Profile
 
@@ -6,7 +6,7 @@
 
 A Mac utility to help inspect Apple Configuration Profile [payloads](https://developer.apple.com/documentation/devicemanagement/profile-specific_payload_keys):
 
-![Example](Readme%20Resources/Example.png)
+![Example](README%20Resources/Example.png)
 
 - [x] Want to see what is inside the Configuration Profiles that are installed on your Mac?
 - [x] Curious to know what a Configuration Profile will enforce / change on a device before actually installing one?
@@ -23,47 +23,56 @@ If the answer is yes to any of the above, then **Low Profile** is the app for **
   - Supported Platforms (iOS, iPadOS, macOS, tvOS, watchOS)
   - Payload-specific information (ie. Identifier, UUID, Display Name, Organisation, etc.)
   - Payload Availability
+  - Example Property List
   - Properties:
 
     - Payload Properties (supported and in the payload)
     - Available Properties (supported and not in the payload)
     - Unknown Properties (unknown and in the payload)
 
-    ![Payload](Readme%20Resources/Payload.png)
+    ![Payload](README%20Resources/Payload.png)
 
 - [x] Displays Property List keys for all payloads:
 
-  ![Property List](Readme%20Resources/Property%20List.png)
+  ![Property List](README%20Resources/Property%20List.png)
 
 - [x] Displays nested payloads for Managed Preferences:
 
-  ![Certificate](Readme%20Resources/Managed%20Preferences.png)
+  ![Certificate](README%20Resources/Managed%20Preferences.png)
 
 - [x] Displays details for custom 3rd-party payloads:
 
   - Including certificate data
   - Including custom arrays and dictionaries
 
-  ![Custom](Readme%20Resources/Custom.png)
+  ![Custom](README%20Resources/Custom.png)
 
 - [x] Displays certificate information for signed Configuration Profiles:
 
-  ![Certificate](Readme%20Resources/Certificate.png)
+  ![Certificate](README%20Resources/Certificate.png)
+
+- [x] Detect issues with deprecated and duplicated property keys:
+
+  ![Issues](README%20Resources/Issues.png)
 
 ## Build Requirements
 
-- Swift **5.5** | Xcode **13.0**.
-- Runs on macOS Monterey **12.0** and later.
+- Swift **5.8**
+- Runs on **macOS Ventura 13** and later.
 
 ## Download
 
-Grab the latest version of **Low Profile** from the [releases page](https://github.com/ninxsoft/LowProfile/releases).
+- Grab the latest version of **Low Profile** from the [releases page](https://github.com/ninxsoft/LowProfile/releases).
+- **Note:** Version **4.0** requires **macOS Ventura 13** or later.
+  - If you need to run **Low Profile** on an older operating system you can still use version **3.0.1**.
 
 ## Credits / Thank You
 
 - Project created and maintained by Nindi Gill ([ninxsoft](https://github.com/ninxsoft)).
 - Documentation and icons sourced from [here](https://developer.apple.com/documentation/devicemanagement) and [here](https://support.apple.com/en-au/guide/mdm/welcome/web).
 - Filippo Maguolo ([filom](https://github.com/filom)) for [AS1NDecoder](https://github.com/filom/ASN1Decoder), used in reading certificate data.
+- J.P. Illanes ([raspu](https://github.com/raspu)) for [Highlightr](https://github.com/raspu/Highlightr), used to syntax highlight property lists.
+- The Sparkle Project ([sparkle-project](https://github.com/sparkle-project)) for [Sparkle](https://github.com/sparkle-project/Sparkle), used to auto update Low Profile.
 - JP Simard ([jpsim](https://github.com/jpsim)) for [Yams](https://github.com/jpsim/Yams), used to import YAML.
 - Marcus Ransom ([@marcusransom](https://twitter.com/marcusransom)) for the awesome app name.
 - James Smith ([smithjw](https://github.com/smithjw)) for the shiny new app icon.
