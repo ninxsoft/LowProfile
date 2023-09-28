@@ -23,6 +23,7 @@ struct SidebarPayloadRow: View {
                     Text(payload.name)
                         .bold()
                         .lineLimit(nil)
+                        .foregroundColor(payload.deprecated ? .red : payload.beta ? .orange : .primary)
                 }
                 HStack {
                     ForEach(payload.platforms) { platform in
@@ -33,7 +34,6 @@ struct SidebarPayloadRow: View {
             Spacer()
         }
         .padding(padding)
-        .background(payload.deprecated ? .red : payload.beta ? .orange : .clear)
         .cornerRadius(cornerRadius)
     }
 }
