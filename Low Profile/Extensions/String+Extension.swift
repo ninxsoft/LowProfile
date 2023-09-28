@@ -74,7 +74,7 @@ extension String {
 
         string.enumerateLines { line, _ in
 
-            var components: [String] = line.components(separatedBy: "=")
+            var components: [String] = line.lowercased().contains("authorization: basic") ? [line] : line.components(separatedBy: "=")
 
             if components.count > 1 {
                 components.insert(identifier, at: 1)
