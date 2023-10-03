@@ -6,9 +6,9 @@
     <language>en</language>
     <link>https://github.com/ninxsoft/LowProfile</link>
     <item>
-      <title>Version 4.0</title>
+      <title>Version 4.0.1</title>
       <link>https://github.com/ninxsoft/LowProfile</link>
-      <sparkle:version>4.0</sparkle:version>
+      <sparkle:version>4.0.1</sparkle:version>
       <sparkle:fullReleaseNotesLink>https://github.com/ninxsoft/LowProfile/blob/main/CHANGELOG.md</sparkle:fullReleaseNotesLink>
       <description>
         <![CDATA[
@@ -32,7 +32,25 @@
             .child li::before {
               content: "";
             }
+            .patched {
+              list-style: none;
+              padding: 0;
+            }
+            .patched li {
+              padding-left: 1rem;
+              text-indent: -0.75rem;
+              margin-top: 15px;
+              margin-bottom: 15px;
+            }
+            .patched li::before {
+              content: "✅ ";
+            }
           </style>
+          <h3>Version 4.0.1</h3>
+          <ul class="patched">
+            <li>Fixed a bug preventing Low Profile from auto-updating</li>
+          </ul>
+          <h3>Version 4.0</h3>
           <ul class="styled">
             <li>Updated payloads to support the following operating systems:
               <ul class="child">
@@ -90,12 +108,12 @@
           </ul>
         ]]>
       </description>
-      <pubDate>Thu, 28 Aug 2023 12:00:00 +0000</pubDate>
-      <enclosure url="https://github.com/ninxsoft/LowProfile/releases/download/v4.0/Low.Profile.4.0.pkg"
+      <pubDate>Tue, 03 Oct 2023 12:00:00 +0000</pubDate>
+      <enclosure url="https://github.com/ninxsoft/LowProfile/releases/download/v4.0.1/Low.Profile.4.0.1.pkg"
                  type="application/octet-stream"
                  sparkle:installationType="package"
-                 sparkle:edSignature="IeBOB+5GYc+Ta8H2ZKDiLPugWdVEC16+qDwXN4HaAgvCz/E/6lBVv4QNKsOlsP+pb1xM9ns3aIVmKwlVCHd+AQ=="
-                 length="3734398"
+                 sparkle:edSignature="32Bpa7EQ/rtUa5N8WFubnqJSw/OhCNqWgwoBMigYpICPLeqxQkB+TaahJpR18oUDzjsVHn3YeXJYMnTmxZ/ACA=="
+                 length="3734559"
       />
     </item>
   </channel>
