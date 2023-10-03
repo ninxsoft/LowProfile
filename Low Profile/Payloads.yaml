@@ -1218,21 +1218,22 @@ com.apple.MCX.FileVault2:
   properties:
   - attributes: {}
     description:
-    - "The DER-encoded certificate data if \u2219`UseRecoveryKey`\u2219 is enabled."
+    - "The DER-encoded certificate data if \u2219`UseRecoveryKey`\u2219 is \u2219\
+      `true`\u2219."
     name: Certificate
     type: data
   - attributes:
       default: 'false'
     description:
     - "If \u2219`true`\u2219, defers enabling FileVault until the designated user\
-      \ logs out. For details, see \u2219`fdesetup(8)`\u2219. The person enabling\
-      \ FileVault must be either a local user or a mobile account user."
+      \ logs out. For details, see \u2219`fdesetup(8)`\u2219. Only a local user or\
+      \ a mobile account user can enable FileVault."
     name: Defer
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, prevents requests for enabling FileVault at user logout\
+    - "If \u2219`true`\u2219, prevents requests to enable FileVault at user logout\
       \ time."
     name: DeferDontAskAtUserLogout
     type: boolean
@@ -1240,10 +1241,10 @@ com.apple.MCX.FileVault2:
       maximum: '9999'
       minimum: '-1'
     description:
-    - "The maximum number of times users can bypass enabling FileVault before being\
-      \ required to enable it to log in. If the value is \u2219`0`\u2219, the user\
-      \ will be required to enabled FileVault the next time they attempt to log in.\
-      \ Setting this key to \u2219`\u20131`\u2219 disables the feature."
+    - "The maximum number of times users can bypass enabling FileVault before the\
+      \ system requires the user to enable it to log in. If the value is \u2219`0`\u2219\
+      , the system requires the user to enable FileVault the next time they attempt\
+      \ to log in. Set this key to \u2219`\u20131`\u2219 to disable this feature."
     name: DeferForceAtUserLoginMaxBypassAttempts
     type: integer
   - attributes:
@@ -1252,30 +1253,35 @@ com.apple.MCX.FileVault2:
       - 'Off'
       required: true
     description:
-    - "If \u2219`true`\u2219, enables FileVault."
+    - "Set to \u2219`On`\u2219 to enable FileVault and set to \u2219`Off`\u2219 to\
+      \ disable FileVault. Payloads set to \u2219`On`\u2219 sent through MDM need\
+      \ to either include full authentication information in the payload or have the\
+      \ \u2219`Defer`\u2219 option set to \u2219`true`\u2219. When \u2219`Defer`\u2219\
+      \ is \u2219`true`\u2219, the system prompts for the authentication information\
+      \ when the user enables FileVault."
     name: Enable
     type: string
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, and this payload is installed after enrolling with MDM\
-      \ in Setup Assistant, it requests Setup Assistant to enable FileVault at setup\
-      \ time. In this case, the system also ignores all other keys in this payload,\
-      \ except for \u2219`ShowRecoveryKey`\u2219."
-    - To use this, enable the Await Device Configured DEP configuration option, send
-      this profile with this key set, before sending the [DeviceConfiguredCommand](https://developer.apple.com/documentation/devicemanagement/deviceconfiguredcommand).
+    - "If \u2219`true`\u2219, and installation of this payload occurs after enrolling\
+      \ with MDM in Setup Assistant, the system requests Setup Assistant to enable\
+      \ FileVault at setup time. In this case, the system also ignores all other keys\
+      \ in this payload, except for \u2219`ShowRecoveryKey`\u2219."
+    - To use this, enable the Await Device Configured DEP configuration option and
+      send this profile with this key set, before sending the [DeviceConfiguredCommand](https://developer.apple.com/documentation/devicemanagement/deviceconfiguredcommand).
     name: ForceEnableInSetupAssistant
     type: boolean
   - attributes: {}
     description:
-    - The path to the location where the recovery key and computer information property
-      list are stored.
+    - The path to the location of the recovery key and computer information property
+      list.
     name: OutputPath
     type: string
   - attributes: {}
     description:
-    - "The password of the Open Directory user to be added to FileVault. Use the \u2219\
-      `UserEntersMissingInfo`\u2219 key if you want to prompt for this information."
+    - "The password of the Open Directory user to add to FileVault. Use the \u2219\
+      `UserEntersMissingInfo`\u2219 key to prompt for this information."
     name: Password
     type: string
   - attributes: {}
@@ -1288,15 +1294,15 @@ com.apple.MCX.FileVault2:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, prevents display of the personal recovery key to the\
-      \ user after FileVault is enabled."
+      \ user after the system enables FileVault."
     name: ShowRecoveryKey
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219 and no certificate information is provided in this payload,\
-      \ the keychain created at \u2219`/Library/Keychains/FileVaultMaster.keychain`\u2219\
-      \ is used when the institutional recovery key is added."
+    - "If \u2219`true`\u2219 and you don\u2019t include certificate information in\
+      \ this payload, the system uses the keychain created at \u2219`/Library/Keychains/FileVaultMaster.keychain`\u2219\
+      \ when it adds the institutional recovery key."
     name: UseKeychain
     type: boolean
   - attributes:
@@ -1314,7 +1320,7 @@ com.apple.MCX.FileVault2:
     type: boolean
   - attributes: {}
     description:
-    - The user name of the Open Directory user to be added to FileVault.
+    - The user name of the Open Directory user to add to FileVault.
     name: Username
     type: string
 com.apple.MCX.TimeMachine:
@@ -2249,8 +2255,8 @@ com.apple.applicationaccess:
       default: 'true'
     description:
     - "If \_\u2219`false`\u2219, disables account modification. Requires a supervised\
-      \ device."
-    - Available in iOS 7 and later, macOS 14 and later, and watchOS 10 and later.
+      \ device. Available in iOS 7 and later, macOS 14 and later, and watchOS 10 and\
+      \ later."
     name: allowAccountModification
     type: boolean
   - attributes:
@@ -2346,6 +2352,13 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
+    - "If \u2219`false`\u2219, prevents modifying the Remote Management Sharing setting\
+      \ in System Settings. Available in macOS 14 and later."
+    name: allowARDRemoteManagementModification
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
     - "If \u2219`false`\u2219, disables Siri. Available in iOS 5 and later and macOS\
       \ 14 and later. Also available for user enrollment."
     name: allowAssistant
@@ -2406,6 +2419,13 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
+    - "If \u2219`false`\u2219, prevents modifying Bluetooth setting in System Settings.\
+      \ Available in macOS 14 and later."
+    name: allowBluetoothSharingModification
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
     - "If \u2219`false`\u2219, removes the Book Store tab from the Books app. Requires\
       \ a supervised device. Available in iOS 6 and later."
     name: allowBookstore
@@ -2413,8 +2433,8 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the user can\u2019t download Apple Books media that\
-      \ is tagged as erotica.\_Available in iOS 6 and later, and tvOS 11.3 and later."
+    - "If \u2219`false`\u2219, the user can\u2019t download Apple Books media that\u2019\
+      s tagged as erotica.\_Available in iOS 6 and later, and tvOS 11.3 and later."
     name: allowBookstoreErotica
     type: boolean
   - attributes:
@@ -2489,6 +2509,13 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
+    - "If \u2219`false`\u2219, disallows iCloud Freeform services. Available in macOS\
+      \ 14 and later."
+    name: allowCloudFreeform
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
     - "If \u2219`false`\u2219, disables iCloud keychain synchronization. This restriction\
       \ is deprecated on unsupervised devices and will be supervised only in a future\
       \ release. Available in iOS 7 and later and macOS 10.12 and later."
@@ -2556,8 +2583,8 @@ com.apple.applicationaccess:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, prevents the user from changing the device name.\_\
-      Requires a supervised device."
-    - Available in iOS 9 and later, macOS 14 and later, and tvOS 11.0 and later.
+      Requires a supervised device. Available in iOS 9 and later, macOS 14 and later,\
+      \ and tvOS 11.0 and later."
     name: allowDeviceNameModification
     type: boolean
   - attributes:
@@ -2653,6 +2680,13 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
+    - "If \u2219`false`\u2219, prevents modifying File Sharing setting in System Settings.\
+      \ Available in macOS 14 and later."
+    name: allowFileSharingModification
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
     - "If \u2219`false`\u2219, prevents connecting to network drives in the Files\
       \ app. Requires a supervised device. Available in iOS 13.1 and later."
     name: allowFilesNetworkDriveAccess
@@ -2731,6 +2765,20 @@ com.apple.applicationaccess:
     - "If \u2219`false`\u2219, prohibits in-app purchasing. Available in iOS 4 and\
       \ later."
     name: allowInAppPurchases
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, prevents modifying Internet Sharing setting in System\
+      \ Settings. Available in macOS 14 and later."
+    name: allowInternetSharingModification
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, disallows iPhone widgets on a Mac that has signed in\
+      \ the same AppleID for iCloud. Supervised only. Available on iOS 17 and later."
+    name: allowiPhoneWidgetsOnMac
     type: boolean
   - attributes:
       default: 'true'
@@ -2879,18 +2927,18 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, hides Passbook notifications from the lock screen.\
-      \ Available in iOS 6 and later."
-    name: allowPassbookWhileLocked
-    type: boolean
-  - attributes:
-      default: 'true'
-    description:
     - "If \u2219`false`\u2219, prevents the device passcode from being added, changed,\
       \ or removed."
     - This restriction is ignored by Shared iPads. Requires a supervised device. Available
       in iOS 9 and later, and macOS 10.13 and later.
     name: allowPasscodeModification
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, hides Passbook notifications from the lock screen.\
+      \ Available in iOS 6 and later."
+    name: allowPassbookWhileLocked
     type: boolean
   - attributes:
       default: 'true'
@@ -2930,13 +2978,6 @@ com.apple.applicationaccess:
     type: boolean
   - attributes:
       default: 'true'
-      deprecated: true
-    description:
-    - "If \u2219`false`\u2219, disables Photo Stream.\_Available in iOS 5 and later."
-    name: allowPhotoStream
-    type: boolean
-  - attributes:
-      default: 'true'
     description:
     - "If \u2219`false`\u2219, disables podcasts.\_Requires a supervised device. Available\
       \ in iOS 8 and later."
@@ -2962,6 +3003,20 @@ com.apple.applicationaccess:
     - "If \u2219`false`\u2219, disables Apple Music Radio. Requires a supervised device.\
       \ Available in iOS 9.3 and later."
     name: allowRadioService
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, prohibits installation of rapid security responses.\
+      \ Available in iOS 16 and later and macOS 13 and later."
+    name: allowRapidSecurityResponseInstallation
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, prohibits removal of rapid security responses. Available\
+      \ in iOS 16 and later and macOS 13 and later."
+    name: allowRapidSecurityResponseRemoval
     type: boolean
   - attributes:
       default: 'true'
@@ -2994,6 +3049,13 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
+    - "If \u2219`false`\u2219, disables\_Shared Photo Stream. Available in iOS 6 and\
+      \ later."
+    name: allowSharedStream
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
     - "If \u2219`false`\u2219, disables saving a screenshot of the display and capturing\
       \ a screen recording. It also disables the Classroom app from observing remote\
       \ screens.\_Available in iOS 4 and later, and macOS 10.14.4 and later. Also\
@@ -3006,13 +3068,6 @@ com.apple.applicationaccess:
     - "If \u2219`false`\u2219, temporary sessions aren\u2019t available on Shared\
       \ iPad. Available in iOS 13.4 and later."
     name: allowSharedDeviceTemporarySession
-    type: boolean
-  - attributes:
-      default: 'true'
-    description:
-    - "If \u2219`false`\u2219, disables\_Shared Photo Stream. Available in iOS 6 and\
-      \ later."
-    name: allowSharedStream
     type: boolean
   - attributes:
       default: 'true'
@@ -3103,14 +3158,6 @@ com.apple.applicationaccess:
     type: boolean
   - attributes:
       default: 'true'
-      deprecated: true
-    description:
-    - "If \u2219`false`\u2219, disables voice dialing if the device is locked with\
-      \ a passcode.\_Available in iOS 4 and later."
-    name: allowVoiceDialing
-    type: boolean
-  - attributes:
-      default: 'true'
     description:
     - "If \u2219`false`\u2219, disables the creation of VPN configurations.\_Requires\
       \ a supervised device. Available in iOS 11 and later."
@@ -3123,18 +3170,47 @@ com.apple.applicationaccess:
       \ supervised device. Available in iOS 9 and later, and macOS 10.13 and later."
     name: allowWallpaperModification
     type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, prevents creating new users in System Settings. Available\
+      \ in macOS 14 and later."
+    name: allowLocalUserCreation
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, prevents modifying Printer Sharing setting in System\
+      \ Settings. Available in macOS 14 and later."
+    name: allowPrinterSharingModification
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, prevents modifying Remote Apple Events Sharing setting\
+      \ in System Settings. Available in macOS 14 and later."
+    name: allowRemoteAppleEventsModification
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, prevents modification of Startup Disk setting in System\
+      \ Settings. Available in macOS 14 and later."
+    name: allowStartupDiskModification
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, prevents modification of Time Machine settings in System\
+      \ Settings. Available in macOS 14 and later."
+    name: allowTimeMachineBackup
+    type: boolean
   - attributes: {}
     description:
     - "If present, allows apps identified by the bundle IDs listed in the array to\
       \ autonomously enter Single App Mode.\_Requires a supervised device. Available\
       \ in iOS 7 and later."
     name: autonomousSingleAppModePermittedAppIDs
-    type: '[string]'
-  - attributes:
-      deprecated: true
-    description:
-    - Use blockedAppBundleIDs instead.
-    name: blacklistedAppBundleIDs
     type: '[string]'
   - attributes: {}
     description:
@@ -3151,8 +3227,7 @@ com.apple.applicationaccess:
       default: '172800'
     description:
     - The value, in seconds, after which the fingerprint unlock requires a password
-      to authenticate. The default value is 48 hours.
-    - Available in macOS 12 and later.
+      to authenticate. The default value is 48 hours. Available in macOS 12 and later.
     name: enforcedFingerprintTimeout
     type: integer
   - attributes:
@@ -3165,23 +3240,9 @@ com.apple.applicationaccess:
       \ number of days after the software update release date.\_This value is used\
       \ by \u2219`forceDelayedAppSoftwareUpdates`\u2219 and \u2219`forceDelayedSoftwareUpdates`\u2219\
       ."
-    - Requires a supervised device in iOS and tvOS.
-    - Available in iOS 11.3 and later, macOS 10.13.4 and later, and tvOS 12.2 and
-      later.
+    - Requires a supervised device in iOS and tvOS. Available in iOS 11.3 and later,
+      macOS 10.13.4 and later, and tvOS 12.2 and later.
     name: enforcedSoftwareUpdateDelay
-    type: integer
-  - attributes:
-      default: '30'
-      maximum: '90'
-      minimum: '1'
-    description:
-    - "This restriction allows the admin to set how many days to delay a major software\
-      \ upgrade on the device. When this restriction is in place the user sees a software\
-      \ upgrade only after the specified delay after the release of the software upgrade.\
-      \ This value controls the delay for \u2219`forceDelayedMajorSoftwareUpdates`\u2219\
-      ."
-    - Available in macOS 11.3 and later.
-    name: enforcedSoftwareUpdateMajorOSDeferredInstallDelay
     type: integer
   - attributes:
       default: '30'
@@ -3192,9 +3253,20 @@ com.apple.applicationaccess:
       \ software update on the device. When this restriction is in place the user\
       \ see a software update only after the specified delay after the release of\
       \ the software update. This value controls the delay for \u2219`forceDelayedSoftwareUpdates`\u2219\
-      ."
-    - Available in macOS 11.3 and later.
+      . Available in macOS 11.3 and later."
     name: enforcedSoftwareUpdateMinorOSDeferredInstallDelay
+    type: integer
+  - attributes:
+      default: '30'
+      maximum: '90'
+      minimum: '1'
+    description:
+    - "This restriction allows the admin to set how many days to delay a major software\
+      \ upgrade on the device. When this restriction is in place the user sees a software\
+      \ upgrade only after the specified delay after the release of the software upgrade.\
+      \ This value controls the delay for \u2219`forceDelayedMajorSoftwareUpdates`\u2219\
+      . Available in macOS 11.3 and later."
+    name: enforcedSoftwareUpdateMajorOSDeferredInstallDelay
     type: integer
   - attributes:
       default: '30'
@@ -3205,8 +3277,7 @@ com.apple.applicationaccess:
       \ update on the device. When this restriction is in place the user sees a non-OS\
       \ software update only after the specified delay after the release of the software.\
       \ This value controls the delay for \u2219`forceDelayedAppSoftwareUpdates`\u2219\
-      ."
-    - Available in macOS 11.3 and later.
+      . Available in macOS 11.3 and later."
     name: enforcedSoftwareUpdateNonOSDeferredInstallDelay
     type: integer
   - attributes:
@@ -3239,6 +3310,14 @@ com.apple.applicationaccess:
     - "If \u2219`true`\u2219, requires trusted certificates for TLS printing communication.\_\
       Requires a supervised device. Available in iOS 11 and later."
     name: forceAirPrintTrustedTLSRequirement
+    type: boolean
+  - attributes:
+      default: 'false'
+    description:
+    - "If \u2219`true`\u2219, allows the teacher to lock apps or the device without\
+      \ prompting the student.\_Requires a supervised device. Available in iOS 11\
+      \ and later, and macOS 10.14.4 and later."
+    name: forceClassroomUnpromptedAppAndDeviceLock
     type: boolean
   - attributes:
       default: 'false'
@@ -3287,14 +3366,6 @@ com.apple.applicationaccess:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, allows the teacher to lock apps or the device without\
-      \ prompting the student.\_Requires a supervised device. Available in iOS 11\
-      \ and later, and macOS 10.14.4 and later."
-    name: forceClassroomUnpromptedAppAndDeviceLock
-    type: boolean
-  - attributes:
-      default: 'false'
-    description:
     - "If \u2219`true`\u2219 and \u2219`ScreenObservationPermissionModificationAllowed`\u2219\
       \ is also \u2219`true`\u2219 in the Education payload, a student enrolled in\
       \ a managed course via the Classroom app automatically gives permission to that\
@@ -3318,8 +3389,8 @@ com.apple.applicationaccess:
   - attributes:
       default: 'false'
     description:
-    - If set to true, delays user visibility of major upgrades to OS Software.
-    - Available in macOS 11.3 and later.
+    - "If \u2219`true`\u2219, delays user visibility of major upgrades to OS Software.\
+      \ Available in macOS 11.3 and later."
     name: forceDelayedMajorSoftwareUpdates
     type: boolean
   - attributes:
@@ -3342,18 +3413,9 @@ com.apple.applicationaccess:
     type: boolean
   - attributes:
       default: 'false'
-      deprecated: true
-    description:
-    - "If \u2219`true`\u2219, forces the user to enter their iTunes password for each\
-      \ transaction. Available in iOS 6 and later."
-    name: forceITunesStorePasswordEntry
-    type: boolean
-  - attributes:
-      default: 'false'
     description:
     - "If \u2219`true`\u2219, limits ad tracking.\_Additionally, it disables app tracking\
-      \ and the Allow Apps To Request To Track setting."
-    - Available in iOS 7 and later.
+      \ and the Allow Apps To Request To Track setting. Available in iOS 7 and later."
     name: forceLimitAdTracking
     type: boolean
   - attributes:
@@ -3382,8 +3444,8 @@ com.apple.applicationaccess:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, limits device to only join Wi-Fi networks set-up via\
-      \ configuration profile. Requires a supervised device. Available in iOS 14.5\
+    - "If \u2219`true`\u2219, limits device to only join Wi-Fi networks set up through\
+      \ a configuration profile. Requires a supervised device. Available in iOS 14.5\
       \ and later."
     name: forceWiFiToAllowedNetworksOnly
     type: boolean
@@ -3410,6 +3472,7 @@ com.apple.applicationaccess:
     description:
     - The maximum level of app content allowed on the device. Available in iOS 4 and
       later, and tvOS 11.3 and later.
+    - Pre-installed (1st party) apps ignore this restriction.
     - 'Possible values (with the US description of the rating level):'
     - '- 1000: All'
     - '- 600: 17+'
@@ -3459,7 +3522,7 @@ com.apple.applicationaccess:
     description:
     - The maximum level of TV content allowed on the device. Available in iOS 4 and
       later, and tvOS 11.3 and later.
-    - 'Possible values (with the US description of the rating level):'
+    - Possible values (with the US description of the rating level)
     - '- 1000: All'
     - '- 600: TV-MA'
     - '- 500: TV-14'
@@ -3523,12 +3586,6 @@ com.apple.applicationaccess:
     name: safariAllowPopups
     type: boolean
   - attributes:
-      deprecated: true
-    description:
-    - "Use \u2219`allowListedAppBundleIDs`\u2219 instead."
-    name: whitelistedAppBundleIDs
-    type: '[string]'
-  - attributes:
       default: 'false'
     description:
     - "If \u2219`true`\u2219, enables Safari fraud warning.\_Available in iOS 4 and\
@@ -3537,100 +3594,42 @@ com.apple.applicationaccess:
     type: boolean
   - attributes:
       default: 'true'
+      deprecated: true
     description:
-    - "If \u2219`false`\u2219, prohibits installation of rapid security responses."
-    name: allowRapidSecurityResponseInstallation
+    - "If \u2219`false`\u2219, disables Photo Stream.\_Available in iOS 5 and later.\
+      \ This restriction is deprecated and will be removed in a future release."
+    name: allowPhotoStream
     type: boolean
   - attributes:
       default: 'true'
+      deprecated: true
     description:
-    - "If \u2219`false`\u2219, prohibits removal of rapid security responses."
-    name: allowRapidSecurityResponseRemoval
+    - "If \u2219`false`\u2219, disables voice dialing if the device is locked with\
+      \ a passcode.\_Available in iOS 4 and later. This restriction is deprecated\
+      \ and will be removed in a future release."
+    name: allowVoiceDialing
     type: boolean
   - attributes:
-      default: 'true'
+      deprecated: true
     description:
-    - "If \u2219`false`\u2219, prevents modifying the Remote Management Sharing setting\
-      \ in System Settings."
-    - Available in macOS 14 and later.
-    name: allowARDRemoteManagementModification
+    - "Use \u2219`blockedAppBundleIDs`\u2219 instead."
+    name: blacklistedAppBundleIDs
+    type: '[string]'
+  - attributes:
+      default: 'false'
+      deprecated: true
+    description:
+    - "If \u2219`true`\u2219, forces the user to enter their iTunes password for each\
+      \ transaction. Available in iOS 6 and later. This restriction is deprecated\
+      \ and will be removed in a future release."
+    name: forceITunesStorePasswordEntry
     type: boolean
   - attributes:
-      default: 'true'
+      deprecated: true
     description:
-    - "If \u2219`false`\u2219, prevents modifying Bluetooth setting in System Settings."
-    - Available in macOS 14 and later.
-    name: allowBluetoothSharingModification
-    type: boolean
-  - attributes:
-      default: 'true'
-    description:
-    - "If \u2219`false`\u2219, disallows iCloud Freeform services."
-    - Available in macOS 14 and later.
-    name: allowCloudFreeform
-    type: boolean
-  - attributes:
-      default: 'true'
-    description:
-    - "If \u2219`false`\u2219, prevents modifying File Sharing setting in System Settings."
-    - Available in macOS 14 and later.
-    name: allowFileSharingModification
-    type: boolean
-  - attributes:
-      default: 'true'
-    description:
-    - "If \u2219`false`\u2219, prevents modifying Internet Sharing setting in System\
-      \ Settings."
-    - Available in macOS 14 and later.
-    name: allowInternetSharingModification
-    type: boolean
-  - attributes:
-      default: 'true'
-    description:
-    - "If \u2219`false`\u2219, disallows iPhone widgets on a Mac that has signed in\
-      \ the same AppleID for iCloud. Supervised only."
-    - Available on iOS 17 and later.
-    name: allowiPhoneWidgetsOnMac
-    type: boolean
-  - attributes:
-      default: 'true'
-    description:
-    - "If \u2219`false`\u2219, prevents creating new users in System Settings."
-    - Available in macOS 14 and later.
-    name: allowLocalUserCreation
-    type: boolean
-  - attributes:
-      default: 'true'
-    description:
-    - "If \u2219`false`\u2219, prevents modifying Printer Sharing setting in System\
-      \ Settings."
-    - Available in macOS 14 and later.
-    name: allowPrinterSharingModification
-    type: boolean
-  - attributes:
-      default: 'true'
-    description:
-    - "If \u2219`false`\u2219, prevents modifying Remote Apple Events Sharing setting\
-      \ in System Settings."
-    - Available in macOS 14 and later.
-    name: allowRemoteAppleEventsModification
-    type: boolean
-  - attributes:
-      default: 'true'
-    description:
-    - "If \u2219`false`\u2219, prevents modification of Startup Disk setting in System\
-      \ Settings."
-    - Available in macOS 14 and later.
-    name: allowStartupDiskModification
-    type: boolean
-  - attributes:
-      default: 'true'
-    description:
-    - "If \u2219`false`\u2219, prevents modification of Time Machine settings in System\
-      \ Settings."
-    - Available in macOS 14 and later.
-    name: allowTimeMachineBackup
-    type: boolean
+    - "Use \u2219`allowListedAppBundleIDs`\u2219 instead."
+    name: whitelistedAppBundleIDs
+    type: '[string]'
 com.apple.applicationaccess.new:
   availability:
     device: macOS
@@ -6328,7 +6327,8 @@ com.apple.globalethernet.managed:
   discussion:
   - "Specify \u2219`com.apple.globalethernet.managed`\u2219 as the payload type."
   - "This payload\u2019s contents contain these profile-specific keys:"
-  - "Interface (String)\n\tThis payload uses the value \u2219`AnyEthernet`\u2219."
+  - "Interface (String)\n\tThis payload uses the value \u2219`GlobalEthernet`\u2219\
+    ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
   - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
