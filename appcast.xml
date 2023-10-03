@@ -1,9 +1,102 @@
-<?xml version="1.0" standalone="yes"?>
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
-    <channel>
-        <title>Low Profile Changelog</title>
-        <description>A Mac utility to help inspect Apple Configuration Profile payloads.</description>
-        <language>en</language>
-        <link>https://github.com/ninxsoft/LowProfile</link>
-    </channel>
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Low Profile Changelog</title>
+    <description>A Mac utility to help inspect Apple Configuration Profile payloads.</description>
+    <language>en</language>
+    <link>https://github.com/ninxsoft/LowProfile</link>
+    <item>
+      <title>Version 4.0</title>
+      <link>https://github.com/ninxsoft/LowProfile</link>
+      <sparkle:version>4.0</sparkle:version>
+      <sparkle:fullReleaseNotesLink>https://github.com/ninxsoft/LowProfile/blob/main/CHANGELOG.md</sparkle:fullReleaseNotesLink>
+      <description>
+        <![CDATA[
+          <style>
+            .styled {
+              list-style: none;
+              padding: 0;
+            }
+            .styled li {
+              padding-left: 1rem;
+              text-indent: -0.75rem;
+              margin-top: 15px;
+              margin-bottom: 15px;
+            }
+            .styled li::before {
+              content: "🆕 ";
+            }
+            .styled li:nth-child(n + 6):before {
+              content: "✅ ";
+            }
+            .child li::before {
+              content: "";
+            }
+          </style>
+          <ul class="styled">
+            <li>Updated payloads to support the following operating systems:
+              <ul class="child">
+                <li>iOS 17</li>
+                <li>iPadOS 17</li>
+                <li>macOS 14 Sonoma</li>
+                <li>tvOS 17</li>
+                <li>watchOS 10</li>
+              </ul>
+            </li>
+            <li>Added support for the following new payloads:
+              <ul class="child">
+                <li><a href="https://developer.apple.com/documentation/devicemanagement/cellularprivatenetwork">CellularPrivateNetwork</a></li>
+                <li><a href="https://developer.apple.com/documentation/devicemanagement/declarations-t8t">Declarations</a></li>
+                <li><a href="https://developer.apple.com/documentation/devicemanagement/relay">Relay</a></li>
+                <li><a href="https://developer.apple.com/documentation/devicemanagement/servicemanagementmanagedloginitems">ServiceManagementManagedLoginItems</a></li>
+              </ul>
+            </li>
+            <li>Added support for identifying issues:
+              <ul class="child">
+                <li>A list of known issues can be viewed via the Issues button located in the toolbar</li>
+                <li>Duplicated properties across payloads / profiles are listed in the Issues popover</li>
+                <li>Deprecated properties are also listed in the Issues popover</li>
+                <li>Click on an individual issue to view the payload property details</li>
+              </ul>
+            </li>
+            <li>Added support for exporting Low Profile reports:
+              <ul class="child">
+                <li>A report of installed profiles can be exported as a <code>.lowprofile</code> file via the Export button located in the toolbar</li>
+                <li>Reports can be opened by Low Profile on any Mac</li>
+              </ul>
+            </li>
+            <li>Syntax highlighting for Property Lists has been rebuilt from the ground up:
+              <ul class="child">
+                <li>Replaced custom code with <a href="https://github.com/raspu/Highlightr">Highlightr</a> package, reducing load times significantly!</li>
+                <li>Supports themes, customizable via app Settings</li>
+                <li>Supports <a href="https://support.apple.com/en-us/HT208976">dynamic appearance</a> (i.e. light mode / dark mode)</li>
+              </ul>
+            </li>
+            <li>Fixed a bug that prevented payload properties with unicode characters from loading correctly</li>
+            <li>Fix a bug that displayed property value types incorrectly</li>
+            <li>The Search bar now supports profile / payload names, identifiers and property keys</li>
+            <li>Sidebars columns are now wider by default and can be resized</li>
+            <li>Payload properties now indicate if they are deprecated</li>
+            <li>An example Property List for each payload is now shown in the Discussion tab</li>
+            <li>The Discussion tab is now hidden if it is empty</li>
+            <li>The previously selected payload is now remembered when switching between profiles</li>
+            <li>The previously selected tab is now remembered when switching between profiles / payloads</li>
+            <li>Text selection has been enabled for the app Settings</li>
+            <li>Added the missing tooltip for each payload&#39;s &quot;View Documentation&quot; button</li>
+            <li>Bumped <a href="https://github.com/filom/ASN1Decoder">AS1NDecoder</a> version to <strong>1.9.0</strong></li>
+            <li>Bumped <a href="https://github.com/sparkle-project/Sparkle">Sparkle</a> version to <strong>2.5.0</strong></li>
+            <li>Bumped <a href="https://github.com/jpsim/Yams">Yams</a> version to <strong>5.0.6</strong></li>
+            <li>A whole bunch of minor cosmetic tweaks</li>
+          </ul>
+        ]]>
+      </description>
+      <pubDate>Thu, 28 Aug 2023 12:00:00 +0000</pubDate>
+      <enclosure url="https://github.com/ninxsoft/LowProfile/releases/download/v4.0/Low.Profile.4.0.pkg"
+                 type="application/octet-stream"
+                 sparkle:installationType="package"
+                 sparkle:edSignature="IeBOB+5GYc+Ta8H2ZKDiLPugWdVEC16+qDwXN4HaAgvCz/E/6lBVv4QNKsOlsP+pb1xM9ns3aIVmKwlVCHd+AQ=="
+                 length="3734398"
+      />
+    </item>
+  </channel>
 </rss>
