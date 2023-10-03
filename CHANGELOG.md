@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.0.1](https://github.com/ninxsoft/LowProfile/releases/tag/v4.0.1) - 2023-10-03
+
+- Fixed a bug preventing Low Profile from auto-updating
+
 ## [4.0](https://github.com/ninxsoft/LowProfile/releases/tag/v4.0) - 2023-09-28
 
 - Updated payloads to support the following operating systems:
