@@ -112,8 +112,8 @@
       <enclosure url="https://github.com/ninxsoft/LowProfile/releases/download/v4.0.1/Low.Profile.4.0.1.pkg"
                  type="application/octet-stream"
                  sparkle:installationType="package"
-                 sparkle:edSignature="32Bpa7EQ/rtUa5N8WFubnqJSw/OhCNqWgwoBMigYpICPLeqxQkB+TaahJpR18oUDzjsVHn3YeXJYMnTmxZ/ACA=="
-                 length="3734559"
+                 sparkle:edSignature="YxQDwnnwsNqkBEVMf1zwE6DaW4Te4ZMS1ScvH4S+DDG8m3Jdm4caEOnIo9xZs+5EAwxzpJI94pQtnye6SbQtBg=="
+                 length="3734528"
       />
     </item>
   </channel>
