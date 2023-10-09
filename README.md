@@ -63,6 +63,7 @@ If the answer is yes to any of the above, then **Low Profile** is the app for **
 ## Download
 
 - Grab the latest version of **Low Profile** from the [releases page](https://github.com/ninxsoft/LowProfile/releases).
+- Alternatively, install via [Homebrew](https://brew.sh) by running `brew install low-profile`
 - **Note:** Version **4.0** requires **macOS Ventura 13** or later.
   - If you need to run **Low Profile** on an older operating system you can still use version **3.0.1**.
 
