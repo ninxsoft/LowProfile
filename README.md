@@ -15,6 +15,12 @@ A Mac utility to help inspect Apple Configuration Profile [payloads](https://dev
 
 If the answer is yes to any of the above, then **Low Profile** is the app for **you!**
 
+<!-- markdownlint-disable no-trailing-punctuation -->
+
+## ![Slack](README%20Resources/Slack.png) Check out [#low-profile](https://macadmins.slack.com/archives/C0590AY05U3) on the [Mac Admins Slack](https://macadmins.slack.com) to discuss all things Low Profile!
+
+<!-- markdownlint-enable no-trailing-punctuation -->
+
 ## Features
 
 - [x] Displays details for all Apple [supported payloads](https://developer.apple.com/documentation/devicemanagement/profile-specific_payload_keys):
