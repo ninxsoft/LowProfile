@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line no-inline-html first-line-heading -->
 <img align="left" width="128" height="128" src="README%20Resources/App%20Icon.png">
 
 # Low Profile
