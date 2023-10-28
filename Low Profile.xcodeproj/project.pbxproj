@@ -835,7 +835,7 @@
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.5.0;
+				minimumVersion = 2.5.1;
 			};
 		};
 		5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */ = {
