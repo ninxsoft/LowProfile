@@ -21,6 +21,7 @@ struct DetailPayloadPropertiesLeading: View {
                     .bold()
                     .foregroundColor(.primary)
                     .strikethrough(property.deprecated)
+                    .multilineTextAlignment(.trailing)
             }
             HStack {
                 Spacer()
