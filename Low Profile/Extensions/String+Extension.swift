@@ -86,13 +86,13 @@ extension String {
                 if index == 0 && component ~= "^ *[a-zA-Z0-9]+ $" && !(component ~= "^ *\\d+$") {
                     let firstIndex: String.Index = component.firstIndex { $0 != " " } ?? component.startIndex
                     let lastIndex: String.Index = component.lastIndex { $0 != " " } ?? component.endIndex
-                    let range: Range<String.Index> = firstIndex..<component.index(after: lastIndex)
-                    components[index] = "\(component[component.startIndex..<firstIndex])\"\(component[range])\"\(component[component.index(after: lastIndex)..<component.endIndex])"
+                    let range: Range<String.Index> = firstIndex ..< component.index(after: lastIndex)
+                    components[index] = "\(component[component.startIndex ..< firstIndex])\"\(component[range])\"\(component[component.index(after: lastIndex) ..< component.endIndex])"
                 } else if index == components.count - 1 && component ~= "^ *.*,?$" && !(component ~= "^ *(\\d+|\\{|\\}|\\[|\\]),?$") && !(component ~= "^ *\".*\",?$") {
                     let firstIndex: String.Index = component.firstIndex { $0 != " " } ?? component.startIndex
                     let lastIndex: String.Index = component.lastIndex { $0 != "," } ?? component.endIndex
-                    let range: Range<String.Index> = firstIndex..<component.index(after: lastIndex)
-                    components[index] = "\(component[component.startIndex..<firstIndex])\"\(component[range])\"\(component[component.index(after: lastIndex)..<component.endIndex])"
+                    let range: Range<String.Index> = firstIndex ..< component.index(after: lastIndex)
+                    components[index] = "\(component[component.startIndex ..< firstIndex])\"\(component[range])\"\(component[component.index(after: lastIndex) ..< component.endIndex])"
                 }
             }
 
