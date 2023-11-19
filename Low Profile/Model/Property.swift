@@ -57,7 +57,7 @@ struct Property: Identifiable, Hashable {
         self.value = value
     }
 
-    // payload property
+    /// payload property
     init(availableProperty: Property, payloadValue: Any) {
         id = UUID().uuidString
         name = availableProperty.name
@@ -73,7 +73,7 @@ struct Property: Identifiable, Hashable {
         value = payloadValue
     }
 
-    // available property
+    /// available property
     init(availableDictionary: [String: Any]) {
         id = UUID().uuidString
         name = availableDictionary["name"] as? String ?? ""
@@ -89,7 +89,7 @@ struct Property: Identifiable, Hashable {
         value = ""
     }
 
-    // unknown property
+    /// unknown property
     init(unknownName: String, unknownValue: Any) {
         id = UUID().uuidString
         name = unknownName
