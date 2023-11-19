@@ -14,11 +14,11 @@ struct SettingsView: View {
     var body: some View {
         TabView {
             SettingsGeneralView(sparkleUpdater: sparkleUpdater)
-            .tabItem { Label("General", systemImage: "gear") }
+                .tabItem { Label("General", systemImage: "gear") }
             SettingsSyntaxHighlightingView()
-            .tabItem { Label("Syntax Highlighting", systemImage: "highlighter") }
+                .tabItem { Label("Syntax Highlighting", systemImage: "highlighter") }
             SettingsAboutView()
-            .tabItem { Label("About", systemImage: "info.circle") }
+                .tabItem { Label("About", systemImage: "info.circle") }
         }
         .textSelection(.enabled)
         .frame(width: width)

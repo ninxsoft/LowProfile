@@ -12,10 +12,10 @@ struct IssuesHeadingView: View {
 
     var body: some View {
         Text("The ") +
-        Text(issue.propertyName)
+            Text(issue.propertyName)
             .font(.system(.body, design: .monospaced))
             .bold() +
-        Text(" property is \(issue.type.description) in the following payloads:")
+            Text(" property is \(issue.type.description) in the following payloads:")
     }
 }
 

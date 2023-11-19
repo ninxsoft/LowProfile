@@ -113,13 +113,13 @@ struct ReportDocumentView: View {
                     Image(systemName: issuesButtonSystemName)
                         .foregroundColor(issuesButtonForegroundColor)
                 }).help("Issues")
-                .popover(isPresented: $showIssuesPopover, arrowEdge: .bottom) {
-                    if !issues.isEmpty {
-                        IssuesView(issues: issues, selectedProfile: $selectedProfile, selectedPayload: $selectedPayload, selectedDetailTab: $selectedDetailTab, selectedProperty: $selectedProperty)
-                    } else {
-                        Text("No issues detected, everything looks good 🥳").padding()
+                    .popover(isPresented: $showIssuesPopover, arrowEdge: .bottom) {
+                        if !issues.isEmpty {
+                            IssuesView(issues: issues, selectedProfile: $selectedProfile, selectedPayload: $selectedPayload, selectedDetailTab: $selectedDetailTab, selectedProperty: $selectedProperty)
+                        } else {
+                            Text("No issues detected, everything looks good 🥳").padding()
+                        }
                     }
-                }
                 Button {
                     homepage()
                 } label: {
@@ -156,24 +156,24 @@ struct ReportDocumentView: View {
     private func filteredProfiles() -> [Profile] {
         profiles.filter {
             $0.name.lowercased().contains(searchString.lowercased()) ||
-            $0.id.lowercased().contains(searchString.lowercased()) ||
-            !$0.payloads.filter {
-                $0.name.lowercased().contains(searchString.lowercased()) ||
-                $0.payloadIdentifier.lowercased().contains(searchString.lowercased()) ||
-                !$0.payloadProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
-                !$0.availableProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
-                !$0.unknownProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty
-            }.isEmpty
+                $0.id.lowercased().contains(searchString.lowercased()) ||
+                !$0.payloads.filter {
+                    $0.name.lowercased().contains(searchString.lowercased()) ||
+                        $0.payloadIdentifier.lowercased().contains(searchString.lowercased()) ||
+                        !$0.payloadProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
+                        !$0.availableProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
+                        !$0.unknownProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty
+                }.isEmpty
         }
     }
 
     private func filteredPayloads(for profile: Profile) -> [Payload] {
         profile.payloads.filter {
             $0.name.lowercased().contains(searchString.lowercased()) ||
-            $0.payloadIdentifier.lowercased().contains(searchString.lowercased()) ||
-            !$0.payloadProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
-            !$0.availableProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
-            !$0.unknownProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty
+                $0.payloadIdentifier.lowercased().contains(searchString.lowercased()) ||
+                !$0.payloadProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
+                !$0.availableProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
+                !$0.unknownProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty
         }
     }
 
