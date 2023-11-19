@@ -27,7 +27,7 @@ class ProfileHelper: NSObject {
         "spconfigprofile_payload_display_name",
         "spconfigprofile_payload_uuid",
         "spconfigprofile_payload_version",
-        "spconfigprofile_payload_data",
+        "spconfigprofile_payload_data"
     ]
 
     func getProfiles() -> [Profile] {
