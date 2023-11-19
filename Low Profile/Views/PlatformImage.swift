@@ -13,17 +13,17 @@ struct PlatformImage: View {
     private var systemName: String {
         switch title {
         case "macOS":
-            return "desktopcomputer"
+            "desktopcomputer"
         case "iOS":
-            return "iphone"
+            "iphone"
         case "iPadOS":
-            return "ipad.landscape"
+            "ipad.landscape"
         case "tvOS":
-            return "appletv.fill"
+            "appletv.fill"
         case "watchOS":
-            return "applewatch"
+            "applewatch"
         default:
-            return ""
+            ""
         }
     }
 

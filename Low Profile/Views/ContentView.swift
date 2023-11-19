@@ -217,22 +217,22 @@ struct ContentView: View {
     private func filteredProperties(for propertySection: PropertySection, using payload: Payload) -> [Property] {
         switch propertySection {
         case .payload:
-            return payload.payloadProperties.filter { $0.name.lowercased().contains(searchString.lowercased()) }
+            payload.payloadProperties.filter { $0.name.lowercased().contains(searchString.lowercased()) }
         case .available:
-            return payload.availableProperties.filter { $0.name.lowercased().contains(searchString.lowercased()) }
+            payload.availableProperties.filter { $0.name.lowercased().contains(searchString.lowercased()) }
         case .unknown:
-            return payload.unknownProperties.filter { $0.name.lowercased().contains(searchString.lowercased()) }
+            payload.unknownProperties.filter { $0.name.lowercased().contains(searchString.lowercased()) }
         }
     }
 
     private func detailTab(for propertySection: PropertySection) -> DetailTab {
         switch propertySection {
         case .payload:
-            return .payloadProperties
+            .payloadProperties
         case .available:
-            return .availableProperties
+            .availableProperties
         case .unknown:
-            return .unknownProperties
+            .unknownProperties
         }
     }
 

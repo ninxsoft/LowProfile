@@ -36,11 +36,11 @@ extension Highlightr {
     func themeVariant(for theme: String, using colorScheme: ColorScheme) -> String {
         switch theme {
         case "kimbie":
-            return "\(theme).\(colorScheme)"
+            "\(theme).\(colorScheme)"
         case "qtcreator":
-            return "\(theme)_\(colorScheme)"
+            "\(theme)_\(colorScheme)"
         default:
-            return "\(theme)-\(colorScheme)"
+            "\(theme)-\(colorScheme)"
         }
     }
 

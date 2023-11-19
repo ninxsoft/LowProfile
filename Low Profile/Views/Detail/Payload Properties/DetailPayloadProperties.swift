@@ -20,22 +20,22 @@ struct DetailPayloadProperties: View {
         var propertiesDescription: String {
             switch self {
             case .payload:
-                return "The following properties are in the profile payload, and are supported:"
+                "The following properties are in the profile payload, and are supported:"
             case .available:
-                return "The following properties are not in the profile payload, and are supported:"
+                "The following properties are not in the profile payload, and are supported:"
             case .unknown:
-                return "The following properties are in the profile payload, and are unknown:"
+                "The following properties are in the profile payload, and are unknown:"
             }
         }
 
         var managedPayloadsDescription: String {
             switch self {
             case .payload:
-                return "The following managed preferences are in the profile payload, and are supported:"
+                "The following managed preferences are in the profile payload, and are supported:"
             case .available:
-                return "The following managed preferences are not in the profile payload, and are supported:"
+                "The following managed preferences are not in the profile payload, and are supported:"
             case .unknown:
-                return "The following managed preferences are in the profile payload, and are unknown:"
+                "The following managed preferences are in the profile payload, and are unknown:"
             }
         }
     }

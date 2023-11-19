@@ -14,11 +14,11 @@ struct TextTag: View {
     private var color: Color {
         switch title {
         case "Deprecated":
-            return .red
+            .red
         case "Beta":
-            return .orange
+            .orange
         default:
-            return .primary
+            .primary
         }
     }
 
