@@ -8,10 +8,8 @@
 import Foundation
 
 enum IssueType: String, Identifiable, CaseIterable {
-    // swiftlint:disable:next redundant_string_enum_value
-    case deprecated = "deprecated"
-    // swiftlint:disable:next redundant_string_enum_value
-    case duplicated = "duplicated"
+    case deprecated
+    case duplicated
 
     var id: String {
         rawValue
