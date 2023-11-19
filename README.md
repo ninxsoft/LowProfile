@@ -23,7 +23,7 @@ If the answer is yes to any of the above, then **Low Profile** is the app for **
 <!-- markdownlint-enable no-trailing-punctuation -->
 <!-- markdownlint-disable no-inline-html -->
 
-<a href="https://www.buymeacoffee.com/ninxsoft" target="_blank"><img width="214" height="60" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy me a coffee"></a>
+<a href="https://www.buymeacoffee.com/ninxsoft"><img width="214" height="60" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy me a coffee"></a>
 
 <!-- markdownlint-enable no-inline-html -->
 
