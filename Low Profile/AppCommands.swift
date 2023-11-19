@@ -31,7 +31,7 @@ struct AppCommands: Commands {
             }
             .keyboardShortcut("w")
         }
-        CommandGroup(replacing: .systemServices) { }
+        CommandGroup(replacing: .systemServices) {}
         CommandGroup(replacing: .help) {
             Button("Low Profile Help") {
                 help()
