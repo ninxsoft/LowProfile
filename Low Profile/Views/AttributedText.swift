@@ -14,14 +14,12 @@ struct AttributedText: View {
         var attributedText: Text = .init("")
 
         for string in strings {
-            var formattedText: Text
-
-            if string ~= "`.*`" {
-                formattedText = Text(.init(string)).foregroundColor(.pink)
+            var formattedText: Text = if string ~= "`.*`" {
+                Text(.init(string)).foregroundColor(.pink)
             } else if string ~= "\\*.*\\*" {
-                formattedText = Text(.init(string)).foregroundColor(.green)
+                Text(.init(string)).foregroundColor(.green)
             } else {
-                formattedText = Text(.init(string)).foregroundColor(.secondary)
+                Text(.init(string)).foregroundColor(.secondary)
             }
 
             // swiftlint:disable:next shorthand_operator
