@@ -9,7 +9,7 @@ import Foundation
 
 struct Payload: Identifiable, Hashable {
     static var example: Payload {
-        var payload: Payload = Payload()
+        var payload: Payload = .init()
         payload.type = "Configuration"
         payload.name = "General"
         return payload

@@ -25,7 +25,7 @@ struct ReportDocument: FileDocument {
                 throw DocumentError("Unable to load Report")
             }
 
-            let profile: Profile = Profile(id: id, name: name, payloads: payloads)
+            let profile: Profile = .init(id: id, name: name, payloads: payloads)
             profiles.append(profile)
         }
     }

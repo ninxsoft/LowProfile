@@ -12,7 +12,7 @@ import Foundation
 struct Profile: Identifiable, Hashable {
     /// Example Profile
     static var example: Profile {
-        let profile: Profile = Profile()
+        let profile: Profile = .init()
         return profile
     }
 
@@ -90,12 +90,12 @@ struct Profile: Identifiable, Hashable {
                 self.name = name
             }
 
-            let payload: Payload = Payload(dictionary: topLevelDictionary)
+            let payload: Payload = .init(dictionary: topLevelDictionary)
             self.payloads.append(payload)
 
             if let array: [[String: Any]] = dictionary["PayloadContent"] as? [[String: Any]] {
                 for item in array {
-                    let payload: Payload = Payload(dictionary: item)
+                    let payload: Payload = .init(dictionary: item)
                     self.payloads.append(payload)
                 }
             }

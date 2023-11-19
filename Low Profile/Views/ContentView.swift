@@ -245,11 +245,11 @@ struct ContentView: View {
     }
 
     private func export() {
-        let dateFormatter: DateFormatter = DateFormatter()
+        let dateFormatter: DateFormatter = .init()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let date: String = dateFormatter.string(from: Date())
 
-        let savePanel: NSSavePanel = NSSavePanel()
+        let savePanel: NSSavePanel = .init()
         savePanel.title = "Export Low Profile Report"
         savePanel.prompt = "Export"
         savePanel.nameFieldStringValue = "Low Profile Report \(date)"

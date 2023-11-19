@@ -8,7 +8,7 @@
 import Foundation
 
 class IssuesHelper: NSObject {
-    static let shared: IssuesHelper = IssuesHelper()
+    static let shared: IssuesHelper = .init()
 
     func getIssues(for profiles: [Profile]) -> [Issue] {
         getDeprecatedIssues(for: profiles) + getDuplicatedIssues(for: profiles)
@@ -41,7 +41,7 @@ class IssuesHelper: NSObject {
             }
 
             if !profilesWithDeprecatedProperties.isEmpty {
-                let issue: Issue = Issue(id: UUID().uuidString, type: .deprecated, propertyName: deprecatedPropertyName, profiles: profilesWithDeprecatedProperties)
+                let issue: Issue = .init(id: UUID().uuidString, type: .deprecated, propertyName: deprecatedPropertyName, profiles: profilesWithDeprecatedProperties)
                 issues.append(issue)
             }
         }
@@ -67,7 +67,7 @@ class IssuesHelper: NSObject {
             }
 
             if !payloadsWithDeprecatedProperties.isEmpty {
-                let issue: Issue = Issue(id: UUID().uuidString, type: .deprecated, propertyName: deprecatedPropertyName, payloads: payloadsWithDeprecatedProperties)
+                let issue: Issue = .init(id: UUID().uuidString, type: .deprecated, propertyName: deprecatedPropertyName, payloads: payloadsWithDeprecatedProperties)
                 issues.append(issue)
             }
         }
@@ -104,7 +104,7 @@ class IssuesHelper: NSObject {
             }
 
             if !profilesWithDuplicatedProperties.isEmpty {
-                let issue: Issue = Issue(id: UUID().uuidString, type: .duplicated, propertyName: duplicatedPropertyName, profiles: profilesWithDuplicatedProperties)
+                let issue: Issue = .init(id: UUID().uuidString, type: .duplicated, propertyName: duplicatedPropertyName, profiles: profilesWithDuplicatedProperties)
                 issues.append(issue)
             }
         }
@@ -134,7 +134,7 @@ class IssuesHelper: NSObject {
             }
 
             if !payloadsWithDuplicatedProperties.isEmpty {
-                let issue: Issue = Issue(id: UUID().uuidString, type: .duplicated, propertyName: duplicatedPropertyName, payloads: payloadsWithDuplicatedProperties)
+                let issue: Issue = .init(id: UUID().uuidString, type: .duplicated, propertyName: duplicatedPropertyName, payloads: payloadsWithDuplicatedProperties)
                 issues.append(issue)
             }
         }

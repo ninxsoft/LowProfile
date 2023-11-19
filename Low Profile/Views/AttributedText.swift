@@ -11,7 +11,7 @@ struct AttributedText: View {
     var string: String
     private var attributedText: Text {
         let strings: [String] = string.split(separator: "∙").map { String($0) }
-        var attributedText: Text = Text("")
+        var attributedText: Text = .init("")
 
         for string in strings {
             var formattedText: Text

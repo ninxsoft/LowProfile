@@ -8,7 +8,7 @@
 import Foundation
 
 class ProfileHelper: NSObject {
-    static let shared: ProfileHelper = ProfileHelper()
+    static let shared: ProfileHelper = .init()
 
     private let keys: [String] = [
         "_name",
@@ -31,7 +31,7 @@ class ProfileHelper: NSObject {
     ]
 
     func getProfiles() -> [Profile] {
-        let url: URL = URL(fileURLWithPath: "\(NSTemporaryDirectory())/LowProfile.plist")
+        let url: URL = .init(fileURLWithPath: "\(NSTemporaryDirectory())/LowProfile.plist")
 
         guard FileManager.default.createFile(atPath: url.path, contents: nil) else {
             return []
@@ -39,7 +39,7 @@ class ProfileHelper: NSObject {
 
         do {
             let output: FileHandle = try FileHandle(forWritingTo: url)
-            let process: Process = Process()
+            let process: Process = .init()
             process.launchPath = "/usr/bin/env"
             process.arguments = ["system_profiler", "-xml", "SPConfigurationProfileDataType", "-detailLevel", "full"]
             process.standardOutput = output

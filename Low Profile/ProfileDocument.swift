@@ -10,7 +10,7 @@ import UniformTypeIdentifiers
 
 struct ProfileDocument: FileDocument {
     static var readableContentTypes: [UTType] = [.mobileconfig]
-    var profile: Profile = Profile()
+    var profile: Profile = .init()
 
     init(configuration: ReadConfiguration) throws {
         guard let data: Data = configuration.file.regularFileContents,

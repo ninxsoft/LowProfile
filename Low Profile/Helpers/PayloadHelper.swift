@@ -9,7 +9,7 @@ import Foundation
 import Yams
 
 class PayloadHelper: NSObject {
-    static let shared: PayloadHelper = PayloadHelper()
+    static let shared: PayloadHelper = .init()
     private var dictionaries: [String: Any] = [:]
     private var keysToIgnore: [String] {
         [
@@ -153,7 +153,7 @@ class PayloadHelper: NSObject {
         for key in dictionary.keys.filter({ !keysToIgnore.contains($0) }).sorted() {
             for availableProperty in availableProperties where key == availableProperty.name {
                 if let value: Any = dictionary[key] {
-                    let property: Property = Property(availableProperty: availableProperty, payloadValue: value)
+                    let property: Property = .init(availableProperty: availableProperty, payloadValue: value)
                     properties.append(property)
                 }
             }
@@ -183,7 +183,7 @@ class PayloadHelper: NSObject {
 
                 dictionary["PayloadType"] = type
 
-                let managedPayload: Payload = Payload(dictionary: dictionary)
+                let managedPayload: Payload = .init(dictionary: dictionary)
                 managedPayloads.append(managedPayload)
             }
         }
@@ -203,7 +203,7 @@ class PayloadHelper: NSObject {
         for key in dictionary.keys.filter({ !keysToIgnore.contains($0) }).sorted() {
             if !availableProperties.map(\.name).contains(key),
                 let value: Any = dictionary[key] {
-                let property: Property = Property(unknownName: key, unknownValue: value)
+                let property: Property = .init(unknownName: key, unknownValue: value)
                 properties.append(property)
             }
         }
@@ -236,7 +236,7 @@ class PayloadHelper: NSObject {
         }
 
         if let date: Date = value as? Date {
-            let dateFormatter: DateFormatter = DateFormatter()
+            let dateFormatter: DateFormatter = .init()
             dateFormatter.dateStyle = .full
             dateFormatter.timeStyle = .long
             return dateFormatter.string(from: date)

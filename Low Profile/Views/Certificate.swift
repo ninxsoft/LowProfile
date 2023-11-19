@@ -44,7 +44,7 @@ struct Certificate: View {
         }
 
         let expired: Bool = date < Date()
-        let dateFormatter: DateFormatter = DateFormatter()
+        let dateFormatter: DateFormatter = .init()
         dateFormatter.dateStyle = .full
         dateFormatter.timeStyle = .full
         let string: String = dateFormatter.string(from: date)

@@ -9,7 +9,7 @@
 struct Availability {
     /// Example Availability
     static var example: Availability {
-        let availability: Availability = Availability(dictionary: [:])
+        let availability: Availability = .init(dictionary: [:])
         return availability
     }
 
