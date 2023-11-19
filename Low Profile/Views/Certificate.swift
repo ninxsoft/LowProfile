@@ -19,7 +19,8 @@ struct Certificate: View {
     private var subjectString: String {
         // CN = 2.5.4.3
 
-        guard let oid: OID = OID(rawValue: "2.5.4.3"),
+        guard
+            let oid: OID = OID(rawValue: "2.5.4.3"),
             let string: String = certificate.subject(oid: oid)?.first else {
             return ""
         }
@@ -30,7 +31,8 @@ struct Certificate: View {
     private var issuerString: String {
         // CN = 2.5.4.3
 
-        guard let oid: OID = OID(rawValue: "2.5.4.3"),
+        guard
+            let oid: OID = OID(rawValue: "2.5.4.3"),
             let string: String = certificate.issuer(oid: oid) else {
             return ""
         }

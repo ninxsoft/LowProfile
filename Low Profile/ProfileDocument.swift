@@ -13,7 +13,8 @@ struct ProfileDocument: FileDocument {
     var profile: Profile = .init()
 
     init(configuration: ReadConfiguration) throws {
-        guard let data: Data = configuration.file.regularFileContents,
+        guard
+            let data: Data = configuration.file.regularFileContents,
             let object: Profile = Profile(from: data) else {
             throw DocumentError("Unable to load Configuration Profile")
         }

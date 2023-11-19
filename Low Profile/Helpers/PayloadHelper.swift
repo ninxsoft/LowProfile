@@ -50,7 +50,8 @@ class PayloadHelper: NSObject {
     }
 
     func name(for type: String) -> String {
-        guard let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
+        guard
+            let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
             let string: String = dictionary["name"] as? String else {
             return "Custom"
         }
@@ -59,7 +60,8 @@ class PayloadHelper: NSObject {
     }
 
     func paths(for type: String) -> [String] {
-        guard let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
+        guard
+            let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
             let strings: [String] = dictionary["paths"] as? [String] else {
             return []
         }
@@ -68,7 +70,8 @@ class PayloadHelper: NSObject {
     }
 
     func description(for type: String) -> String {
-        guard let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
+        guard
+            let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
             let string: String = dictionary["description"] as? String else {
             return "This is a custom 3rd-party payload."
         }
@@ -77,7 +80,8 @@ class PayloadHelper: NSObject {
     }
 
     func platforms(for type: String) -> [Platform] {
-        guard let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
+        guard
+            let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
             let array: [[String: Any]] = dictionary["platforms"] as? [[String: Any]] else {
             return []
         }
@@ -86,7 +90,8 @@ class PayloadHelper: NSObject {
     }
 
     func availability(for type: String) -> Availability {
-        guard let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
+        guard
+            let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
             let availabilityDictionary: [String: Any] = dictionary["availability"] as? [String: Any] else {
             return Availability(dictionary: [:])
         }
@@ -95,7 +100,8 @@ class PayloadHelper: NSObject {
     }
 
     func discussion(for type: String) -> [String] {
-        guard let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
+        guard
+            let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
             let strings: [String] = dictionary["discussion"] as? [String] else {
             return []
         }
@@ -104,7 +110,8 @@ class PayloadHelper: NSObject {
     }
 
     func example(for type: String) -> String {
-        guard let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
+        guard
+            let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
             let string: String = dictionary["example"] as? String else {
             return ""
         }
@@ -163,7 +170,8 @@ class PayloadHelper: NSObject {
     }
 
     func managedPayloads(for type: String, in dictionary: [String: Any]) -> [Payload] {
-        guard type == "com.apple.ManagedClient.preferences",
+        guard
+            type == "com.apple.ManagedClient.preferences",
             let payloadContent: [String: Any] = dictionary["PayloadContent"] as? [String: Any] else {
             return []
         }
@@ -171,7 +179,8 @@ class PayloadHelper: NSObject {
         var managedPayloads: [Payload] = []
 
         for type in payloadContent.keys {
-            guard let payload: [String: Any] = payloadContent[type] as? [String: Any],
+            guard
+                let payload: [String: Any] = payloadContent[type] as? [String: Any],
                 let array: [[String: Any]] = payload["Forced"] as? [[String: Any]] else {
                 continue
             }
@@ -201,7 +210,8 @@ class PayloadHelper: NSObject {
         var properties: [Property] = []
 
         for key in dictionary.keys.filter({ !keysToIgnore.contains($0) }).sorted() {
-            if !availableProperties.map(\.name).contains(key),
+            if
+                !availableProperties.map(\.name).contains(key),
                 let value: Any = dictionary[key] {
                 let property: Property = .init(unknownName: key, unknownValue: value)
                 properties.append(property)
@@ -212,7 +222,8 @@ class PayloadHelper: NSObject {
     }
 
     private func knownProperties(for type: String) -> [Property] {
-        guard let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
+        guard
+            let dictionary: [String: Any] = dictionaries[type] as? [String: Any],
             let propertyDictionaries: [[String: Any]] = dictionary["properties"] as? [[String: Any]] else {
             return []
         }
@@ -255,7 +266,8 @@ class PayloadHelper: NSObject {
             return string.description
         }
 
-        if let data: Data = try? JSONSerialization.data(withJSONObject: value, options: [.prettyPrinted, .sortedKeys]),
+        if
+            let data: Data = try? JSONSerialization.data(withJSONObject: value, options: [.prettyPrinted, .sortedKeys]),
             let string: String = String(data: data, encoding: .utf8) {
             return string
         }

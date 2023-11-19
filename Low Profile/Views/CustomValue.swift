@@ -42,7 +42,8 @@ struct CustomValue: View {
 
     var body: some View {
         Group {
-            if let data: Data = value as? Data,
+            if
+                let data: Data = value as? Data,
                 let certificate: X509Certificate = try? X509Certificate(data: data) {
                 Certificate(certificate: certificate, certificateImageLength: length)
             } else if (value as? [Any]) != nil {

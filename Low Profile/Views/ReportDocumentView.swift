@@ -144,7 +144,8 @@ struct ReportDocumentView: View {
         }
         .onChange(of: selectedPayload) { _ in
 
-            guard let profile: Profile = selectedProfile,
+            guard
+                let profile: Profile = selectedProfile,
                 let payload: Payload = selectedPayload else {
                 return
             }

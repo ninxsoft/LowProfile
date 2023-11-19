@@ -45,7 +45,8 @@ extension String {
         var string: String = self
 
         for match in matches {
-            guard let hexadecimal: Int = Int(String(match.output.1), radix: 16),
+            guard
+                let hexadecimal: Int = Int(String(match.output.1), radix: 16),
                 let scalar: UnicodeScalar = UnicodeScalar(hexadecimal) else {
                 continue
             }

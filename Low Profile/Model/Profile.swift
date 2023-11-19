@@ -57,7 +57,8 @@ struct Profile: Identifiable, Hashable {
             }
 
             certificates = pkcs7.certificates.sorted {
-                guard let subject: String = $0.subjectDistinguishedName,
+                guard
+                    let subject: String = $0.subjectDistinguishedName,
                     let issuer: String = $1.issuerDistinguishedName else {
                     return false
                 }

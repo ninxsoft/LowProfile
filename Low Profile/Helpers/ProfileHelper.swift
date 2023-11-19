@@ -109,7 +109,8 @@ class ProfileHelper: NSObject {
                 payloadDictionary["spconfigprofile_payload_data"] = ""
             }
 
-            guard let string: String = payloadDictionary["spconfigprofile_payload_data"] as? String,
+            guard
+                let string: String = payloadDictionary["spconfigprofile_payload_data"] as? String,
                 let jsonString: String = string.toJSONString(),
                 let data: Data = jsonString.data(using: .utf8) else {
                 continue
