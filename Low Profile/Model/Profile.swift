@@ -73,7 +73,7 @@ struct Profile: Identifiable, Hashable {
                 return nil
             }
 
-            self.payloads = []
+            payloads = []
 
             // MARK: Testing
             // self.payloads = PayloadHelper.shared.dictionaries.map { Payload(dictionary: ["PayloadType": $0.key]) }.sorted { $0.name < $1.name }
@@ -91,12 +91,12 @@ struct Profile: Identifiable, Hashable {
             }
 
             let payload: Payload = .init(dictionary: topLevelDictionary)
-            self.payloads.append(payload)
+            payloads.append(payload)
 
             if let array: [[String: Any]] = dictionary["PayloadContent"] as? [[String: Any]] {
                 for item in array {
                     let payload: Payload = .init(dictionary: item)
-                    self.payloads.append(payload)
+                    payloads.append(payload)
                 }
             }
 
@@ -111,7 +111,7 @@ struct Profile: Identifiable, Hashable {
         self.id = id
         self.name = name
         self.payloads = payloads.map { Payload(dictionary: $0) }
-        self.certificates = []
+        certificates = []
     }
 
     static func == (lhs: Profile, rhs: Profile) -> Bool {

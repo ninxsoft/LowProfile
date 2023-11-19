@@ -14,7 +14,7 @@ struct DetailPayloadProperties: View {
         case unknown = "Unknown"
 
         var id: String {
-            self.rawValue
+            rawValue
         }
 
         var propertiesDescription: String {

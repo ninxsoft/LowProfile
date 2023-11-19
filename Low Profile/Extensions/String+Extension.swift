@@ -23,7 +23,7 @@ extension String {
         let doctype: String = "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">"
         let plist: String = "<plist version=\"1.0\">"
 
-        return self.replacingOccurrences(of: xml, with: "")
+        return replacingOccurrences(of: xml, with: "")
             .replacingOccurrences(of: doctype, with: "")
             .replacingOccurrences(of: plist, with: "")
             .replacingOccurrences(of: "</plist>", with: "")
@@ -41,7 +41,7 @@ extension String {
             }
         }
 
-        let matches: [Regex<Regex<Regex<(Substring, Regex<Substring>.RegexOutput)>.RegexOutput>.RegexOutput>.Match] = self.matches(of: regex)
+        let matches: [Regex<Regex<Regex<(Substring, Regex<Substring>.RegexOutput)>.RegexOutput>.RegexOutput>.Match] = matches(of: regex)
         var string: String = self
 
         for match in matches {
@@ -57,7 +57,7 @@ extension String {
     }
 
     func toJSONString() -> String? {
-        guard !self.isEmpty else {
+        guard !isEmpty else {
             return "{}"
         }
 

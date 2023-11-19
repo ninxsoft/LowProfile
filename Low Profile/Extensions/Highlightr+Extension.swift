@@ -45,7 +45,7 @@ extension Highlightr {
     }
 
     func highlight(_ string: String) -> AttributedString {
-        guard let attributedString: NSAttributedString = self.highlight(string) else {
+        guard let attributedString: NSAttributedString = highlight(string) else {
             return AttributedString()
         }
 
