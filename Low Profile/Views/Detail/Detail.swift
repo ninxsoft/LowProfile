@@ -29,7 +29,7 @@ struct Detail: View {
                     DetailCertificates(certificates: certificates)
                         .tabItem { Text(DetailTab.certificates.description) }.tag(DetailTab.certificates)
                 }
-                if !payload.payloadProperties.isEmpty || !payload.managedPayloads.flatMap({ $0.payloadProperties }).isEmpty {
+                if !payload.payloadProperties.isEmpty || !payload.managedPayloads.flatMap(\.payloadProperties).isEmpty {
                     DetailPayloadProperties(type: .payload, properties: payload.payloadProperties, managedPayloads: payload.managedPayloads, selectedProperty: $selectedProperty)
                         .tabItem { Text(DetailTab.payloadProperties.description) }.tag(DetailTab.payloadProperties)
                 }
@@ -37,7 +37,7 @@ struct Detail: View {
                     DetailPayloadProperties(type: .available, properties: payload.availableProperties, managedPayloads: [], selectedProperty: $selectedProperty)
                         .tabItem { Text(DetailTab.availableProperties.description) }.tag(DetailTab.availableProperties)
                 }
-                if !payload.unknownProperties.isEmpty || !payload.managedPayloads.flatMap({ $0.unknownProperties }).isEmpty {
+                if !payload.unknownProperties.isEmpty || !payload.managedPayloads.flatMap(\.unknownProperties).isEmpty {
                     DetailPayloadProperties(type: .unknown, properties: payload.unknownProperties, managedPayloads: payload.managedPayloads, selectedProperty: $selectedProperty)
                         .tabItem { Text(DetailTab.unknownProperties.description) }.tag(DetailTab.unknownProperties)
                 }

@@ -58,10 +58,10 @@ struct Payload: Identifiable, Hashable {
         paths.isEmpty
     }
     var deprecated: Bool {
-        !platforms.filter { $0.deprecated }.isEmpty
+        !platforms.filter(\.deprecated).isEmpty
     }
     var beta: Bool {
-        !platforms.filter { $0.beta }.isEmpty
+        !platforms.filter(\.beta).isEmpty
     }
     var managed: Bool {
         payloadDescription.isEmpty && payloadDisplayName.isEmpty && payloadIdentifier.isEmpty && payloadOrganisation.isEmpty && payloadUUID.isEmpty && payloadVersion == 0

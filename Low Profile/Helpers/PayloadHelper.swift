@@ -126,7 +126,7 @@ class PayloadHelper: NSObject {
         var dictionary: [String: Any] = dictionary
         let knownProperties: [Property] = knownProperties(for: type)
 
-        for (key, value) in dictionary where knownProperties.map({ $0.name }).contains(key) && !keysToIgnore.contains(key) {
+        for (key, value) in dictionary where knownProperties.map(\.name).contains(key) && !keysToIgnore.contains(key) {
 
             guard let property: Property = knownProperties.first(where: { $0.name == key }) else {
                 continue
@@ -219,7 +219,7 @@ class PayloadHelper: NSObject {
 
         for key in dictionary.keys.filter({ !keysToIgnore.contains($0) }).sorted() {
 
-            if !availableProperties.map({ $0.name }).contains(key),
+            if !availableProperties.map(\.name).contains(key),
                 let value: Any = dictionary[key] {
                 let property: Property = Property(unknownName: key, unknownValue: value)
                 properties.append(property)

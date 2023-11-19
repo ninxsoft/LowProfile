@@ -25,7 +25,7 @@ class IssuesHelper: NSObject {
 
         for profile in profiles {
             for payload in profile.payloads {
-                for property in payload.payloadProperties.filter({ $0.deprecated }) {
+                for property in payload.payloadProperties.filter(\.deprecated) {
                     deprecatedPropertyNames.insert(property.name)
                 }
             }
@@ -56,7 +56,7 @@ class IssuesHelper: NSObject {
         var deprecatedPropertyNames: Set<String> = []
 
         for payload in profile.payloads {
-            for property in payload.payloadProperties.filter({ $0.deprecated }) {
+            for property in payload.payloadProperties.filter(\.deprecated) {
                 deprecatedPropertyNames.insert(property.name)
             }
         }

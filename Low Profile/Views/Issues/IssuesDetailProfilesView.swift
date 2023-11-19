@@ -21,7 +21,7 @@ struct IssuesDetailProfilesView: View {
     var body: some View {
         GroupBox {
             ForEach(profiles) { profile in
-                ForEach(profile.payloads.filter { $0.payloadProperties.map { $0.name }.contains(propertyName) }) { payload in
+                ForEach(profile.payloads.filter { $0.payloadProperties.map(\.name).contains(propertyName) }) { payload in
                     if let property: Property = payload.payloadProperties.first(where: { $0.name == propertyName }) {
                         Button {
                             selectedProfile = profile
@@ -44,7 +44,7 @@ struct IssuesDetailProfilesView: View {
                         }
                         .buttonStyle(.plain)
 
-                        if profile != profiles.last || payload != profile.payloads.last(where: { $0.payloadProperties.map { $0.name }.contains(propertyName) }) {
+                        if profile != profiles.last || payload != profile.payloads.last(where: { $0.payloadProperties.map(\.name).contains(propertyName) }) {
                             Divider()
                         }
                     }

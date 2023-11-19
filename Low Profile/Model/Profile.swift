@@ -29,7 +29,7 @@ struct Profile: Identifiable, Hashable {
         [
             "id": id,
             "name": name,
-            "payloads": payloads.map { $0.dictionary }
+            "payloads": payloads.map(\.dictionary)
         ]
     }
 

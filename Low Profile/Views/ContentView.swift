@@ -196,9 +196,9 @@ struct ContentView: View {
             !$0.payloads.filter {
                 $0.name.lowercased().contains(searchString.lowercased()) ||
                 $0.payloadIdentifier.lowercased().contains(searchString.lowercased()) ||
-                !$0.payloadProperties.map { $0.name }.filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
-                !$0.availableProperties.map { $0.name }.filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
-                !$0.unknownProperties.map { $0.name }.filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty
+                !$0.payloadProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
+                !$0.availableProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
+                !$0.unknownProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty
             }.isEmpty
         }
     }
@@ -207,9 +207,9 @@ struct ContentView: View {
         profile.payloads.filter {
             $0.name.lowercased().contains(searchString.lowercased()) ||
             $0.payloadIdentifier.lowercased().contains(searchString.lowercased()) ||
-            !$0.payloadProperties.map { $0.name }.filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
-            !$0.availableProperties.map { $0.name }.filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
-            !$0.unknownProperties.map { $0.name }.filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty
+            !$0.payloadProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
+            !$0.availableProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty ||
+            !$0.unknownProperties.map(\.name).filter { $0.lowercased().contains(searchString.lowercased()) }.isEmpty
         }
     }
 
@@ -265,7 +265,7 @@ struct ContentView: View {
             return
         }
 
-        let array: [[String: Any]] = profiles.map { $0.dictionary }
+        let array: [[String: Any]] = profiles.map(\.dictionary)
 
         do {
             let data: Data = try PropertyListSerialization.data(fromPropertyList: array, format: .xml, options: .bitWidth)

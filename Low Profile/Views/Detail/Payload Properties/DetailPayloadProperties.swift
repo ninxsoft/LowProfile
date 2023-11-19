@@ -73,7 +73,7 @@ struct DetailPayloadProperties: View {
                     }
                 }
             }
-            if type == .payload && !managedPayloads.flatMap({ $0.payloadProperties }).isEmpty || type == .unknown && !managedPayloads.flatMap({ $0.unknownProperties }).isEmpty {
+            if type == .payload && !managedPayloads.flatMap(\.payloadProperties).isEmpty || type == .unknown && !managedPayloads.flatMap(\.unknownProperties).isEmpty {
                 text(for: type.managedPayloadsDescription)
                 ScrollView(.vertical) {
                     ForEach(managedPayloads) { payload in
