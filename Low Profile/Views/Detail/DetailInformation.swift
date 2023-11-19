@@ -17,7 +17,7 @@ struct DetailInformation: View {
             (key: "Identifier", value: payload.payloadIdentifier),
             (key: "Organisation", value: payload.payloadOrganisation),
             (key: "UUID", value: payload.payloadUUID),
-            (key: "Version", value: "\(payload.payloadVersion)")
+            (key: "Version", value: "\(payload.payloadVersion)"),
         ]
     }
 
@@ -29,7 +29,7 @@ struct DetailInformation: View {
             (key: "Requires Supervision", value: payload.availability.supervision),
             (key: "Requires User Approved MDM", value: payload.availability.userApproved),
             (key: "Allowed in User Enrollment", value: payload.availability.userEnrol),
-            (key: "Allow Multiple Payloads", value: payload.availability.multiple)
+            (key: "Allow Multiple Payloads", value: payload.availability.multiple),
         ]
     }
 

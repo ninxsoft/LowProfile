@@ -29,7 +29,7 @@ extension Highlightr {
             "kimbie",
             "paraiso",
             "qtcreator",
-            "solarized"
+            "solarized",
         ]
     }
 

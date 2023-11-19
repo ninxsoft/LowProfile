@@ -22,7 +22,7 @@ class PayloadHelper: NSObject {
             "PayloadRemovalDisallowed",
             "PayloadType",
             "PayloadUUID",
-            "PayloadVersion"
+            "PayloadVersion",
         ]
     }
 
