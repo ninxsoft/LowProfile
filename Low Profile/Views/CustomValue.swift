@@ -37,6 +37,7 @@ struct CustomValue: View {
             return AttributedString()
         }
     }
+
     private let length: CGFloat = 50
 
     var body: some View {

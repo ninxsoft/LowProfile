@@ -17,6 +17,7 @@ struct DetailDiscussion: View {
     private var discussionString: String {
         payload.discussion.joined(separator: "\n\n")
     }
+
     private var propertyList: AttributedString {
         guard let highlightr: Highlightr = Highlightr() else {
             return AttributedString()

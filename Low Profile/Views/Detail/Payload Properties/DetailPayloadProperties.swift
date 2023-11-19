@@ -27,6 +27,7 @@ struct DetailPayloadProperties: View {
                 return "The following properties are in the profile payload, and are unknown:"
             }
         }
+
         var managedPayloadsDescription: String {
             switch self {
             case .payload:

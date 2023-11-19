@@ -49,18 +49,23 @@ struct Payload: Identifiable, Hashable {
             return nil
         }
     }
+
     var general: Bool {
         paths.contains("toplevel")
     }
+
     var custom: Bool {
         paths.isEmpty
     }
+
     var deprecated: Bool {
         !platforms.filter(\.deprecated).isEmpty
     }
+
     var beta: Bool {
         !platforms.filter(\.beta).isEmpty
     }
+
     var managed: Bool {
         payloadDescription.isEmpty && payloadDisplayName.isEmpty && payloadIdentifier.isEmpty && payloadOrganisation.isEmpty && payloadUUID.isEmpty && payloadVersion == 0
     }

@@ -20,6 +20,7 @@ struct DetailInformation: View {
             (key: "Version", value: "\(payload.payloadVersion)")
         ]
     }
+
     private var availability: [(key: String, value: String)] {
         [
             (key: "Device Channel", value: payload.availability.device),

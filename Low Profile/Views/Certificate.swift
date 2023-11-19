@@ -15,6 +15,7 @@ struct Certificate: View {
     private var validImagelength: CGFloat {
         certificateImageLength / 5
     }
+
     private var subjectString: String {
         // CN = 2.5.4.3
 
@@ -25,6 +26,7 @@ struct Certificate: View {
 
         return string
     }
+
     private var issuerString: String {
         // CN = 2.5.4.3
 
@@ -35,6 +37,7 @@ struct Certificate: View {
 
         return "Issued by: " + string
     }
+
     private var dateString: String {
         guard let date: Date = certificate.notAfter else {
             return ""
@@ -47,12 +50,15 @@ struct Certificate: View {
         let string: String = dateFormatter.string(from: date)
         return "Expire\(expired ? "d" : "s"): " + string
     }
+
     private var valid: Bool {
         certificate.checkValidity()
     }
+
     private var validString: String {
         "This certificate is " + (valid ? "" : "in") + "valid"
     }
+
     private var systemName: String {
         valid ? "checkmark.seal.fill" : "xmark.seal.fill"
     }

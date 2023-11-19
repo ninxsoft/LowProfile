@@ -24,9 +24,11 @@ struct ContentView: View {
     private var issuesButtonSystemName: String {
         issues.isEmpty ? "checkmark.circle" : "exclamationmark.triangle"
     }
+
     private var issuesButtonForegroundColor: Color {
         issues.isEmpty ? .green : .orange
     }
+
     private let profilesSidebarWidth: CGFloat = 250
     private let payloadsSidebarWidth: CGFloat = 275
     private let width: CGFloat = 1_260

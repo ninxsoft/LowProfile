@@ -44,6 +44,7 @@ struct SettingsSyntaxHighlightingView: View {
 
         return highlightr.highlight(string)
     }
+
     private var width: CGFloat = 300
     private var height: CGFloat = 350
 

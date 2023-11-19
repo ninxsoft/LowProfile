@@ -20,9 +20,11 @@ struct ProfileDocumentView: View {
     private var issuesButtonSystemName: String {
         issues.isEmpty ? "checkmark.circle" : "exclamationmark.triangle"
     }
+
     private var issuesButtonForegroundColor: Color {
         issues.isEmpty ? .green : .orange
     }
+
     private let sidebarWidth: CGFloat = 275
     private let width: CGFloat = 1_260
     private let height: CGFloat = 720
