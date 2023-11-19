@@ -15,11 +15,11 @@ struct AttributedText: View {
 
         for string in strings {
             var formattedText: Text = if string ~= "`.*`" {
-                Text(.init(string)).foregroundColor(.pink)
+                .init(.init(string)).foregroundColor(.pink)
             } else if string ~= "\\*.*\\*" {
-                Text(.init(string)).foregroundColor(.green)
+                .init(.init(string)).foregroundColor(.green)
             } else {
-                Text(.init(string)).foregroundColor(.secondary)
+                .init(.init(string)).foregroundColor(.secondary)
             }
 
             // swiftlint:disable:next shorthand_operator
