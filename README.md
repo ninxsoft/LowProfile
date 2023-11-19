@@ -1,5 +1,5 @@
-<!-- markdownlint-disable-next-line no-inline-html first-line-heading -->
-<img align="left" width="128" height="128" src="README%20Resources/App%20Icon.png">
+<!-- markdownlint-disable-next-line first-line-heading no-inline-html -->
+<img align="left" width="128" height="128" src="README%20Resources/App%20Icon.png" alt="App Icon">
 
 # Low Profile
 
@@ -21,6 +21,11 @@ If the answer is yes to any of the above, then **Low Profile** is the app for **
 ## ![Slack](README%20Resources/Slack.png) Check out [#low-profile](https://macadmins.slack.com/archives/C0590AY05U3) on the [Mac Admins Slack](https://macadmins.slack.com) to discuss all things Low Profile!
 
 <!-- markdownlint-enable no-trailing-punctuation -->
+<!-- markdownlint-disable no-inline-html -->
+
+<a href="https://www.buymeacoffee.com/ninxsoft" target="_blank"><img width="214" height="60" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy me a coffee"></a>
+
+<!-- markdownlint-enable no-inline-html -->
 
 ## Features
 
