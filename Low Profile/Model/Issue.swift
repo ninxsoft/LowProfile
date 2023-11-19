@@ -8,7 +8,6 @@
 import Foundation
 
 struct Issue: Identifiable, Hashable {
-
     static var example: Issue {
         Issue(
             id: UUID().uuidString,

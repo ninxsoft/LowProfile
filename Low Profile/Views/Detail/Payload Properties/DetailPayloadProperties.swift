@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DetailPayloadProperties: View {
-
     enum PropertyType: String, Identifiable, CaseIterable {
         case payload = "Payload"
         case available = "Available"

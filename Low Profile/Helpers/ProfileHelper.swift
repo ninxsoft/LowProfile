@@ -8,7 +8,6 @@
 import Foundation
 
 class ProfileHelper: NSObject {
-
     static let shared: ProfileHelper = ProfileHelper()
 
     private let keys: [String] = [
@@ -32,7 +31,6 @@ class ProfileHelper: NSObject {
     ]
 
     func getProfiles() -> [Profile] {
-
         let url: URL = URL(fileURLWithPath: "\(NSTemporaryDirectory())/LowProfile.plist")
 
         guard FileManager.default.createFile(atPath: url.path, contents: nil) else {
@@ -82,7 +80,6 @@ class ProfileHelper: NSObject {
     }
 
     private func profile(for dictionary: [String: Any]) -> Profile? {
-
         var dictionary: [String: Any] = dictionary
         dictionary["PayloadType"] = "Configuration"
         dictionary["PayloadDisplayName"] = dictionary["_name"]

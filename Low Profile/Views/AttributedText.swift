@@ -14,7 +14,6 @@ struct AttributedText: View {
         var attributedText: Text = Text("")
 
         for string in strings {
-
             var formattedText: Text
 
             if string ~= "`.*`" {

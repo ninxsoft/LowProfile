@@ -15,7 +15,6 @@ struct DetailPropertyList: View {
     @AppStorage("SyntaxHighlightingTheme")
     private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
     private var propertyList: AttributedString {
-
         guard let highlightr: Highlightr = Highlightr() else {
             return AttributedString()
         }

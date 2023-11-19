@@ -8,7 +8,6 @@
 import Foundation
 
 struct Payload: Identifiable, Hashable {
-
     static var example: Payload {
         var payload: Payload = Payload()
         payload.type = "Configuration"
@@ -37,7 +36,6 @@ struct Payload: Identifiable, Hashable {
     var unknownProperties: [Property]
     var dictionary: [String: Any]
     var propertyList: String? {
-
         do {
             let data: Data = try PropertyListSerialization.data(fromPropertyList: dictionary, format: .xml, options: 0)
 

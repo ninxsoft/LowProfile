@@ -10,7 +10,6 @@ import Highlightr
 import SwiftUI
 
 extension Highlightr {
-
     static func propertyListThemes() -> [String] {
         [
             "a11y",
@@ -35,7 +34,6 @@ extension Highlightr {
     }
 
     func themeVariant(for theme: String, using colorScheme: ColorScheme) -> String {
-
         switch theme {
         case "kimbie":
             return "\(theme).\(colorScheme)"
@@ -47,7 +45,6 @@ extension Highlightr {
     }
 
     func highlight(_ string: String) -> AttributedString {
-
         guard let attributedString: NSAttributedString = self.highlight(string) else {
             return AttributedString()
         }

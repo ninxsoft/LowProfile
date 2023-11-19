@@ -176,7 +176,6 @@ struct ContentView: View {
     }
 
     func refreshProfiles() {
-
         refreshing = true
 
         Task {
@@ -244,7 +243,6 @@ struct ContentView: View {
     }
 
     private func export() {
-
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let date: String = dateFormatter.string(from: Date())
@@ -281,7 +279,6 @@ struct ContentView: View {
     }
 
     private func homepage() {
-
         guard let url: URL = URL(string: .repositoryURL) else {
             return
         }

@@ -8,7 +8,6 @@
 import Foundation
 
 class IssuesHelper: NSObject {
-
     static let shared: IssuesHelper = IssuesHelper()
 
     func getIssues(for profiles: [Profile]) -> [Issue] {
@@ -32,7 +31,6 @@ class IssuesHelper: NSObject {
         }
 
         for deprecatedPropertyName in deprecatedPropertyNames {
-
             var profilesWithDeprecatedProperties: [Profile] = []
 
             for profile in profiles {
@@ -62,7 +60,6 @@ class IssuesHelper: NSObject {
         }
 
         for deprecatedPropertyName in deprecatedPropertyNames {
-
             var payloadsWithDeprecatedProperties: [Payload] = []
 
             for payload in profile.payloads where !payload.payloadProperties.filter({ $0.name == deprecatedPropertyName }).isEmpty {
@@ -97,7 +94,6 @@ class IssuesHelper: NSObject {
         }
 
         for duplicatedPropertyName in duplicatedPropertyNames {
-
             var profilesWithDuplicatedProperties: [Profile] = []
 
             for profile in profiles {
@@ -131,7 +127,6 @@ class IssuesHelper: NSObject {
         }
 
         for duplicatedPropertyName in duplicatedPropertyNames {
-
             var payloadsWithDuplicatedProperties: [Payload] = []
 
             for payload in profile.payloads where !payload.payloadProperties.filter({ $0.name == duplicatedPropertyName }).isEmpty {

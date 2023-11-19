@@ -10,7 +10,6 @@ import Foundation
 
 /// Configuration Profile struct
 struct Profile: Identifiable, Hashable {
-
     /// Example Profile
     static var example: Profile {
         let profile: Profile = Profile()

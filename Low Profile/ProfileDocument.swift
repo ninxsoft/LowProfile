@@ -9,12 +9,10 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct ProfileDocument: FileDocument {
-
     static var readableContentTypes: [UTType] = [.mobileconfig]
     var profile: Profile = Profile()
 
     init(configuration: ReadConfiguration) throws {
-
         guard let data: Data = configuration.file.regularFileContents,
             let object: Profile = Profile(from: data) else {
             throw DocumentError("Unable to load Configuration Profile")

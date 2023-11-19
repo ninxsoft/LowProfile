@@ -16,7 +16,6 @@ struct Certificate: View {
         certificateImageLength / 5
     }
     private var subjectString: String {
-
         // CN = 2.5.4.3
 
         guard let oid: OID = OID(rawValue: "2.5.4.3"),
@@ -27,7 +26,6 @@ struct Certificate: View {
         return string
     }
     private var issuerString: String {
-
         // CN = 2.5.4.3
 
         guard let oid: OID = OID(rawValue: "2.5.4.3"),
@@ -38,7 +36,6 @@ struct Certificate: View {
         return "Issued by: " + string
     }
     private var dateString: String {
-
         guard let date: Date = certificate.notAfter else {
             return ""
         }

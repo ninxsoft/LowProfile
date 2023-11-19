@@ -9,7 +9,6 @@ import Foundation
 import RegexBuilder
 
 extension String {
-
     static let repositoryURL: String = "https://github.com/ninxsoft/LowProfile"
     static let payloadsURL: String = "https://raw.githubusercontent.com/ninxsoft/LowProfile/main/Low%20Profile/Payloads.yaml"
     static let documentationPrefix: String = "https://developer.apple.com/documentation/devicemanagement/"
@@ -32,7 +31,6 @@ extension String {
     }
 
     func replacingUnicode() -> String {
-
         let regex: Regex = Regex {
             "\\U"
             Capture {
@@ -47,7 +45,6 @@ extension String {
         var string: String = self
 
         for match in matches {
-
             guard let hexadecimal: Int = Int(String(match.output.1), radix: 16),
                 let scalar: UnicodeScalar = UnicodeScalar(hexadecimal) else {
                 continue
@@ -60,7 +57,6 @@ extension String {
     }
 
     func toJSONString() -> String? {
-
         guard !self.isEmpty else {
             return "{}"
         }
@@ -87,7 +83,6 @@ extension String {
             }
 
             for (index, component) in components.enumerated() {
-
                 if index == 0 && component ~= "^ *[a-zA-Z0-9]+ $" && !(component ~= "^ *\\d+$") {
                     let firstIndex: String.Index = component.firstIndex { $0 != " " } ?? component.startIndex
                     let lastIndex: String.Index = component.lastIndex { $0 != " " } ?? component.endIndex

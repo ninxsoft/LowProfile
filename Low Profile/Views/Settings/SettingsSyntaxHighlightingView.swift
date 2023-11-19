@@ -34,7 +34,6 @@ struct SettingsSyntaxHighlightingView: View {
     </plist>
     """
     private var propertyList: AttributedString {
-
         guard let highlightr: Highlightr = Highlightr() else {
             return AttributedString()
         }

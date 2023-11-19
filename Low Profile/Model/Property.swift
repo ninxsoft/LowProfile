@@ -8,7 +8,6 @@
 import Foundation
 
 struct Property: Identifiable, Hashable {
-
     static var example: Property {
         let property: Property = Property(availableDictionary: [:])
         return property

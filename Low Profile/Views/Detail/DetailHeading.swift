@@ -45,7 +45,6 @@ struct DetailHeading: View {
     }
 
     private func documentation() {
-
         payload.paths.compactMap { URL(string: .documentationPrefix + $0) }.forEach { url in
             openURL(url)
         }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Platform: Identifiable {
-
     static var example: Platform {
         let platform: Platform = Platform(dictionary: [:])
         return platform

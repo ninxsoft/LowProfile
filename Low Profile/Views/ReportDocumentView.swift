@@ -206,7 +206,6 @@ struct ReportDocumentView: View {
     }
 
     private func homepage() {
-
         guard let url: URL = URL(string: .repositoryURL) else {
             return
         }
