@@ -365,6 +365,7 @@
 				57D4F7CB24D6D6A500BC0648 /* Frameworks */,
 				57D4F7CC24D6D6A500BC0648 /* Resources */,
 				57D4F7E124D6D6DA00BC0648 /* Run SwiftLint */,
+				57C1C85B2B09E8AA006DB77B /* Run SwiftFormat */,
 				39C419F7275CD5AE001F4B4E /* Run DrString */,
 			);
 			buildRules = (
@@ -390,7 +391,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					5770D85D2958489D00297B46 = {
 						CreatedOnToolsVersion = 14.2;
@@ -463,6 +464,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/usr/bin/env bash";
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which drstring > /dev/null ; then\n  drstring check --config-file \"$SRCROOT/.drstring.toml\" || true\nelse\n  echo \"warning: DrString not installed, download from https://github.com/dduan/DrString\"\nfi\n\nexit 0\n";
+		};
+		57C1C85B2B09E8AA006DB77B /* Run SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftFormat";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/usr/bin/env bash";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftformat > /dev/null ; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n\nexit 0\n";
 		};
 		57D4F7E124D6D6DA00BC0648 /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
