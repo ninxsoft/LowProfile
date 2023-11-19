@@ -1,0 +1,6 @@
+--commas inline
+--decimalgrouping 3,4
+--disable wrapMultilineStatementBraces
+--enable docComments
+--redundanttype explicit
+--wrapconditions before-first
