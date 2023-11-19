@@ -30,7 +30,7 @@ struct ReportDocument: FileDocument {
         }
     }
 
-    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
+    func fileWrapper(configuration _: WriteConfiguration) throws -> FileWrapper {
         throw DocumentError("Unable to save Report")
     }
 }
