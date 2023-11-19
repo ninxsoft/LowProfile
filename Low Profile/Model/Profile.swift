@@ -76,6 +76,7 @@ struct Profile: Identifiable, Hashable {
             payloads = []
 
             // MARK: Testing
+
             // self.payloads = PayloadHelper.shared.dictionaries.map { Payload(dictionary: ["PayloadType": $0.key]) }.sorted { $0.name < $1.name }
             // return
 
