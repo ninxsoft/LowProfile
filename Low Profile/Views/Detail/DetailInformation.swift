@@ -41,7 +41,7 @@ struct DetailInformation: View {
                         InformationGridRow(key: item.key, value: item.value)
                     }
                 }
-                if !payload.general && !payload.custom {
+                if !payload.general, !payload.custom {
                     if !payload.managed {
                         Divider()
                     }
