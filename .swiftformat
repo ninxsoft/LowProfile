@@ -2,5 +2,6 @@
 --decimalgrouping 3,4
 --disable wrapMultilineStatementBraces
 --enable docComments
+--hexgrouping none
 --redundanttype explicit
 --wrapconditions before-first
