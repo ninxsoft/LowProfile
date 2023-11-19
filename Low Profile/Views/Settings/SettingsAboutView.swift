@@ -1,5 +1,5 @@
 //
-//  SettingAboutView.swift
+//  SettingsAboutView.swift
 //  Low Profile
 //
 //  Created by Nindi Gill on 25/12/2022.

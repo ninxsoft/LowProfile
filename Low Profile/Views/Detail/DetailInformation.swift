@@ -1,5 +1,5 @@
 //
-//  Detailnformation.swift
+//  DetailInformation.swift
 //  Low Profile
 //
 //  Created by Nindi Gill on 5/8/20.
