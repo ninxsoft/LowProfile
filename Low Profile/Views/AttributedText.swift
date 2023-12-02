@@ -14,7 +14,7 @@ struct AttributedText: View {
         var attributedText: Text = .init("")
 
         for string in strings {
-            var formattedText: Text = if string ~= "`.*`" {
+            let formattedText: Text = if string ~= "`.*`" {
                 .init(.init(string)).foregroundColor(.pink)
             } else if string ~= "\\*.*\\*" {
                 .init(.init(string)).foregroundColor(.green)
