@@ -236,7 +236,7 @@ Configuration:
     - For interactive installations on iOS devices, specifying a target platform avoids
       interstitial alerts that prompt the user to choose a profile target when multiple
       targets are eligible.
-    - 'Possible values include:'
+    - 'Allowed values:'
     - "\u2219`0`\u2219\n\tAny/unspecified"
     - "\u2219`1`\u2219\n\tiPhone/iPad/iPod Touch"
     - "\u2219`2`\u2219\n\tApple Watch"
@@ -300,10 +300,9 @@ com.apple.ADCertificate.managed:
     type: string
   - attributes: {}
     description:
-    - The name of the certificate authority (CA). This value is determined from the
-      common name (CN) of the Active Directory entry. Available in macOS 10.8 and
-      later.
-    - 'Valid values:'
+    - 'The name of the certificate authority (CA), which is determined from the common
+      name (CN) of the Active Directory entry. Available in macOS 10.8 and later.
+      Valid values:'
     - '- CN=<your CA Name>'
     - "- CN=\u2219`Certification Authorities`\u2219"
     - "- CN=\u2219`Public Key Services`\u2219"
@@ -347,8 +346,8 @@ com.apple.ADCertificate.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, allows exporting the private key. Available in macOS\
-      \ 10.10 and later."
+    - "If \u2219`true`\u2219, the system allows exporting the private key. Available\
+      \ in macOS 10.10 and later."
     name: KeyIsExtractable
     type: boolean
   - attributes:
@@ -361,10 +360,10 @@ com.apple.ADCertificate.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, the user is prompted for credentials when the profile\
-      \ is installed. This key applies only to user certificates with the Manual Download\
-      \ profile delivery method. Omit this key for computer certificates. Available\
-      \ in macOS 10.8 and later."
+    - "If \u2219`true`\u2219, the system prompts the user for credentials when is\
+      \ installs the profile. This key applies only to user certificates with the\
+      \ Manual Download profile delivery method. Omit this key for computer certificates.\
+      \ Available in macOS 10.8 and later."
     name: PromptForCredentials
     type: boolean
 com.apple.AIM.account:
@@ -479,71 +478,70 @@ com.apple.AssetCache.managed:
   - attributes:
       default: 'true'
     description:
-    - Allow the system to purge content from the cache automatically when it needs
-      disk space for other apps (i.e. when free disk space runs low on the computer).
-      Customers who want Content Caching to be as effective as possible should turn
-      this setting off.
-    - Available in macOS 10.15 and later.
+    - "If true, the system purges content from the cache automatically when it needs\
+      \ disk space for other apps when free disk space runs low on the computer. Set\
+      \ to \u2219`false`\u2219 to maximize effectiveness of Content Caching. Available\
+      \ in macOS 10.15 and later."
     name: AllowCacheDelete
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`true`\u2219, caches the user's iCloud data. Clients may take some\
-      \ time (hours or days) to react to changes to this setting; it doesn't have\
-      \ an immediate effect."
+    - "If \u2219`true`\u2219, the system caches the user\u2019s iCloud data. Changes\
+      \ to this value don\u2019t have an immediate effect. Clients may take some time,\
+      \ such as hours or days, to react to changes."
     - "At least one of the \u2219`AllowPersonalCaching`\u2219 or \u2219`AllowSharedCaching`\u2219\
-      \ keys must be \u2219`true`\u2219."
+      \ keys need to be \u2219`true`\u2219."
     name: AllowPersonalCaching
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`true`\u2219, caches non-iCloud content, such as apps and software\
-      \ updates. Clients may take some time (hours, days) to react to changes to this\
-      \ setting; it does not have an immediate effect."
+    - "If \u2219`true`\u2219, the system caches non-iCloud content, such as apps and\
+      \ software updates. Changes to this value don\u2019t have an immediate effect.\
+      \ Clients may take some time, such as hours or days, to react to changes."
     - "At least one of the \u2219`AllowPersonalCaching`\u2219 or \u2219`AllowSharedCaching`\u2219\
-      \ keys must be \u2219`true`\u2219."
+      \ keys need to be \u2219`true`\u2219."
     name: AllowSharedCaching
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, automatically activates the content cache when possible\
-      \ and prevents it from being disabled. If the \u2219`allowContentCaching`\u2219\
-      \ restriction is set to \u2219`false`\u2219, \u2219`AutoActivation`\u2219 is\
-      \ also \u2219`false`\u2219."
+    - "If \u2219`true`\u2219, the system automatically activates the content cache\
+      \ when possible and prevents disabling it. If \u2219`allowContentCaching`\u2219\
+      \ is \u2219`false`\u2219, \u2219`AutoActivation`\u2219 is also \u2219`false`\u2219\
+      ."
     - "Removing a profile that set \u2219`AutoActivation`\u2219 to \u2219`true`\u2219\
-      \ does not deactivate the Content Cache."
+      \ doesn\u2019t deactivate the Content Cache."
     name: AutoActivation
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "Automatically enable Internet connection sharing when possible and prevent\
-      \ disabling Internet connection sharing. \u2219`DenyTetheredCaching`\u2219 overrides\
-      \ \u2219`AutoEnableTetheredCaching`\u2219. Tethered caching requires Content\
-      \ Caching."
+    - "If \u2219`true`\u2219, the system automatically enables Internet connection\
+      \ sharing when possible and prevent disabling Internet connection sharing. \u2219\
+      `DenyTetheredCaching`\u2219 overrides \u2219`AutoEnableTetheredCaching`\u2219\
+      . Tethered caching requires Content Caching."
     - Available in macOS 10.15.4 and later.
     name: AutoEnableTetheredCaching
     type: boolean
   - attributes:
       default: '0'
     description:
-    - The maximum number of bytes of disk space that will be used for the content
-      cache. A value of 0 means unlimited disk space.
+    - "The maximum number of bytes of disk space to use for the content cache. Set\
+      \ to \u2219`0`\u2219 for unlimited disk space."
     name: CacheLimit
     type: integer
   - attributes:
       default: /Library/Application Support/Apple/AssetCache/Data
     description:
     - "The path to the directory used to store cached content. Changing this setting\
-      \ manually doesn't automatically move cached content from the old location to\
-      \ the new one. To move content automatically, use the Sharing preference's Content\
-      \ Caching pane. The value must be (or end with) \u2219`/Library/Application\
+      \ manually doesn\u2019t automatically move cached content from the old location\
+      \ to the new one. To move content automatically, use the Sharing preference\u2019\
+      s Content Caching pane. The value must be (or end with) \u2219`/Library/Application\
       \ Support/Apple/AssetCache/Data`\u2219."
-    - "A directory and its intermediates are created for the given data path if it\
-      \ doesn't already exist. The directory is owned by \u2219`_assetcache:_assetcache`\u2219\
+    - "The system creates a directory and its intermediates for the given data path\
+      \ if it doesn\u2019t already exist. The directory is owned by \u2219`_assetcache:_assetcache`\u2219\
       \ and has mode 0750. Its immediate parent directory (\u2219`.../Library/Application\
       \ Support/Apple/AssetCache`\u2219) is owned by \u2219`_assetcache:_assetcache`\u2219\
       \ and has mode \u2219`0755`\u2219."
@@ -552,7 +550,7 @@ com.apple.AssetCache.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables tethered caching."
+    - "If \u2219`true`\u2219, the system disables tethered caching."
     name: DenyTetheredCaching
     type: boolean
   - attributes:
@@ -561,23 +559,21 @@ com.apple.AssetCache.managed:
     - "If \u2219`true`\u2219, Content Caching displays exceptional conditions (alerts)\
       \ as system notifications in the upper corner of the screen. Alerts were automatically\
       \ displayed starting in macOS 10.13. In macOS 10.15 the alerts are off by default,\
-      \ but still available via this setting."
-    - Available in macOS 10.15 and later.
+      \ but still available through this setting. Available in macOS 10.15 and later."
     name: DisplayAlerts
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, prevents the computer from sleeping as long as Content\
-      \ Caching is on (System Preferences > Sharing > Content Caching is on). Customers\
-      \ who want Content Caching to be as available as musch as possible should turn\
-      \ this setting on."
-    - Available in macOS 10.15 and later.
+    - "If \u2219`true`\u2219, the system fprevents the computer from sleeping as long\
+      \ as Content Caching is on (System Preferences > Sharing > Content Caching is\
+      \ on). Customers who want Content Caching to be as available as musch as possible\
+      \ should turn this setting on. Available in macOS 10.15 and later."
     name: KeepAwake
     type: boolean
   - attributes: {}
     description:
-    - An array of dictionaries describing a range of client IP addresses to serve.
+    - An array of dictionaries that describe a range of client IP addresses to serve.
     name: ListenRanges
     type: '[ContentCaching.Ranges]'
   - attributes:
@@ -601,7 +597,7 @@ com.apple.AssetCache.managed:
     - "If \u2219`true`\u2219, the content cache offers content to clients only on\
       \ the same immediate local network only. No content is offered to clients on\
       \ other networks reachable by the content cache. If \u2219`LocalSubnetsOnly`\u2219\
-      \ is set to \u2219`true`\u2219, \u2219`ListenRanges`\u2219 will be ignored."
+      \ is \u2219`true`\u2219, the system ignores \u2219`ListenRanges`\u2219."
     name: LocalSubnetsOnly
     type: boolean
   - attributes:
@@ -620,32 +616,33 @@ com.apple.AssetCache.managed:
       - round-robin
       - sticky-available
     description:
-    - The policy to implement when choosing among more than one configured parent
-      content cache. With every policy, parent caches that are temporarily unavailable
-      are skipped.
-    - "\u2219`first-available`\u2219: Always use the first available parent in the\
+    - 'The policy to implement when choosing among more than one configured parent
+      content cache. With every policy, the system skips parent caches that are temporarily
+      unavailable. Allowed values:'
+    - "\u2219`first-available`\u2219\n\tAlways use the first available parent in the\
       \ Parents list. Use this policy to designate permanent primary, secondary, and\
       \ subsequent parents."
-    - "\u2219`url-path-hash`\u2219: Hash the path part of the requested URL so that\
+    - "\u2219`url-path-hash`\u2219\n\tHash the path part of the requested URL so that\
       \ the same parent is always used for the same URL. This is useful for maximizing\
       \ the size of the combined caches of the parents."
-    - "\u2219`random`\u2219: Choose a parent at random. Use this policy for load balancing."
-    - "\u2219`round-robin`\u2219: Rotate through the parents in order. Use this policy\
-      \ for load balancing."
-    - "\u2219`sticky-available`\u2219: Use the first available parent that is available\
-      \ in the Parents list\_until it becomes unavailable, then advance to the next\
-      \ one. Use this policy for designating floating primary, secondary, and subsequent\
-      \ parents."
+    - "\u2219`random`\u2219\n\tChoose a parent at random. Use this policy for load\
+      \ balancing."
+    - "\u2219`round-robin`\u2219\n\tRotate through the parents in order. Use this\
+      \ policy for load balancing."
+    - "\u2219`sticky-available`\u2219\n\tUse the first available parent in the Parents\
+      \ list\_until it becomes unavailable, then advance to the next one. Use this\
+      \ policy for designating floating primary, secondary, and subsequent parents."
     name: ParentSelectionPolicy
     type: string
   - attributes: {}
     description:
-    - An array of the local IP addresses of other content caches that this cache should
-      download from or upload to, instead of downloading from or uploading to Apple
-      directly. Invalid addresses and addresses of computers that aren't content caches
-      are ignored. Parent caches that become unavailable are skipped. If all parent
-      content caches become unavailable, the content cache downloads from or uploads
-      to Apple directly, until a parent content cache becomes available again.
+    - "An array of the local IP addresses of other content caches that this cache\
+      \ should download from or upload to, instead of downloading from or uploading\
+      \ to Apple directly. The system ignores invalid addresses and addresses of computers\
+      \ that aren\u2019t content caches. The system skips Parent caches that become\
+      \ unavailable. If all parent content caches become unavailable, the content\
+      \ cache downloads from or uploads to Apple directly, until a parent content\
+      \ cache becomes available again."
     name: Parents
     type: '[string]'
   - attributes: {}
@@ -653,7 +650,7 @@ com.apple.AssetCache.managed:
     - "An array of dictionaries describing a range of peer IP addresses that the content\
       \ cache uses to filter its list of peers to query for content. The content cache\
       \ only queries peers in \u2219`PeerFilterRanges`\u2219. When \u2219`PeerFilterRanges`\u2219\
-      \ is an empty array, the content cache doesn't query any peers."
+      \ is an empty array, the content cache doesn\u2019t query any peers."
     name: PeerFilterRanges
     type: '[ContentCaching.Ranges]'
   - attributes: {}
@@ -679,8 +676,8 @@ com.apple.AssetCache.managed:
   - attributes:
       default: '0'
     description:
-    - The TCP port number on which the content cache accepts requests for uploads
-      or downloads. Set the port to 0 to pick a random, available port.
+    - "The TCP port number on which the content cache accepts requests for uploads\
+      \ or downloads. Set to \u2219`0`\u2219 to pick a random, available port."
     name: Port
     type: integer
   - attributes: {}
@@ -766,25 +763,27 @@ com.apple.DirectoryService.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, allows authentication from any domain in the namespace."
+    - "If \u2219`true`\u2219, the system allows authentication from any domain in\
+      \ the namespace."
     name: ADAllowMultiDomainAuth
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADAllowMultiDomainAuth`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADAllowMultiDomainAuth`\u2219\
+      \ key."
     name: ADAllowMultiDomainAuthFlag
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, creates a mobile account at login."
+    - "If \u2219`true`\u2219, the system creates a mobile account at login."
     name: ADCreateMobileAccountAtLogin
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADCreateMobileAccountAtLogin`\u2219\
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADCreateMobileAccountAtLogin`\u2219\
       \ key."
     name: ADCreateMobileAccountAtLoginFlag
     type: boolean
@@ -796,30 +795,33 @@ com.apple.DirectoryService.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADDefaultUserShell`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADDefaultUserShell`\u2219\
+      \ key."
     name: ADDefaultUserShellFlag
     type: boolean
   - attributes: {}
     description:
-    - The list of Active Directory groups that are granted admin access.
+    - The list of Active Directory groups with admin access.
     name: ADDomainAdminGroupList
     type: '[string]'
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADDomainAdminGroupList`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADDomainAdminGroupList`\u2219\
+      \ key."
     name: ADDomainAdminGroupListFlag
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, forces a local home directory."
+    - "If \u2219`true`\u2219, the system forces a local home directory."
     name: ADForceHomeLocal
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADForceHomeLocal`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADForceHomeLocal`\u2219\
+      \ key."
     name: ADForceHomeLocalFlag
     type: boolean
   - attributes: {}
@@ -830,7 +832,8 @@ com.apple.DirectoryService.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADMapGGIDAttributeFlag`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADMapGGIDAttributeFlag`\u2219\
+      \ key."
     name: ADMapGGIDAttributeFlag
     type: boolean
   - attributes: {}
@@ -841,7 +844,8 @@ com.apple.DirectoryService.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADMapGIDAttribute`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADMapGIDAttribute`\u2219\
+      \ key."
     name: ADMapGIDAttributeFlag
     type: boolean
   - attributes: {}
@@ -852,7 +856,8 @@ com.apple.DirectoryService.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADMapUIDAttribute`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADMapUIDAttribute`\u2219\
+      \ key."
     name: ADMapUIDAttributeFlag
     type: boolean
   - attributes: {}
@@ -869,12 +874,12 @@ com.apple.DirectoryService.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADNamespace`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADNamespace`\u2219 key."
     name: ADNamespaceFlag
     type: boolean
   - attributes: {}
     description:
-    - The organizational unit where the joining computer object is added.
+    - The organizational unit to add the joining computer object to.
     name: ADOrganizationalUnit
     type: string
   - attributes: {}
@@ -885,7 +890,8 @@ com.apple.DirectoryService.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADPacketEncrypt`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADPacketEncrypt`\u2219\
+      \ key."
     name: ADPacketEncryptFlag
     type: boolean
   - attributes: {}
@@ -896,7 +902,7 @@ com.apple.DirectoryService.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADPacketSign`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADPacketSign`\u2219 key."
     name: ADPacketSignFlag
     type: boolean
   - attributes: {}
@@ -907,62 +913,67 @@ com.apple.DirectoryService.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADPreferredDCServer`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADPreferredDCServer`\u2219\
+      \ key."
     name: ADPreferredDCServerFlag
     type: boolean
   - attributes: {}
     description:
-    - An array of strings representing the interfaces that are allowed for dynamic
-      DNS updates (for example, en0, en1, and so on).
+    - An array of strings that represent the interfaces allowed for dynamic DNS updates,
+      such as en0 and en1.
     name: ADRestrictDDNS
     type: '[string]'
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADRestrictDDNS`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADRestrictDDNS`\u2219\
+      \ key."
     name: ADRestrictDDNSFlag
     type: boolean
   - attributes: {}
     description:
     - "The number of days before requiring a change of the computer trust account\
-      \ password. \u2219`0`\u2219 disables the feature."
+      \ password. Set to \u2219`0`\u2219 to disable the feature."
     name: ADTrustChangePassIntervalDays
     type: integer
   - attributes:
       default: 'false'
     description:
-    - "If true, enables the \u2219`ADTrustChangePassIntervalDays `\u2219key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADTrustChangePassIntervalDays\
+      \ `\u2219key."
     name: ADTrustChangePassIntervalDaysFlag
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, uses the UNC path from Active Directory to derive the\
-      \ network home location."
+    - "If \u2219`true`\u2219, the system uses the UNC path from Active Directory to\
+      \ derive the network home location."
     name: ADUseWindowsUNCPath
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADUseWindowsUNCPath`\u2219 key."
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADUseWindowsUNCPath`\u2219\
+      \ key."
     name: ADUseWindowsUNCPathFlag
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the warning before creating the mobile account."
+    - "If \u2219`true`\u2219, the system enables the warning before creating the mobile\
+      \ account."
     name: ADWarnUserBeforeCreatingMA
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the \u2219`ADWarnUserBeforeCreatingMA`\u2219\
+    - "If \u2219`true`\u2219, the system enables the \u2219`ADWarnUserBeforeCreatingMA`\u2219\
       \ key."
     name: ADWarnUserBeforeCreatingMAFlag
     type: boolean
   - attributes: {}
     description:
-    - The client's identifier.
+    - "The client\u2019s identifier."
     name: ClientID
     type: string
   - attributes: {}
@@ -1026,12 +1037,12 @@ com.apple.DiscRecording:
       - 'on'
       required: true
     description:
-    - "If \u2219`off`\u2219, disables disc burning."
-    - "If \u2219`on`\u2219, allows normal default operation.\_Setting this key to\
-      \ \u2219`on`\u2219 doesn't enable disc burn support if it has already been disabled\
-      \ by other mechanisms or preferences. It also must be enabled with the [Finder](https://developer.apple.com/documentation/devicemanagement/finder)\
-      \ profile."
-    - "If \u2219`authenticate`\u2219, requires authentication."
+    - 'Configure disc-burn. Allowed values:'
+    - "\u2219`off`\u2219\n\tThe system disables disc burning."
+    - "\u2219`on`\u2219\n\tThe system allows normal default operation.\_Setting this\
+      \ key to \u2219`on`\u2219 doesn\u2019t enable disc burn support if other mechanisms\
+      \ or preferences disabled it. Needs to be enabled with the  profile"
+    - "\u2219`authenticate`\u2219\n\tThe system requires authentication."
     name: BurnSupport
     type: string
 com.apple.MCX:
@@ -1074,69 +1085,71 @@ com.apple.MCX:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables the guest account. This property has no effect\
-      \ if \u2219`EnableGuestAccount`\u2219 is \u2219`true`\u2219."
+    - "If \u2219`true`\u2219, the system disables the guest account. This property\
+      \ has no effect if \u2219`EnableGuestAccount`\u2219 is \u2219`true`\u2219."
     name: DisableGuestAccount
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables the guest account."
+    - "If \u2219`true`\u2219, the system enables the guest account."
     name: EnableGuestAccount
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, bypasses the secure token authorization dialog. This\
-      \ dialog only appears on APFS volumes."
+    - "If \u2219`true`\u2219, the system bypasses the secure token authorization dialog.\
+      \ This dialog only appears on APFS volumes."
     name: cachedaccounts.askForSecureTokenAuthBypass
     type: boolean
   - attributes:
       default: '-1'
     description:
-    - The minimum number of seconds a mobile account can exist before an automatic
-      attempt is made to remove the mobile account.
-    - "Set to \u2219`0`\u2219 to try to remove it at next login or logout time. Set\
-      \ to \u2219`-1`\u2219 to never try to remove the mobile account."
+    - "The minimum number of seconds a mobile account can exist before the system\
+      \ makes an automatic attempt to remove the mobile account. Set to \u2219`0`\u2219\
+      \ to attempt removing it at the next login or logout. Set to \u2219`-1`\u2219\
+      \ to never attempt removing the mobile account."
     name: cachedaccounts.expiry.delete.disusedSeconds
     type: integer
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, allows the user to stop the prompts about mobile account\
-      \ creation every time the user logs in. This key is only valid if \u2219`com.apple.cachedaccounts.WarnOnCreate`\u2219\
-      \ is set to \u2219`true`\u2219."
+    - "If \u2219`true`\u2219, the system allows the user to stop the prompts about\
+      \ mobile account creation every time the user logs in. This key is only valid\
+      \ if \u2219`com.apple.cachedaccounts.WarnOnCreate`\u2219 is \u2219`true`\u2219\
+      ."
     name: cachedaccounts.WarnOnCreate.allowNever
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, creates the mobile account at login time."
+    - "If \u2219`true`\u2219, the system creates the mobile account at login time."
     name: com.apple.cachedaccounts.CreateAtLogin
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, asks the user if the mobile account should be created\
-      \ and allow the user to not create it."
+    - "If \u2219`true`\u2219, the system asks the user whether to create the mobile\
+      \ account and it allows the user to not create it."
     name: com.apple.cachedaccounts.WarnOnCreate
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "Set to \u2219`true`\u2219 to prevent storing the FileVault key across restarts."
+    - "If \u2219`true`\u2219, the system won\u2019t store th FileVault key across\
+      \ restarts."
     name: DestroyFVKeyOnStandby
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "Set to \u2219`true`\u2219 to prevent FileVault from being disabled."
+    - "If \u2219`true`\u2219, the system won\u2019t disable FileVault."
     name: dontAllowFDEDisable
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "Set to \u2219`true`\u2219 to prevent FileVault from being enabled."
+    - "If \u2219`true`\u2219, the system won\u2019t enable FileVault."
     name: dontAllowFDEEnable
     type: boolean
   - attributes: {}
@@ -1232,16 +1245,16 @@ com.apple.MCX.FileVault2:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, defers enabling FileVault until the designated user\
-      \ logs out. For details, see \u2219`fdesetup(8)`\u2219. Only a local user or\
-      \ a mobile account user can enable FileVault."
+    - "If \u2219`true`\u2219, the system defers enabling FileVault until the designated\
+      \ user logs out. For details, see \u2219`fdesetup(8)`\u2219. Only a local user\
+      \ or a mobile account user can enable FileVault."
     name: Defer
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, prevents requests to enable FileVault at user logout\
-      \ time."
+    - "If \u2219`true`\u2219, the system prevents requests to enable FileVault at\
+      \ user logout time."
     name: DeferDontAskAtUserLogout
     type: boolean
   - attributes:
@@ -1300,8 +1313,8 @@ com.apple.MCX.FileVault2:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, prevents display of the personal recovery key to the\
-      \ user after the system enables FileVault."
+    - "If \u2219`false`\u2219, the system prevents display of the personal recovery\
+      \ key to the user after the system enables FileVault."
     name: ShowRecoveryKey
     type: boolean
   - attributes:
@@ -1315,14 +1328,15 @@ com.apple.MCX.FileVault2:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`true`\u2219, creates a personal recovery key and displays it to the\
-      \ user."
+    - "If \u2219`true`\u2219, the system creates a personal recovery key and displays\
+      \ it to the user."
     name: UseRecoveryKey
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables a prompt for missing user name or password fields."
+    - "If \u2219`true`\u2219, the system enables a prompt for missing user name or\
+      \ password fields."
     name: UserEntersMissingInfo
     type: boolean
   - attributes: {}
@@ -1452,22 +1466,20 @@ com.apple.MCX.WiFi:
   - attributes:
       default: 'false'
     description:
-    - If [true](https://developer.apple.com/documentation/swift/true), requires administrator
-      authorization for network changes.
+    - "If \u2219`true`\u2219, requires administrator authorization for network changes."
     name: RequireAdminForAirPortNetworkChange
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - If [true](https://developer.apple.com/documentation/swift/true), requires administrator
-      authorization to enable IBSS.
+    - "If \u2219`true`\u2219, requires administrator authorization to enable IBSS."
     name: RequireAdminForIBSS
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - If [true](https://developer.apple.com/documentation/swift/true), requires administrator
-      authorization to turn Wi-Fi on or off.
+    - "If \u2219`true`\u2219, requires administrator authorization to turn Wi-Fi on\
+      \ or off."
     name: RequireAdminToTurnAirPortOnOff
     type: boolean
 com.apple.ManagedClient.preferences:
@@ -1525,25 +1537,19 @@ com.apple.NSExtension:
     user: macOS
     user_approved: '-'
     user_enrol: '-'
-  description: The payload you use to configure the extensions allowed to run on the
-    device.
+  description: The payload you use to configure the extensions that the system allows
+    or disallows to run on the device.
   discussion:
   - "Specify \u2219`com.apple.NSExtension`\u2219 as the payload type."
-  - This payload specifies which NSExtensions are allowed or disallowed on a system.
-    Extensions can be managed by bundleIDs in allow lists and deny lists or by a deny
-    list of extension points.
-  - "\u2219`DeniedExtensionPoints`\u2219 will be filled with a list of extension points\
-    \ that the client considers to be \u2219`public`\u2219, if an array element within\
-    \ \u2219`DeniedExtensionPoints`\u2219 is \u2219`AllPublicExtensionPoints`\u2219\
-    ."
-  - "Expansion of \u2219`AllPublicExtensionPoints`\u2219 happens at evaluation time.\
-    \ The list of extension points may change from release to release."
-  - "This feature is intended as a way to specify \u201DStart with no extensions belonging\
-    \ to any public extension points enabled, but then allow only extensions A, B,\
-    \ C to run.\" Specifying \u2219`AllPublicExtensionPoints`\u2219 will disallow\
-    \ both Apple and third-party extensions within the \u2219`public`\u2219 extension\
-    \ points, but will still allow extensions belonging to system-critical extension\
-    \ points to execute."
+  - You can manage extensions by bundle identifiers in allow and deny lists, or by
+    a deny list of extension points.
+  - "You can also start with all public extensions disallowed. To do so, include \u2219\
+    `AllPublicExtensionPoints`\u2219 in \u2219`DeniedExtensionPoints`\u2219. This\
+    \ causes the system to expand the list to include all extensions that belong to\
+    \ any public extension points. This expansion occurs at evaluation time. The list\
+    \ of extension points can change from release to release. The expanded list disallows\
+    \ Apple and third-party extensions, but still allows extensions that belong to\
+    \ system-critcial extension points to execute."
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -1572,18 +1578,19 @@ com.apple.NSExtension:
   properties:
   - attributes: {}
     description:
-    - An array of identifiers for extensions that are allowed to run on the system.
+    - An array of bundle identifiers for allowed extensions.
     name: AllowedExtensions
     type: '[string]'
   - attributes: {}
     description:
-    - An array of extension points for extensions that aren't allowed to run on the
-      system.
+    - "An array of extension points for extensions that the system doesn\u2019t allow\
+      \ to run."
     name: DeniedExtensionPoints
     type: '[string]'
   - attributes: {}
     description:
-    - An array of identifiers for extensions that aren't allowed to run on the system.
+    - "An array of bundle identifiers for extensions that the system doesn\u2019t\
+      \ allow to run."
     name: DeniedExtensions
     type: '[string]'
 com.apple.SetupAssistant.managed:
@@ -1697,6 +1704,11 @@ com.apple.SetupAssistant.managed:
     description:
     - "If \u2219`true`\u2219, the system skips the Unlock With Apple Watch pane."
     name: SkipUnlockWithWatch
+    type: boolean
+  - attributes:
+      default: 'false'
+    description: []
+    name: SkipWallpaper
     type: boolean
 com.apple.ShareKitHelper:
   availability:
@@ -1979,17 +1991,16 @@ com.apple.airplay:
     type: '[AirPlay.AllowListItem]'
   - attributes: {}
     description:
-    - If present, sets passwords for known AirPlay destinations.
-    - Using multiple entries for the same destination, whether within the same payload
-      or across multiple installed payloads, is an error and results in undefined
-      behavior.
+    - If present, sets passwords for known AirPlay destinations. Using multiple entries
+      for the same destination, whether within the same payload or across multiple
+      installed payloads, is an error and results in undefined behavior.
     name: Passwords
     type: '[AirPlay.PasswordsItem]'
   - attributes:
       deprecated: true
     description:
-    - "Use \u2219`AllowList`\u2219 instead. As of macOS 11.3 and iOS 14.5 this key\
-      \ is deprecated."
+    - "Use \u2219`AllowList`\u2219 instead. This key is deprecated in iOS 14.5 and\
+      \ macOS 11.3."
     name: Whitelist
     type: '[AirPlay.AllowListItem]'
 com.apple.airplay.security:
@@ -2043,7 +2054,8 @@ com.apple.airplay.security:
     type: string
   - attributes: {}
     description:
-    - "The AirPlay password; required if SecurityType is \u2219`PASSWORD`\u2219."
+    - "The AirPlay password; required if \u2219`SecurityType`\u2219 is \u2219`PASSWORD`\u2219\
+      ."
     name: Password
     type: string
   - attributes:
@@ -2053,16 +2065,16 @@ com.apple.airplay.security:
       - PASSWORD
       required: true
     description:
-    - The security policy for AirPlay.
-    - "\u2219`PASSCODE_ONCE`\u2219 requires an onscreen passcode on first connection\
-      \ from a device. Subsequent connections from the same device aren't prompted."
-    - "\u2219`PASSCODE_ALWAYS`\u2219 requires an onscreen passcode for every AirPlay\
-      \ connection. After an AirPlay connection ends, reconnecting within 30 seconds\
-      \ is allowed without a password."
-    - "\u2219`PASSWORD`\u2219 requires a passphrase as specified in the \u2219`Password`\u2219\
-      \ key."
-    - "\u2219`NONE`\u2219 was deprecated in tvOS 11.3. Existing profiles using \u2219\
-      `NONE`\u2219 get the \u2219`PASSWORD_ONCE`\u2219 behavior."
+    - 'The security policy for AirPlay. Allowed values:'
+    - "\u2219`PASSCODE_ONCE`\u2219\n\tRequires an onscreen passcode on first connection\
+      \ from a device. Subsequent connections from the same device aren\u2019t prompted."
+    - "\u2219`PASSCODE_ALWAYS`\u2219\n\tRequires an onscreen passcode for every AirPlay\
+      \ connection. After an AirPlay connection ends, the system allows reconnecting\
+      \ within 30 seconds without a password."
+    - "\u2219`PASSWORD`\u2219\n\tRequires the passphrase set for \u2219`Password`\u2219\
+      ."
+    - "\u2219`NONE`\u2219 was deprecated in tvOS 11.3. Existing profiles that use\
+      \ \u2219`NONE`\u2219 get the \u2219`PASSWORD_ONCE`\u2219 behavior."
     name: SecurityType
     type: string
 com.apple.airprint:
@@ -2264,23 +2276,24 @@ com.apple.applicationaccess:
     description:
     - "If\_\u2219`false`\u2219, the system disables modification of accounts such\
       \ as Apple IDs and Internet-based accounts such as Mail, Contacts, and Calendar.\
-      \ Requires a supervised device. Available in iOS 7 and later, macOS 14 and later,\
-      \ and watchOS 10 and later."
+      \ Available in iOS 7 and later, macOS 14 and later, and watchOS 10 and later.\
+      \ Requires a supervised device in iOS and watchOS."
     name: allowAccountModification
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system disables activity continuation. Available\
-      \ in iOS 8 and later, and macOS 10.15 and later."
+      \ in iOS 8 and later, and macOS 10.15 and later. Support for this restriction\
+      \ on unsupervised devices and with managed Apple IDs is deprecated."
     name: allowActivityContinuation
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system prohibits adding friends to Game Center.\
-      \ As of iOS 13, requires a supervised device. Available in iOS 4.2.1 and later,\
-      \ and macOS 10.13 and later."
+      \ Available in iOS 4.2.1 and later, and macOS 10.13 and later. Requires a supervised\
+      \ device in iOS 13 and later."
     name: allowAddingGameCenterFriends
     type: boolean
   - attributes:
@@ -2293,15 +2306,15 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables incoming AirPlay requests. Requires\
-      \ a supervised device. Available in macOS 12.3 and later, and tvOS 10.2 and\
-      \ later."
+    - "If \u2219`false`\u2219, the system disables incoming AirPlay requests. Available\
+      \ in macOS 12.3 and later, and tvOS 10.2 and later. Requires a supervised device\
+      \ in tvOS."
     name: allowAirPlayIncomingRequests
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables AirPrint.\_ Requires a supervised\
+    - "If \u2219`false`\u2219, the system disables AirPrint. Requires a supervised\
       \ device. Available in iOS 11 and later."
     name: allowAirPrint
     type: boolean
@@ -2342,23 +2355,23 @@ com.apple.applicationaccess:
     description:
     - "If \u2219`false`\u2219, the system disables the App Store, and the system removes\
       \ its icon from the Home screen. Users are unable to install or update their\
-      \ apps. In iOS 10 and later, MDM commands can override this restriction. As\
-      \ of iOS 13, this restriction requires a supervised device. Available in iOS\
-      \ 4 and later and watchOS 10 and later."
+      \ apps. In iOS 10 and later, MDM commands can override this restriction. Available\
+      \ in iOS 4 and later, and watchOS 10 and later. Requires a supervised device\
+      \ in iOS 13 and later, and watchOS."
     name: allowAppInstallation
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system limits Apple personalized advertising. Available\
-      \ in iOS 14 and later and macOS 12 and later."
+      \ in iOS 14 and later, and macOS 12 and later."
     name: allowApplePersonalizedAdvertising
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system disables removal of apps from an iOS device.\
-      \ Requires a supervised device. Available in iOS 4.2.1 and later and watchOS\
+      \ Requires a supervised device. Available in iOS 4.2.1 and later, and watchOS\
       \ 10 and later."
     name: allowAppRemoval
     type: boolean
@@ -2372,7 +2385,7 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables Siri. Available in iOS 5 and later\
+    - "If \u2219`false`\u2219, the system disables Siri. Available in iOS 5 and later,\
       \ and macOS 14 and later. Also available for user enrollment."
     name: allowAssistant
     type: boolean
@@ -2381,7 +2394,7 @@ com.apple.applicationaccess:
     description:
     - "If \u2219`false`\u2219, the system prevents Siri from querying user-generated\
       \ content from the web.\_Requires a supervised device. Available in iOS 7 and\
-      \ later and watchOS 10 and later."
+      \ later, and watchOS 10 and later."
     name: allowAssistantUserGeneratedContent
     type: boolean
   - attributes:
@@ -2404,7 +2417,7 @@ com.apple.applicationaccess:
     description:
     - "If \u2219`false`\u2219, the system prevents automatic downloading of apps purchased\
       \ on other devices. This setting doesn\u2019t affect updates to existing apps.\_\
-      Requires a supervised device. Available in iOS 9 and later and watchOS 10 and\
+      Requires a supervised device. Available in iOS 9 and later, and watchOS 10 and\
       \ later."
     name: allowAutomaticAppDownloads
     type: boolean
@@ -2419,7 +2432,8 @@ com.apple.applicationaccess:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system disallows auto unlock.\_Available in macOS\
-      \ 10.12 and later, and iOS 14.5 and later."
+      \ 10.12 and later, and iOS 14.5 and later. Support for this restriction on unsupervised\
+      \ devices is deprecated."
     name: allowAutoUnlock
     type: boolean
   - attributes:
@@ -2432,7 +2446,7 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system prevents modifying Bluetooth setting in\
+    - "If \u2219`false`\u2219, the system prevents modifying Bluetooth settings in\
       \ System Settings. Available in macOS 14 and later."
     name: allowBluetoothSharingModification
     type: boolean
@@ -2448,17 +2462,17 @@ com.apple.applicationaccess:
     description:
     - "If \u2219`false`\u2219, the system prevents the user from downloading Apple\
       \ Books media that\u2019s tagged as erotica.\_Available in iOS 6 and later,\
-      \ and tvOS 11.3 and later."
+      \ and tvOS 11.3 and later. Support for this restriction on unsupervised devices\
+      \ is deprecated."
     name: allowBookstoreErotica
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables the camera, and the system removes\
-      \ its icon from the Home screen. Users are unable to take photographs."
-    - This restriction is deprecated on unsupervised devices and will be supervised
-      only in a future release. Available in iOS 4 and later, macOS 10.11 and later,
-      and tvOS 17 and later.
+    - "If \u2219`false`\u2219, the system disables the camera and removes its icon\
+      \ from the Home screen, and users are unable to take photographs. Available\
+      \ in iOS 4 and later, macOS 10.11 and later, and tvOS 17 and later. This restriction\
+      \ is deprecated."
     name: allowCamera
     type: boolean
   - attributes:
@@ -2472,7 +2486,7 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables the use of the iMessage with supervised\
+    - "If \u2219`false`\u2219, the system disables the use of iMessage with supervised\
       \ devices. If the device supports text messaging, the user can still send and\
       \ receive text messages. Requires a supervised device. Available in iOS 5 and\
       \ later."
@@ -2488,9 +2502,9 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables backing up the device to iCloud."
-    - This restriction is deprecated on unsupervised devices and will be supervised
-      only in a future release. Available in iOS 5 and later.
+    - "If \u2219`false`\u2219, the system disables backing up the device to iCloud.\
+      \ Available in iOS 5 and later. Support for this restriction on unsupervised\
+      \ devices is deprecated."
     name: allowCloudBackup
     type: boolean
   - attributes:
@@ -2510,7 +2524,7 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables cloud desktop and document services.\
+    - "If \u2219`false`\u2219, the system disables iCloud Desktop and Document services.\
       \ Available in macOS 10.12.4 and later."
     name: allowCloudDesktopAndDocuments
     type: boolean
@@ -2518,9 +2532,10 @@ com.apple.applicationaccess:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system disables document and key-value syncing\
-      \ to iCloud. As of iOS 13, this restriction requires a supervised device and\
-      \ Shared iPad doesn\u2019t support it. Available in iOS 5 and later, and macOS\
-      \ 10.11 and later."
+      \ to iCloud. Available in iOS 5 and later, and macOS 10.11 and later. Requires\
+      \ a supervised device in iOS 13 and later, and Shared iPad doesn\u2019t support\
+      \ it. Support for this restriction on unsupervised devices and with managed\
+      \ Apple IDs is deprecated."
     name: allowCloudDocumentSync
     type: boolean
   - attributes:
@@ -2533,9 +2548,9 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables iCloud keychain synchronization."
-    - This restriction is deprecated on unsupervised devices and will be supervised
-      only in a future release. Available in iOS 7 and later and macOS 10.12 and later.
+    - "If \u2219`false`\u2219, the system disables iCloud keychain synchronization.\
+      \ Available in iOS 7 and later, and macOS 10.12 and later. This restriction\
+      \ is deprecated."
     name: allowCloudKeychainSync
     type: boolean
   - attributes:
@@ -2558,15 +2573,17 @@ com.apple.applicationaccess:
     - "If \u2219`false`\u2219, the system disables iCloud Photo Library. The system\
       \ removes any photos from local storage that aren\u2019t fully downloaded from\
       \ iCloud Photo Library to the device.\_Available in iOS 9 and later, and macOS\
-      \ 10.12 and later."
+      \ 10.12 and later. Support for this restriction on unsupervised devices and\
+      \ with managed Apple IDs is deprecated."
     name: allowCloudPhotoLibrary
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables iCloud Private Relay. For iOS devices,\
-      \ this restriction requires a supervised device. Available in macOS 12 and later,\
-      \ and iOS 15 and later."
+    - "If \u2219`false`\u2219, the system disables iCloud Private Relay. Available\
+      \ in iOS 15 and later, and in macOS 12 and later. Requires a supervised device\
+      \ in iOS. Support for this restriction on unsupervised devices and with managed\
+      \ Apple IDs is deprecated."
     name: allowCloudPrivateRelay
     type: boolean
   - attributes:
@@ -2593,22 +2610,23 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables definition lookup. Requires a supervised\
-      \ device on iOS. Available in iOS 8.1.3 and later and macOS 10.11 and later."
+    - "If \u2219`false`\u2219, the system disables definition lookup. Available in\
+      \ iOS 8.1.3 and later, and macOS 10.11 and later. Requires a supervised device\
+      \ on iOS."
     name: allowDefinitionLookup
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system prevents the user from changing the device\
-      \ name.\_Requires a supervised device. Available in iOS 9 and later, macOS 14\
-      \ and later, and tvOS 11.0 and later."
+      \ name. Available in iOS 9 and later, macOS 14 and later, and tvOS 11.0 and\
+      \ later. Requires a supervised device in iOS and tvOS."
     name: allowDeviceNameModification
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system prevents device from automatically sleeping.\
+    - "If \u2219`false`\u2219, the system prevents the device from automatically sleeping.\
       \ Requires a supervised device. Available in tvOS 13 and later."
     name: allowDeviceSleep
     type: boolean
@@ -2631,19 +2649,19 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disallows dictation input.\_Requires a supervised\
-      \ device. Available in iOS 10.3 and later, and macOS 10.13 and later."
+    - "If \u2219`false`\u2219, the system disallows dictation input. Available in\
+      \ iOS 10.3 and later, and macOS 10.13 and later. Requires a supervised device\
+      \ in iOS."
     name: allowDictation
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables the \u201CEnable Restrictions\u201D\
-      \ option in the Restrictions UI in Settings."
-    - "In iOS 12 or later, if \u2219`false`\u2219, the system disables the \u201C\
-      Enable ScreenTime\u201D option in the ScreenTime UI in Settings and disables\
-      \ ScreenTime if already enabled.\_Requires a supervised device. Available in\
-      \ iOS 8 and later."
+    - "If \u2219`false`\u2219, the system disables the Enable Restrictions option\
+      \ in the Restrictions UI in Settings. If \u2219`false`\u2219 in iOS 12 and later,\
+      \ the system disables the Enable ScreenTime option in the ScreenTime UI in Settings\
+      \ and disables ScreenTime if already enabled.\_Requires a supervised device.\
+      \ Available in iOS 8 and later."
     name: allowEnablingRestrictions
     type: boolean
   - attributes:
@@ -2675,9 +2693,9 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables the Erase All Content And Settings\
-      \ option in the Reset UI. Requires a supervised device. Available in iOS 8 and\
-      \ later, and macOS 12 and later."
+    - "If \u2219`false`\u2219, the system disables the Erase All Content and Settings\
+      \ option in the Reset UI. Available in iOS 8 and later, and macOS 12 and later.\
+      \ Requires a supervised device in iOS."
     name: allowEraseContentAndSettings
     type: boolean
   - attributes:
@@ -2693,9 +2711,10 @@ com.apple.applicationaccess:
     description:
     - "If \u2219`false`\u2219, the system hides explicit music or video content purchased\
       \ from the iTunes Store. The system marks explicit content as such by content\
-      \ providers, such as record labels, when sold through the iTunes Store. As of\
-      \ iOS 13, requires a supervised device. Available in iOS 4 and later, and tvOS\
-      \ 11.3 and later."
+      \ providers, such as record labels, when sold through the iTunes Store. Available\
+      \ in iOS 4 and later, and tvOS 11.3 and later. Requires a supervised device\
+      \ in iOS 13 and later. Support for this restriction on unsupervised devices\
+      \ is deprecated."
     name: allowExplicitContent
     type: boolean
   - attributes:
@@ -2724,14 +2743,16 @@ com.apple.applicationaccess:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system disables Find My Device in the Find My app.\
-      \ Requires a supervised device. Available in iOS 13 and later."
+      \ Requires a supervised device. Available in iOS 13 and later, and macOS 10.15\
+      \ and later."
     name: allowFindMyDevice
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system disables Find My Friends in the Find My\
-      \ app. Requires a supervised device. Available in iOS 13 and later."
+      \ app. Requires a supervised device. Available in iOS 13 and later, and macOS\
+      \ 10.15 and later."
     name: allowFindMyFriends
     type: boolean
   - attributes:
@@ -2745,30 +2766,32 @@ com.apple.applicationaccess:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system prevents Touch ID or Face ID from unlocking\
-      \ a device.\_Available in iOS 7 and later, and macOS 10.12.4 and later."
+      \ a device.\_Available in iOS 7 and later, and macOS 10.12.4 and later. Support\
+      \ for this restriction on unsupervised devices is deprecated."
     name: allowFingerprintForUnlock
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system prevents the user from modifying Touch ID\
-      \ or Face ID. Requires a supervised device. Available in iOS 8.3 and later,\
-      \ and macOS 14 and later."
+      \ or Face ID. Available in iOS 8.3 and later, and macOS 14 and later. Requires\
+      \ a supervised device in iOS."
     name: allowFingerprintModification
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system disables Game Center, and the system removes\
-      \ its icon from the Home screen.\_Requires a supervised device. Available in\
-      \ iOS 6 and later, and macOS 10.13 and later."
+      \ its icon from the Home screen. Available in iOS 6 and later, and macOS 10.13\
+      \ and later. Requires a supervised device in iOS."
     name: allowGameCenter
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system disables global background fetch activity\
-      \ when an iOS phone is roaming. Available in iOS 4 and later."
+      \ when an iOS phone is roaming. Available in iOS 4 and later. Support for this\
+      \ restriction on unsupervised devices is deprecated."
     name: allowGlobalBackgroundFetchWhenRoaming
     type: boolean
   - attributes:
@@ -2785,21 +2808,21 @@ com.apple.applicationaccess:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system prohibits in-app purchasing. Available in\
-      \ iOS 4 and later."
+      \ iOS 4 and later. Support for this restriction on unsupervised devices is deprecated."
     name: allowInAppPurchases
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system prevents modifying Internet Sharing setting\
-      \ in System Settings. Available in macOS 14 and later."
+    - "If \u2219`false`\u2219, the system prevents modifying the Internet Sharing\
+      \ setting in System Settings. Available in macOS 14 and later."
     name: allowInternetSharingModification
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system disallows iPhone widgets on a Mac that has\
-      \ signed in the same AppleID for iCloud. Requires a supervised device. Available\
+      \ signed in the same Apple ID for iCloud. Requires a supervised device. Available\
       \ on iOS 17 and later."
     name: allowiPhoneWidgetsOnMac
     type: boolean
@@ -2808,8 +2831,8 @@ com.apple.applicationaccess:
     description:
     - "If \u2219`false`\u2219, the system disables the iTunes Music Store, and the\
       \ system removes its icon from the Home screen. Users can\u2019t preview, purchase,\
-      \ or download content. As of iOS 13, requires a supervised device. Available\
-      \ in iOS 4 and later."
+      \ or download content. Available in iOS 4 and later. Requires a supervised device\
+      \ in iOS 13 and later."
     name: allowiTunes
     type: boolean
   - attributes:
@@ -2830,10 +2853,17 @@ com.apple.applicationaccess:
     description:
     - "If present, the system only shows or can launch apps with bundle IDs in the\
       \ array. Include the value \u2219`com.apple.webapp`\u2219 to allow all webclips.\
-      \ Requires a supervised device. Available in iOS 9.3 and later, and tvOS 11.0\
-      \ and later."
+      \ Requires a supervised device. Available in iOS 15 and later, and tvOS 15 and\
+      \ later."
     name: allowListedAppBundleIDs
     type: '[string]'
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, the system disables live voicemail on the device. Available\
+      \ in iOS 17.2 and later, and visionOS 1.1 and later."
+    name: allowLiveVoicemail
+    type: boolean
   - attributes:
       default: 'true'
     description:
@@ -2876,17 +2906,17 @@ com.apple.applicationaccess:
       default: 'false'
     description:
     - "If \u2219`true`\u2219, the system allows managed apps to write contacts to\
-      \ unmanaged contacts accounts. If \u2219`allowOpenFromManagedToUnmanaged`\u2219\
-      \ is \u2219`true`\u2219, this restriction has no effect. Available in iOS 12\
-      \ and later."
-    - You need to use MDM to install profiles that contain this restriction.
+      \ unmanaged accounts. If \u2219`allowOpenFromManagedToUnmanaged`\u2219 is \u2219\
+      `true`\u2219, this restriction has no effect. Available in iOS 12 and later."
+    - Use MDM to install profiles that contain this restriction.
     name: allowManagedToWriteUnmanagedContacts
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system prohibits multiplayer gaming. Requires a\
-      \ supervised device. Available in iOS 4.1 and later, and macOS 10.13 and later."
+    - "If \u2219`false`\u2219, the system prohibits multiplayer gaming. Available\
+      \ in iOS 4.1 and later, and macOS 10.13 and later. Requires a supervised device\
+      \ in iOS."
     name: allowMultiplayerGaming
     type: boolean
   - attributes:
@@ -2939,7 +2969,7 @@ com.apple.applicationaccess:
     description:
     - "If \u2219`false`\u2219, the system disables over-the-air PKI updates. Setting\
       \ this restriction to \u2219`false`\u2219 doesn\u2019t disable CRL and OCSP\
-      \ checks.\_ Available in iOS 7 and later."
+      \ checks. Available in iOS 7 and later."
     name: allowOTAPKIUpdates
     type: boolean
   - attributes:
@@ -2953,9 +2983,10 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system prevents adding, changingThe system ignores\
-      \ this restriction on Shared iPad. Requires a supervised device. Available in\
-      \ iOS 9 and later, and macOS 10.13 and later."
+    - "If \u2219`false`\u2219, the system prevents adding, changing, or removing the\
+      \ passcode. The system ignores this restriction on Shared iPad. Available in\
+      \ iOS 9 and later, and macOS 10.13 and later. Requires a supervised device in\
+      \ iOS."
     name: allowPasscodeModification
     type: boolean
   - attributes:
@@ -2972,28 +3003,28 @@ com.apple.applicationaccess:
     - '- The AutoFill Passwords feature in iOS, with Keychain and third-party password
       managers'
     - '- Prompting the user to use a saved password in Safari or in apps'
-    - '- Automatic Strong Passwords'
+    - '- Automatic strong passwords'
     - '- Suggesting strong passwords to users'
     - "However, if \u2219`false`\u2219, the system doesn\u2019t prevent AutoFill for\
       \ contact info and credit cards in Safari."
-    - Requires a supervised device. Available in iOS 12 and later, and macOS 10.14
-      and later.
+    - Available in iOS 12 and later, and macOS 10.14 and later. Requires a supervised
+      device in iOS.
     name: allowPasswordAutoFill
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system disables requesting passwords from nearby\
-      \ devices. Requires a supervised device. Available in iOS 12 and later, macOS\
-      \ 10.14 and later, and tvOS 12 and later."
+      \ devices. Available in iOS 12 and later, macOS 10.14 and later, and tvOS 12\
+      \ and later. Requires a supervised device in iOS and tvOS."
     name: allowPasswordProximityRequests
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system disables sharing passwords with the Airdrop\
-      \ Passwords feature.\_Requires a supervised device. Available in iOS 12 and\
-      \ later, and macOS 10.14 and later."
+      \ Passwords feature.\_Available in iOS 12 and later, and macOS 10.14 and later.\
+      \ Requires a supervised device in iOS."
     name: allowPasswordSharing
     type: boolean
   - attributes:
@@ -3059,8 +3090,9 @@ com.apple.applicationaccess:
     - "If \u2219`false`\u2219, the system disables remote screen observation by the\
       \ Classroom app. Nest this key beneath \u2219`allowScreenShot`\u2219 as a subrestriction.\
       \ If \u2219`allowScreenShot`\u2219 is \u2219`false`\u2219, the Classroom app\
-      \ doesn\u2019t observe remote screens.\_Requires a supervised device until iOS\
-      \ 13 and macOS 10.15. Available in iOS 12 and later, and macOS 10.14.4 and later."
+      \ doesn\u2019t observe remote screens. Available in iOS 12 and later, and macOS\
+      \ 10.14.4 and later. Requires a supervised device until iOS 13 and macOS 10.15.\
+      \ Allowed for user enrollments in macOS 12 and later."
     name: allowRemoteScreenObservation
     type: boolean
   - attributes:
@@ -3071,13 +3103,6 @@ com.apple.applicationaccess:
       \ users from opening web clips. As of iOS 13, requires a supervised device.\
       \ Available in iOS 4 and later."
     name: allowSafari
-    type: boolean
-  - attributes:
-      default: 'true'
-    description:
-    - "If \u2219`false`\u2219, the system disables\_Shared Photo Stream. Available\
-      \ in iOS 6 and later."
-    name: allowSharedStream
     type: boolean
   - attributes:
       default: 'true'
@@ -3098,7 +3123,15 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system disables keyboard spell-check. Requires\
+    - "If \u2219`false`\u2219, the system disables\_Shared Photo Stream. Available\
+      \ in iOS 6 and later. Support for this restriction on unsupervised devices is\
+      \ deprecated."
+    name: allowSharedStream
+    type: boolean
+  - attributes:
+      default: 'true'
+    description:
+    - "If \u2219`false`\u2219, the system disables the keyboard spell checker. Requires\
       \ a supervised device. Available in iOS 8.1.3 and later."
     name: allowSpellCheck
     type: boolean
@@ -3106,7 +3139,8 @@ com.apple.applicationaccess:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system disables Spotlight Internet search results\
-      \ in Siri Suggestions. Available in iOS 8 and later, and macOS 10.11 and later."
+      \ in Siri Suggestions. Available in iOS 8 and later, and macOS 10.11 and later.\
+      \ Support for this restriction on unsupervised devices is deprecated."
     name: allowSpotlightInternetResults
     type: boolean
   - attributes:
@@ -3121,17 +3155,17 @@ com.apple.applicationaccess:
     description:
     - "If \u2219`false`\u2219, the system disables the App Store, and the systems\
       \ removes its icon from the Home screen. However, users can continue to use\
-      \ host apps (iTunes, Configurator) to install or update their apps."
+      \ host apps such as iTunes or Configurator to install or update their apps."
     - "In iOS 10 and later, MDM commands can override this restriction.\_Requires\
-      \ a supervised device. Available in iOS 9 and later and watchOS 10 and later."
+      \ a supervised device. Available in iOS 9 and later, and watchOS 10 and later."
     name: allowUIAppInstallation
     type: boolean
   - attributes:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system prohibits the user from installing configuration\
-      \ profiles and certificates interactively. Requires a supervised device. Available\
-      \ in iOS 6 and later and macOS 13 and later."
+      \ profiles and certificates interactively. Available in iOS 6 and later, and\
+      \ macOS 13 and later. Requires a supervised device in iOS."
     name: allowUIConfigurationProfileInstallation
     type: boolean
   - attributes:
@@ -3147,7 +3181,7 @@ com.apple.applicationaccess:
     - "If \u2219`true`\u2219, the system allows unmanaged apps to read from managed\
       \ contacts accounts. If \u2219`allowOpenFromManagedToUnmanaged`\u2219 is \u2219\
       `true`\u2219, this restriction has no effect. Available in iOS 12 and later."
-    - You need to use MDM to install profiles that contain this restriction.
+    - Use MDM to install profiles that contain this restriction.
     name: allowUnmanagedToReadManagedContacts
     type: boolean
   - attributes:
@@ -3170,15 +3204,15 @@ com.apple.applicationaccess:
     - "If\_\u2219`false`\u2219, the system allows iOS devices to always connect to\
       \ USB accessories while locked. On macOS, allows new USB and Thunderbolt accessories\
       \ and SD cards to connect without authorization. If the system has Lockdown\
-      \ mode enabled, it ignores this value. Requires a supervised device. Available\
-      \ in iOS 11.4.1 and later and macOS 13 and later."
+      \ mode enabled, it ignores this value. Available in iOS 11.4.1 and later, and\
+      \ macOS 13 and later. Requires a supervised device in iOS."
     name: allowUSBRestrictedMode
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system hides the FaceTime app. As of iOS 13, requires\
-      \ a supervised device. Available in iOS 4 and later."
+    - "If \u2219`false`\u2219, the system hides the FaceTime app. Available in iOS\
+      \ 4 and later. Requires a supervised device in iOS 13 and later."
     name: allowVideoConferencing
     type: boolean
   - attributes:
@@ -3191,8 +3225,9 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system prevents changing the wallpaper.\_Requires\
-      \ a supervised device. Available in iOS 9 and later, and macOS 10.13 and later."
+    - "If \u2219`false`\u2219, the system prevents changing the wallpaper. Available\
+      \ in iOS 9 and later, and macOS 10.13 and later.\_Requires a supervised device\
+      \ in iOS."
     name: allowWallpaperModification
     type: boolean
   - attributes:
@@ -3205,7 +3240,7 @@ com.apple.applicationaccess:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system prevents modifying Printer Sharing setting\
+    - "If \u2219`false`\u2219, the system prevents modifying Printer Sharing settings\
       \ in System Settings. Available in macOS 14 and later."
     name: allowPrinterSharingModification
     type: boolean
@@ -3213,13 +3248,13 @@ com.apple.applicationaccess:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, the system prevents modifying Remote Apple Events Sharing\
-      \ setting in System Settings. Available in macOS 14 and later."
+      \ settings in System Settings. Available in macOS 14 and later."
     name: allowRemoteAppleEventsModification
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, the system prevents modification of Startup Disk setting\
+    - "If \u2219`false`\u2219, the system prevents modification of Startup Disk settings\
       \ in System Settings. Available in macOS 14 and later."
     name: allowStartupDiskModification
     type: boolean
@@ -3240,9 +3275,9 @@ com.apple.applicationaccess:
   - attributes: {}
     description:
     - "If present, the system prevents showing or launching apps with bundle IDs in\
-      \ the array from. Include the value \u2219`com.apple.webapp`\u2219 to restrict\
-      \ all webclips. Requires a supervised device. Available in iOS 9.3 and later,\
-      \ and tvOS 11.0 and later."
+      \ the array. Include the value \u2219`com.apple.webapp`\u2219 to restrict all\
+      \ webclips. Requires a supervised device. Available in iOS 15 and later, and\
+      \ tvOS 15 and later."
     - Denying system apps may disable other functionality. For example, denying the
       App Store app may prevent users from accepting the terms and conditions for
       the user-based Volume Purchase Program (VPP).
@@ -3264,8 +3299,8 @@ com.apple.applicationaccess:
       \ in place, the user doesn\u2019t see a software update until the specified\
       \ number of days after the software update release date.\_The restrictions \u2219\
       `forceDelayedAppSoftwareUpdates`\u2219 and \u2219`forceDelayedSoftwareUpdates`\u2219\
-      \ use this value. Requires a supervised device in iOS and tvOS. Available in\
-      \ iOS 11.3 and later, macOS 10.13.4 and later, and tvOS 12.2 and later."
+      \ use this value. Available in iOS 11.3 and later, macOS 10.13.4 and later,\
+      \ and tvOS 12.2 and later. Requires a supervised device in iOS and tvOS."
     name: enforcedSoftwareUpdateDelay
     type: integer
   - attributes:
@@ -3273,8 +3308,8 @@ com.apple.applicationaccess:
       maximum: '90'
       minimum: '1'
     description:
-    - "This restriction allows the admin to set how many days to delay a minor OS\
-      \ software update on the device. When this restriction is in place the user\
+    - "This restriction allows the administrator to set how many days to delay a minor\
+      \ OS software update on the device. When this restriction is in place, the user\
       \ see a software update only after the specified delay after the release of\
       \ the software update. This value controls the delay for \u2219`forceDelayedSoftwareUpdates`\u2219\
       . Available in macOS 11.3 and later."
@@ -3285,10 +3320,10 @@ com.apple.applicationaccess:
       maximum: '90'
       minimum: '1'
     description:
-    - "This restriction allows the admin to set how many days to delay a major software\
-      \ upgrade on the device. When this restriction is in place the user sees a software\
-      \ upgrade only after the specified delay after the release of the software upgrade.\
-      \ This value controls the delay for \u2219`forceDelayedMajorSoftwareUpdates`\u2219\
+    - "This restriction allows the administrator to set how many days to delay a major\
+      \ software upgrade on the device. When this restriction is in place, the user\
+      \ sees a software upgrade only after the specified delay after the release of\
+      \ the software upgrade. This value controls the delay for \u2219`forceDelayedMajorSoftwareUpdates`\u2219\
       . Available in macOS 11.3 and later."
     name: enforcedSoftwareUpdateMajorOSDeferredInstallDelay
     type: integer
@@ -3297,10 +3332,10 @@ com.apple.applicationaccess:
       maximum: '90'
       minimum: '1'
     description:
-    - "This restriction allows the admin to set how many days to delay an app software\
-      \ update on the device. When this restriction is in place the user sees a non-OS\
-      \ software update only after the specified delay after the release of the software.\
-      \ This value controls the delay for \u2219`forceDelayedAppSoftwareUpdates`\u2219\
+    - "This restriction allows the administrator to set how many days to delay an\
+      \ app software update on the device. When this restriction is in place, the\
+      \ user sees a non-OS software update only after the specified delay after the\
+      \ release of the software. This value controls the delay for \u2219`forceDelayedAppSoftwareUpdates`\u2219\
       . Available in macOS 11.3 and later."
     name: enforcedSoftwareUpdateNonOSDeferredInstallDelay
     type: integer
@@ -3315,9 +3350,9 @@ com.apple.applicationaccess:
       default: 'false'
     description:
     - "If \u2219`true`\u2219, the system forces all devices sending AirPlay requests\
-      \ to this device to use a pairing password. Available in Apple TV Software 6.2\
-      \ and later. This key isn\u2019t supported in tvOS 10.2 and later. Use the AirPlay\
-      \ Security Payload instead."
+      \ to this device to use a pairing password. Available in tvOS 6.2 and later.\
+      \ This key isn\u2019t supported in tvOS 10.2 and later. Use the AirPlay Security\
+      \ Payload instead."
     name: forceAirPlayIncomingRequestsPairingPassword
     type: boolean
   - attributes:
@@ -3347,18 +3382,18 @@ com.apple.applicationaccess:
       default: 'false'
     description:
     - "If \u2219`true`\u2219, the system forces the use of the profanity filter assistant.\
-      \ Requires a supervised device. Available in iOS 11 and later and macOS 10.13\
-      \ and later."
+      \ Available in iOS 11 and later, and macOS 10.13 and later. Requires a supervised\
+      \ device in iOS."
     name: forceAssistantProfanityFilter
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, the system the user needs to authenticate before the\
-      \ system can autofill passwords or credit card information in Safari and apps.\
-      \ If this restriction isn\u2019t enforced, the user can toggle this feature\
-      \ in Settings. Only supported on devices with Face ID or Touch ID.\_Requires\
-      \ a supervised device. Available in iOS 11 and later."
+    - "If \u2219`true`\u2219, the user needs to authenticate before the system can\
+      \ autofill passwords or credit card information in Safari and apps. If this\
+      \ restriction isn\u2019t enforced, the user can toggle this feature in Settings.\
+      \ Only supported on devices with Face ID or Touch ID.\_Requires a supervised\
+      \ device. Available in iOS 11 and later."
     name: forceAuthenticationBeforeAutoFill
     type: boolean
   - attributes:
@@ -3382,10 +3417,10 @@ com.apple.applicationaccess:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, the system a student enrolled in an unmanaged course\
-      \ through Classroom requests permission from the teacher when attempting to\
-      \ leave the course. Requires a supervised device. Available in iOS 11.3 and\
-      \ later, and macOS 10.14.4 and later."
+    - "If \u2219`true`\u2219, a student enrolled in an unmanaged course through Classroom\
+      \ needs to request permission from the teacher to leave the course. Requires\
+      \ a supervised device. Available in iOS 11.3 and later, and macOS 10.14.4 and\
+      \ later."
     name: forceClassroomRequestPermissionToLeaveClasses
     type: boolean
   - attributes:
@@ -3402,8 +3437,8 @@ com.apple.applicationaccess:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, the system delays user visibility of non-OS Software\
-      \ Updates. Requires a supervised device. Control visibility of operating system\
+    - "If \u2219`true`\u2219, the system delays user visibility of non-OS software\
+      \ updates. Requires a supervised device. Control visibility of operating system\
       \ updates through \u2219`forceDelayedSoftwareUpdates`\u2219. The delay is 30\
       \ days unless you set \u2219`enforcedSoftwareUpdateDelay`\u2219 to another value.\
       \ Available in macOS 11 and later."
@@ -3412,18 +3447,18 @@ com.apple.applicationaccess:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, the system delays user visibility of major upgrades\
-      \ to OS Software. Available in macOS 11.3 and later."
+    - "If \u2219`true`\u2219, the system delays user visibility of major OS updates.\
+      \ Available in macOS 11.3 and later."
     name: forceDelayedMajorSoftwareUpdates
     type: boolean
   - attributes:
       default: 'false'
     description:
     - "If \u2219`true`\u2219, the system delays user visibility of software updates.\
-      \ In macOS, the system allows seed build updates without delay. Requires a supervised\
-      \ device in iOS and tvOS. The delay is 30 days unless you set \u2219`enforcedSoftwareUpdateDelay`\u2219\
-      \ to another value. Available in iOS 11.3 and later, macOS 10.13 and later,\
-      \ and tvOS 12.2 and later."
+      \ In macOS, the system allows seed build updates without delay. The delay is\
+      \ 30 days unless you set \u2219`enforcedSoftwareUpdateDelay`\u2219 to another\
+      \ value. Available in iOS 11.3 and later, macOS 10.13 and later, and tvOS 12.2\
+      \ and later. Requires a supervised device in iOS and tvOS."
     name: forceDelayedSoftwareUpdates
     type: boolean
   - attributes:
@@ -3437,7 +3472,7 @@ com.apple.applicationaccess:
       default: 'false'
     description:
     - "If \u2219`true`\u2219, the system limits ad tracking.\_Additionally, it disables\
-      \ app tracking and the Allow Apps To Request To Track setting. Available in\
+      \ app tracking and the Allow Apps to Request to Track setting. Available in\
       \ iOS 7 and later."
     name: forceLimitAdTracking
     type: boolean
@@ -3460,6 +3495,15 @@ com.apple.applicationaccess:
   - attributes:
       default: 'false'
     description:
+    - "If \u2219`true`\u2219, the system preserves eSIM when it erases the device\
+      \ due to too many failed password attempts or the Erase All Content and Settings\
+      \ option in Settings > General > Reset. Available in iOS 17.2 and later."
+    - "The system doesn\u2019t preserve eSIM if Find My initiates erasing the device."
+    name: forcePreserveESIMOnErase
+    type: boolean
+  - attributes:
+      default: 'false'
+    description:
     - "If \u2219`true`\u2219, the system forces a paired Apple Watch to use Wrist\
       \ Detection.\_Available in iOS 8.2 and later. Also available for user enrollment."
     name: forceWatchWristDetection
@@ -3467,7 +3511,7 @@ com.apple.applicationaccess:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, the system limits device to only join Wi-Fi networks\
+    - "If \u2219`true`\u2219, the system limits the device to only join Wi-Fi networks\
       \ set up through a configuration profile. Requires a supervised device. Available\
       \ in iOS 14.5 and later."
     name: forceWiFiToAllowedNetworksOnly
@@ -3486,9 +3530,9 @@ com.apple.applicationaccess:
       maximum: '1000'
       minimum: '0'
     description:
-    - The maximum level of app content allowed on the device. Pre-installed (1st party)
-      apps ignore this restriction. Available in iOS 4 and later, and tvOS 11.3 and
-      later.
+    - The maximum level of app content allowed on the device. Preinstalled (first
+      party) apps ignore this restriction. Available in iOS 4 and later, and tvOS
+      11.3 and later. Support for this restriction on unsupervised devices is deprecated.
     - 'Possible values, with the US description of the rating level:'
     - "\u2219`1000`\u2219\n\tAll"
     - "\u2219`600`\u2219\n\t17+"
@@ -3504,7 +3548,8 @@ com.apple.applicationaccess:
       minimum: '0'
     description:
     - The maximum level of movie content allowed on the device. Available in iOS 4
-      and later, and tvOS 11.3 and later.
+      and later, and tvOS 11.3 and later. Support for this restriction on unsupervised
+      devices is deprecated.
     - 'Possible values, with the US description of the rating level:'
     - "\u2219`1000`\u2219\n\tAll"
     - "\u2219`500`\u2219\n\tNC-17"
@@ -3528,7 +3573,7 @@ com.apple.applicationaccess:
       - gb
     description:
     - "The two-letter key that profile tools use to display the proper ratings for\
-      \ the given region. This data isn\u2019t recognized or reported by the client."
+      \ the given region. The client doesn\u2019t recognize or report this data."
     name: ratingRegion
     type: string
   - attributes:
@@ -3537,7 +3582,8 @@ com.apple.applicationaccess:
       minimum: '0'
     description:
     - The maximum level of TV content allowed on the device. Available in iOS 4 and
-      later, and tvOS 11.3 and later.
+      later, and tvOS 11.3 and later. Support for this restriction on unsupervised
+      devices is deprecated.
     - 'Possible values, with the US description of the rating level:'
     - "\u2219`1000`\u2219\n\tAll"
     - "\u2219`600`\u2219\n\tTV-MA"
@@ -3565,12 +3611,13 @@ com.apple.applicationaccess:
       - '1.5'
       - '2'
     description:
-    - Defines the conditions under which the device accepts cookies. The user-facing
+    - 'Defines the conditions under which the device accepts cookies. The user-facing
       settings changed in iOS 11, although the possible values remain the same. Available
-      in iOS 4 and later.
-    - "\u2219`0`\u2219\n\tEnables Prevent Cross-Site Tracking and Block All Cookies\
+      in iOS 4 and later. Support for this restriction on unsupervised devices is
+      deprecated. Allowed values:'
+    - "\u2219`0`\u2219\n\tEnables Prevent Cross-Site Tracking and Block All Cookies,\
       \ and the user can\u02BCt disable either setting."
-    - "\u2219`1`\u2219 or \u2219`1.5`\u2219\n\tEnables Prevent Cross-Site Tracking\
+    - "\u2219`1`\u2219 or \u2219`1.5`\u2219\n\tEnables Prevent Cross-Site Tracking,\
       \ and the user can\u02BCt disable it. Doesn\u2019t enable Block All Cookies,\
       \ but the user can enable it."
     - "\u2219`2`\u2219\n\tEnables Prevent Cross-Site Tracking but doesn\u2019t enable\
@@ -3584,7 +3631,7 @@ com.apple.applicationaccess:
       \ contact info, and credit cards and also prevents using the Keychain for AutoFill.\
       \ As of iOS 13, requires a supervised device. Available in iOS 4 and later,\
       \ and macOS 10.13 and later."
-    - The system still allows third-party password managers and apps can use AutoFill.
+    - The system still allows third-party password managers, and apps can use AutoFill.
     name: safariAllowAutoFill
     type: boolean
   - attributes:
@@ -3598,7 +3645,8 @@ com.apple.applicationaccess:
       default: 'true'
     description:
     - "If \u2219`false`\u2219, Safari doesn\u2019t allow pop-up windows. Available\
-      \ in iOS 4 and later."
+      \ in iOS 4 and later. Support for this restriction on unsupervised devices is\
+      \ deprecated."
     name: safariAllowPopups
     type: boolean
   - attributes:
@@ -3770,32 +3818,33 @@ com.apple.appstore:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables software update notifications.\_Available in\
-      \ macOS 10.10 and later."
+    - "If \u2219`true`\u2219, the system disables software update notifications.\_\
+      Available in macOS 10.10 and later."
     name: DisableSoftwareUpdateNotifications
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables app adoption by users.\_Available in macOS\
-      \ 10.10 and later."
+    - "If \u2219`true`\u2219, the system disables app adoption by users.\_Available\
+      \ in macOS 10.10 and later."
     name: restrict-store-disable-app-adoption
     type: boolean
   - attributes:
       default: 'false'
       deprecated: true
     description:
-    - "If \u2219`true`\u2219, restricts app installations to admin users only. Deprecated\
-      \ in macOS 10.14. Use the \u2219`com.apple.SoftwareUpdate`\u2219 payload key\
-      \ \u2219`restrict-software-update-require-admin-to-install`\u2219 as a replacement."
+    - "If \u2219`true`\u2219, the system restricts app installations to admin users\
+      \ only. Deprecated in macOS 10.14. Use the \u2219`com.apple.SoftwareUpdate`\u2219\
+      \ payload key \u2219`restrict-software-update-require-admin-to-install`\u2219\
+      \ instead."
     name: restrict-store-require-admin-to-install
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, prevents App Store from launching. Available in macOS\
-      \ 10.14 and later. Restricts installations to software updates only in macOS\
-      \ 10.10 - 10.13."
+    - "If \u2219`true`\u2219, the system prevents App Store from launching. Available\
+      \ in macOS 10.14 and later. Restricts installations to software updates only\
+      \ in macOS 10.10 through 10.13."
     name: restrict-store-softwareupdate-only
     type: boolean
 com.apple.asam:
@@ -3810,10 +3859,10 @@ com.apple.asam:
   description: The payload you use to configure Autonomous Single App mode.
   discussion:
   - "Specify \u2219`com.apple.asam`\u2219 as the payload type."
-  - Only one profile of this type can be installed on a system, and it must be installed
-    by way of a user-approved MDM server. Apps listed in this profile have low-level
-    access to the system, including, but not limited to, key logging and user interface
-    manipulation outside the app's context.
+  - "The system only allows installation of one profile of this type, and it requires\
+    \ installation through a user-approved MDM server. Apps listed in this profile\
+    \ have low-level access to the system, including, but not limited to, key logging\
+    \ and user interface manipulation outside the app\u2019s context."
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -3841,7 +3890,7 @@ com.apple.asam:
   - attributes:
       required: true
     description:
-    - An array of dictionaries that specifies the apps that can be granted access
+    - An array of dictionaries that specifies the apps that the system grants access
       to the Accessibility APIs.
     name: AllowedApplications
     type: '[AutonomousSingleAppMode.AllowedApplicationsItem]'
@@ -3857,7 +3906,7 @@ com.apple.associated-domains:
   description: The payload you use to configure associated domains.
   discussion:
   - "Specify \u2219`com.apple.associated-domains`\u2219 as the payload type."
-  - Associated domains can be used with features such as Extensible AppSSO, universal
+  - You can use associated domains with features such as Extensible AppSSO, universal
     links, and Password AutoFill.
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
@@ -3948,7 +3997,7 @@ com.apple.caldav.account:
     type: string
   - attributes: {}
     description:
-    - "The user\u2019s password. This is only used with encrypted profiles."
+    - "The user\u2019s password. The system only uses this with encrypted profiles."
     name: CalDAVPassword
     type: string
   - attributes: {}
@@ -3963,20 +4012,20 @@ com.apple.caldav.account:
     type: string
   - attributes: {}
     description:
-    - The user name for logins.
-    - If this profile part of a non-interactive install, this field is required.
+    - The user name for logins. If this profile is part of a non-interactive install,
+      the system requires this field.
     name: CalDAVUsername
     type: string
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`true`\u2219, enables SSL."
+    - "If \u2219`true`\u2219, the system enables SSL."
     name: CalDAVUseSSL
     type: boolean
   - attributes: {}
     description:
-    - The VPNUUID of the per-app VPN the account uses for network communication.
-    - Available in iOS 14 and later.
+    - The VPNUUID of the per-app VPN the account uses for network communication. Available
+      in iOS 14 and later.
     name: VPNUUID
     type: string
 com.apple.carddav.account:
@@ -4057,7 +4106,7 @@ com.apple.carddav.account:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`true`\u2219, enables SSL."
+    - "If \u2219`true`\u2219, the system enables SSL."
     name: CardDAVUseSSL
     type: boolean
   - attributes: {}
@@ -4067,8 +4116,8 @@ com.apple.carddav.account:
     type: CardDAV.CommunicationServiceRules
   - attributes: {}
     description:
-    - The VPNUUID of the per-app VPN the account uses for network communication.
-    - Available in iOS 14 and later.
+    - The VPNUUID of the per-app VPN the account uses for network communication. Available
+      in iOS 14 and later.
     name: VPNUUID
     type: string
 com.apple.cellular:
@@ -4302,7 +4351,7 @@ com.apple.configurationprofile.identification:
   - attributes:
       required: true
     description:
-    - The dictionary containing details about the user.
+    - The dictionary that contains details about the user.
     name: PayloadIdentification
     type: Identification.PayloadIdentification
 com.apple.dashboard:
@@ -4555,9 +4604,9 @@ com.apple.dnsSettings.managed:
     type: DNSSettings.DNSSettings
   - attributes: {}
     description:
-    - "An array of rules defining the DNS settings. If rules aren\u2019t present,\
-      \ the system always applies the DNS settings. These rules are identical to the\
-      \ \u2219`OnDemandRules`\u2219 array in VPN payloads."
+    - "An array of rules that define the DNS settings. If not set, the system always\
+      \ applies the DNS settings. These rules are identical to the \u2219`OnDemandRules`\u2219\
+      \ array in VPN payloads."
     name: OnDemandRules
     type: '[DNSSettings.OnDemandRulesElement]'
   - attributes: {}
@@ -4569,8 +4618,8 @@ com.apple.dnsSettings.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, prohibits users from disabling DNS settings. This key\
-      \ is only available on supervised devices."
+    - "If \u2219`true`\u2219, the system prohibits users from disabling DNS settings.\
+      \ This key is only available on supervised devices."
     name: ProhibitDisablement
     type: boolean
 com.apple.dock:
@@ -4981,7 +5030,7 @@ com.apple.eas.account:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables this account to use Mail Drop."
+    - "If \u2219`true`\u2219, the system enables this account to use Mail Drop."
     name: allowMailDrop
     type: boolean
   - attributes: {}
@@ -5009,7 +5058,8 @@ com.apple.eas.account:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, excludes this account from Recent Addresses syncing."
+    - "If \u2219`true`\u2219, the system excludes this account from Recent Addresses\
+      \ syncing."
     name: disableMailRecentsSyncing
     type: boolean
   - attributes: {}
@@ -5046,8 +5096,8 @@ com.apple.eas.account:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables OAuth for authentication. If enabled, don't\
-      \ specify a password."
+    - "If \u2219`true`\u2219, enables OAuth for authentication. If enabled, don\u2019\
+      t specify a password."
     - Available only in iOS 12.0 and above.
     name: OAuth
     type: boolean
@@ -5058,9 +5108,9 @@ com.apple.eas.account:
     type: string
   - attributes: {}
     description:
-    - The UUID of of the certificate payload within the same profile to use for the
-      identity credential. If this field is present, the Certificate field is not
-      used.
+    - "The UUID of the certificate payload within the same profile to use for the\
+      \ identity credential. If this field is present, the Certificate field isn\u2019\
+      t used."
     name: PayloadCertificateUUID
     type: string
   - attributes:
@@ -5073,33 +5123,33 @@ com.apple.eas.account:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, prevents messages from being moved out of this email\
-      \ account into another account. This setting also prevents forwarding or replying\
-      \ from an account other than the one the message was sent to."
+    - "If \u2219`true`\u2219, the system prevents moving messages from out of this\
+      \ email account into another account. This setting also prevents forwarding\
+      \ or replying from an account other than the recipient of the message."
     name: PreventMove
     type: boolean
   - attributes:
       default: 'false'
       deprecated: true
     description:
-    - "If \u2219`true`\u2219, enables S/MIME encryption. In iOS 10.0 and later, this\
-      \ key is ignored. Use \u2219`SMIMESigningEnabled`\u2219 instead."
+    - "If \u2219`true`\u2219, the system enables S/MIME encryption. In iOS 10.0 and\
+      \ later, this key is ignored. Use \u2219`SMIMESigningEnabled`\u2219 instead."
     name: SMIMEEnabled
     type: boolean
   - attributes:
       default: 'false'
       deprecated: true
     description:
-    - "If \u2219`true`\u2219, enables S/MIME encryption for this account. Available\
-      \ in iOS 10.0 and later. As of iOS 12.0, this key is deprecated. It is recommended\
-      \ to use \u2219`SMIMEEncryptByDefault`\u2219 instead."
+    - "If \u2219`true`\u2219, the system enables S/MIME encryption for this account.\
+      \ Available in iOS 10.0 and later. As of iOS 12.0, this key is deprecated. Use\
+      \ \u2219`SMIMEEncryptByDefault`\u2219 instead."
     name: SMIMEEncryptionEnabled
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables S/MIME signing for this account. Available in\
-      \ iOS 10.0 and later."
+    - "If \u2219`true`\u2219, the system enables S/MIME signing for this account.\
+      \ Available in iOS 10.0 and later."
     name: SMIMESigningEnabled
     type: boolean
   - attributes:
@@ -5112,16 +5162,16 @@ com.apple.eas.account:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, displays the per-message encryption switch in the Mail\
-      \ Compose UI. Available in iOS 12.0 and later."
+    - "If \u2219`true`\u2219, the system displays the per-message encryption switch\
+      \ in the Mail Compose UI. Available in iOS 12.0 and later."
     name: SMIMEEnableEncryptionPerMessageSwitch
     type: boolean
   - attributes:
       default: 'false'
       deprecated: true
     description:
-    - "If \u2219`true`\u2219, displays the per-message encryption switch in the Mail\
-      \ Compose UI."
+    - "If \u2219`true`\u2219, the system displays the per-message encryption switch\
+      \ in the Mail Compose UI."
     - "Available in iOS 8.0 and later. As of iOS 12.0, this key is deprecated. Use\
       \ \u2219`SMIMEEnableEncryptionPerMessageSwitch`\u2219 instead."
     name: SMIMEEnablePerMessageSwitch
@@ -5129,24 +5179,25 @@ com.apple.eas.account:
   - attributes:
       default: 'false'
     description:
-    - "If set to true, S/MIME encryption is enabled by default. If \u2219`SMIMEEnableEncryptionPerMessageSwitch`\u2219\
-      \ is false, this default cannot be changed by the user. Available in iOS 12.0\
-      \ and later."
+    - "If \u2219`true`\u2219, the system enables S/MIME encryption by default. If\
+      \ \u2219`SMIMEEnableEncryptionPerMessageSwitch`\u2219 is \u2219`false`\u2219\
+      , the user can\u2019t change this default. Available in iOS 12.0 and later."
     name: SMIMEEncryptByDefault
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, the user can turn encryption by default on/off, and\
-      \ encryption is on. Available in iOS 12.0 and later."
+    - "If \u2219`true`\u2219, the system enables encryption by default and the user\
+      \ can\u2019t change it. Available in iOS 12.0 and later."
     name: SMIMEEncryptByDefaultUserOverrideable
     type: boolean
   - attributes: {}
     description:
-    - The payload UUID of the identity certificate used to decrypt messages sent to
-      this account. The public certificate is attached to outgoing mail to allow encrypted
-      mail to be sent to this user. When the user sends encrypted mail, the public
-      certificate is used to encrypt the copy of the mail in the user's Sent mailbox.
+    - "The payload UUID of the identity certificate used to decrypt messages sent\
+      \ to this account. The system attaches the public certificate to outgoing mail\
+      \ to allow the user to receive encrypted mail. When the user sends encrypted\
+      \ mail, the system uses the public certificate to encrypt the copy of the mail\
+      \ in the user\u2019s Sent mailbox."
     name: SMIMEEncryptionCertificateUUID
     type: string
   - attributes:
@@ -5171,78 +5222,78 @@ com.apple.eas.account:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables SSL for authentication."
+    - "If \u2219`true`\u2219, the system enables SSL for authentication."
     name: SSL
     type: boolean
   - attributes: {}
     description:
-    - This user name for this Exchange account. The user name is required for noninteractive
-      installations like MDM in iOS.
+    - This user name for this Exchange account. Required for noninteractive installations
+      like MDM in iOS.
     name: UserName
     type: string
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, disables the Calendars service for this account. The\
-      \ Calendars service may be re-enabled in Settings unless \u2219`EnableCalendarsUserOverridable`\u2219\
-      \ is \u2219`false`\u2219."
-    - "\u2219`EnableMail`\u2219, \u2219`EnableContacts`\u2219, \u2219`EnableCalendars`\u2219\
-      , \u2219`EnableReminders`\u2219, and \u2219`EnableNotes`\u2219 can't all be\
-      \ set to \u2219`false`\u2219."
+    - "If \u2219`false`\u2219, the system disables the Calendars service for this\
+      \ account. The user can reenable Calendars service in Settings unless \u2219\
+      `EnableCalendarsUserOverridable`\u2219 is \u2219`false`\u2219."
+    - "At least of the following fields needs to be \u2219`true`\u2219: \u2219`EnableMail`\u2219\
+      , \u2219`EnableContacts`\u2219, \u2219`EnableCalendars`\u2219, \u2219`EnableReminders`\u2219\
+      , and \u2219`EnableNotes`\u2219."
     name: EnableCalendars
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, prevents the user from changing the state of the Calendars\
-      \ service for this account in Settings."
+    - "If \u2219`false`\u2219, the system prevents the user from changing the state\
+      \ of the Calendars service for this account in Settings."
     name: EnableCalendarsUserOverridable
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, disables the Contacts service for this account. The\
-      \ Contacts service may be re-enabled in Settings unless \u2219`EnableContactsUserOverridable`\u2219\
+    - "If \u2219`false`\u2219, the system disables the Contacts service for this account.\
+      \ The user can reenable Contacts service in Settings unless \u2219`EnableContactsUserOverridable`\u2219\
       \ is \u2219`false`\u2219."
-    - "\u2219`EnableMail`\u2219, \u2219`EnableContacts`\u2219, \u2219`EnableCalendars`\u2219\
-      , \u2219`EnableReminders`\u2219, and \u2219`EnableNotes`\u2219 can't all be\
-      \ set to \u2219`false`\u2219."
+    - "At least of the following fields needs to be \u2219`true`\u2219: \u2219`EnableMail`\u2219\
+      , \u2219`EnableContacts`\u2219, \u2219`EnableCalendars`\u2219, \u2219`EnableReminders`\u2219\
+      , and \u2219`EnableNotes`\u2219."
     name: EnableContacts
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, prevents the user from changing the state of the Contacts\
-      \ service for this account in Settings."
+    - "If \u2219`false`\u2219, the system prevents the user from changing the state\
+      \ of the Contacts service for this account in Settings."
     name: EnableContactsUserOverridable
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, disables the Mail service for this account. The Mail\
-      \ service may be re-enabled in Settings unless \u2219`EnableMailUserOverridable`\u2219\
+    - "If \u2219`false`\u2219, the system disables the Mail service for this account.\
+      \ The user can reenable Mail service in Settings unless \u2219`EnableMailUserOverridable`\u2219\
       \ is \u2219`false`\u2219."
-    - "\u2219`EnableMail`\u2219, \u2219`EnableContacts`\u2219, \u2219`EnableCalendars`\u2219\
-      , \u2219`EnableReminders`\u2219, and \u2219`EnableNotes`\u2219 can't all be\
-      \ set to \u2219`false`\u2219."
+    - "At least of the following fields needs to be \u2219`true`\u2219: \u2219`EnableMail`\u2219\
+      , \u2219`EnableContacts`\u2219, \u2219`EnableCalendars`\u2219, \u2219`EnableReminders`\u2219\
+      , and \u2219`EnableNotes`\u2219."
     name: EnableMail
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, prevents the user from changing the state of the Mail\
-      \ service for this account in Settings."
+    - "If \u2219`false`\u2219, the system prevents the user from changing the state\
+      \ of the Mail service for this account in Settings."
     name: EnableMailUserOverridable
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, disables the Notes service for this account. The Notes\
-      \ service may be re-enabled in Settings unless \u2219`EnableNotesUserOverridable`\u2219\
+    - "If \u2219`false`\u2219, the system disables the Notes service for this account.\
+      \ The user can reenable Notes service in Settings unless \u2219`EnableNotesUserOverridable`\u2219\
       \ is \u2219`false`\u2219."
-    - "\u2219`EnableMail`\u2219, \u2219`EnableContacts`\u2219, \u2219`EnableCalendars`\u2219\
-      , \u2219`EnableReminders`\u2219, and \u2219`EnableNotes`\u2219 can't all be\
-      \ set to \u2219`false`\u2219."
+    - "At least of the following fields needs to be \u2219`true`\u2219: \u2219`EnableMail`\u2219\
+      , \u2219`EnableContacts`\u2219, \u2219`EnableCalendars`\u2219, \u2219`EnableReminders`\u2219\
+      , and \u2219`EnableNotes`\u2219."
     name: EnableNotes
     type: boolean
   - attributes:
@@ -5255,46 +5306,46 @@ com.apple.eas.account:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, disables the Reminders service for this account. The\
-      \ Reminders service may be re-enabled in Settings unless \u2219`EnableRemindersUserOverridable`\u2219\
-      \ is false."
-    - "\u2219`EnableMail`\u2219, \u2219`EnableContacts`\u2219, \u2219`EnableCalendars`\u2219\
-      , \u2219`EnableReminders`\u2219, and \u2219`EnableNotes`\u2219 can't all be\
-      \ set to \u2219`false`\u2219."
+    - "If \u2219`false`\u2219, the system disables the Reminders service for this\
+      \ account. The user can reenable Reminders service in Settings unless \u2219\
+      `EnableRemindersUserOverridable`\u2219 is \u2219`false`\u2219."
+    - "At least of the following fields needs to be \u2219`true`\u2219: \u2219`EnableMail`\u2219\
+      , \u2219`EnableContacts`\u2219, \u2219`EnableCalendars`\u2219, \u2219`EnableReminders`\u2219\
+      , and \u2219`EnableNotes`\u2219."
     name: EnableReminders
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, prevents the user from changing the state of the Reminders\
-      \ service for this account in Settings."
+    - "If \u2219`false`\u2219, the system prevents the user from changing the state\
+      \ of the Reminders service for this account in Settings."
     name: EnableRemindersUserOverridable
     type: boolean
   - attributes: {}
     description:
-    - The URL that this account should use for signing in via OAuth. When this URL
-      is specified, auto-discovery is not used for this account so you must also specify
-      a host.
-    - "This field is ignored unless \u2219`OAuth`\u2219 is \u2219`true`\u2219."
+    - "The URL that this account should use for signing in through OAuth. Ignored\
+      \ unless \u2219`OAuth`\u2219 is \u2219`true`\u2219. If you specify this URL,\
+      \ auto-discovery isn\u2019t used for this account, so you need to also specify\
+      \ a host."
     name: OAuthSignInURL
     type: string
   - attributes: {}
     description:
-    - The URL that this account should use for token requests via OAuth.
-    - "This field is ignored unless \u2219`OAuth`\u2219 is \u2219`true`\u2219."
+    - "The URL that this account should use for token requests through OAuth. Ignored\
+      \ unless \u2219`OAuth`\u2219 is \u2219`true`\u2219."
     name: OAuthTokenRequestURL
     type: string
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219,  overrides the previous user/EAS password with the new\
-      \ EAS password in the payload. Available in iOS 14 and later."
+    - "If \u2219`true`\u2219, the system overrides the previous user/EAS password\
+      \ with the new EAS password in the payload. Available in iOS 14 and later."
     name: OverridePreviousPassword
     type: boolean
   - attributes: {}
     description:
-    - The VPNUUID of the per-app VPN the account uses for network communication.
-    - Available in iOS 14 and later.
+    - The VPNUUID of the per-app VPN the account uses for network communication. Available
+      in iOS 14 and later.
     name: VPNUUID
     type: string
 com.apple.education:
@@ -5310,19 +5361,19 @@ com.apple.education:
     within an educational organization.
   discussion:
   - "Specify \u2219`com.apple.education`\u2219 as the payload type."
-  - In iOS, this payload must be sent over the device channel. Additionally, supervision
-    is required unless the payload only specifies as teacher configuration.
-  - In macOS, this payload must be sent over the user channel. Student payloads are
-    supported in macOS 10.14.4 and later.
-  - 'Additional requirements:'
-  - '- All identities must be configured as both SSL clients and servers.'
-  - '- All certificates must have a key size of at least 2048 bits.'
-  - '- All certificates must use a hashing algorithm of SHA256 or stronger.'
-  - '- Leader certificates must have the common name prefix leader (case insensitive).'
-  - '- Member certificates must have the common name prefix member (case insensitive).'
+  - In iOS, send this payload over the device channel. Additionally, the system requires
+    supervision unless the payload only specifies as teacher configuration.
+  - In macOS, send this payload over the user channel. The system supports student
+    payloads in macOS 10.14.4 and later.
+  - 'Additionally, configure:'
+  - '- All identities as both SSL clients and servers'
+  - '- All certificates with a key size of at least 2048 bits'
+  - '- All certificates to use a hashing algorithm of SHA256 or stronger'
+  - '- Leader certificates to have the common name prefix leader, which is case insensitive'
+  - '- Member certificates to have the common name prefix member, which is case insensitive'
   - '- TLS server certificates issued on or after September 1, 2020 00:00 GMT/UTC
-    must not have a validity period greater than 398 days. See [About Upcoming Limits
-    on Trusted Certificates](https://developer.apple.comhttps://support.apple.com/en-us/HT211025)
+    to have a validity period greater than 398 days; see [About Upcoming Limits on
+    Trusted Certificates](https://developer.apple.comhttps://support.apple.com/en-us/HT211025)
     for more information.'
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
@@ -5439,16 +5490,16 @@ com.apple.education:
   - attributes: {}
     description:
     - "\u2219*For shared iPad profiles:*\u2219 The array of dictionaries that defines\
-      \ which departments  are shown in the Shared iPad login screen."
-    - If present, this key is used to configure both Classroom and the Shared iPad
-      login screen.
+      \ which departments the system displays in the Shared iPad login screen. If\
+      \ set, the system uses this key to configure both Classroom and the Shared iPad\
+      \ login screen."
     name: Departments
     type: '[EducationConfiguration.DepartmentsItem]'
   - attributes: {}
     description:
     - "\u2219*For leader/teacher profiles:*\u2219 The array of dictionaries that defines\
-      \ which device groups the leader can assign devices to. This key is not included\
-      \ in member payloads."
+      \ which device groups the leader can assign devices to. Not included in member\
+      \ payloads."
     name: DeviceGroups
     type: '[EducationConfiguration.DeviceGroupsItem]'
   - attributes:
@@ -5465,40 +5516,43 @@ com.apple.education:
   - attributes: {}
     description:
     - The array of UUIDs referring to certificate payloads within the same profile
-      that are used to authorize leader peer certificate identities. This array must
-      contain all certificates needed to validate the entire chain of trust. Leader
-      certificates must have the common name prefix leader (case insensitive).
-    - "Note: This property doesn\u2019t support identity payloads or PKCS12 certificates."
-    - This key is required when configuring a student device for Classroom, and is
-      ignored when configuring an instructor device. It does not impact the configuration
-      of the Shared iPad login screen.
+      that the system uses to authorize leader peer certificate identities. This array
+      needs to contain all necessary certificates to validate the entire chain of
+      trust. Leader certificates needs to have the common name prefix leader, which
+      is case insensitive.
+    - "This property doesn\u2019t support identity payloads or PKCS12 certificates."
+    - Required when configuring a student device for Classroom, and ignored when configuring
+      an instructor device. Has no effect on the configuration of the Shared iPad
+      login screen.
     name: LeaderPayloadCertificateAnchorUUID
     type: '[string]'
   - attributes: {}
     description:
     - The array of UUIDs referring to certificate payloads within the same profile
-      that are used to authorize group member peer certificate identities. This array
-      must contain all certificates needed to validate the entire chain of trust.
-      Member certificates must have the common name prefix member (case insensitive).
-    - "Note: This property doesn\u2019t support identity payloads or PKCS12 certificates."
-    - This key is required when configuring an instructor device for Classroom, and
-      is ignored when configuring a student device. It does not impact the configuration
-      of the Shared iPad login screen.
+      that the system uses to authorize group member peer certificate identities.
+      This array must contain all certificates needed to validate the entire chain
+      of trust. Member certificates must have the common name prefix member (case
+      insensitive).
+    - "This property doesn\u2019t support identity payloads or PKCS12 certificates."
+    - Required when configuring a student device for Classroom, and ignored when configuring
+      an instructor device. Has no effect on the configuration of the Shared iPad
+      login screen.
     name: MemberPayloadCertificateAnchorUUID
     type: '[string]'
   - attributes:
       required: true
     description:
-    - The organization's display name. This name is shown in the iOS login screen.
+    - "The organization\u2019s display name. The system displays this name in the\
+      \ iOS login screen."
     name: OrganizationName
     type: string
   - attributes:
       required: true
     description:
-    - The organization's UUID identifier. This identifier can be any valid UUID. All
-      teacher and student devices that need to communicate with one another must have
-      the same organization UUID, particularly if they originated from different Device
-      Enrollment Programs.
+    - "The organization\u2019s UUID identifier. This identifier can be any valid UUID.\
+      \ All teacher and student devices that need to communicate with one another\
+      \ must have the same organization UUID, particularly if they originated from\
+      \ different Device Enrollment Programs."
     name: OrganizationUUID
     type: string
   - attributes: {}
@@ -5506,45 +5560,46 @@ com.apple.education:
     - The UUID of an identity certificate payload within the same profile to use for
       performing client authentication with other devices. This property supports
       PKCS12 certificates.
-    - This key is required to configure Classroom. It does not impact the configuration
-      of the Shared iPad login screen.
+    - Required to configure Classroom. Has no effect on the configuration of the Shared
+      iPad login screen.
     name: PayloadCertificateUUID
     type: string
   - attributes: {}
     description:
-    - The UUID of an identity certificate payload within the same profile that is
-      used to perform client authentication when fetching additional resources, such
-      as student images. If not specified, the MDM client identity is used.
-    - If present, this key is used to configure both Classroom and the Shared iPad
-      login screen.
+    - The UUID of an identity certificate payload within the same profile that the
+      system uses to perform client authentication when fetching additional resources,
+      such as student images.
+    - If set, the system uses this key to configure both Classroom and the Shared
+      iPad login screen. If not set, the system uses MDM client identity.
     name: ResourcePayloadCertificateUUID
     type: string
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, allows students enrolled in managed classes to modify\
-      \ their teacher's permissions for screen observation on their device."
+    - "If \u2219`true`\u2219, the system allows students enrolled in managed classes\
+      \ to modify their teacher\u2019s permissions for screen observation on their\
+      \ device."
     name: ScreenObservationPermissionModificationAllowed
     type: boolean
   - attributes:
       required: true
     description:
     - The unique string that identifies the user of this device within the organization.
-    - If this payload is intended to configure the Shared iPad login screen, this
-      value must not be set.
+    - "Don\u2019t set this value in payloads intended to configure the Shared iPad\
+      \ login screen."
     name: UserIdentifier
     type: string
   - attributes:
       required: true
     description:
     - 'For shared iPad profiles: The array of dictionaries that define the users that
-      are shown in the iOS login window.'
-    - 'For leader/teacher profiles: The array of dictionaries that define users that
-      are members of the teacher''s groups.'
-    - "For member/student profiles: The array of dictionaries that must contain the\
-      \ definition of the user specified in the \u2219`UserIdentifier`\u2219 key.\
-      \ With one-to-one member devices, this key should include only the device user\
-      \ and the teacher but not other class members."
+      the system displays in the iOS login window.'
+    - "\u2219*For leader/teacher profiles:*\u2219 The array of dictionaries that define\
+      \ users that are members of the teacher\u2019s groups."
+    - "\u2219*For member/student profiles:*\u2219 The array of dictionaries that needs\
+      \ to contain the definition of the user specified in the \u2219`UserIdentifier`\u2219\
+      \ key. With one-to-one member devices, this key should include only the device\
+      \ user and the teacher but not other class members."
     name: Users
     type: '[EducationConfiguration.UsersItem]'
 com.apple.ews.account:
@@ -5592,20 +5647,20 @@ com.apple.ews.account:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables Mail Drop."
+    - "If \u2219`true`\u2219, the system enables Mail Drop."
     name: allowMailDrop
     type: boolean
   - attributes: {}
     description:
-    - The UUID of of the certificate payload within the same profile to use for the
-      identity credential. Supported on macOS 10.11 or later. On macOS 10.12 or later
-      use the PayloadCertificateUUID.
+    - The UUID of the certificate payload within the same profile to use for the identity
+      credential. Supported on macOS 10.11 or later. On macOS 10.12 or later use the
+      PayloadCertificateUUID.
     name: AuthenticationCertificateUUID
     type: string
   - attributes: {}
     description:
-    - The full email address for the account. If the email address string isn't present
-      in the payload, the device prompts for it during profile installation.
+    - "The full email address for the account. If the email address string isn\u2019\
+      t present in the payload, the device prompts for it during profile installation."
     name: EmailAddress
     type: string
   - attributes: {}
@@ -5626,27 +5681,27 @@ com.apple.ews.account:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`true`\u2219, enables SSL for connections to the external server."
+    - "If \u2219`true`\u2219, the system enables SSL for connections to the external\
+      \ server."
     name: ExternalSSL
     type: boolean
   - attributes: {}
     description:
-    - The Exchange server host name or IP address.
-    - If using OAuth, the host name is ignored..
+    - "The Exchange server host name or IP address.\_Ignored if using OAuth."
     name: Host
     type: string
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables OAuth for authentication. If OAuth is enabled,\
-      \ don't specify a password."
-    - Available in macOS 10.14 and later
+    - "If \u2219`true`\u2219, the system enables OAuth for authentication. Don\u2019\
+      t specify a password if \u2219`OAuth`\u2219 is \u2219`true`\u2219. Available\
+      \ in macOS 10.14 and later"
     name: OAuth
     type: boolean
   - attributes: {}
     description:
-    - "The URL to load into a web view for authentication via OAuth when autodiscovery\
-      \ isn't used. This setting requires a \u2219`Host`\u2219 value."
+    - "The URL to load into a web view for authentication through OAuth when autodiscovery\
+      \ isn\u2019t used. This setting requires a \u2219`Host`\u2219 value."
     name: OAuthSignInURL
     type: string
   - attributes: {}
@@ -5661,8 +5716,8 @@ com.apple.ews.account:
     type: string
   - attributes: {}
     description:
-    - The UUID of of the certificate payload within the same profile to use for the
-      identity credential. Supported on macOS 10.12 or later.
+    - The UUID of the certificate payload within the same profile to use for the identity
+      credential. Supported on macOS 10.12 or later.
     name: PayloadCertificateUUID
     type: string
   - attributes: {}
@@ -5673,14 +5728,14 @@ com.apple.ews.account:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`true`\u2219, enables SSL."
+    - "If \u2219`true`\u2219, the system enables SSL."
     name: SSL
     type: boolean
   - attributes: {}
     description:
-    - The user name for this Exchange account. This string is required for noninteractive
-      (for example, MDM) installation. If it's missing, the device prompts for it
-      during interactive profile installation.
+    - The user name for this Exchange account. Required for noninteractive installation,
+      such as through MDM. If missing, the system prompts the user for it during interactive
+      profile installation.
     name: UserName
     type: string
 com.apple.extensiblesso:
@@ -5695,7 +5750,7 @@ com.apple.extensiblesso:
   description: The payload for configuring an app extension that performs single sign-on.
   discussion:
   - "Specify \u2219`com.apple.extensiblesso`\u2219 as the payload type."
-  - User channel installation is supported in macOS 11 and later.
+  - The system supports user channel installation in macOS 11 and later.
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?><!DOCTYPE plist\
     \ PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -5738,15 +5793,14 @@ com.apple.extensiblesso:
       - UserSecureEnclaveKey
     description:
     - The Platform SSO authentication method the extension uses. Requires that the
-      SSO Extension also supports the method.
-    - Available in macOS 13 and later and deprecated in macOS 14.
+      SSO Extension also supports the method. Available in macOS 13 and later, and
+      deprecated in macOS 14.
     name: AuthenticationMethod
     type: string
   - attributes: {}
     description:
     - "An array of bundle identifiers of apps that don\u2019t use SSO provided by\
-      \ this extension."
-    - Available in iOS 15 and later and macOS 12 and later.
+      \ this extension. Available in iOS 15 and later, and macOS 12 and later."
     name: DeniedBundleIdentifiers
     type: '[string]'
   - attributes: {}
@@ -5763,14 +5817,16 @@ com.apple.extensiblesso:
     type: string
   - attributes: {}
     description:
-    - An array of host names or domain names that apps can authenticate through the
-      app extension.
+    - An array of host or domain names that apps can authenticate through the app
+      extension.
     - "Required for \u2219`Credential`\u2219 payloads. Ignored for \u2219`Redirect`\u2219\
       \ payloads."
-    - Host or domain names are matched case-insensitively, and all the host/domain
-      names of all installed Extensible SSO payloads must be unique.
-    - "Hosts that begin with a \u201C.\u201D are wildcard suffixes and match all subdomains;\
-      \ otherwise the host must be an exact match."
+    - 'The system:'
+    - '- Matches host or domain names case-insensitively'
+    - '- Requires that all the host and domain names of all installed Extensible SSO
+      payloads are unique'
+    - "Host names that begin with a \u201C.\u201D are wildcard suffixes that match\
+      \ all subdomains; otherwise the host name needs be an exact match."
     name: Hosts
     type: '[string]'
   - attributes: {}
@@ -5781,16 +5837,14 @@ com.apple.extensiblesso:
   - attributes: {}
     description:
     - "The realm name for \u2219`Credential`\u2219 payloads. Use proper capitalization\
-      \ for this value."
-    - "This key is ignored for \u2219`Redirect`\u2219 payloads."
+      \ for this value. Ignored for \u2219`Redirect`\u2219 payloads."
     name: Realm
     type: string
   - attributes: {}
     description:
     - "The token this device uses for registration with Platform SSO. Use it for silent\
       \ registration with the Identity Provider. Requires that \u2219`AuthenticationMethod`\u2219\
-      \ isn\u2019t empty."
-    - Available in macOS 13 and later.
+      \ isn\u2019t empty. Available in macOS 13 and later."
     name: RegistrationToken
     type: string
   - attributes:
@@ -5801,16 +5855,15 @@ com.apple.extensiblesso:
     description:
     - "If set to \u2219`Cancel`\u2219, the system cancels authentication requests\
       \ when the screen is locked. If set to \u2219`DoNotHandle`\u2219, the request\
-      \ continues without SSO instead. This does not apply to requests where \u2219\
-      `userInterfaceEnabled`\u2219 is set to \u2219`false`\u2219 or background [URLSession](https://developer.apple.com/documentation/foundation/urlsession)\
-      \ requests."
-    - Available in iOS 15 and later and macOS 12 and later.
+      \ continues without SSO instead. This doesn\u2019t apply to requests where \u2219\
+      `userInterfaceEnabled`\u2219 is \u2219`false`\u2219, or for background [URLSession](https://developer.apple.com/documentation/foundation/urlsession)\
+      \ requests. Available in iOS 15 and later, and macOS 12 and later."
     name: ScreenLockedBehavior
     type: string
   - attributes: {}
     description:
-    - The team identifier of the app extension.
-    - This key is required on macOS and ignored elsewhere.
+    - The team identifier of the app extension. This key is required on macOS and
+      ignored elsewhere.
     name: TeamIdentifier
     type: string
   - attributes:
@@ -5828,10 +5881,12 @@ com.apple.extensiblesso:
       SSO.
     - "Required for \u2219`Redirect`\u2219 payloads. Ignored for \u2219`Credential`\u2219\
       \ payloads."
-    - "The URLs must begin with \u2219`http://`\u2219 or \u2219`https://`\u2219, the\
-      \ scheme and host name are matched case-insensitively, query parameters and\
-      \ URL fragments are not allowed, and the URLs of all installed Extensible SSO\
-      \ payloads must be unique."
+    - "The URLs need to begin with \u2219`http://`\u2219 or \u2219`https://`\u2219\
+      ."
+    - 'The system:'
+    - '- Matches scheme and host name case-insensitively'
+    - "- Doesn\u2019t allow query parameters and URL fragments"
+    - '- Requires that the URLs of all installed Extensible SSO payloads are unique'
     name: URLs
     type: '[string]'
   - attributes: {}
@@ -5844,24 +5899,26 @@ com.apple.extensiblesso:
       - com.apple.AppSSOKerberos.KerberosExtension
       required: true
     description:
-    - "This value must be  \u2219`com.apple.AppSSOKerberos.KerberosExtension`\u2219\
-      \ for this extension."
+    - "Set this to \u2219`com.apple.AppSSOKerberos.KerberosExtension`\u2219 for this\
+      \ extension."
     name: ExtensionIdentifier
     type: string
   - attributes: {}
     description:
-    - One or more host or domain names for which the app extension performs SSO. Host
-      or domain names are matched case-insensitively, and all the host/domain names
-      of all installed Extensible SSO payloads must be unique.
-    - "Hosts that begin with a \u201C.\u201D are wildcard suffixes and will match\
-      \ all subdomains, otherwise the host must be an exact match."
+    - One or more host or domain names for which the app extension performs SSO.
+    - 'The system:'
+    - '- Matches host or domain names case-insensitively'
+    - '- Requires that all the host and domain names of all installed Extensible SSO
+      payloads are unique'
+    - "Host names that begin with a \u201C.\u201D are wildcard suffixes that match\
+      \ all subdomains; otherwise the host name needs be an exact match."
     name: Hosts
     type: '[string]'
   - attributes:
       required: true
     description:
-    - The Kerberos realm, which should be properly capitalized. If in an Active Directory
-      forest, this is the realm where the user logs in.
+    - The Kerberos realm. Use proper capitalization for this value. If in an Active
+      Directory forest, this is the realm where the user logs in.
     name: Realm
     type: string
   - attributes:
@@ -5869,7 +5926,7 @@ com.apple.extensiblesso:
       - Credential
       required: true
     description:
-    - "This value must be \u2219`Credential`\u2219 for the Kerberos extension."
+    - "Set this to \u2219`Credential`\u2219 for this extension."
     name: Type
     type: string
   - attributes:
@@ -5877,7 +5934,7 @@ com.apple.extensiblesso:
       - apple
       required: true
     description:
-    - "This value must be \u2219`apple`\u2219 for the Kerberos extension."
+    - "Set this to \u2219`apple`\u2219 for this extension."
     name: TeamIdentifier
     type: string
 com.apple.familycontrols.contentfilter:
@@ -6193,12 +6250,12 @@ com.apple.firstactiveethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
-  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
-    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
+  - "SetupModes (String)\n\tThe type of connection mode, which is either \u201CSystem\u201D\
+    \ or \u201CLoginwindow.\u201D \u201CSystem\u201D is the default."
   - "Payloads with \u2219`active`\u2219 in their name apply to Ethernet interfaces\
     \ that are working at the time of profile installation. If there\u2019s no active\
-    \ Ethernet interface working, this payload will configure the interface with the\
-    \ highest service-order priority."
+    \ Ethernet interface working, this payload configures the interface with the highest\
+    \ service-order priority."
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -6249,10 +6306,10 @@ com.apple.firstethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
-  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
-    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
+  - "SetupModes (String)\n\tThe type of connection mode, which is either \u201CSystem\u201D\
+    \ or \u201CLoginwindow.\u201D \u201CSystem\u201D is the default."
   - This payload applies to Ethernet interfaces according to service order, regardless
-    of whether the interface is working or not.
+    of whether the interface is working.
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -6422,8 +6479,8 @@ com.apple.globalethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
-  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
-    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
+  - "SetupModes (String)\n\tThe type of connection mode, which is either \u201CSystem\u201D\
+    \ or \u201CLoginwindow.\u201D \u201CSystem\u201D is the default."
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -6467,7 +6524,12 @@ com.apple.globalethernet.managed:
     name: tvOS
   properties:
   - attributes: {}
-    description: []
+    description:
+    - "Keys relevant to 802.1X configuration. User enrollment payloads don\u2019t\
+      \ support the various proxy keys, including \u2219`ProxyType`\u2219, \u2219\
+      `ProxyServer`\u2219, \u2219`ProxyServerPort`\u2219, \u2219`ProxyUsername`\u2219\
+      , \u2219`ProxyPassword`\u2219, \u2219`ProxyPACURL`\u2219 and \u2219`ProxyPACFallbackAllowed`\u2219\
+      ."
     name: ANY
     type: any
 com.apple.google-oauth:
@@ -6483,10 +6545,9 @@ com.apple.google-oauth:
   discussion:
   - "Specify \u2219`com.apple.google-oauth`\u2219 as the payload type."
   - You can install multiple Google payloads. Each sets up a Google email address
-    and any other Google services the user enables after authentication. Google accounts
-    must be installed through MDM or by Apple Configurator 2 (if the device is supervised).
-  - The payload never contains credentials; the user is prompted to enter credentials
-    shortly after the payload is installed.
+    and any other Google services the user enables after authentication.
+  - The payload never contains credentials; the system prompts the user to enter credentials
+    shortly after installation of the payload.
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -6539,8 +6600,8 @@ com.apple.google-oauth:
     type: string
   - attributes: {}
     description:
-    - The VPNUUID of the per-app VPN the account uses for network communication.
-    - Available in iOS 14 and later.
+    - The VPNUUID of the per-app VPN the account uses for network communication. Available
+      in iOS 14 and later.
     name: VPNUUID
     type: string
 com.apple.homescreenlayout:
@@ -6822,7 +6883,8 @@ com.apple.ldap.account:
     type: string
   - attributes: {}
     description:
-    - "The user\u2019s password. The password is enabled only with encrypted profiles."
+    - "The user\u2019s password. The system only enables the password with encrypted\
+      \ profiles."
     name: LDAPAccountPassword
     type: string
   - attributes: {}
@@ -6833,7 +6895,7 @@ com.apple.ldap.account:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`true`\u2219, enables SSL."
+    - "If \u2219`true`\u2219, the system enables SSL."
     name: LDAPAccountUseSSL
     type: boolean
   - attributes: {}
@@ -6843,8 +6905,8 @@ com.apple.ldap.account:
     type: '[LDAP.LDAPSearchSettingsItem]'
   - attributes: {}
     description:
-    - The VPNUUID of the per-app VPN the account uses for network communication.
-    - Available in iOS 14 and later.
+    - The VPNUUID of the per-app VPN the account uses for network communication. Available
+      in iOS 14 and later.
     name: VPNUUID
     type: string
 com.apple.loginitems.managed:
@@ -6947,17 +7009,17 @@ com.apple.loginwindow:
       - SystemVersion
       - IPAddress
     description:
-    - If this key is included in the payload, its value is displayed in the login
-      window as additional computer information. Before macOS 10.10, this string could
-      contain only certain information (host name, system version, or IP address).
-      After macOS 10.10, setting this key to any value allows the user to click the
-      time area of the menu bar to toggle through various computer information values.
+    - The admin host info. If present in the payload, the system displays its value
+      in the login window as additional computer information. Before macOS 10.10,
+      this string could only contain host name, system version, or IP address. After
+      macOS 10.10, setting this key to any value allows the user to click the time
+      area of the menu bar to toggle through various computer information values.
     name: AdminHostInfo
     type: string
   - attributes: {}
     description:
-    - The list of user GUIDs or group GUIDs of users that are allowed to log in. An
-      asterisk '*' string specifies all users or groups.
+    - "The list of user GUIDs or group GUIDs of users that the system allows to log\
+      \ in. An asterisk (\u2219`*`\u2219) string specifies all users or groups."
     name: AllowList
     type: '[string]'
   - attributes: {}
@@ -6974,54 +7036,57 @@ com.apple.loginwindow:
     type: string
   - attributes: {}
     description:
-    - "The list of user GUIDs or group GUIDs of users that cannot log in. This list\
-      \ takes priority over the list in the \u2219`AllowList`\u2219 key."
+    - "The list of user GUIDs or group GUIDs of users that the system disallows to\
+      \ log in. This list takes priority over the list in the \u2219`AllowList`\u2219\
+      \ key."
     name: DenyList
     type: '[string]'
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disregards the \u2219`>console`\u2219 special user name,\
-      \ which will provide a command line UI."
+    - "If \u2219`true`\u2219, the system disregards the \u2219`>console`\u2219 special\
+      \ user name, which provides a command line UI."
     name: DisableConsoleAccess
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If t\u2219`rue`\u2219, disables the automatic login option when using FileVault."
+    - "If t\u2219`rue`\u2219, the system disables the automatic login option when\
+      \ using FileVault."
     name: DisableFDEAutoLogin
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables the immediate Screen Lock functions. Available\
-      \ in macOS 10.13 and later."
+    - "If \u2219`true`\u2219, the system disables the immediate Screen Lock functions.\
+      \ Available in macOS 10.13 and later."
     name: DisableScreenLockImmediate
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, hides administrator users when showing a user list."
+    - "If \u2219`true`\u2219, the system hides administrator users when showing a\
+      \ user list."
     name: HideAdminUsers
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, shows only network and system users when showing a user\
-      \ list."
+    - "If \u2219`true`\u2219, the system shows only network and system users when\
+      \ showing a user list."
     name: HideLocalUsers
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, hides mobile account users in a user list. In some cases,\
-      \ mobile users show up as network users."
+    - "If \u2219`true`\u2219, the system hides mobile account users in a user list.\
+      \ In some cases, mobile users show up as network users."
     name: HideMobileAccounts
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, shows network users when showing a user list."
+    - "If \u2219`true`\u2219, the system shows network users when showing a user list."
     name: IncludeNetworkUser
     type: boolean
   - attributes: {}
@@ -7032,66 +7097,67 @@ com.apple.loginwindow:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables the Log Out menu item when the user is logged\
-      \ in. Available in macOS 10.13 and later."
+    - "If \u2219`true`\u2219, the system disables the Log Out menu item when the user\
+      \ is logged in. Available in macOS 10.13 and later."
     name: LogOutDisabledWhileLoggedIn
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables the Power Off menu item when the user is logged\
-      \ in."
+    - "If \u2219`true`\u2219, the system disables the Power Off menu item when the\
+      \ user is logged in."
     name: PowerOffDisabledWhileLoggedIn
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables the Restart item."
+    - "If \u2219`true`\u2219, the system disables the Restart item."
     name: RestartDisabled
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables the Restart menu item when the user is logged\
-      \ in."
+    - "If \u2219`true`\u2219, the system disables the Restart menu item when the user\
+      \ is logged in."
     name: RestartDisabledWhileLoggedIn
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, shows the name and password dialog; if \u2219`false`\u2219\
-      , displays a list of users."
+    - "If \u2219`true`\u2219, the system shows the name and password dialog. If \u2219\
+      `false`\u2219, the system displays a list of users."
     name: SHOWFULLNAME
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, displays Other... when showing a list of users."
+    - "If \u2219`true`\u2219, the system displays \u201COther...\u201D when it shows\
+      \ a list of users."
     name: SHOWOTHERUSERS_MANAGED
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`True`\u2219, shows the Input Menu in the login window."
+    - "If \u2219`true`\u2219, the system shows the Input Menu in the login window."
     name: showInputMenu
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables the Shut Down button."
+    - "If \u2219`true`\u2219, the system disables the Shut Down button."
     name: ShutDownDisabled
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables the Sleep button."
+    - "If \u2219`true`\u2219, the system disables the Sleep button."
     name: SleepDisabled
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, disables the Shut Down menu item when the user is logged\
-      \ in."
+    - "If \u2219`true`\u2219, the system disables the Shut Down menu item when the\
+      \ user is logged in."
     name: ShutDownDisabledWhileLoggedIn
     type: boolean
 com.apple.lom:
@@ -7272,7 +7338,7 @@ com.apple.lom:
   properties:
   - attributes: {}
     description:
-    - Array of payload UUIDs containing CA certificates that devices use to evaluate
+    - An array of payload UUIDs containing CA certificates that devices use to evaluate
       trust of controller certificates.
     - This key configures the device to accept the [LOMDeviceRequestCommand](https://developer.apple.com/documentation/devicemanagement/lomdevicerequestcommand)
       from MDM and then send it to the target device. This certificate must contain
@@ -7290,8 +7356,8 @@ com.apple.lom:
     type: string
   - attributes: {}
     description:
-    - Array of payload UUIDs containing CA certificates that controllers use to evaluate
-      trust of device certificates.
+    - An array of payload UUIDs containing CA certificates that controllers use to
+      evaluate trust of device certificates.
     name: DeviceCACertificateUUIDs
     type: '[string]'
   - attributes: {}
@@ -7366,13 +7432,14 @@ com.apple.mail.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables this account to use Mail Drop."
+    - "If \u2219`true`\u2219, the system enables this account to use Mail Drop."
     name: allowMailDrop
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, excludes this account from Recent Addresses syncing."
+    - "If \u2219`true`\u2219, the system excludes this account from Recent Addresses\
+      \ syncing."
     name: disableMailRecentsSyncing
     type: boolean
   - attributes: {}
@@ -7383,7 +7450,7 @@ com.apple.mail.managed:
     type: string
   - attributes: {}
     description:
-    - The full user name for the account. This name is shown in sent messages.
+    - The full user name for the account. The system displays this name in sent messages.
     name: EmailAccountName
     type: string
   - attributes:
@@ -7392,14 +7459,14 @@ com.apple.mail.managed:
       - EmailTypePOP
       required: true
     description:
-    - Defines the protocol to be used for the account.
+    - Defines the protocol to use for the account.
     name: EmailAccountType
     type: string
   - attributes: {}
     description:
-    - The full email address for the account. If this string isn't present in the
-      payload, the device prompts for this string during interactive profile installation
-      in Settings or System Preferences.
+    - "The full email address for the account. If this string isn\u2019t present in\
+      \ the payload, the device prompts the user for this string during interactive\
+      \ profile installation in Settings or System Preferences."
     name: EmailAddress
     type: string
   - attributes:
@@ -7427,29 +7494,29 @@ com.apple.mail.managed:
     type: string
   - attributes: {}
     description:
-    - The incoming mail server port number. If no port number is specified, the default
-      port for a given protocol is used.
+    - The incoming mail server port number. If not set, the system uses the default
+      port for a given protocol.
     name: IncomingMailServerPortNumber
     type: integer
   - attributes: {}
     description:
-    - The user name for the email account, usually the same as the email address up
-      to the @ character. If the user name isn't present in the payload and the account
-      is set up to require authentication for incoming email, the device prompts for
-      this string during interactive profile installation in Settings or System Preferences.
+    - "The user name for the email account, usually the same as the email address\
+      \ up to the \u201C@\u201D character. If not set and the account requires authentication\
+      \ for incoming email, the device prompts the user for this string during interactive\
+      \ profile installation in Settings or System Preferences."
     name: IncomingMailServerUsername
     type: string
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables SSL for authentication on the incoming mail\
-      \ server."
+    - "If \u2219`true`\u2219, the system enables SSL for authentication on the incoming\
+      \ mail server."
     name: IncomingMailServerUseSSL
     type: boolean
   - attributes: {}
     description:
-    - The password for the incoming mail server. This password is used only with encrypted
-      profiles.
+    - The password for the incoming mail server. The system only uses this password
+      with encrypted profiles.
     name: IncomingPassword
     type: string
   - attributes:
@@ -7472,82 +7539,82 @@ com.apple.mail.managed:
     type: string
   - attributes: {}
     description:
-    - The outgoing mail server port number. If no port number is specified, ports
-      25, 587, and 465 are used, in that order.
+    - The outgoing mail server port number. If not set, the system uses ports 25,
+      587, and 465, in that order.
     name: OutgoingMailServerPortNumber
     type: integer
   - attributes: {}
     description:
-    - The user name for the email account, usually the same as the email address up
-      to the @ character. If the user name isn't present in the payload and the account
-      is set up to require authentication for outgoing email, the device prompts for
-      this string during interactive profile installation in Settings or System Preferences.
+    - "The user name for the email account, usually the same as the email address\
+      \ up to the \u201C@\u201D character. If not set and the account requires authentication\
+      \ for outgoing email, the device prompts the user for this string during interactive\
+      \ profile installation in Settings or System Preferences."
     name: OutgoingMailServerUsername
     type: string
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables SSL authentication on the outgoing mail server."
+    - "If \u2219`true`\u2219, the system enables SSL authentication on the outgoing\
+      \ mail server."
     name: OutgoingMailServerUseSSL
     type: boolean
   - attributes: {}
     description:
-    - The password for the outgoing mail server. This password is used only with encrypted
-      profiles.
+    - The password for the outgoing mail server. The system only uses this password
+      with encrypted profiles.
     name: OutgoingPassword
     type: string
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, the user is prompted only once for the password, which\
-      \ is used for both outgoing and incoming mail."
+    - "If \u2219`true`\u2219, the system prompts the user only once for the password,\
+      \ which it uses for both outgoing and incoming mail."
     - This setting is only supported by interactive profile installations. Not supported
-      by non-interactive installations (like MDM on iOS).
+      by non-interactive installations, such as MDM on iOS.
     name: OutgoingPasswordSameAsIncomingPassword
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, prevents this account from sending mail in any app other\
-      \ than the Apple Mail app."
+    - "If \u2219`true`\u2219, the system prevents this account from sending mail in\
+      \ any app other than the Apple Mail app."
     name: PreventAppSheet
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, prevents messages from being moved out of this email\
+    - "If \u2219`true`\u2219, the system prevents moving messages out of this email\
       \ account and into another account. It also prevents forwarding or replying\
-      \ from an account other than one the message was sent to."
+      \ from an account other than the recipient of the message."
     name: PreventMove
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables S/MIME encryption. In iOS 10.0 and later, this\
-      \ key is ignored."
+    - "If \u2219`true`\u2219, the system enables S/MIME encryption. The system ignores\
+      \ this key in iOS 10.0 and later."
     name: SMIMEEnabled
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, displays the per-message encryption switch in the Mail\
-      \ Compose UI."
+    - "If \u2219`true`\u2219, the system displays the per-message encryption switch\
+      \ in the Mail Compose UI."
     name: SMIMEEnableEncryptionPerMessageSwitch
     type: boolean
   - attributes:
       default: 'false'
       deprecated: true
     description:
-    - "If \u2219`true`\u2219, displays the per-message encryption switch in the Mail\
-      \ Compose UI."
-    - "As of iOS 12.0, this key is deprecated. Use \u2219`SMIMEEnableEncryptionPerMessageSwitch`\u2219\
+    - "If \u2219`true`\u2219, the system displays the per-message encryption switch\
+      \ in the Mail Compose UI. Deprecated in iOS 12.0. Use \u2219`SMIMEEnableEncryptionPerMessageSwitch`\u2219\
       \ instead."
     name: SMIMEEnablePerMessageSwitch
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables S/MIME encryption by default."
+    - "If \u2219`true`\u2219, the system enables S/MIME encryption by default."
     name: SMIMEEncryptByDefault
     type: boolean
   - attributes:
@@ -7560,9 +7627,9 @@ com.apple.mail.managed:
   - attributes: {}
     description:
     - The UUID of the identity certificate used to decrypt messages sent to this account.
-      The public certificate is attached to outgoing mail to allow encrypted mail
-      to be sent to this user. When the user sends encrypted mail, the public certificate
-      is used to encrypt the copy of the mail in their Sent mailbox.
+      The system attaches the public certificate to outgoing mail to allow the user
+      to receive encrypted mail. When the user sends encrypted mail, the system uses
+      the public certificate to encrypt the copy of the mail in their Sent mailbox.
     name: SMIMEEncryptionCertificateUUID
     type: string
   - attributes:
@@ -7575,7 +7642,7 @@ com.apple.mail.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables S/MIME encryption for this account."
+    - "If \u2219`true`\u2219, the system enables S/MIME encryption for this account."
     name: SMIMEEncryptionEnabled
     type: boolean
   - attributes: {}
@@ -7593,7 +7660,7 @@ com.apple.mail.managed:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables S/MIME signing for this account."
+    - "If \u2219`true`\u2219, the system enables S/MIME signing for this account."
     name: SMIMESigningEnabled
     type: boolean
   - attributes:
@@ -7604,8 +7671,8 @@ com.apple.mail.managed:
     type: boolean
   - attributes: {}
     description:
-    - The VPNUUID of the per-app VPN the account uses for network communication.
-    - Available in iOS 14 and later.
+    - The VPNUUID of the per-app VPN the account uses for network communication. Available
+      in iOS 14 and later.
     name: VPNUUID
     type: string
 com.apple.mcxMenuExtras:
@@ -7800,13 +7867,13 @@ com.apple.mcxloginscripts:
   discussion:
   - "Specify \u2219`com.apple.mcxloginscripts`\u2219 as the payload type."
   - "The MCX login and logout managed-scripts payload contains information about executable\
-    \ scripts that can be run at user login and logout. To use this payload, \u2219\
-    `EnableMCXLoginScripts`\u2219 must be set to \u2219`true `\u2219in \u2219`/var/root/Library/Preferences/com.apple.loginwindow.plist`\u2219\
-    . Failure to set this key results in this payload being ignored."
+    \ scripts that can run at user login and logout. To use this payload, set \u2219\
+    `EnableMCXLoginScripts`\u2219 to \u2219`true `\u2219in \u2219`/var/root/Library/Preferences/com.apple.loginwindow.plist`\u2219\
+    ; otherwise, the system ignores this payload."
   - "\u2219`Loginwindow`\u2219 uses the \u2219`LoginHook`\u2219 and \u2219`LogoutHook`\u2219\
     \ string keys in \u2219`/var/root/Library/Preferences/com.apple.loginwindow.plist`\u2219\
-    \ to indicate a path to the executable script files, which are run during user\
-    \ login and logout. The current user name is passed as an argument to the file."
+    \ to indicate a path to the executable script files, which run during user login\
+    \ and logout. The system passes the current user name as an argument to the file."
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -7846,13 +7913,15 @@ com.apple.mcxloginscripts:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, doesn't execute the login scripts during login."
+    - "If \u2219`true`\u2219, the system doesn\u2019t execute the login scripts during\
+      \ login."
     name: skipLoginHook
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, doesn't execute the logout scripts during logout."
+    - "If \u2219`true`\u2219, the system doesn\u2019t execute the logout scripts during\
+      \ logout."
     name: skipLogoutHook
     type: boolean
 com.apple.mcxprinting:
@@ -8090,48 +8159,46 @@ com.apple.mdm:
   - attributes: {}
     description:
     - 'Logical OR of the following bit flags:'
-    - "\u2219`1`\u2219: Allow inspection of installed configuration profiles."
-    - "\u2219`2`\u2219: Allow installation and removal of configuration profiles."
-    - "\u2219`4`\u2219: Allow device lock and passcode removal."
-    - "\u2219`8`\u2219: Allow device erase."
-    - "\u2219`16`\u2219: Allow query of device information (device capacity, serial\
+    - "\u2219`1`\u2219\n\tAllow inspection of installed configuration profiles."
+    - "\u2219`2`\u2219\n\tAllow installation and removal of configuration profiles."
+    - "\u2219`4`\u2219\n\tAllow device lock and passcode removal."
+    - "\u2219`8`\u2219\n\tAllow device erase."
+    - "\u2219`16`\u2219\n\tAllow query of device information (device capacity, serial\
       \ number)."
-    - "\u2219`32`\u2219: Allow query of network information (phone/SIM numbers, MAC\
-      \ addresses)."
-    - "\u2219`64`\u2219: Allow inspection of installed provisioning profiles."
-    - "\u2219`128`\u2219: Allow installation and removal of provisioning profiles."
-    - "\u2219`256`\u2219: Allow inspection of installed applications."
-    - "\u2219`512`\u2219: Allow restriction-related queries."
-    - "\u2219`1024`\u2219: Allow security-related queries."
-    - "\u2219`2048`\u2219: Allow manipulation of settings."
-    - "\u2219`4096`\u2219: Allow app management."
-    - "The value can't be \u2219`0`\u2219. If \u2219`2`\u2219 is specified, \u2219\
-      `1`\u2219 must also be specified. If \u2219`128`\u2219 is specified, \u2219\
-      `64`\u2219 must also be specified."
-    - "If the \u2219`ManagedAppleID`\u2219 is included, then \u2219`AccessRights`\u2219\
-      \ are ignored."
+    - "\u2219`32`\u2219\n\tAllow query of network information (phone/SIM numbers,\
+      \ MAC addresses)."
+    - "\u2219`64`\u2219\n\tAllow inspection of installed provisioning profiles."
+    - "\u2219`128`\u2219\n\tAllow installation and removal of provisioning profiles."
+    - "\u2219`256`\u2219\n\tAllow inspection of installed applications."
+    - "\u2219`512`\u2219\n\tAllow restriction-related queries."
+    - "\u2219`1024`\u2219\n\tAllow security-related queries."
+    - "\u2219`2048`\u2219\n\tAllow manipulation of settings."
+    - "\u2219`4096`\u2219\n\tAllow app management."
+    - "Don\u2019t set to \u2219`0`\u2219. Specify \u2219`1`\u2219 if you specify \u2219\
+      `2`\u2219. Specify \u2219`64`\u2219 if you specify \u2219`128`\u2219. Ignored\
+      \ if you set a value for \u2219`ManagedAppleID`\u2219."
     name: AccessRights
     type: integer
   - attributes: {}
     description:
-    - The Managed Apple ID pre-assigned to the authenticated user. This is only used
-      with the BYOD enrollment flow. This key is required for the profile-based user
-      enrollment flow but must not present in the account-based user enrollment flow.
-    - Available in iOS 15 and later.
+    - "The Managed Apple ID pre-assigned to the authenticated user. The system only\
+      \ uses this value with the BYOD enrollment flow. Required for the profile-based\
+      \ user enrollment flow. Don\u2019t set this value for the account-based user\
+      \ enrollment flow. Available in iOS 15 and later."
     name: AssignedManagedAppleID
     type: string
   - attributes: {}
     description:
     - "The URL that the device should use to check in during installation. The URL\
       \ must begin with the \u2219`https://`\u2219 URL scheme and may contain a port\
-      \ number (\u2219`:1234`\u2219, for example). If this URL isn't given, \u2219\
-      `ServerURL`\u2219 is used for both purposes."
+      \ number (\u2219`:1234`\u2219, for example). If not set, the system uses \u2219\
+      `ServerURL`\u2219."
     name: CheckInURL
     type: string
   - attributes: {}
     description:
-    - "An array of strings, each containing the payload UUID of a certificate to be\
-      \ used when evaluating trust to the \u2219`.../checkin/`\u2219 URLs of MDM servers."
+    - "An array of strings, each containing the payload UUID of a certificate to use\
+      \ when evaluating trust to the \u2219`.../checkin/`\u2219 URLs of MDM servers."
     name: CheckInURLPinningCertificateUUIDs
     type: '[string]'
   - attributes:
@@ -8146,46 +8213,44 @@ com.apple.mdm:
       - BYOD
       - ADDE
     description:
-    - The enrollment mode the server indicates must be used when enrolling. This must
-      be present for BYOD enrollments. This key is required for the profile-based
-      user enrollment flow but must not present in the account-based user enrollment
-      flow.
-    - Available in iOS 15 and later.
+    - "The enrollment mode the server indicates to use when enrolling. Required for\
+      \ BYOD enrollments and for the profile-based user enrollment flow. Don\u2019\
+      t set for the account-based user enrollment flow. Available in iOS 15 and later."
     name: EnrollmentMode
     type: string
   - attributes:
       required: true
     description:
-    - The UUID of the certificate payload for the device's identity. It may also point
-      to a SCEP payload.
+    - "The UUID of the certificate payload for the device\u2019s identity. It may\
+      \ also point to a SCEP payload."
     name: IdentityCertificateUUID
     type: string
   - attributes:
       deprecated: true
     description:
-    - The Managed Apple ID of the user. This key is required for the profile-based
-      user enrollment flow but must not present in the account-based user enrollment
-      flow. Available in iOS 13.1 and later, and macOS 10.15 and later.
+    - "The Managed Apple ID of the user. Required for the profile-based user enrollment\
+      \ flow. Don\u2019t set for the account-based user enrollment flow. Available\
+      \ in iOS 13.1 and later, and macOS 10.15 and later."
     name: ManagedAppleID
     type: string
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, fails the connection attempt unless a verified positive\
-      \ response is obtained during certificate revocation checks."
-    - "If \u2219`false`\u2219, revocation checks are done on a best-attempt basis,\
-      \ where failure to reach the server isn't considered fatal."
+    - "If \u2219`true`\u2219, the system fails the connection attempt unless it obtains\
+      \ a verified positive response during certificate revocation checks."
+    - "If \u2219`false`\u2219, the system performs revocation checks on a best-attempt\
+      \ basis, where failure to reach the server isn\u2019t considered fatal."
     name: PinningRevocationCheckRequired
     type: boolean
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, warns the user that they need to reboot into RecoveryOS\
-      \ and allow the MDM to use the Bootstrap Token for authentication for certain\
-      \ sensitive operations such as enabling kernel extensions or installing some\
-      \ types of software updates. If the MDM doesn\u2019t need to perform these operations,\
-      \ it can leave this key set to \u2219`false`\u2219, and the user won\u2019t\
-      \ be notified."
+    - "If \u2219`true`\u2219, the system warns the user that they need to reboot into\
+      \ RecoveryOS and allow the MDM to use the Bootstrap Token for authentication\
+      \ for certain sensitive operations such as enabling kernel extensions or installing\
+      \ some types of software updates. If the MDM doesn\u2019t need to perform these\
+      \ operations, it can leave this key set to \u2219`false`\u2219, and the user\
+      \ isn\u2019t notified."
     - The [SettingsCommand.Command.Settings.MDMOptions.MDMOptions](https://developer.apple.com/documentation/devicemanagement/settingscommand/command/settings/mdmoptions/mdmoptions)
       command overrides this default value.
     - "This setting only applies to devices that have \u2219`BootstrapTokenRequiredForSoftwareUpdate`\u2219\
@@ -8221,7 +8286,7 @@ com.apple.mdm:
       \ macOS devices or a Shared iPad, this field is mandatory and must contain the\
       \ value \u2219`com.apple.mdm.per-user-connections`\u2219, which indicates that\
       \ the server supports both device and user connections."
-    - "Starting with macOS 11, it is also recommended that macOS device enrollment\
+    - "Starting with macOS 11, it\u2019s also recommended that macOS device enrollment\
       \ profiles contain the value \u2219`com.apple.mdm.bootstraptoken`\u2219 to ensure\
       \ the Bootstrap Token is created and escrowed with the MDM server at enrollment\
       \ time."
@@ -8237,7 +8302,7 @@ com.apple.mdm:
     type: string
   - attributes: {}
     description:
-    - "An array of strings, each containing the UUID of a certificate to be used when\
+    - "An array of strings, each containing the UUID of a certificate to use when\
       \ evaluating trust to the \u2219`.../connect/`\u2219 URLs of MDM servers."
     name: ServerURLPinningCertificateUUIDs
     type: '[string]'
@@ -8261,10 +8326,9 @@ com.apple.mdm:
     description:
     - "If \u2219`true`\u2219, the device uses the development APNS servers. Otherwise,\
       \ the device uses the production servers."
-    - "Note that this property must be set to \u2219`false`\u2219 if your Apple Push\
-      \ Notification Service certificate was issued by the Apple Push Certificate\
-      \ Portal (\u2219`https://identity.apple.com/pushcert`\u2219). That portal only\
-      \ issues certificates for the production push environment."
+    - "Set to \u2219`false`\u2219 if your Apple Push Notification Service certificate\
+      \ was issued by the Apple Push Certificate Portal (\u2219`https://identity.apple.com/pushcert`\u2219\
+      ). That portal only issues certificates for the production push environment."
     name: UseDevelopmentAPNS
     type: boolean
 com.apple.mobiledevice.passwordpolicy:
@@ -8708,10 +8772,10 @@ com.apple.profileRemovalPassword:
   description: The payload you use to configure profile removal.
   discussion:
   - "Specify \u2219`com.apple.profileRemovalPassword`\u2219 as the payload type."
-  - This payload provides a password to allow users to remove a locked configuration
-    profile from the device. If this payload is present and has a password value set,
-    the device asks for the password when the user taps a profile's Remove button.
-    This payload is encrypted with the rest of the profile.
+  - "This payload provides a password to allow users to remove a locked configuration\
+    \ profile from the device. If this payload is present and has a password value\
+    \ set, the device asks for the password when the user taps a profile\u2019s Remove\
+    \ button. This system encrypts the payload with the rest of the profile."
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -8746,7 +8810,7 @@ com.apple.profileRemovalPassword:
   properties:
   - attributes: {}
     description:
-    - The password for allowing the profile to be removed.
+    - The password to allow removing the profile.
     name: RemovalPassword
     type: string
 com.apple.proxy.http.global:
@@ -9043,12 +9107,12 @@ com.apple.secondactiveethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
-  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
-    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
+  - "SetupModes (String)\n\tThe type of connection mode, which is either \u201CSystem\u201D\
+    \ or \u201CLoginwindow.\u201D \u201CSystem\u201D is the default."
   - "Payloads with \u2219`active`\u2219 in their name apply to Ethernet interfaces\
     \ that are working at the time of profile installation. If there\u2019s no active\
-    \ Ethernet interface working, this payload will configure the interface with the\
-    \ highest service-order priority."
+    \ Ethernet interface working, this payload configures the interface with the highest\
+    \ service-order priority."
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -9099,10 +9163,10 @@ com.apple.secondethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
-  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
-    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
+  - "SetupModes (String)\n\tThe type of connection mode, which is either \u201CSystem\u201D\
+    \ or \u201CLoginwindow.\u201D \u201CSystem\u201D is the default."
   - This payload applies to Ethernet interfaces according to service order, regardless
-    of whether the interface is working or not.
+    of whether the interface is working.
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -9151,30 +9215,30 @@ com.apple.security.FDERecoveryKeyEscrow:
     \ type."
   - FileVault Full Disk Encryption (FDE) recovery keys are, by default, sent to Apple
     if the user requests them. Only one payload of this type is allowed per system.
-  - "If FileVault is enabled after this payload is installed on the system, the FileVault\
-    \ PRK is encrypted with the specified certificate, wrapped with a CMS envelope\
-    \ and stored at \u2219`/var/db/FileVaultPRK.dat`\u2219. The encrypted data is\
-    \ made available to the MDM server as part of the \u2219`SecurityInfo`\u2219 command."
+  - "If FileVault is enabled after the system installs this payload, the system encrypts\
+    \ the FileVault PRK with the specified certificate, wrapped with a CMS envelope\
+    \ and stored at \u2219`/var/db/FileVaultPRK.dat`\u2219. The \u2219`SecurityInfo`\u2219\
+    \ command makes this encrypted data available to the MDM server."
   - Alternatively, if a site uses its own administration software, it can extract
     the PRK from the foregoing location at any time. Because the PRK is encrypted
     using the certificate provided in the profile, only the author of the profile
     can extract the data.
   - 'Note these cautions:'
-  - '- The payload must exist in a system-scoped profile.'
+  - '- The payload needs to exist in a system-scoped profile.'
   - '- Installing more than one payload of this type per computer results in an error.'
   - "- The previous payload (\u2219`com.apple.security.FDERecoveryRedirect`\u2219\
-    ) is no longer supported. It can still be installed but it's ignored, so servers\
-    \ can send out the same profile to old and new clients."
-  - '- If only an old-style redirection payload is installed at the time FileVault
-    is turned on through the Security Preferences pane, an error is displayed and
-    FileVault isn''t enabled.'
-  - '- No warning or error is provided if FileVault is already enabled and an old-style
-    payload is installed. In this case, it''s assumed that the recovery key has already
-    been escrowed with the server.'
-  - "Although the previous FDE Recovery payload is no longer supported in macOS 10.13\
-    \ and later, it's still supported in macOS 10.9 through 10.12. Designate that\
-    \ payload by specifying \u2219`com.apple.security.FDERecoveryRedirect`\u2219 as\
-    \ the payload type."
+    ) is no longer supported. You can still install the previous payload but the system\
+    \ ignores it, so servers can send out the same profile to old and new clients."
+  - "- If only an old-style redirection payload is installed at the time FileVault\
+    \ is turned on through the Security Preferences pane, the system displays an error\
+    \ and doesn\u2019t enable FileVault."
+  - "- The system doesn\u2019t provide a warning or error if FileVault is already\
+    \ enabled and an old-style payload is installed. In this case, it\u2019s assumed\
+    \ that the recovery key has already been escrowed with the server."
+  - "Although the system no longer supports the previous FDE Recovery payload in macOS\
+    \ 10.13 and later, it\u2019s still supported in macOS 10.9 through 10.12. Designate\
+    \ that payload by specifying \u2219`com.apple.security.FDERecoveryRedirect`\u2219\
+    \ as the payload type."
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -9232,26 +9296,27 @@ com.apple.security.FDERecoveryKeyEscrow:
   properties:
   - attributes: {}
     description:
-    - The string that's included in help text if the user appears to have forgotten
-      the password. Site admins can use this key to look up the escrowed key for the
-      particular computer.
+    - "The string that\u2019s included in help text if the user appears to have forgotten\
+      \ the password. Site admins can use this key to look up the escrowed key for\
+      \ the particular computer."
     - "This key replaces the \u2219`RecordNumber`\u2219 key used in the previous escrow\
-      \ mechanism. If the key is missing, the device serial number is used instead."
+      \ mechanism. If the key is missing, the system uses the device serial number\
+      \ instead."
     name: DeviceKey
     type: string
   - attributes:
       required: true
     description:
     - "The UUID of a payload within the same profile that contains the certificate\
-      \ that will be used to encrypt the recovery key. The referenced payload must\
+      \ that the system uses to encrypt the recovery key. The referenced payload must\
       \ be of type \u2219`com.apple.security.pkcs1`\u2219."
     name: EncryptCertPayloadUUID
     type: string
   - attributes:
       required: true
     description:
-    - The description of the location where the recovery key will be escrowed. This
-      text will be inserted into the message the user sees when enabling FileVault.
+    - The description of the location where the system escrows the recovery key. The
+      system inserts this text into the message the user sees when it enables FileVault.
     name: Location
     type: string
 com.apple.security.FDERecoveryRedirect:
@@ -9388,13 +9453,13 @@ com.apple.security.acme:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, the device provides attestations describing the device\
+    - "If \u2219`true`\u2219, the device provides attestations that describe the device\
       \ and the generated key to the ACME server. The server can use the attestations\
       \ as strong evidence that the key is bound to the device, and that the device\
       \ has properties listed in the attestation. The server can use that as part\
       \ of a trust score to decide whether to issue the requested certificate."
     - "When \u2219`Attest`\u2219 is \u2219`true`\u2219, \u2219`HardwareBound`\u2219\
-      \ must also be \u2219`true`\u2219."
+      \ also needs to be \u2219`true`\u2219."
     - "On macOS, if this key is present, it needs to be \u2219`false`\u2219."
     name: Attest
     type: boolean
@@ -9433,7 +9498,7 @@ com.apple.security.acme:
       \ with a system key. This prevents the system from exporting the private key."
     - "If \u2219`true`\u2219, \u2219`KeyType`\u2219 must be \u2219`ECSECPrimeRandom`\u2219\
       \ and \u2219`KeySize`\u2219 must be 256 or 384."
-    - "This key is required on macOS, and needs to be \u2219`false`\u2219."
+    - "Required on macOS, and needs to be \u2219`false`\u2219."
     name: HardwareBound
     type: boolean
   - attributes:
@@ -9457,15 +9522,18 @@ com.apple.security.acme:
       - ECSECPrimeRandom
       required: true
     description:
-    - The type of key pair to generate.
-    - "- \u2219`RSA`\u2219: Specifies an RSA key pair. RSA key pairs must have a KeySize\
-      \ in the range [1024..4096] inclusive and a multiple of 8, and \u2219`HardwareBound`\u2219\
-      \ must be false."
-    - "- \u2219`ECSECPrimeRandom`\u2219: Specifies a key pair on the P-192, P-256,\
-      \ P-384 or P-521 curves as defined in FIPS Pub 186-4. KeySize defines the particular\
-      \ curve, which must be 192, 256, 384 or 521. Hardware bound keys only support\
-      \ values of 256 and 384. Note that the key size is 521, not 512, even though\
-      \ the other key sizes are multiples of 64."
+    - 'The type of key pair to generate. Allowed values:'
+    - "\u2219`RSA`\u2219\n\tSpecifies an RSA key pair. RSA key pairs need to have\
+      \ a \u2219`KeySize`\u2219 that\u2019s a multiple of 8 in the range of 1024 through\
+      \ 4096 (inclusive), and \u2219`HardwareBound`\u2219 needs to be \u2219`false`\u2219\
+      ."
+    - "\u2219`ECSECPrimeRandom`\u2219\n\tSpecifies a key pair on the P-192, P-256,\
+      \ P-384, or P-521 curves as defined in FIPS Pub 186-4. \u2219`KeySize`\u2219\
+      \ defines the particular curve, which needs to be \u2219`192`\u2219, \u2219\
+      `256`\u2219, \u2219`384`\u2219, or \u2219`521`\u2219. Hardware bound keys only\
+      \ support values of \u2219`256`\u2219 and \u2219`384`\u2219.Note that the key\
+      \ size is \u2219`521`\u2219, not \u2219`512`\u2219, even though the other key\
+      \ sizes are multiples of 64."
     name: KeyType
     type: string
   - attributes:
@@ -9516,7 +9584,7 @@ com.apple.security.certificatepreference:
   - "Specify \u2219`com.apple.security.certificatepreference`\u2219 as the payload\
     \ type."
   - "A \u2219`CertificatePreference`\u2219 payload lets you identify a certificate\
-    \ preference item in the user's keychain that references a certificate payload\
+    \ preference item in the user\u2019s keychain that references a certificate payload\
     \ included in the same profile. It can only appear in a user profile, not a device\
     \ profile. You can include multiple \u2219`CertificatePreference`\u2219 payloads\
     \ as needed."
@@ -9607,9 +9675,9 @@ com.apple.security.certificaterevocation:
     - An array of certificates that the system checks for revocation.
     - Specifying a certificate authority (CA) enables revocation checking for all
       certificates chaining up to that CA.
-    - It is not necessary to specify trusted root certificates because they are implicitly
-      specified. See [https://support.apple.com/en-us/HT209143](https://developer.apple.comhttps://support.apple.com/en-us/HT209143)
-      for the available trusted root certificates for Apple operating systems.
+    - "It\u2019s not necessary to specify trusted root certificates because they\u2019\
+      re implicitly specified. See [https://support.apple.com/en-us/HT209143](https://developer.apple.comhttps://support.apple.com/en-us/HT209143)\
+      \ for the available trusted root certificates for Apple operating systems."
     name: EnabledForCerts
     type: '[CertificateRevocation.SubjectPublicKeyInfoHashDict]'
 com.apple.security.certificatetransparency:
@@ -9668,31 +9736,31 @@ com.apple.security.certificatetransparency:
   properties:
   - attributes: {}
     description:
-    - 'An array of certificates for which certificate transparency is disabled. For
-      Certificate Transparency enforcement to be disabled when this policy is set,
-      one of the following conditions must be met:'
-    - "- The hash is of the server certificate's \u2219`subjectPublicKeyInfo`\u2219\
+    - 'An array of certificates for which certificate transparency is disabled. One
+      of the following conditions needs to be met to disable certificate transparency
+      enforcement when this policy is set:'
+    - "- The hash is of the server certificate\u2019s \u2219`subjectPublicKeyInfo`\u2219\
       ."
     - "- The hash is of a \u2219`subjectPublicKeyInfo`\u2219 that appears in a CA\
       \ certificate in the certificate chain; the CA certificate is constrained through\
-      \ the X.509v3 \u2219`nameConstraints`\u2219 extension; one or more \u2219`directoryName`\u2219\
-      \ \u2219`nameConstraints`\u2219 are present in the \u2219`permittedSubtrees;`\u2219\
-      \ and the \u2219`directoryName`\u2219 contains an \u2219`organizationName`\u2219\
+      \ the X.509v3 \u2219`nameConstraints`\u2219 extension. One or more \u2219`directoryName`\u2219\
+      \ \u2219`nameConstraints`\u2219 are present in the \u2219`permittedSubtrees`\u2219\
+      , and the \u2219`directoryName`\u2219 contains an \u2219`organizationName`\u2219\
       \ attribute."
     - "- The hash is of a \u2219`subjectPublicKeyInfo`\u2219 that appears in a CA\
-      \ certificate in the certificate chain; the CA certificate has one or more \u2219\
-      `organizationName`\u2219 attributes in the certificate \u2219`Subject;`\u2219\
-      \ and the server's certificate contains the same number of \u2219`organizationName`\u2219\
+      \ certificate in the certificate chain. The CA certificate has one or more \u2219\
+      `organizationName`\u2219 attributes in the certificate \u2219`Subject`\u2219\
+      , and the server\u2019s certificate contains the same number of \u2219`organizationName`\u2219\
       \ attributes, in the same order, and with byte-for-byte identical values."
     name: DisabledForCerts
     type: '[CertificateTransparency.SubjectPublicKeyInfoHashDict]'
   - attributes: {}
     description:
-    - An array of strings representing the domains to be excluded from certificate
-      transparency enforcement. A leading period (.) is supported to signify subdomains.
-    - "Wildcard domains are not supported. If a leading period (.) is specified, the\
-      \ domain cannot be a top-level domain (for example, \u2219`.com`\u2219 and \u2219\
-      `.co.uk`\u2219 are disallowed)."
+    - "An array of strings that represent the domains to exclude from certificate\
+      \ transparency enforcement. The system supports using a leading period (\u2219\
+      `.`\u2219) to signify subdomains. However, the system doesn\u2019t support wildcards.\
+      \ If you include a leading period, the domain can\u2019t be a top-level domain,\
+      \ such as \u2219`.com`\u2219 and \u2219`.co.uk`\u2219."
     name: DisabledForDomains
     type: '[string]'
 com.apple.security.firewall:
@@ -9801,9 +9869,9 @@ com.apple.security.identitypreference:
   description: "The payload you use to configure the user\u2019s identity on the device."
   discussion:
   - "Specify \u2219`com.apple.security.identitypreference`\u2219 as the payload type."
-  - This payload specifies an [IdentityPreference](https://developer.apple.com/documentation/devicemanagement/identitypreference)
-    item in the user's keychain that references an identity payload included in the
-    same profile. It can only appear in a user profile, not in a device profile.
+  - "This payload specifies an [IdentityPreference](https://developer.apple.com/documentation/devicemanagement/identitypreference)\
+    \ item in the user\u2019s keychain that references an identity payload included\
+    \ in the same profile. It can only appear in a user profile, not in a device profile."
   - You can include multiple [IdentityPreference](https://developer.apple.com/documentation/devicemanagement/identitypreference)
     payloads as needed.
   - See also [CertificatePreference](https://developer.apple.com/documentation/devicemanagement/certificatepreference)
@@ -10154,15 +10222,15 @@ com.apple.security.pkcs12:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, allows apps access to the private key. Available in\
-      \ macOS 10.10 and later."
+    - "If \u2219`true`\u2219, the system allows apps access to the private key. Available\
+      \ in macOS 10.10 and later."
     name: AllowAllAppsAccess
     type: boolean
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, doesn\u2019t tag the private key data as extractable\
-      \ in the keychain."
+    - "If \u2219`false`\u2219, the system doesn\u2019t tag the private key data as\
+      \ extractable in the keychain."
     name: KeyIsExtractable
     type: boolean
   - attributes: {}
@@ -10380,7 +10448,7 @@ com.apple.security.smartcard:
   - attributes:
       default: 'true'
     description:
-    - "If \u2219`false`\u2219, disables the SmartCard for logins, authorizations,\
+    - "If \u2219`false`\u2219, the system disables the SmartCard for logins, authorizations,\
       \ and screen saver unlocking. It is still allowed for other functions, such\
       \ as signing emails and accessing the web. A restart is required for a setting\
       \ change to take effect."
@@ -10394,17 +10462,18 @@ com.apple.security.smartcard:
       - '2'
       - '3'
     description:
-    - 'Valid values are 0 to 3:'
-    - "\u2219`0`\u2219: Turns off certificate trust check."
-    - "\u2219`1`\u2219: Turns on certificate trust check. A standard validity check\
-      \ is performed but doesn't include additional revocation checks."
-    - "\u2219`2`\u2219: Turns on certificate trust check. A soft revocation check\
+    - 'Configures the certificate trust check and has one of the following possible
+      values:'
+    - "\u2219`0`\u2219\n\tTurns off certificate trust check."
+    - "\u2219`1`\u2219\n\tTurns on certificate trust check. A standard validity check\
+      \ is performed but doesn\u2019t include additional revocation checks."
+    - "\u2219`2`\u2219\n\tTurns on certificate trust check. A soft revocation check\
       \ is also performed. Until the certificate is explicitly rejected by CRL/OCSP,\
-      \ it's considered valid. This setting means that unavailable or unreachable\
+      \ it\u2019s considered valid. This setting means that unavailable or unreachable\
       \ CRL/OCSP allow this check to succeed."
-    - "\u2219`3`\u2219: Turns on certificate trust check. A hard revocation check\
-      \ is also performed. Unless CRL/OCSP explicitly says \"This certificate is OK,\"\
-      \ it's considered invalid. This option is the most secure."
+    - "\u2219`3`\u2219\n\tTurns on certificate trust check. A hard revocation check\
+      \ is also performed. Unless CRL/OCSP explicitly says \u201CThis certificate\
+      \ is OK,\u201D it\u2019s considered invalid. This option is the most secure."
     name: checkCertificateTrust
     type: integer
   - attributes:
@@ -10427,8 +10496,8 @@ com.apple.security.smartcard:
       - '0'
       - '1'
     description:
-    - "If \u2219`1`\u2219, enables the screen saver when the SmartCard is removed.\
-      \ Available in macOS 10.13.4 and later."
+    - "If \u2219`1`\u2219, the system enables the screen saver when the SmartCard\
+      \ is removed. Available in macOS 10.13.4 and later."
     name: tokenRemovalAction
     type: integer
   - attributes:
@@ -10545,7 +10614,8 @@ com.apple.shareddeviceconfiguration:
       Lock screen.
     name: AssetTagInformation
     type: string
-  - attributes: {}
+  - attributes:
+      deprecated: true
     description:
     - "Deprecated. Use \u2219`LockScreenFootnote`\u2219 instead."
     name: IfLostReturnToMessage
@@ -10564,7 +10634,7 @@ com.apple.sso:
     user: '-'
     user_approved: '-'
     user_enrol: iOS
-  description: The payload you use to configure single sign-on.
+  description: The payload you use to configure single sign-on (SSO).
   discussion:
   - "Specify \u2219`com.apple.sso`\u2219 as the payload type."
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
@@ -10672,13 +10742,13 @@ com.apple.subscribedcalendar.account:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, enables SSL."
+    - "If \u2219`true`\u2219, the system enables SSL."
     name: SubCalAccountUseSSL
     type: boolean
   - attributes: {}
     description:
-    - The VPNUUID of the per-app VPN the account uses for network communication.
-    - Available in iOS 14 and later.
+    - The VPNUUID of the per-app VPN the account uses for network communication. Available
+      in iOS 14 and later.
     name: VPNUUID
     type: string
 com.apple.syspolicy.kernel-extension-policy:
@@ -11361,12 +11431,12 @@ com.apple.thirdactiveethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
-  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
-    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
+  - "SetupModes (String)\n\tThe type of connection mode, which is either \u201CSystem\u201D\
+    \ or \u201CLoginwindow.\u201D \u201CSystem\u201D is the default."
   - "Payloads with \u2219`active`\u2219 in their name apply to Ethernet interfaces\
     \ that are working at the time of profile installation. If there\u2019s no active\
-    \ Ethernet interface working, this payload will configure the interface with the\
-    \ highest service-order priority."
+    \ Ethernet interface working, this payload configures the interface with the highest\
+    \ service-order priority."
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -11417,10 +11487,10 @@ com.apple.thirdethernet.managed:
     ."
   - "EAPClientConfiguration ([WiFi.EAPClientConfiguration](https://developer.apple.com/documentation/devicemanagement/wifi/eapclientconfiguration))\n\
     \tThe dictionary that defines the enterprise profile for the network."
-  - "SetupModes (String)\n\tThe type of connection mode. This key can be \u201CSystem\u201D\
-    \ or \u201CLoginwindow\u201D, with \u201CSystem\u201D as the default."
+  - "SetupModes (String)\n\tThe type of connection mode, which is either \u201CSystem\u201D\
+    \ or \u201CLoginwindow.\u201D \u201CSystem\u201D is the default."
   - This payload applies to Ethernet interfaces according to service order, regardless
-    of whether the interface is working or not.
+    of whether the interface is working.
   example: "<?xml version=\u201D1.0\u201D encoding=\u201DUTF-8\u201D?>\n<!DOCTYPE\
     \ plist PUBLIC \u201C-//Apple//DTD PLIST 1.0//EN\u201D \u201Chttp://www.apple.com/DTDs/PropertyList-1.0.dtd\u201D\
     >\n<plist version=\u201D1.0\u201D>\n<dict>\n    <key>PayloadContent</key>\n  \
@@ -11800,7 +11870,14 @@ com.apple.vpn.managed:
       `VPN`\u2219, \u2219`IPSec`\u2219, or \u2219`IKEv2`\u2219."
     name: VPN
     type: VPN.VPN
-  - attributes: {}
+  - attributes:
+      possibleValues:
+      - com.cisco.anyconnect
+      - net.pulsesecure.PulseSecure.vpnplugin
+      - com.f5.F5-Edge-Client.vpnplugin
+      - com.sonicwall.SonicWALL-SSLVPN.vpnplugin
+      - com.arubanetworks.aruba-via.vpnplugin
+      - com.checkpoint.CheckPoint-VPN.vpnplugin
     description:
     - "An identifier for a vendor-specified configuration dictionary when the value\
       \ for \u2219`VPNType`\u2219 is \u2219`VPN`\u2219."
@@ -12942,7 +13019,7 @@ loginwindow:
   - attributes:
       default: 'false'
     description:
-    - "If \u2219`true`\u2219, prevents the user from disabling login item launches\
-      \ by using the Shift key."
+    - "If \u2219`true`\u2219, the system prevents the user from disabling login item\
+      \ launches by using the Shift key."
     name: DisableLoginItemsSuppression
     type: boolean
