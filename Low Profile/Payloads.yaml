@@ -10870,7 +10870,7 @@ com.apple.system-extension-policy:
       the team identifiers (keys) to arrays of bundle identifiers, where the bundle
       identifier defines the system extension to install.
     - To avoid requiring an administrator to authorize the operation, you can activate
-      system extensions that this key specifies using [activationRequest(forExtensionWithIdentifier:queue:)](https://developer.apple.com/documentation/systemextensions/ossystemextensionrequest/3295272-activationrequest).
+      system extensions that this key specifies using [activationRequest(forExtensionWithIdentifier:queue:)](https://developer.apple.com/documentation/systemextensions/ossystemextensionrequest/activationrequest(forextensionwithidentifier:queue:)).
     - "It\u2019s an error for the same team identifier to appear in both the \u2219\
       `AllowedTeamIdentifiers`\u2219 array and as a key in this dictionary."
     name: AllowedSystemExtensions
@@ -10891,7 +10891,7 @@ com.apple.system-extension-policy:
       are allowable to load. Approved system extensions are those signed with any
       of the specified team identifiers.
     - To avoid requiring an administrator to authorize the operation, you can activate
-      system extensions that this key specifies using [activationRequest(forExtensionWithIdentifier:queue:)](https://developer.apple.com/documentation/systemextensions/ossystemextensionrequest/3295272-activationrequest).
+      system extensions that this key specifies using [activationRequest(forExtensionWithIdentifier:queue:)](https://developer.apple.com/documentation/systemextensions/ossystemextensionrequest/activationrequest(forextensionwithidentifier:queue:)).
     - "It\u2019s an error for the same team identifier to appear in both this array\
       \ and as a key in the \u2219`AllowedSystemExtensions`\u2219 dictionary."
     name: AllowedTeamIdentifiers
