@@ -118,12 +118,12 @@
           </ul>
         ]]>
       </description>
-      <pubDate>Tue, 03 Oct 2023 12:00:00 +0000</pubDate>
-      <enclosure url="https://github.com/ninxsoft/LowProfile/releases/download/v4.0.1/Low.Profile.4.0.1.pkg"
+      <pubDate>Thu, 01 Feb 2024 12:00:00 +0000</pubDate>
+      <enclosure url="https://github.com/ninxsoft/LowProfile/releases/download/v4.0.2/Low.Profile.4.0.2.pkg"
                  type="application/octet-stream"
                  sparkle:installationType="package"
-                 sparkle:edSignature="YxQDwnnwsNqkBEVMf1zwE6DaW4Te4ZMS1ScvH4S+DDG8m3Jdm4caEOnIo9xZs+5EAwxzpJI94pQtnye6SbQtBg=="
-                 length="3734528"
+                 sparkle:edSignature="uhxwMcGoTykWklZP+jBRBaAIAVyDUEp2lvLBwwtGHYT8jioVklmnfuBMyIP61PZQgbKXSMOLRPes1SLavIMRDA=="
+                 length="3702126"
       />
     </item>
   </channel>
