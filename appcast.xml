@@ -48,7 +48,7 @@
             .patched-402 li::before {
               content: "🆕 ";
             }
-            .patched-402 li:nth-child(n + 1):before {
+            .patched-402 li:nth-child(n + 2):before {
               content: "✅ ";
             }
           </style>
