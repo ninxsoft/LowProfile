@@ -57,6 +57,7 @@ extension String {
         return string
     }
 
+    // swiftlint:disable:next function_body_length
     func toJSONString() -> String? {
         guard !isEmpty else {
             return "{}"
