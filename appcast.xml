@@ -12,7 +12,8 @@
       <sparkle:fullReleaseNotesLink>https://github.com/ninxsoft/LowProfile/blob/main/CHANGELOG.md</sparkle:fullReleaseNotesLink>
       <description>
         <![CDATA[
-          .styled {
+          <style>
+            .styled {
               list-style: none;
               padding: 0;
             }
