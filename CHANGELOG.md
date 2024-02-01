@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.0.2](https://github.com/ninxsoft/LowProfile/releases/tag/v4.0.2) - 2024-02-01
+
+- Fixed a crash caused by payload properties with multiple lines and carriage returns - thanks [sheacraig](https://github.com/sheagcraig)!
+- Reports can now be exported via the CLI
+  - Use the `--export` option to export a Low Profile report
+  - Thanks [BigMacAdmin](https://github.com/BigMacAdmin)!
+- Bumped [Sparkle](https://github.com/sparkle-project/Sparkle) version to **2.5.2**
+- Minor cosmetic tweaks to the text alignment of payload properties
+
 ## [4.0.1](https://github.com/ninxsoft/LowProfile/releases/tag/v4.0.1) - 2023-10-03
 
 - Fixed a bug preventing Low Profile from auto-updating
