@@ -6,9 +6,9 @@
     <language>en</language>
     <link>https://github.com/ninxsoft/LowProfile</link>
     <item>
-      <title>Version 4.0.1</title>
+      <title>Version 4.0.2</title>
       <link>https://github.com/ninxsoft/LowProfile</link>
-      <sparkle:version>4.0.1</sparkle:version>
+      <sparkle:version>4.0.2</sparkle:version>
       <sparkle:fullReleaseNotesLink>https://github.com/ninxsoft/LowProfile/blob/main/CHANGELOG.md</sparkle:fullReleaseNotesLink>
       <description>
         <![CDATA[
@@ -23,37 +23,47 @@
               margin-top: 15px;
               margin-bottom: 15px;
             }
-            .styled li::before {
+            .styled-400 li::before {
               content: "🆕 ";
             }
-            .styled li:nth-child(n + 6):before {
+            .styled-400 li:nth-child(n + 6):before {
               content: "✅ ";
             }
-            .child li::before {
+            .styled-400-child li::before {
               content: "";
             }
-            .patched {
-              list-style: none;
-              padding: 0;
-            }
-            .patched li {
-              padding-left: 1rem;
-              text-indent: -0.75rem;
-              margin-top: 15px;
-              margin-bottom: 15px;
-            }
-            .patched li::before {
+            .styled-401 li::before {
               content: "✅ ";
             }
+            .styled-402 li::before {
+              content: "🆕 ";
+            }
+            .styled-402 li:nth-child(n + 2):before {
+              content: "✅ ";
+            }
+            .styled-402-child li::before {
+              content: "";
+            }
           </style>
+          <h3>Version 4.0.2</h3>
+          <ul class="styled styled-402">
+            <li>Reports can now be exported via the CLI
+              <ul class="styled-402-child">
+                <li>Use the <code>--export</code> option to export a Low Profile report</li>
+              </ul>
+            </li>
+            <li>Fixed a crash caused by payload properties with multiple lines and carriage returns</li>
+            <li>Bumped <a href="https://github.com/sparkle-project/Sparkle">Sparkle</a> version to <strong>2.5.2</strong></li>
+            <li>Minor cosmetic tweaks to the text alignment of payload properties</li>
+          </ul>
           <h3>Version 4.0.1</h3>
-          <ul class="patched">
+          <ul class="styled styled-401">
             <li>Fixed a bug preventing Low Profile from auto-updating</li>
           </ul>
           <h3>Version 4.0</h3>
-          <ul class="styled">
+          <ul class="styled styled-400">
             <li>Updated payloads to support the following operating systems:
-              <ul class="child">
+              <ul class="styled-400-child">
                 <li>iOS 17</li>
                 <li>iPadOS 17</li>
                 <li>macOS 14 Sonoma</li>
@@ -62,7 +72,7 @@
               </ul>
             </li>
             <li>Added support for the following new payloads:
-              <ul class="child">
+              <ul class="styled-400-child">
                 <li><a href="https://developer.apple.com/documentation/devicemanagement/cellularprivatenetwork">CellularPrivateNetwork</a></li>
                 <li><a href="https://developer.apple.com/documentation/devicemanagement/declarations-t8t">Declarations</a></li>
                 <li><a href="https://developer.apple.com/documentation/devicemanagement/relay">Relay</a></li>
@@ -70,7 +80,7 @@
               </ul>
             </li>
             <li>Added support for identifying issues:
-              <ul class="child">
+              <ul class="styled-400-child">
                 <li>A list of known issues can be viewed via the Issues button located in the toolbar</li>
                 <li>Duplicated properties across payloads / profiles are listed in the Issues popover</li>
                 <li>Deprecated properties are also listed in the Issues popover</li>
@@ -78,13 +88,13 @@
               </ul>
             </li>
             <li>Added support for exporting Low Profile reports:
-              <ul class="child">
+              <ul class="styled-400-child">
                 <li>A report of installed profiles can be exported as a <code>.lowprofile</code> file via the Export button located in the toolbar</li>
                 <li>Reports can be opened by Low Profile on any Mac</li>
               </ul>
             </li>
             <li>Syntax highlighting for Property Lists has been rebuilt from the ground up:
-              <ul class="child">
+              <ul class="styled-400-child">
                 <li>Replaced custom code with <a href="https://github.com/raspu/Highlightr">Highlightr</a> package, reducing load times significantly!</li>
                 <li>Supports themes, customizable via app Settings</li>
                 <li>Supports <a href="https://support.apple.com/en-us/HT208976">dynamic appearance</a> (i.e. light mode / dark mode)</li>
@@ -108,12 +118,12 @@
           </ul>
         ]]>
       </description>
-      <pubDate>Tue, 03 Oct 2023 12:00:00 +0000</pubDate>
-      <enclosure url="https://github.com/ninxsoft/LowProfile/releases/download/v4.0.1/Low.Profile.4.0.1.pkg"
+      <pubDate>Thu, 01 Feb 2024 12:00:00 +0000</pubDate>
+      <enclosure url="https://github.com/ninxsoft/LowProfile/releases/download/v4.0.2/Low.Profile.4.0.2.pkg"
                  type="application/octet-stream"
                  sparkle:installationType="package"
-                 sparkle:edSignature="YxQDwnnwsNqkBEVMf1zwE6DaW4Te4ZMS1ScvH4S+DDG8m3Jdm4caEOnIo9xZs+5EAwxzpJI94pQtnye6SbQtBg=="
-                 length="3734528"
+                 sparkle:edSignature="uhxwMcGoTykWklZP+jBRBaAIAVyDUEp2lvLBwwtGHYT8jioVklmnfuBMyIP61PZQgbKXSMOLRPes1SLavIMRDA=="
+                 length="3702126"
       />
     </item>
   </channel>
