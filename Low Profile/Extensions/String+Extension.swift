@@ -69,6 +69,10 @@ extension String {
         string = string.replacingOccurrences(of: "};\n", with: "},\n")
         string = string.replacingOccurrences(of: ";\n", with: ",\n")
 
+        if contains("-----BEGIN PUBLIC KEY-----"), contains("-----END PUBLIC KEY-----") {
+            string = string.replacingOccurrences(of: "\r", with: "")
+        }
+
         string.enumerateLines { line, _ in
 
             var components: [String] = line.lowercased().contains("authorization: basic") ? [line] : line.components(separatedBy: "=")
