@@ -18,7 +18,7 @@ jobs:
       APPLE_DEVELOPER_TEAM_ID: "7K3HVCLV7Z"
       KEYCHAIN_FILE: "apple-developer.keychain-db"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: swift-actions/setup-swift@v1
       - name: Install Apple Developer ID Certificates
         run: |
