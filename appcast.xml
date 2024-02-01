@@ -42,23 +42,29 @@
               margin-top: 15px;
               margin-bottom: 15px;
             }
-            .patched li::before {
+            .patched-401 li::before {
+              content: "✅ ";
+            }
+            .patched-402 li::before {
+              content: "🆕 ";
+            }
+            .patched-402 li:nth-child(n + 1):before {
               content: "✅ ";
             }
           </style>
           <h3>Version 4.0.2</h3>
-          <ul class="styled">
-            <li>Fixed a crash caused by payload properties with multiple lines and carriage returns</li>
+          <ul class="patched patched-402">
             <li>Reports can now be exported via the CLI
               <ul class="child">
                 <li>Use the <code>--export</code> option to export a Low Profile report</li>
               </ul>
             </li>
-            <li>Bumped <a href="https://github.com/sparkle-project/Sparkle">Sparkle><a/> version to <strong>2.5.2</strong></li>
+            <li>Fixed a crash caused by payload properties with multiple lines and carriage returns</li>
+            <li>Bumped <a href="https://github.com/sparkle-project/Sparkle">Sparkle<a/> version to <strong>2.5.2</strong></li>
             <li>Minor cosmetic tweaks to the text alignment of payload properties</li>
           </ul>
           <h3>Version 4.0.1</h3>
-          <ul class="patched">
+          <ul class="patched patched-401">
             <li>Fixed a bug preventing Low Profile from auto-updating</li>
           </ul>
           <h3>Version 4.0</h3>
