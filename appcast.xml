@@ -48,9 +48,9 @@
             .patched-402 li::before {
               content: "🆕 ";
             }
-            .patched-402 li:nth-child(n + 2):before {
+            <!-- .patched-402 li:nth-child(n + 2):before {
               content: "✅ ";
-            }
+            } -->
           </style>
           <h3>Version 4.0.2</h3>
           <ul class="patched patched-402">
