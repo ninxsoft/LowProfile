@@ -12,14 +12,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWindow.allowsAutomaticWindowTabbing = false
 
         for argument in ["-e", "--export"] {
-
-            guard let exportIndex: Int = CommandLine.arguments.firstIndex(of: argument),
+            guard
+                let exportIndex: Int = CommandLine.arguments.firstIndex(of: argument),
                 CommandLine.arguments.count > exportIndex + 1 else {
                 continue
             }
 
             let path: String = CommandLine.arguments[exportIndex + 1].replacingOccurrences(of: "~", with: NSHomeDirectory())
-            let url: URL = URL(fileURLWithPath: path)
+            let url: URL = .init(fileURLWithPath: path)
 
             Task {
                 await export(to: url)
@@ -29,8 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func export(to url: URL) async {
-
-        let array: [[String: Any]] = ProfileHelper.shared.getProfiles().map { $0.dictionary }
+        let array: [[String: Any]] = ProfileHelper.shared.getProfiles().map(\.dictionary)
 
         do {
             let data: Data = try PropertyListSerialization.data(fromPropertyList: array, format: .xml, options: .bitWidth)
