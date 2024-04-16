@@ -13,7 +13,7 @@ jobs:
     runs-on: macos-13
     steps:
       - uses: actions/checkout@v4
-      - uses: swift-actions/setup-swift@v1
+      - uses: swift-actions/setup-swift@v2
       - name: Install Apple Developer Application Certificate
         env:
           APPLE_DEVELOPER_ID_APPLICATION_CERTIFICATE: ${{ secrets.APPLE_DEVELOPER_ID_APPLICATION_CERTIFICATE }}
