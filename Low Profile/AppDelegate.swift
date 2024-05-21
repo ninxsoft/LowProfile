@@ -33,11 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         do {
             let data: Data = try PropertyListSerialization.data(fromPropertyList: array, format: .xml, options: .bitWidth)
-
-            guard let string: String = String(data: data, encoding: .utf8) else {
-                return
-            }
-
+            let string: String = .init(decoding: data, as: UTF8.self)
             try string.write(to: url, atomically: true, encoding: .utf8)
             print("Exported Low Profile report: '\(url.path())'")
         } catch {

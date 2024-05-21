@@ -38,11 +38,7 @@ struct Payload: Identifiable, Hashable {
     var propertyList: String? {
         do {
             let data: Data = try PropertyListSerialization.data(fromPropertyList: dictionary, format: .xml, options: 0)
-
-            guard let string: String = String(data: data, encoding: .utf8) else {
-                return nil
-            }
-
+            let string: String = .init(decoding: data, as: UTF8.self)
             return string
         } catch {
             print(error.localizedDescription)

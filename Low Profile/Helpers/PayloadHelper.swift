@@ -266,9 +266,8 @@ class PayloadHelper: NSObject {
             return string.description
         }
 
-        if
-            let data: Data = try? JSONSerialization.data(withJSONObject: value, options: [.prettyPrinted, .sortedKeys]),
-            let string: String = String(data: data, encoding: .utf8) {
+        if let data: Data = try? JSONSerialization.data(withJSONObject: value, options: [.prettyPrinted, .sortedKeys]) {
+            let string: String = .init(decoding: data, as: UTF8.self)
             return string
         }
 

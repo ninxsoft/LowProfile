@@ -117,11 +117,7 @@ extension String {
             }
 
             let data: Data = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
-
-            guard let string: String = String(data: data, encoding: .utf8) else {
-                return nil
-            }
-
+            let string: String = .init(decoding: data, as: UTF8.self)
             return string
         } catch {
             print(error.localizedDescription)

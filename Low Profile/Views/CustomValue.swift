@@ -26,11 +26,7 @@ struct CustomValue: View {
 
         do {
             let data: Data = try PropertyListSerialization.data(fromPropertyList: value, format: .xml, options: 0)
-
-            guard let string: String = String(data: data, encoding: .utf8) else {
-                return AttributedString()
-            }
-
+            let string: String = .init(decoding: data, as: UTF8.self)
             return highlightr.highlight(string.strippingPropertyListWrapper())
         } catch {
             print(error.localizedDescription)
