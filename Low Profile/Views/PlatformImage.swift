@@ -22,6 +22,8 @@ struct PlatformImage: View {
             "appletv.fill"
         case "watchOS":
             "applewatch"
+        case "visionOS":
+            "visionpro"
         default:
             ""
         }
