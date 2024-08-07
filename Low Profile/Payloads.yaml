@@ -1047,7 +1047,8 @@ com.apple.DiscRecording:
     - "\u2219`off`\u2219\n\tThe system disables disc burning."
     - "\u2219`on`\u2219\n\tThe system allows normal default operation.\_Setting this\
       \ key to \u2219`on`\u2219 doesn\u2019t enable disc burn support if other mechanisms\
-      \ or preferences disabled it. Needs to be enabled with the  profile"
+      \ or preferences disabled it. Needs to be enabled with the [Finder](https://developer.apple.com/documentation/devicemanagement/finder)\
+      \ profile"
     - "\u2219`authenticate`\u2219\n\tThe system requires authentication."
     name: BurnSupport
     type: string
