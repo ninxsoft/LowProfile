@@ -351,6 +351,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				39573B5A2CFC502600384870 /* PBXTargetDependency */,
 			);
 			name = LowProfileTests;
 			productName = "Low ProfileTests";
@@ -364,13 +365,13 @@
 				57D4F7CA24D6D6A500BC0648 /* Sources */,
 				57D4F7CB24D6D6A500BC0648 /* Frameworks */,
 				57D4F7CC24D6D6A500BC0648 /* Resources */,
-				57D4F7E124D6D6DA00BC0648 /* Run SwiftLint */,
 				57C1C85B2B09E8AA006DB77B /* Run SwiftFormat */,
 				39C419F7275CD5AE001F4B4E /* Run DrString */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				39573B582CFC501B00384870 /* PBXTargetDependency */,
 			);
 			name = "Low Profile";
 			packageProductDependencies = (
@@ -415,6 +416,7 @@
 				39C419FB275D9AEC001F4B4E /* XCRemoteSwiftPackageReference "Yams" */,
 				5770D865295860DF00297B46 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				5745C7262A9B070200744AAE /* XCRemoteSwiftPackageReference "Highlightr" */,
+				39573B562CFC4FD200384870 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = 57D4F7CF24D6D6A500BC0648 /* Products */;
 			projectDirPath = "";
@@ -483,25 +485,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/usr/bin/env bash";
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftformat > /dev/null ; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n\nexit 0\n";
-		};
-		57D4F7E124D6D6DA00BC0648 /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/usr/bin/env bash";
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null ; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\nexit 0\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -580,6 +563,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		39573B582CFC501B00384870 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 39573B572CFC501B00384870 /* SwiftLintBuildToolPlugin */;
+		};
+		39573B5A2CFC502600384870 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 39573B592CFC502600384870 /* SwiftLintBuildToolPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5770D8632958489D00297B46 /* Debug */ = {
@@ -834,12 +828,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		39C419FB275D9AEC001F4B4E /* XCRemoteSwiftPackageReference "Yams" */ = {
+		39573B562CFC4FD200384870 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jpsim/Yams.git";
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.6;
+				minimumVersion = 0.57.1;
+			};
+		};
+		39C419FB275D9AEC001F4B4E /* XCRemoteSwiftPackageReference "Yams" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jpsim/Yams";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.3;
 			};
 		};
 		5745C7262A9B070200744AAE /* XCRemoteSwiftPackageReference "Highlightr" */ = {
@@ -847,7 +849,7 @@
 			repositoryURL = "https://github.com/raspu/Highlightr";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.2;
+				minimumVersion = 2.2.1;
 			};
 		};
 		5770D865295860DF00297B46 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
@@ -855,20 +857,30 @@
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.5.2;
+				minimumVersion = 2.6.4;
 			};
 		};
 		5794E85B254A6B1A004A5942 /* XCRemoteSwiftPackageReference "ASN1Decoder" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/filom/ASN1Decoder.git";
+			repositoryURL = "https://github.com/filom/ASN1Decoder";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.9.0;
+				minimumVersion = 1.10.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		39573B572CFC501B00384870 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39573B562CFC4FD200384870 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		39573B592CFC502600384870 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39573B562CFC4FD200384870 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
 		39C419FC275D9AEC001F4B4E /* Yams */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 39C419FB275D9AEC001F4B4E /* XCRemoteSwiftPackageReference "Yams" */;
