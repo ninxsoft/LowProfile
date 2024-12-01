@@ -10,6 +10,9 @@ import Highlightr
 import SwiftUI
 
 extension Highlightr {
+    /// The array of Syntax Highlighting theme names.
+    ///
+    /// - Returns: An array of Syntax Highlighting theme names.
     static func propertyListThemes() -> [String] {
         [
             "a11y",
@@ -33,6 +36,13 @@ extension Highlightr {
         ]
     }
 
+    /// Returns the Synxtax Highlighting theme name 'variant' based on the provided color scheme.
+    ///
+    /// - Parameters:
+    ///   - theme:       The Syntax Highlighting theme.
+    ///   - colorScheme: The Syntax Highlighting theme variant.
+    ///
+    /// - Returns: The Syntax Highlighting theme name (including the variant).
     func themeVariant(for theme: String, using colorScheme: ColorScheme) -> String {
         switch theme {
         case "kimbie":
@@ -44,6 +54,12 @@ extension Highlightr {
         }
     }
 
+    /// sdf.
+    ///
+    /// - Parameters:
+    ///   - string: sdf.
+    ///
+    /// - Returns: sdf.
     func highlight(_ string: String) -> AttributedString {
         guard let attributedString: NSAttributedString = highlight(string) else {
             return AttributedString()

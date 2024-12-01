@@ -9,15 +9,29 @@ import Foundation
 import RegexBuilder
 
 extension String {
+    /// The GitHub repository URL.
     static let repositoryURL: String = "https://github.com/ninxsoft/LowProfile"
+    /// The GitHub repository payloads URL.
     static let payloadsURL: String = "https://raw.githubusercontent.com/ninxsoft/LowProfile/main/Low%20Profile/Payloads.yaml"
+    /// The Apple Device Management documentation URL prefix.
     static let documentationPrefix: String = "https://developer.apple.com/documentation/devicemanagement/"
+    /// The default Syntax Highlighting theme.
     static let syntaxHighlightingThemeDefault: String = "solarized"
 
+    /// Compares the left hand side string with the right hand regular expresson string.
+    ///
+    /// - Parameters:
+    ///   - lhs: The string to be compared.
+    ///   - rhs: The regular expression to compare against.
+    ///
+    /// - Returns: `true` if the `lhs` string matches the `rhs` regular expression string.
     static func ~= (lhs: String, rhs: String) -> Bool {
         lhs.range(of: rhs, options: .regularExpression) != nil
     }
 
+    /// Removes the property list header (if found) within the string.
+    ///
+    /// - Returns: The input string with no property list header (if found).
     func strippingPropertyListWrapper() -> String {
         let xml: String = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
         let doctype: String = "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">"
@@ -30,6 +44,9 @@ extension String {
             .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
+    /// Replaces all unicode characters found within the string.
+    ///
+    /// - Returns: The input string with all unicode characters removed.
     func replacingUnicode() -> String {
         let regex: Regex = Regex {
             "\\U"
@@ -57,7 +74,10 @@ extension String {
         return string
     }
 
-    // swiftlint:disable:next function_body_length
+    // swiftlint:disable function_body_length
+    /// Converts and returns a JSON-formatted string.
+    ///
+    /// - Returns: A JSON-formatted string.
     func toJSONString() -> String? {
         guard !isEmpty else {
             return "{}"
@@ -124,4 +144,5 @@ extension String {
             return nil
         }
     }
+    // swiftlint:enable function_body_length
 }

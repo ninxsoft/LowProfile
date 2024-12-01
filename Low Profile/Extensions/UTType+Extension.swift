@@ -8,6 +8,8 @@
 import UniformTypeIdentifiers
 
 extension UTType {
+    /// Low Profile Report Uniform Type.
     static var lowprofilereport: UTType = .init(importedAs: "com.ninxsoft.lowprofile.report")
+    /// Configuration Profile (.mobileconfig) Uniform Type.
     static var mobileconfig: UTType = .init(importedAs: "com.apple.mobileconfig")
 }
