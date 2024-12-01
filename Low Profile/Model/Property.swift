@@ -91,23 +91,23 @@ struct Property: Identifiable, Hashable {
         id = UUID().uuidString
         name = unknownName
 
-        if unknownValue as? Bool != nil {
+        if unknownValue is Bool {
             type = "boolean"
-        } else if unknownValue as? Data != nil {
+        } else if unknownValue is Data {
             type = "data"
-        } else if unknownValue as? Date != nil {
+        } else if unknownValue is Date {
             type = "date"
-        } else if unknownValue as? Int != nil {
+        } else if unknownValue is Int {
             type = "integer"
-        } else if unknownValue as? NSNumber != nil {
+        } else if unknownValue is NSNumber {
             type = "number"
-        } else if unknownValue as? String != nil {
+        } else if unknownValue is String {
             type = "string"
-        } else if unknownValue as? [String] != nil {
+        } else if unknownValue is [String] {
             type = "[string]"
-        } else if unknownValue as? [String: Any] != nil {
+        } else if unknownValue is [String: Any] {
             type = "dictionary"
-        } else if unknownValue as? [[String: Any]] != nil {
+        } else if unknownValue is [[String: Any]] {
             type = "[dictionary]"
         } else {
             type = "Unknown type"
