@@ -6,9 +6,9 @@
     <language>en</language>
     <link>https://github.com/ninxsoft/LowProfile</link>
     <item>
-      <title>Version 4.0.2</title>
+      <title>Version 4.0.3</title>
       <link>https://github.com/ninxsoft/LowProfile</link>
-      <sparkle:version>4.0.2</sparkle:version>
+      <sparkle:version>4.0.3</sparkle:version>
       <sparkle:fullReleaseNotesLink>https://github.com/ninxsoft/LowProfile/blob/main/CHANGELOG.md</sparkle:fullReleaseNotesLink>
       <description>
         <![CDATA[
@@ -44,7 +44,18 @@
             .styled-402-child li::before {
               content: "";
             }
+            .styled-403 li::before {
+              content: "✅ ";
+            }
           </style>
+          <h3>Version 4.0.3</h3>
+          <ul class="styled styled-403">
+            <li>Added missing <a href="https://developer.apple.com/sf-symbols">Symbol</a> for <strong>visionOS</strong></li>
+            <li>Bumped <a href="https://github.com/filom/ASN1Decoder">ASN1Decoder</a> version to <strong>1.10.0</strong></li>
+            <li>Bumped <a href="https://github.com/raspu/Highlightr">Highlightr</a> version to <strong>2.2.1</strong></li>
+            <li>Bumped <a href="https://github.com/sparkle-project/Sparkle">Sparkle</a> version to <strong>2.6.4</strong></li>
+            <li>Bumped <a href="https://github.com/jpsim/Yams">Yams</a> version to <strong>5.1.3</strong></li>
+          </ul>
           <h3>Version 4.0.2</h3>
           <ul class="styled styled-402">
             <li>Reports can now be exported via the CLI
@@ -118,12 +129,12 @@
           </ul>
         ]]>
       </description>
-      <pubDate>Thu, 01 Feb 2024 12:00:00 +0000</pubDate>
-      <enclosure url="https://github.com/ninxsoft/LowProfile/releases/download/v4.0.2/Low.Profile.4.0.2.pkg"
+      <pubDate>Mon, 02 Dec 2024 12:00:00 +0000</pubDate>
+      <enclosure url="https://github.com/ninxsoft/LowProfile/releases/download/v4.0.3/Low.Profile.4.0.3.pkg"
                  type="application/octet-stream"
                  sparkle:installationType="package"
-                 sparkle:edSignature="uhxwMcGoTykWklZP+jBRBaAIAVyDUEp2lvLBwwtGHYT8jioVklmnfuBMyIP61PZQgbKXSMOLRPes1SLavIMRDA=="
-                 length="3702126"
+                 sparkle:edSignature="D6WWOxvbSoT9qrFb4arhRxPW5pMrxJQqC+FP+E7fu1R7HvZ0Us0Y2+JogliDK158IDcBFFEK9KgevFiASuXVAQ=="
+                 length="3690535"
       />
     </item>
   </channel>
