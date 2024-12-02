@@ -9,6 +9,6 @@ import XCTest
 
 final class LowProfileTests: XCTestCase {
     func test() throws {
-        XCTAssertEqual(true == true)
+        XCTAssertTrue(true)
     }
 }
