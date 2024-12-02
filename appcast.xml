@@ -44,7 +44,7 @@
             .styled-402-child li::before {
               content: "";
             }
-            .styled-403 li {
+            .styled-403 li::before {
               content: "✅ ";
             }
           </style>
