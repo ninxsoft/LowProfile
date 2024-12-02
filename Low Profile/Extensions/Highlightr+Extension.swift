@@ -54,12 +54,12 @@ extension Highlightr {
         }
     }
 
-    /// sdf.
+    /// Highlights a string with the current Syntax Highlighting theme.
     ///
     /// - Parameters:
-    ///   - string: sdf.
+    ///   - string: The string to syntax highlight.
     ///
-    /// - Returns: sdf.
+    /// - Returns: A syntax highlighted `AttributedString`.
     func highlight(_ string: String) -> AttributedString {
         guard let attributedString: NSAttributedString = highlight(string) else {
             return AttributedString()
