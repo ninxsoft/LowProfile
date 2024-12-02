@@ -1,4 +1,4 @@
-include = ["Low Profile/**/*.swift"]
+include = ["Low Profile/*.swift", "Low Profile/**/*.swift", "Low Profile Tests/*.swift"]
 align-after-colon = ["parameters", "throws", "returns"]
 parameter-style = "grouped"
 needs-separation = ["description", "parameters", "throws"]
