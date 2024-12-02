@@ -17,7 +17,7 @@ struct SidebarPayloadRow: View {
     var body: some View {
         HStack(spacing: 0) {
             ScaledImage(name: payload.name, length: length)
-                .padding(.trailing)
+                .padding(.trailing, padding)
             VStack(alignment: .leading, spacing: spacing) {
                 HStack(alignment: .firstTextBaseline) {
                     Text(payload.name)
