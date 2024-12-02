@@ -35,7 +35,7 @@ jobs:
       - name: Run Unit Tests
         run: |
           xcodebuild -scheme "Low Profile Tests" -destination "platform=macOS,arch=arm64" -quiet clean
-          xcodebuild -scheme "Low Profile Tests" -destination "platform=macOS,arch=arm64" -quiet test
+          xcodebuild -scheme "Low Profile Tests" -destination "platform=macOS,arch=arm64" -quiet -skipPackagePluginValidation test
       - name: Remove Apple Developer Keychain
         if: ${{ always() }}
         run: security delete-keychain $RUNNER_TEMP/apple-developer.keychain-db
