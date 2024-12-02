@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.0.3](https://github.com/ninxsoft/LowProfile/releases/tag/v4.0.3) - 2024-12-02
+
+- Added missing [Symbol](https://developer.apple.com/sf-symbols) for **visionOS**
+- Bumped [ASN1Decoder](https://github.com/filom/ASN1Decoder) version to **1.10.0**
+- Bumped [Highlightr](https://github.com/raspu/Highlightr) version to **2.2.1**
+- Bumped [Sparkle](https://github.com/sparkle-project/Sparkle) version to **2.6.4**
+- Bumped [Yams](https://github.com/jpsim/Yams) version to **5.1.3**
+
 ## [4.0.2](https://github.com/ninxsoft/LowProfile/releases/tag/v4.0.2) - 2024-02-01
 
 - Fixed a crash caused by payload properties with multiple lines and carriage returns - thanks [sheacraig](https://github.com/sheagcraig)!

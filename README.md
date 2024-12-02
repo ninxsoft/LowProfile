@@ -32,7 +32,7 @@ If the answer is yes to any of the above, then **Low Profile** is the app for **
 - [x] Displays details for all Apple [supported payloads](https://developer.apple.com/documentation/devicemanagement/profile-specific_payload_keys):
 
   - Description + Payload Type
-  - Supported Platforms (iOS, iPadOS, macOS, tvOS, watchOS)
+  - Supported Platforms (iOS, iPadOS, macOS, tvOS, visionOS, watchOS)
   - Payload-specific information (ie. Identifier, UUID, Display Name, Organisation, etc.)
   - Payload Availability
   - Example Property List
@@ -69,7 +69,7 @@ If the answer is yes to any of the above, then **Low Profile** is the app for **
 
 ## Build Requirements
 
-- Swift **5.8**
+- Swift **5.10**
 - Runs on **macOS Ventura 13** and later.
 
 ## Download
