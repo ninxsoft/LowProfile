@@ -26,7 +26,7 @@ class PayloadHelper: NSObject {
         ]
     }
 
-    override init() {
+    func refresh() async {
         let urls: [URL?] = [URL(string: .payloadsURL), Bundle.main.url(forResource: "Payloads", withExtension: "yaml")]
 
         for url in urls {
@@ -35,7 +35,8 @@ class PayloadHelper: NSObject {
             }
 
             do {
-                let string: String = try String(contentsOf: url)
+                let (data, _): (Data, URLResponse) = try await URLSession.shared.data(from: url)
+                let string: String = .init(decoding: data, as: UTF8.self)
 
                 guard let dictionaries: [String: Any] = try Yams.load(yaml: string) as? [String: Any] else {
                     continue

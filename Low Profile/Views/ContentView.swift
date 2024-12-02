@@ -182,6 +182,7 @@ struct ContentView: View {
         refreshing = true
 
         Task {
+            await PayloadHelper.shared.refresh()
             let profiles: [Profile] = ProfileHelper.shared.getProfiles()
             self.profiles = profiles
             selectedProfile = profiles.first
