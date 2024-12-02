@@ -18,6 +18,7 @@ jobs:
         uses: cirruslabs/swiftlint-action@v1
         with:
           version: latest
+        args: --strict
       - name: Print SwiftFormat version
         run: swiftformat --version
       - name: Run SwiftFormat
