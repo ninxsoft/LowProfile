@@ -26,7 +26,7 @@
             .styled-500 li::before {
               content: "🆕 ";
             }
-            .styled-500 li:nth-child(n + 2):before {
+            .styled-500 li:nth-child(n + 4):before {
               content: "✅ ";
             }
             .styled-500-child li::before {
