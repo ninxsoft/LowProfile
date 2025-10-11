@@ -135,7 +135,6 @@ struct ReportDocumentView: View {
             issues = IssuesHelper.shared.getIssues(for: profiles)
         }
         .onChange(of: selectedProfile) { profile in
-
             guard let profile: Profile = selectedProfile else {
                 return
             }
@@ -143,7 +142,6 @@ struct ReportDocumentView: View {
             selectedPayload = profile.payloads.first { $0.id == previousSelections[profile.id] } ?? profile.payloads.first
         }
         .onChange(of: selectedPayload) { _ in
-
             guard
                 let profile: Profile = selectedProfile,
                 let payload: Payload = selectedPayload else {

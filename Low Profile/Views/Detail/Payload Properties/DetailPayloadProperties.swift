@@ -62,7 +62,6 @@ struct DetailPayloadProperties: View {
                         }
                     }
                     .onChange(of: selectedProperty) { property in
-
                         guard let property: Property = property, properties.contains(property) else {
                             return
                         }

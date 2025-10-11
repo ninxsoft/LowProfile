@@ -8,7 +8,7 @@
 struct DocumentError: Error {
     let message: String
 
-    public var localizedDescription: String {
+    var localizedDescription: String {
         message
     }
 

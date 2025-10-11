@@ -75,6 +75,7 @@ extension String {
     }
 
     // swiftlint:disable function_body_length
+
     /// Converts and returns a JSON-formatted string.
     ///
     /// - Returns: A JSON-formatted string.
@@ -95,7 +96,6 @@ extension String {
         }
 
         string.enumerateLines { line, _ in
-
             var components: [String] = line.lowercased().contains("authorization: basic") ? [line] : line.components(separatedBy: "=")
 
             if components.count > 1 {
@@ -144,5 +144,6 @@ extension String {
             return nil
         }
     }
+
     // swiftlint:enable function_body_length
 }
