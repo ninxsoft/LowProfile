@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		391B82032E9A21EE0091A898 /* Low Profile.icon in Resources */ = {isa = PBXBuildFile; fileRef = 391B82022E9A21EE0091A898 /* Low Profile.icon */; };
 		392BC50927CF7940009D77D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392BC50827CF7940009D77D8 /* ContentView.swift */; };
 		39C419F9275D9AA2001F4B4E /* Payloads.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 39C419F8275D9AA2001F4B4E /* Payloads.yaml */; };
 		39C419FD275D9AEC001F4B4E /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 39C419FC275D9AEC001F4B4E /* Yams */; };
@@ -75,6 +76,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		391B82022E9A21EE0091A898 /* Low Profile.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Low Profile.icon"; sourceTree = "<group>"; };
 		392BC50827CF7940009D77D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		39C419F8275D9AA2001F4B4E /* Payloads.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = Payloads.yaml; sourceTree = "<group>"; };
 		39C41A00275DAED9001F4B4E /* DetailHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeading.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				57D4F7D524D6D6A700BC0648 /* Assets.xcassets */,
 				578F000424E8148D00DA8DF1 /* DocumentError.swift */,
 				57D4F7DA24D6D6A700BC0648 /* Info.plist */,
+				391B82022E9A21EE0091A898 /* Low Profile.icon */,
 				57D4F7D124D6D6A500BC0648 /* LowProfileApp.swift */,
 				39C419F8275D9AA2001F4B4E /* Payloads.yaml */,
 				57D4F7FB24D6D8D100BC0648 /* ProfileDocument.swift */,
@@ -442,6 +445,7 @@
 			files = (
 				39C419F9275D9AA2001F4B4E /* Payloads.yaml in Resources */,
 				57D4F7D624D6D6A700BC0648 /* Assets.xcassets in Resources */,
+				391B82032E9A21EE0091A898 /* Low Profile.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,7 +744,7 @@
 		57D4F7DF24D6D6A700BC0648 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Low Profile";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
@@ -770,7 +774,7 @@
 		57D4F7E024D6D6A700BC0648 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Low Profile";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";

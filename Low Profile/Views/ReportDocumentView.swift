@@ -73,7 +73,7 @@ struct ReportDocumentView: View {
         .searchable(text: $searchString, prompt: "Name, identifier or property")
         .searchSuggestions {
             ForEach(filteredProfiles()) { profile in
-                ResultsTitleView(title: profile.name, image: "Profile")
+                ResultsTitleView(title: profile.name)
                     .tag(profile.id)
                     .onTapGesture {
                         selectedProfile = profile

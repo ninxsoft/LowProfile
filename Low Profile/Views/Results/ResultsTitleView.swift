@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ResultsTitleView: View {
     var title: String
-    var image: String
+    var image: String?
     var indentation: CGFloat = 0
     private let spacing: CGFloat = 5
     private let length: CGFloat = 16

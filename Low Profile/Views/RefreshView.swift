@@ -13,7 +13,7 @@ struct RefreshView: View {
 
     var body: some View {
         HStack(spacing: spacing) {
-            ScaledImage(name: "Profile", length: length)
+            ScaledImage(length: length)
             Text("Retrieving Profiles...")
             ProgressView()
                 .controlSize(.small)

@@ -17,7 +17,7 @@ struct SidebarProfileRow: View {
 
     var body: some View {
         HStack {
-            ScaledImage(name: "Profile", length: length)
+            ScaledImage(length: length)
             VStack(alignment: .leading) {
                 Text(profile.name)
                     .bold()

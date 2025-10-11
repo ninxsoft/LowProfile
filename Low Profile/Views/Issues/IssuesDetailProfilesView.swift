@@ -31,7 +31,7 @@ struct IssuesDetailProfilesView: View {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
                             VStack {
-                                ResultsTitleView(title: profile.name, image: "Profile")
+                                ResultsTitleView(title: profile.name)
                                 ResultsTitleView(
                                     title: "\(payload.name) (\(payload.payloadUUID))",
                                     image: payload.name,
