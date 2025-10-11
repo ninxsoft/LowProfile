@@ -68,12 +68,11 @@ struct ProfileDocumentView: View {
             }
         }
         .toolbar {
-            if !issues.isEmpty {
-                ToolbarItem {
+            ToolbarItemGroup {
+                if !issues.isEmpty {
                     Text("\(issues.count) issue\(issues.count == 1 ? "" : "s") detected")
+                        .padding(.leading)
                 }
-            }
-            ToolbarItem {
                 Button(action: {
                     showIssuesPopover = true
                 }, label: {
@@ -88,8 +87,6 @@ struct ProfileDocumentView: View {
                         Text("No issues detected, everything looks good 🥳").padding()
                     }
                 }
-            }
-            ToolbarItem {
                 Button(action: {
                     homepage()
                 }, label: {

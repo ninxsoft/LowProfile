@@ -137,6 +137,7 @@ struct ContentView: View {
         ToolbarItemGroup {
             if !issues.isEmpty {
                 Text("\(issues.count) issue\(issues.count == 1 ? "" : "s") detected")
+                    .padding(.leading)
             }
             Button(action: {
                 showIssuesPopover = true
