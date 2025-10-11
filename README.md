@@ -88,11 +88,10 @@ If the answer is yes to any of the above, then **Low Profile** is the app for **
 - The Sparkle Project ([sparkle-project](https://github.com/sparkle-project)) for [Sparkle](https://github.com/sparkle-project/Sparkle), used to auto update Low Profile.
 - JP Simard ([jpsim](https://github.com/jpsim)) for [Yams](https://github.com/jpsim/Yams), used to import YAML.
 - Marcus Ransom ([@marcusransom](https://twitter.com/marcusransom)) for the awesome app name.
-- James Smith ([smithjw](https://github.com/smithjw)) for the shiny new app icon.
 
 ## License
 
-> Copyright © 2024 Nindi Gill
+> Copyright © 2020-2025 Nindi Gill
 >
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
