@@ -21,6 +21,7 @@ class ProfileHelper: NSObject {
         "spconfigprofile_version",
         "spconfigprofile_RemovalDisallowed",
         "spconfigprofile_install_date",
+        "spconfigprofile_install_source",
         "spconfigprofile_certificate_payload_uuid",
         "spconfigprofile_verification_state",
         "spconfigprofile_payload_identifier",
