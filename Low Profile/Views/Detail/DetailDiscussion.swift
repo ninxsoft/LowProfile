@@ -35,7 +35,7 @@ struct DetailDiscussion: View {
             AttributedText(string: discussionString)
                 .font(.title3)
                 .padding(.bottom)
-            if !payload.general {
+            if !payload.general, !payload.example.isEmpty {
                 HStack {
                     Text("Example Property List")
                         .font(.title)
