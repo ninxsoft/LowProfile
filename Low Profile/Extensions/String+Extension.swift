@@ -16,7 +16,7 @@ extension String {
     /// The Apple Device Management documentation URL prefix.
     static let documentationPrefix: String = "https://developer.apple.com/documentation/devicemanagement/"
     /// The default Syntax Highlighting theme.
-    static let syntaxHighlightingThemeDefault: String = "solarized"
+    static let syntaxHighlightingThemeDefault: String = "color-brewer"
 
     /// Compares the left hand side string with the right hand regular expresson string.
     ///

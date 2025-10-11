@@ -9,8 +9,6 @@ import Highlightr
 import SwiftUI
 
 struct SettingsSyntaxHighlightingView: View {
-    @Environment(\.colorScheme)
-    var colorScheme: ColorScheme
     @AppStorage("SyntaxHighlightingTheme")
     private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
     private var string: String = """
@@ -38,10 +36,7 @@ struct SettingsSyntaxHighlightingView: View {
             return AttributedString()
         }
 
-        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
-            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
-        }
-
+        highlightr.setTheme(to: syntaxHighlightingTheme)
         return highlightr.highlight(string)
     }
 
@@ -55,7 +50,7 @@ struct SettingsSyntaxHighlightingView: View {
                 Spacer()
             }
             HStack {
-                List(Highlightr.propertyListThemes(), id: \.self, selection: $syntaxHighlightingTheme) { name in
+                List(Highlightr()?.availableThemes().sorted() ?? [], id: \.self, selection: $syntaxHighlightingTheme) { name in
                     Text(name)
                         .tag(name)
                 }

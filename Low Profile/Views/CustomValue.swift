@@ -10,8 +10,6 @@ import Highlightr
 import SwiftUI
 
 struct CustomValue: View {
-    @Environment(\.colorScheme)
-    var colorScheme: ColorScheme
     var value: Any
     @AppStorage("SyntaxHighlightingTheme")
     private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
@@ -20,9 +18,7 @@ struct CustomValue: View {
             return AttributedString()
         }
 
-        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
-            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
-        }
+        highlightr.setTheme(to: syntaxHighlightingTheme)
 
         do {
             let data: Data = try PropertyListSerialization.data(fromPropertyList: value, format: .xml, options: 0)

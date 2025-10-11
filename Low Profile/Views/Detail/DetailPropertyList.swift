@@ -9,8 +9,6 @@ import Highlightr
 import SwiftUI
 
 struct DetailPropertyList: View {
-    @Environment(\.colorScheme)
-    var colorScheme: ColorScheme
     var string: String
     @AppStorage("SyntaxHighlightingTheme")
     private var syntaxHighlightingTheme: String = .syntaxHighlightingThemeDefault
@@ -19,10 +17,7 @@ struct DetailPropertyList: View {
             return AttributedString()
         }
 
-        if !highlightr.setTheme(to: highlightr.themeVariant(for: syntaxHighlightingTheme, using: colorScheme)) {
-            highlightr.setTheme(to: highlightr.themeVariant(for: .syntaxHighlightingThemeDefault, using: colorScheme))
-        }
-
+        highlightr.setTheme(to: syntaxHighlightingTheme)
         return highlightr.highlight(string)
     }
 
