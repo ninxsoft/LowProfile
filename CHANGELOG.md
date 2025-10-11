@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.0.0](https://github.com/ninxsoft/LowProfile/releases/tag/v5.0.0) - 2025-10-11
+
+- Added support for **macOS Tahoe 26** 🎉
+  - Updated app icon to support new appearances on macOS Tahoe
+  - Updated app accent color to better reflect the new app icon
+- Added more syntax highlighting themes
+- Fixed numerous grammatical errors and typos in the payload property metadata
+- Fixed a bug that attempted to show a payload example if one was not available
+- Bumped [Highlightr](https://github.com/raspu/Highlightr) version to **2.3.0**
+- Bumped [Sparkle](https://github.com/sparkle-project/Sparkle) version to **2.8.0**
+- Bumped [Yams](https://github.com/jpsim/Yams) version to **6.2.0**
+
 ## [4.0.3](https://github.com/ninxsoft/LowProfile/releases/tag/v4.0.3) - 2024-12-02
 
 - Added missing [Symbol](https://developer.apple.com/sf-symbols) for **visionOS**
