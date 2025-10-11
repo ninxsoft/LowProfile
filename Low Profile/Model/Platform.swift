@@ -16,20 +16,16 @@ struct Platform: Identifiable {
     var id: String
     var name: String
     var introducedAt: String
-    var current: String
-    var deprecated: Bool
     var deprecatedAt: String
     var beta: Bool
     var supportedVersions: String {
-        "\(introducedAt) - \(deprecated ? deprecatedAt : current)"
+        "\(introducedAt)\(deprecatedAt.isEmpty ? "+" : " - \(deprecatedAt)")"
     }
 
     init(dictionary: [String: Any]) {
         id = UUID().uuidString
         name = dictionary["name"] as? String ?? ""
         introducedAt = dictionary["introduced_at"] as? String ?? ""
-        current = dictionary["current"] as? String ?? ""
-        deprecated = dictionary["deprecated"] as? Bool ?? false
         deprecatedAt = dictionary["deprecated_at"] as? String ?? ""
         beta = dictionary["beta"] as? Bool ?? false
     }

@@ -55,7 +55,7 @@ struct Payload: Identifiable, Hashable {
     }
 
     var deprecated: Bool {
-        !platforms.filter(\.deprecated).isEmpty
+        !platforms.filter { !$0.deprecatedAt.isEmpty }.isEmpty
     }
 
     var beta: Bool {
